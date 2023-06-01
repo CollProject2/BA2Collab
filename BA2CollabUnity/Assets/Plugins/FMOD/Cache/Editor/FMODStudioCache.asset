@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-4194439154459797918
+--- !u!114 &-5143897097376029460
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
-  Path: ../../SoundFMOD/BA2_Collab/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638212305421680345
+  Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638212374202341731
   FileSizes:
-  - Name: Desktop
-    Value: 77152
+  - Name: 
+    Value: 806
   Exists: 1
---- !u!114 &-1912943755091345020
+--- !u!114 &-4025464701835835941
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -32,13 +32,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: ../../SoundFMOD/BA2_Collab/Build/Desktop/SFX.bank
+  Path: Assets/Audio/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638212305421919512
-  FileSizes:
-  - Name: Desktop
-    Value: 76640
+  lastModified: 638212374202564797
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3227535647774278028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FmodBanks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638212374202317505
+  FileSizes: []
   Exists: 1
 --- !u!114 &-35345361026848262
 MonoBehaviour:
@@ -73,17 +89,17 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 2780629904042913573}
-  - {fileID: -4194439154459797918}
-  - {fileID: -1912943755091345020}
+  - {fileID: -5143897097376029460}
+  - {fileID: -3227535647774278028}
+  - {fileID: -4025464701835835941}
   EditorEvents:
   - {fileID: 4333426495449838960}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -4194439154459797918}
+  - {fileID: -3227535647774278028}
   StringsBanks:
-  - {fileID: 2780629904042913573}
-  cacheTime: 638212305421919512
+  - {fileID: -5143897097376029460}
+  cacheTime: 638212374202564797
   cacheVersion: 131603
 --- !u!114 &1784499567279226234
 MonoBehaviour:
@@ -113,26 +129,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &2780629904042913573
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: ../../SoundFMOD/BA2_Collab/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638212305421690609
-  FileSizes:
-  - Name: Desktop
-    Value: 806
-  Exists: 1
 --- !u!114 &4333426495449838960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,8 +148,8 @@ MonoBehaviour:
     Data3: -459947078
     Data4: -1639359516
   Banks:
-  - {fileID: -4194439154459797918}
-  - {fileID: -1912943755091345020}
+  - {fileID: -3227535647774278028}
+  - {fileID: -4025464701835835941}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
