@@ -9,7 +9,14 @@ public class Player : MonoBehaviour
     //Properties
     public Vector3 currentPosition { get; private set; }
     public List<Item> inventory { get; private set; }
-    
+    public Vector3 velocity;
+    private CharacterController characterController;
+    // adjust in unity editor
+    public float speed;
+    public float gravity;
+
+    public int currentStage;
+
     //Constructor
     public Player()
     {
@@ -28,13 +35,38 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
+        characterController = GetComponent<CharacterController>();
+    }
+    private void Update()
+    {
+        // Apply the movement
+        HandleMovement();
     }
 
     //Methods
-    public void Move(Vector3 newPosition)
+    public void HandleMovement()
     {
-        // TODO: Check if newPosition is valid + character controller/rigid body stuff
-        currentPosition = newPosition;
+        // Read input for horizontal and vertical movement
+        float moveX = Input.GetAxis("Horizontal");
+        float moveZ = Input.GetAxis("Vertical");
+
+ 
+        Vector3 movementVector = transform.right * moveX + transform.forward * moveZ;
+
+        //normalise so all directions are the same speed (s/o to Jonas)
+        if (movementVector.magnitude > 1) 
+            movementVector = movementVector.normalized;
+
+        movementVector = speed * Time.deltaTime * movementVector;
+
+        // Check if character is grounded, if not add gravity
+        if (characterController.isGrounded)
+            velocity.y = -2f;
+        else
+            velocity.y -= gravity * Time.deltaTime;
+
+        // Apply the movement
+        characterController.Move(movementVector + (velocity * Time.deltaTime));
     }
 
     public void CollectItem(Item item)
@@ -47,15 +79,19 @@ public class Player : MonoBehaviour
     {
         // do solving puzzle things here: displaying a UI, waiting for user input and then checking the solution 
         //when solved, unlock a memory 
+        puzzle.isSolved = true;
     }
 
     public void RecallMemory(PlayerMemory memory)
     {
+        memory.isUnlocked = true;
         // recalling memory => playing an animation or cutscene, or displaying some text or images
     }
 
     public void BeginNewChapter()
     {
+
         // checking if all parameters are true if so trigger new things
+        currentStage++;
     }
 }

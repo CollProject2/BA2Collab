@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Item: MonoBehaviour
+public class Item : MonoBehaviour
 {
     // Properties
     public string itemName { get; private set; }

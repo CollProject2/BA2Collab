@@ -3,7 +3,7 @@
 public class Puzzle: MonoBehaviour
 {
     //Properties
-    public bool isSolved { get; private set; }
+    public bool isSolved { get; set; }
     public PlayerMemory associatedMemory { get; private set; }
 
     //Constructor
@@ -21,7 +21,7 @@ public class Puzzle: MonoBehaviour
 
     public void Solve()
     {
-        //check if the puzzle is already solved
-        isSolved = true;
+        // call the solve method of the player
+        Player.instance.SolvePuzzle(this);
     }
 }
