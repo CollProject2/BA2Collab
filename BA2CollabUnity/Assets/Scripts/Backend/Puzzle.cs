@@ -1,0 +1,27 @@
+﻿using UnityEngine;
+
+public class Puzzle: MonoBehaviour
+{
+    //Properties
+    public bool isSolved { get; private set; }
+    public PlayerMemory associatedMemory { get; private set; }
+
+    //Constructor
+    public Puzzle(PlayerMemory memory)
+    {
+        associatedMemory = memory;
+        isSolved = false;
+    }
+
+    //Methods
+    public void Display()
+    {
+        //show the puzzle to the player (e.g. display a picture)
+    }
+
+    public void Solve()
+    {
+        //check if the puzzle is already solved
+        isSolved = true;
+    }
+}
