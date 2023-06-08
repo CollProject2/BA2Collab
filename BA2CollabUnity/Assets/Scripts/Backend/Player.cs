@@ -50,11 +50,11 @@ public class Player : MonoBehaviour
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
- 
+
         Vector3 movementVector = transform.right * moveX + transform.forward * moveZ;
 
         //normalise so all directions are the same speed (s/o to Jonas)
-        if (movementVector.magnitude > 1) 
+        if (movementVector.magnitude > 1)
             movementVector = movementVector.normalized;
 
         movementVector = speed * Time.deltaTime * movementVector;
@@ -77,14 +77,13 @@ public class Player : MonoBehaviour
 
     public void SolvePuzzle(Puzzle puzzle)
     {
-        // do solving puzzle things here: displaying a UI, waiting for user input and then checking the solution 
-        //when solved, unlock a memory 
-        puzzle.isSolved = true;
+        // do solving puzzle things here: displaying a UI
+        puzzle.SelectPuzzle();
     }
 
     public void RecallMemory(PlayerMemory memory)
     {
-        memory.isUnlocked = true;
+        memory.Unlock();
         // recalling memory => playing an animation or cutscene, or displaying some text or images
     }
 

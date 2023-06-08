@@ -10,8 +10,8 @@ public class Environment : MonoBehaviour
     public float rotationAngle { get; private set; }
     public List<Vector3> rotationPoints { get; private set; }
 
-    //Constructor
-    public Environment()
+    //Init
+    public void Awake()
     {
         items = new List<Item>();
         puzzles = new List<Puzzle>();
@@ -23,12 +23,19 @@ public class Environment : MonoBehaviour
     //Methods
     public void Display()
     {
-        //show everything in the environment
+       gameObject.SetActive(true);
     }
+
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
+
     public void Rotate(float newAngle)
     {
         rotationAngle = newAngle;
     }
+
     public void CheckForRotationPoint(Vector3 playerPosition)
     {
         foreach (var e in rotationPoints)

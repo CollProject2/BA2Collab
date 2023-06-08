@@ -6,11 +6,11 @@ public class Item : MonoBehaviour
     public string itemName { get; private set; }
     public Puzzle associatedPuzzle { get; private set; }
 
-    // Constructor
-    public Item(string name, Puzzle puzzle)
+    // initItem
+    public void InitializeItem(string name, Puzzle puzzle)
     {
-        this.itemName = name;
-        this.associatedPuzzle = puzzle;
+        itemName = name;
+        associatedPuzzle = puzzle;
     }
 
     // Methods
@@ -18,6 +18,18 @@ public class Item : MonoBehaviour
     {
         Player.instance.CollectItem(this); // player adds item to inventory
         gameObject.SetActive(false); //remove item visually from gameworld, can't destroy because of the reference to this object in the player's inventory
+        associatedPuzzle.Display(); // display the puzzle associated with this item
+        Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
 
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            Collect();
+        }
+    }
+
+    //specific item stuff
 }
