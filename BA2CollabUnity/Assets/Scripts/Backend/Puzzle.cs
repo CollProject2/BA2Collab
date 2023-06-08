@@ -1,27 +1,82 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
-public class Puzzle: MonoBehaviour
+public class Puzzle : MonoBehaviour
 {
     //Properties
     public bool isSolved { get; set; }
+    public string puzzleName { get; private set; }
     public PlayerMemory associatedMemory { get; private set; }
 
-    //Constructor
-    public Puzzle(PlayerMemory memory)
+    private void Update()
+    {
+        if (!isSolved)
+            FirstPuzzle(); //hardcoded for now
+    }
+    //Init
+    private void Awake()
+    {
+        isSolved = false;
+        Hide();
+    }
+
+    public void InitializePuzzle(string name, PlayerMemory memory)
     {
         associatedMemory = memory;
-        isSolved = false;
+        puzzleName = name;
     }
 
     //Methods
     public void Display()
     {
-        //show the puzzle to the player (e.g. display a picture)
+        gameObject.SetActive(true);
+    }
+    public void Hide()
+    {
+        gameObject.SetActive(false);
     }
 
     public void Solve()
     {
-        // call the solve method of the player
-        Player.instance.SolvePuzzle(this);
+        //when solved, unlock a memory 
+        isSolved = true;
+        Player.instance.RecallMemory(associatedMemory);
+        Hide();
+    }
+
+    // Additional properties for the first puzzle
+    private int targetNumber;
+    private int playerGuess;
+
+    public void SelectPuzzle()
+    {
+        //for now its all hardcoded
+
+        GetComponentInChildren<MeshRenderer>().enabled=true;
+        // Generate a random target number between 1 and 3
+        targetNumber = Random.Range(1, 3);
+        FirstPuzzle();
+    }
+
+
+    //specific puzzle stuff
+    private void FirstPuzzle()
+    {
+
+        // Read player's input (for simplicity, we're using number keys)
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+            playerGuess = 1;
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+            playerGuess = 2;
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+            playerGuess = 3;
+        else
+            return;
+
+        if (playerGuess == targetNumber)
+        {
+            // Player has guessed the correct number
+            Solve();
+        }
     }
 }

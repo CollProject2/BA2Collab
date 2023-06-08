@@ -4,25 +4,21 @@ public class PlayerMemory : MonoBehaviour
 {
     //Properties
     public string memoryName { get; private set; }
-    public Puzzle associatedPuzzle { get; private set; }
     public bool isUnlocked { get; set; }
 
-    //Constructor
-    public PlayerMemory(string name, Puzzle puzzle)
+    //Methods
+    public void InitializePlayerMemory(string name)
     {
         memoryName = name;
-        associatedPuzzle = puzzle;
         isUnlocked = false;
+        gameObject.SetActive(false);
     }
 
-    //Methods
     public void Unlock()
     {
         isUnlocked = true;
+        gameObject.SetActive(true);
     }
+    //specific memory stuff
 
-    public void Recall()
-    {
-        Player.instance.RecallMemory(this);
-    }
 }
