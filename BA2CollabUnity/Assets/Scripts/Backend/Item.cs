@@ -24,17 +24,26 @@ public class Item : MonoBehaviour
         associatedPuzzle = puzzle;
     }
 
+    public void Display()
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
+    }
+    public void Hide()
+    {
+        //gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.SetActive(false);
+    }
+
     // Methods
     public void Collect()
     {
         Player.instance.CollectItem(this); // player adds item to inventory
-        //gameObject.SetActive(false); //remove item visually from gameworld, can't destroy because of the reference to this object in the player's inventory
         collider.enabled = false;
         AnimateItemOnCollect();
-        associatedPuzzle.Display(); // display the puzzle associated with this item
-        UIManager.instance.puzzleUI.DisplayUIPuzzle(0); // Open the first UI puzzle 
-        Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
 
+        associatedPuzzle.Display(); // display the puzzle associated with this item
+        UIManager.instance.puzzleUI.DisplayUIPuzzle(associatedPuzzle.puzzleID); // Open the first UI puzzle , we just added this puzzle to the inventory so -1 to have the correct puzzle index (we start at 0)
+        Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
     }
     
     void HideItemModel()
