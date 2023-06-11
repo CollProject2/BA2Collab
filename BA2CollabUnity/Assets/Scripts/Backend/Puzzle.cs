@@ -42,6 +42,7 @@ public class Puzzle : MonoBehaviour
         isSolved = true;
         Player.instance.RecallMemory(associatedMemory);
         Hide();
+        UIManager.instance.puzzleUI.HideUIPuzzle(0);
     }
 
     // Additional properties for the first puzzle
