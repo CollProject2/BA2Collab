@@ -10,7 +10,7 @@ public class MainMenuUI : MonoBehaviour
     // zoom in, open curtains, open related buttons....
     
     //Properties
-    [SerializeField] private bool isDisplayed;
+    public bool isDisplayed { get; private set; }
     [SerializeField] private GameObject mainMenuPanel, camEndPos;
     [SerializeField] private float cameraZoomDuration = 2;
     
