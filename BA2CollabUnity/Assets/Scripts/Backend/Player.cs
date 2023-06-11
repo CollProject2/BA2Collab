@@ -26,12 +26,6 @@ public class Player : MonoBehaviour
 
     public int currentStage;
 
-    //Constructor
-    public Player()
-    {
-        currentPosition = new Vector3(0, 0, 0);
-        inventory = new List<Item>();
-    }
 
     private void Awake()
     {
@@ -44,8 +38,13 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
+
+        //Initialise
         characterController = GetComponent<CharacterController>();
+        currentPosition = new Vector3(0, 0, 0);
+        inventory = new List<Item>();
     }
+
     private void Update()
     {
         // Apply the movement
@@ -54,7 +53,8 @@ public class Player : MonoBehaviour
         HandleAnimation();
     }
 
-    //Methods
+    //Methods 
+    //TODO add stopping of walking while playing animation
     public void HandleMovement()
     {
         // Read input for horizontal and vertical movement
@@ -115,18 +115,20 @@ public class Player : MonoBehaviour
     public void SolvePuzzle(Puzzle puzzle)
     {
         // do solving puzzle things here: displaying a UI
-        puzzle.SelectPuzzle();
+        puzzle.StartPuzzle();
     }
 
-    public void RecallMemory(PlayerMemory memory)
+    public void RecallMemory()
     {
-        memory.Unlock();
+        UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
+        inventory[^1].associatedPuzzle.associatedMemory.Unlock();
+        inventory[^1].associatedPuzzle.Hide();
+        inventory[^1].Hide();
         // recalling memory => playing an animation or cutscene, or displaying some text or images
     }
 
     public void BeginNewChapter()
     {
-
         // checking if all parameters are true if so trigger new things
         currentStage++;
     }

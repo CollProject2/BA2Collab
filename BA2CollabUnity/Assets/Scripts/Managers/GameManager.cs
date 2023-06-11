@@ -22,36 +22,38 @@ public class GameManager : MonoBehaviour
 
         // Instantiate Items, Puzzles, and Memories
         InitializeGameObjects();
+        // Give all object data to environment
+        InitializeEnvironment();
     }
 
+    private void InitializeEnvironment()
+    {
+        Environment.instance.InitializeEnvironment(items, puzzles, memories);
+    }
 
     void InitializeGameObjects()
     {
-        //test with one of each, will add more later
-        // Instantiate Items
-        Item item = Instantiate(itemPrefabs[0]);
 
-        // Instantiate Puzzles
-        Puzzle puzzle = Instantiate(puzzlePrefabs[0]);
+        //THIS ONLY WORKS IF EVERY ITEM HAS ONE PUZZLE AND EVERY PUZZLE HAS ONE MEMORY; If changed this needs to be adjusted!
+        //Memory first because every puzzle needs a memory, puzzle after that because every item needs a puzzle.
+        for (int i = 0; i < itemPrefabs.Count; i++)
+        {
+            // Instantiate Memory
+            PlayerMemory memory = Instantiate(memoryPrefabs[i]);
+            memory.InitializePlayerMemory("Memory" + i + 1);// +1 so we start with memory 1 instead of memory 0
+            memories.Add(memory);
 
-        // Instantiate Memories
-        PlayerMemory memory = Instantiate(memoryPrefabs[0]);
+            // Instantiate Puzzles
+            Puzzle puzzle = Instantiate(puzzlePrefabs[i]);
+            puzzle.InitializePuzzle("Puzzle" + i + 1, memories[i], i);
+            puzzles.Add(puzzle);
 
+            // Instantiate Items
+            Item item = Instantiate(itemPrefabs[i]);
+            item.InitializeItem("Item" + i + 1, puzzles[i]);
+            items.Add(item);
 
-        // assuming each item is associated with a puzzle
-        item.InitializeItem("Item", puzzle);
-        items.Add(item);
-        // assuming each puzzle is associated with a memory
-        puzzle.InitializePuzzle("memory",memory);
-        puzzles.Add(puzzle);
-        // assuming each memory is associated with a puzzle
-        memory.InitializePlayerMemory("memory");
-        memories.Add(memory);
-
-
-
-
-
+        }
 
     }
 }

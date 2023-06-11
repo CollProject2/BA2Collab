@@ -19,8 +19,10 @@ public class PlayerMemory : MonoBehaviour
         isUnlocked = true;
         gameObject.SetActive(true);
         
-        
-        UIManager.instance.dialogues.StartDialogue(0);
+        // TEST, memory objects can also hold their own flowcharts, for now I put them together on a manager.
+        // Liwa: The memory of the linked associated item is the last one in the list
+        UIManager.instance.dialogues.StartDialogue(Player.instance.inventory[^1].associatedPuzzle.puzzleID);
+        gameObject.SetActive(false);
     }
     //specific memory stuff
 
