@@ -19,8 +19,8 @@ public class PlayerMemory : MonoBehaviour
         isUnlocked = true;
         gameObject.SetActive(true);
         
-        // TEST, memory objects can also hold their own flowcharts, for now I put them together on a manager.
-        UIManager.instance.dialogues.StartDialogue(1);
+        
+        UIManager.instance.dialogues.StartDialogue(0);
     }
     //specific memory stuff
 
