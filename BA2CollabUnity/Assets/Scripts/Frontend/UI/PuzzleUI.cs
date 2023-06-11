@@ -7,7 +7,7 @@ using UnityEngine;
 public class PuzzleUI : MonoBehaviour
 {
     // Properties
-    [SerializeField] private bool isDisplayed;
+    public bool isDisplayed { get; private set; }
     public List<GameObject> puzzleImages;
     public float openingDuration;
 

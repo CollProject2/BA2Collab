@@ -10,7 +10,7 @@ public class PauseMenuUI : MonoBehaviour
     // zoom out, close curtains, open related buttons....
     
     //Properties
-    [SerializeField] private bool isDisplayed;
+    public bool isDisplayed { get; private set; }
     [SerializeField] private GameObject pauseMenuPanel;
 
     private void Update()
