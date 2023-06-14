@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Fungus;
 using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
@@ -18,28 +19,38 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject exitButton;
+    [SerializeField] private GameObject curtainL;
+    [SerializeField] private GameObject curtainR;
     
     [Header("Positions")]
     [SerializeField] private Transform camEndPos;
-    [SerializeField] private Transform titleEndPos;
-    [SerializeField] private Transform startButtonEndPos;
-    [SerializeField] private Transform exitButtonEndPos;
+    [SerializeField] private Transform titleActivePos;
+    [SerializeField] private Transform startButtonActivePos;
+    [SerializeField] private Transform exitButtonActivePos;
+    [SerializeField] private Transform TEMPUIAwayPos;
     
     [Header("Durations")]
     [SerializeField] private float cameraZoomDuration = 2;
     [SerializeField] private float titleMoveDuration = 4;
     [SerializeField] private float startButtonMoveDuration = 2;
     [SerializeField] private float exitButtonMoveDuration = 2;
+    [SerializeField] private float curtainOpenDuration = 2;
+
+    [Header("Scale")] 
+    [SerializeField] private float targetScaleX;
     
     [Header("Curves")] 
     [SerializeField] private AnimationCurve titleMoveCurve;
+    [SerializeField] private AnimationCurve menuAwayCurve;
+    [SerializeField] private AnimationCurve buttonCurve;
+
     
 
     private void Start()
     {
+        // starts without input
         DisplayMainMenuUI();
         MainMenuSequence();
-        
     }
 
     void DisplayMainMenuUI()
@@ -52,7 +63,8 @@ public class MainMenuUI : MonoBehaviour
         Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
         Camera.main.transform.DORotate(new Vector3(0, 0, 0), cameraZoomDuration);
     }
-
+    
+    // the sequence of events when we start the game and re load the scene
     void MainMenuSequence()
     {
         FadeToTransparent();
@@ -61,18 +73,33 @@ public class MainMenuUI : MonoBehaviour
 
     void FadeToTransparent()
     {
+        // Tweens the alpha value to zero
         mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 0), 4);
     }
 
     void MoveTitleUp()
     {
-        title.transform.DOMove(titleEndPos.position, titleMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
+        title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
     }
 
     void MoveMenuButtonsIn()
     {
-        startButton.transform.DOMove(startButtonEndPos.position, startButtonMoveDuration);
-        exitButton.transform.DOMove(exitButtonEndPos.position, exitButtonMoveDuration);
+        startButton.transform.DOMove(startButtonActivePos.position, startButtonMoveDuration).SetEase(buttonCurve);
+        exitButton.transform.DOMove(exitButtonActivePos.position, exitButtonMoveDuration).SetEase(buttonCurve);
+    }
+
+    void OpenCurtains()
+    {
+        curtainL.transform.DOScaleX(targetScaleX,curtainOpenDuration).SetEase(Ease.Linear);
+        curtainR.transform.DOScaleX(targetScaleX,curtainOpenDuration).SetEase(Ease.Linear);
+    }
+
+    void MoveButtonsAndTitleAway()
+    {
+        startButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
+        exitButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
+        title.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
+
     }
 
     //Buttons
@@ -80,6 +107,8 @@ public class MainMenuUI : MonoBehaviour
     {
         mainMenuPanel.SetActive(false);
         CameraZoomSequence();
+        OpenCurtains();
+        MoveButtonsAndTitleAway(); // TEMPorary
         isDisplayed = false;
     }
     public void ExitGameButton()
