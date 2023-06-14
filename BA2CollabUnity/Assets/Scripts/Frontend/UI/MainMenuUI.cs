@@ -44,7 +44,12 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private AnimationCurve menuAwayCurve;
     [SerializeField] private AnimationCurve buttonCurve;
 
-    
+    public GameObject tempFocus;
+    public float offSetY = 2;
+    public float offSetZ = 2;
+    public float offSetX = 2;
+
+    public bool look = false;
 
     private void Start()
     {
@@ -61,9 +66,24 @@ public class MainMenuUI : MonoBehaviour
     private void CameraZoomSequence()
     {
         Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
-        Camera.main.transform.DORotate(new Vector3(0, 0, 0), cameraZoomDuration);
+        Camera.main.transform.DORotate(new Vector3(21, 0, 0), cameraZoomDuration).OnComplete(Look);
     }
-    
+
+    private void Look()
+    {
+        look = true;
+    }
+
+    private void Update()
+    {
+        if (look)
+        {
+            Camera.main.transform.position = new Vector3(Player.instance.transform.position.x + offSetX,
+                Player.instance.transform.position.y + offSetY, Player.instance.transform.position.z + offSetZ);
+            Camera.main.transform.LookAt(tempFocus.transform);
+        }
+    }
+
     // the sequence of events when we start the game and re load the scene
     void MainMenuSequence()
     {
