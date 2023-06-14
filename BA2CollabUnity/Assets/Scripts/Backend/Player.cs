@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     //Singelton instance
     public static Player instance = null;
+    public int missingBlocks;
 
     //Properties
     public Vector3 currentPosition { get; private set; }
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         currentPosition = new Vector3(0, 0, 0);
         inventory = new List<Item>();
+        missingBlocks = 3;
     }
 
     private void Update()
