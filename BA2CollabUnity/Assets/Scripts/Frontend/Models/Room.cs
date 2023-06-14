@@ -90,7 +90,6 @@ public class Room : MonoBehaviour
     void MoveToStartPosAnim(ObjectInRoom obj)
     {
         obj.transform.DOLocalMove(new Vector3(obj.startPos.x, obj.startPos.y, obj.startPos.z), Random.Range(1.7f, 4.5f));
-
     }
 
     void MoveRoomDown()
