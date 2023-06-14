@@ -32,6 +32,7 @@ public class PuzzleBlock : MonoBehaviour
     {
         BlockManager.instance.SetCurrentBlock(this);
     }
+
     public void RotateBlock(RotationDirection direction)
     {
         if (isRotating) return;

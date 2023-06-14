@@ -1,11 +1,9 @@
-using Fungus;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class BlockManager : MonoBehaviour
 {
     public PuzzleBlock currentBlock;
+    public int missingBlocks;
 
     public PuzzleBlock[] gridBlocks = new PuzzleBlock[9]; // 3x3 grid flattened to 1D
     //Singelton instance
@@ -22,6 +20,22 @@ public class BlockManager : MonoBehaviour
         {
             Destroy(this);
         }
+        missingBlocks = 3;
+    }
+    public void DisplayNextBlock()
+    {
+        switch (missingBlocks)
+        {
+            case 0:
+                gridBlocks[0].gameObject.SetActive(true);
+                break;
+            case 1:
+                gridBlocks[1].gameObject.SetActive(true);
+                break;
+            case 2:
+                gridBlocks[2].gameObject.SetActive(true);
+                break;
+        }
     }
     public void SetCurrentBlock(PuzzleBlock block)
     {
@@ -32,10 +46,12 @@ public class BlockManager : MonoBehaviour
     {
         foreach (PuzzleBlock block in gridBlocks)
         {
-           if (block.CurrentFace != blockFace) return false;
+            if (block.isActiveAndEnabled && block.CurrentFace != blockFace)
+                return false;
         }
         return true;
     }
+
 
     public void CallCheck()
     {

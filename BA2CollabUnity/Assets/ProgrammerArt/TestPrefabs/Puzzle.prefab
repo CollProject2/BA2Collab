@@ -183,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentBlock: {fileID: 0}
+  missingBlocks: 0
   gridBlocks:
   - {fileID: 6141412548234809467}
   - {fileID: 2706474865468522916}
@@ -523,6 +524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Block
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313431333845966749, guid: 8fe144acb098fc64f871fcb4b0647a54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5213966807299925537, guid: 8fe144acb098fc64f871fcb4b0647a54,
         type: 3}
@@ -1012,6 +1018,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Block (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 3313431333845966749, guid: 8fe144acb098fc64f871fcb4b0647a54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5213966807299925537, guid: 8fe144acb098fc64f871fcb4b0647a54,
         type: 3}
       propertyPath: index
@@ -1271,6 +1282,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Block (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3313431333845966749, guid: 8fe144acb098fc64f871fcb4b0647a54,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5213966807299925537, guid: 8fe144acb098fc64f871fcb4b0647a54,
         type: 3}
