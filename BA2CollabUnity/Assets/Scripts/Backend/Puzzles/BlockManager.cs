@@ -34,13 +34,13 @@ public class BlockManager : MonoBehaviour
         {
            if (block.CurrentFace != blockFace) return false;
         }
-        Debug.Log("trigger memmory yellow");
         return true;
     }
 
     public void CallCheck()
     {
-        CheckWinCondition(BlockFace.Top);
+        if (CheckWinCondition(BlockFace.Top))
+            Player.instance.RecallMemory();
     }
 
     public void RotateBlockAt(int index, RotationDirection direction)

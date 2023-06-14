@@ -11,7 +11,8 @@ public class PuzzleUI : MonoBehaviour
 
     public void OnButtonClickBlock(int direction)
     {
-        BlockManager.instance.RotateBlockAt(BlockManager.instance.currentBlock.index, (RotationDirection)direction);
+        if(BlockManager.instance.currentBlock != null)
+            BlockManager.instance.RotateBlockAt(BlockManager.instance.currentBlock.index, (RotationDirection)direction);
     }
 
     public void DisplayUIPuzzle(int puzzleNum)

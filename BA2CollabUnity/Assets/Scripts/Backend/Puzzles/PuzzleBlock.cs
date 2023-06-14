@@ -19,7 +19,6 @@ public enum BlockFace
     Bottom
 }
 
-
 public class PuzzleBlock : MonoBehaviour
 {
     public GameObject faceDetector;
@@ -35,7 +34,6 @@ public class PuzzleBlock : MonoBehaviour
     }
     public void RotateBlock(RotationDirection direction)
     {
-        
         if (isRotating) return;
         isRotating = true;
 
