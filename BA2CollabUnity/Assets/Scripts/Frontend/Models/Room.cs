@@ -9,6 +9,9 @@ public class Room : MonoBehaviour
 {
     public List<ObjectInRoom> objectsInRoom;
     public float targetY;
+    public float targetYRoom;
+    public Vector3 roomStartPos;
+    [SerializeField]public AnimationCurve easeCurve;
 
     private void Awake()
     {
@@ -16,6 +19,8 @@ public class Room : MonoBehaviour
         {
             objectsInRoom.Add(child.GetComponent<ObjectInRoom>());
         }
+
+        roomStartPos = transform.position;
     }
 
     private void Update()
@@ -28,6 +33,15 @@ public class Room : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             MoveObjectsToStartPos();
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            MoveRoomDown();
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            MoveRoomUp();
         }
     }
 
@@ -78,7 +92,16 @@ public class Room : MonoBehaviour
         obj.transform.DOLocalMove(new Vector3(obj.startPos.x, obj.startPos.y, obj.startPos.z), Random.Range(1.7f, 4.5f));
 
     }
+
+    void MoveRoomDown()
+    {
+        transform.DOMove(new Vector3(transform.position.x, targetYRoom, transform.position.z), 3)
+            .SetEase(easeCurve);
+    }
     
-    
+    void MoveRoomUp()
+    {
+        transform.DOMove(roomStartPos, 3).SetEase(easeCurve);
+    }
     
 }

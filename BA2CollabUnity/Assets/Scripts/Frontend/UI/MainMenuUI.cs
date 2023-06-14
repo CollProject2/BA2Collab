@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Fungus;
+using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
@@ -11,13 +13,30 @@ public class MainMenuUI : MonoBehaviour
     
     //Properties
     public bool isDisplayed { get; private set; }
-    [SerializeField] private GameObject mainMenuPanel, camEndPos;
+
+    [Header("Objects")] 
+    [SerializeField] private GameObject mainMenuPanel;
+    [SerializeField] private GameObject title;
+    
+    [Header("Positions")]
+    [SerializeField] private Transform camEndPos;
+    [SerializeField] private Transform titleEndPos;
+    
+    [Header("Durations")]
     [SerializeField] private float cameraZoomDuration = 2;
+    [SerializeField] private float titleMoveDuration = 4;
+
+    [Header("Curves")] 
+    [SerializeField] private AnimationCurve titleMoveCurve;
+    
+    
     
 
     private void Start()
     {
         DisplayMainMenuUI();
+        MainMenuSequence();
+        
     }
 
     void DisplayMainMenuUI()
@@ -25,22 +44,35 @@ public class MainMenuUI : MonoBehaviour
         isDisplayed = true;
         mainMenuPanel.SetActive(true);
     }
+    private void CameraZoomSequence()
+    {
+        Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
+        Camera.main.transform.DORotate(new Vector3(0, 0, 0), cameraZoomDuration);
+    }
 
+    void MainMenuSequence()
+    {
+        FadeToTransparent();
+        MoveTitleUp();
+    }
+
+    void FadeToTransparent()
+    {
+        mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 0), 4);
+    }
+
+    void MoveTitleUp()
+    {
+        title.transform.DOMove(titleEndPos.position, titleMoveDuration).SetEase(titleMoveCurve);
+    }
+
+    //Buttons
     public void StartGameButton()
     {
         mainMenuPanel.SetActive(false);
         CameraZoomSequence();
         isDisplayed = false;
     }
-
-    private void CameraZoomSequence()
-    {
-        Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
-        Camera.main.transform.DORotate(new Vector3(0, 0, 0), cameraZoomDuration);
-    }
-    
-    
-
     public void ExitGameButton()
     {
         Application.Quit();
