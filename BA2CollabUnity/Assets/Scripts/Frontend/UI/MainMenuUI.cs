@@ -135,6 +135,7 @@ public class MainMenuUI : MonoBehaviour
     public void StartGameButton()
     {
         mainMenuPanel.SetActive(false);
+        mandala.GetComponent<SpriteRenderer>().DOColor(new Color(1, 1, 1, 0), 1);
         CameraZoomSequence();
         OpenCurtains();
         MoveButtonsAndTitleAway(); // TEMPorary
