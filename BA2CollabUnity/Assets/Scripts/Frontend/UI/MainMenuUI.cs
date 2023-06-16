@@ -63,7 +63,7 @@ public class MainMenuUI : MonoBehaviour
     {
         if (look)
         {
-            Camera.main.transform.position = new Vector3(Player.instance.transform.position.x + offSetX,
+            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x,
                 Player.instance.transform.position.y + offSetY, Camera.main.transform.position.z);
             Camera.main.transform.LookAt(tempFocus.transform);
         }

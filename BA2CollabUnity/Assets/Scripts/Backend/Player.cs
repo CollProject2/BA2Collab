@@ -14,7 +14,8 @@ public class Player : MonoBehaviour
     public Vector3 velocity;
     private CharacterController characterController;
     public Animator animator;
-    public bool canMove { get; private set; }
+
+    public bool canMove = false;
     // adjust in unity editor
     public float speed;
     public float gravity;
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
 
     public void SetCanMove(bool moveState)
     {
+        Debug.Log("player movement change");
         canMove = moveState;
     }
 
@@ -66,6 +68,7 @@ public class Player : MonoBehaviour
     public void HandleMovement()
     {
         if (!canMove) return;
+        if( Environment.instance.canTurnStage == false ) return;
         // Read input for horizontal and vertical movement
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
@@ -86,11 +89,12 @@ public class Player : MonoBehaviour
             velocity.y -= gravity * Time.deltaTime;
 
         // Apply the movement
-        characterController.Move(new Vector3(0,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
+        characterController.Move(new Vector3(direction.normalized.x,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
     }
 
     private void HandleAnimation()
     {
+        if(Environment.instance.canTurnStage == false) return;
         //animate character
         if (direction.magnitude > 0)
         {
@@ -138,7 +142,7 @@ public class Player : MonoBehaviour
         inventory[^1].associatedPuzzle.Hide();
         //hide item
         inventory[^1].Hide();
-        SetCanMove(true);
+        //SetCanMove(true);
     }
 
     public void BeginNewChapter()
