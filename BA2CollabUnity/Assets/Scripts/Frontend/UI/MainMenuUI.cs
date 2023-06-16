@@ -21,6 +21,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject curtainL;
     [SerializeField] private GameObject curtainR;
+    [SerializeField] private GameObject mandala;
     
     [Header("Positions")]
     [SerializeField] private Transform camEndPos;
@@ -44,6 +45,10 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private AnimationCurve menuAwayCurve;
     [SerializeField] private AnimationCurve buttonCurve;
 
+    [Header("Values")] 
+    public float mandalaTurnSpeed = 15f;
+    
+    
     public GameObject tempFocus;
     public float offSetY = 2;
     public float offSetZ = 2;
@@ -56,6 +61,23 @@ public class MainMenuUI : MonoBehaviour
         // starts without input
         DisplayMainMenuUI();
         MainMenuSequence();
+    }
+    
+    private void Update()
+    {
+        if (look)
+        {
+            Camera.main.transform.position = new Vector3(Player.instance.transform.position.x + offSetX,
+                Player.instance.transform.position.y + offSetY,  Camera.main.transform.position.z);
+            Camera.main.transform.LookAt(tempFocus.transform);
+        }
+        
+        TurnMandala();
+    }
+
+    void TurnMandala()
+    {
+        mandala.transform.Rotate(Vector3.forward, mandalaTurnSpeed* Time.deltaTime);
     }
 
     void DisplayMainMenuUI()
@@ -72,16 +94,6 @@ public class MainMenuUI : MonoBehaviour
     private void Look()
     {
         look = true;
-    }
-
-    private void Update()
-    {
-        if (look)
-        {
-            Camera.main.transform.position = new Vector3(Player.instance.transform.position.x + offSetX,
-                Player.instance.transform.position.y + offSetY,  Camera.main.transform.position.z);
-            Camera.main.transform.LookAt(tempFocus.transform);
-        }
     }
 
     // the sequence of events when we start the game and re load the scene
