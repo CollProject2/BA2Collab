@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public Vector3 velocity;
     private CharacterController characterController;
     public Animator animator;
+    public bool canMove { get; private set; }
     // adjust in unity editor
     public float speed;
     public float gravity;
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
-
+        canMove = false;
         //Initialise
         characterController = GetComponent<CharacterController>();
         currentPosition = new Vector3(0, 0, 0);
@@ -55,10 +56,16 @@ public class Player : MonoBehaviour
         HandleAnimation();
     }
 
+    public void SetCanMove(bool moveState)
+    {
+        canMove = moveState;
+    }
+
     //Methods 
     //TODO add stopping of walking while playing animation
     public void HandleMovement()
     {
+        if (!canMove) return;
         // Read input for horizontal and vertical movement
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
@@ -109,6 +116,7 @@ public class Player : MonoBehaviour
         //add item to inventory
         inventory.Add(item);
         
+        SetCanMove(false);
         // trigger pickUp anim
         animator.SetTrigger("pickUp");
         animator.SetBool("isMoving",false);
@@ -130,6 +138,7 @@ public class Player : MonoBehaviour
         inventory[^1].associatedPuzzle.Hide();
         //hide item
         inventory[^1].Hide();
+        SetCanMove(true);
     }
 
     public void BeginNewChapter()
