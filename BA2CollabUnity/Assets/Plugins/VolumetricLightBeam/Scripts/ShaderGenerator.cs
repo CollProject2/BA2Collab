@@ -1,9 +1,9 @@
 ﻿#if UNITY_EDITOR
-using UnityEngine;
-using UnityEngine.Rendering;
-using UnityEditor;
 using System.Collections.Generic;
 using System.IO;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Rendering;
 
 namespace VLB
 {
@@ -99,7 +99,7 @@ namespace VLB
             return ShaderLangage.CG;
         }
 
-        static string GetShaderLangagePre (ShaderLangage lang) { return lang == ShaderLangage.CG ? "CGPROGRAM" : "HLSLPROGRAM"; }
+        static string GetShaderLangagePre(ShaderLangage lang) { return lang == ShaderLangage.CG ? "CGPROGRAM" : "HLSLPROGRAM"; }
         static string GetShaderLangagePost(ShaderLangage lang) { return lang == ShaderLangage.CG ? "ENDCG" : "ENDHLSL"; }
 
         public class GenPass
@@ -119,7 +119,7 @@ namespace VLB
                 const string kPrefix = "                #pragma multi_compile";
 #endif
                 str += kPrefix;
-                if(genDefaultVariant) str += " __";
+                if (genDefaultVariant) str += " __";
                 foreach (string opt in options) str += " " + opt;
                 str += System.Environment.NewLine;
             }
@@ -134,15 +134,15 @@ namespace VLB
 
                 string multiCompileVariants = "";
                 AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.AlphaAsBlack);
-                if (enabledFeatures.noise3D)        AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.Noise3D);
-                if (enabledFeatures.depthBlend)     AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.DepthBlend);
-                switch(enabledFeatures.colorGradient)
+                if (enabledFeatures.noise3D) AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.Noise3D);
+                if (enabledFeatures.depthBlend) AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.DepthBlend);
+                switch (enabledFeatures.colorGradient)
                 {
-                    case FeatureEnabledColorGradient.HighOnly:      AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.ColorGradientMatrixHigh); break;
-                    case FeatureEnabledColorGradient.HighAndLow:    AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.ColorGradientMatrixHigh, ShaderKeywords.ColorGradientMatrixLow); break;
+                    case FeatureEnabledColorGradient.HighOnly: AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.ColorGradientMatrixHigh); break;
+                    case FeatureEnabledColorGradient.HighAndLow: AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.ColorGradientMatrixHigh, ShaderKeywords.ColorGradientMatrixLow); break;
                 }
-                if (enabledFeatures.dynamicOcclusion)   AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.OcclusionClippingPlane, ShaderKeywords.OcclusionDepthTexture);
-                if (enabledFeatures.meshSkewing)        AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.MeshSkewing);
+                if (enabledFeatures.dynamicOcclusion) AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.OcclusionClippingPlane, ShaderKeywords.OcclusionDepthTexture);
+                if (enabledFeatures.meshSkewing) AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.MeshSkewing);
                 if (enabledFeatures.shaderAccuracyHigh) AppendMultiCompile(ref multiCompileVariants, true, ShaderKeywords.ShaderAccuracyHigh);
                 code = code.Replace("{VLB_GEN_PRAGMA_MULTI_COMPILE_VARIANTS}", multiCompileVariants);
 
@@ -257,7 +257,7 @@ namespace VLB
 
             string GetRenderPipelineInclude(SRPHelper.RenderPipeline rp)
             {
-                switch(rp)
+                switch (rp)
                 {
                     case SRPHelper.RenderPipeline.BuiltIn: return "ShaderSpecificBuiltin.cginc";
                     case SRPHelper.RenderPipeline.HDRP: return "ShaderSpecificHDRP.hlsl";
@@ -294,7 +294,7 @@ namespace VLB
 
         void OnEnable()
         {
-            if(ms_GenerationParamOnEnable != null && Instance != null)
+            if (ms_GenerationParamOnEnable != null && Instance != null)
             {
                 Generate(ms_GenerationParamOnEnable.renderPipeline, ms_GenerationParamOnEnable.renderingMode, ms_GenerationParamOnEnable.enabledFeatures);
                 ms_GenerationParamOnEnable = null;

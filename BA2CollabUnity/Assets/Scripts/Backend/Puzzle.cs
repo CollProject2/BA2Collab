@@ -70,125 +70,17 @@ public class Puzzle : MonoBehaviour
 
 public class PuzzleOne : Puzzle
 {
-    private int targetNumber;
-    private int playerGuess;
-    private bool isActive;
-
-    private void Awake()
+    public void Awake()
     {
-        // Generate a random target number between 1 and 3
-        targetNumber = Random.Range(1, 3);
-        isActive = false;
-        ExecutePuzzle();
-    }
-    private void Update()
-    {
-        if (!isSolved && isActive)
-            ExecutePuzzle();
-    }
-
-    public void ExecutePuzzle()
-    {
-        isActive = true;
-        // Read player's input (for simplicity, we're using number keys)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            playerGuess = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            playerGuess = 2;
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            playerGuess = 3;
-        else
-            return;
-
-        if (playerGuess == targetNumber)
-        {
-            // Player has guessed the correct number
-            isActive = false;
-            Solve();
-            //Destroy(this);
-        }
+        Display();
     }
 }
 
 public class PuzzleTwo : Puzzle
 {
-    private int targetNumber;
-    private int playerGuess;
-    private bool isActive;
-
-    private void Awake()
-    {
-        // Generate a random target number between 1 and 3
-        targetNumber = Random.Range(1, 3);
-        isActive = false;
-        ExecutePuzzle();
-    }
-    private void Update()
-    {
-        if (!isSolved && isActive)
-            ExecutePuzzle();
-    }
-
-    public void ExecutePuzzle()
-    {
-        isActive = true;
-        // Read player's input (for simplicity, we're using number keys)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            playerGuess = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            playerGuess = 2;
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            playerGuess = 3;
-        else
-            return;
-
-        if (playerGuess == targetNumber)
-        {
-            // Player has guessed the correct number
-            isActive = false;
-            Solve();
-            //Destroy(this);
-        }
-    }
+    
 }
 public class PuzzleThree : Puzzle
 {
-    private int targetNumber;
-    private int playerGuess;
-    private bool isActive;
-
-    private void Awake()
-    {
-        // Generate a random target number between 1 and 3
-        targetNumber = Random.Range(1, 3);
-        isActive = false;
-        ExecutePuzzle();
-    }
-    private void Update()
-    {
-        if (!isSolved && isActive)
-            ExecutePuzzle();
-    }
-
-    public void ExecutePuzzle()
-    {
-        isActive = true;
-        // Read player's input (for simplicity, we're using number keys)
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            playerGuess = 1;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            playerGuess = 2;
-        else if (Input.GetKeyDown(KeyCode.Alpha3))
-            playerGuess = 3;
-        else
-            return;
-
-        if (playerGuess == targetNumber)
-        {
-            // Player has guessed the correct number
-            isActive = false;
-            Solve();
-            //Destroy(this);
-        }
-    }
+   
 }

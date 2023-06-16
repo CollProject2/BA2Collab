@@ -8,13 +8,13 @@ public class Item : MonoBehaviour
     public string itemName { get; private set; }
     public Puzzle associatedPuzzle { get; private set; }
     public PuzzleUI associatedPuzzleUI { get; private set; }
-    private Collider collider;
+    private Collider itemCollider;
     
     public GameObject modelObj;
 
     private void Awake()
     {
-        collider = gameObject.GetComponent<Collider>();
+        itemCollider = gameObject.GetComponent<Collider>();
     }
 
     // initItem
@@ -38,7 +38,7 @@ public class Item : MonoBehaviour
     public void Collect()
     {
         Player.instance.CollectItem(this); // player adds item to inventory
-        collider.enabled = false;
+        itemCollider.enabled = false;
         AnimateItemOnCollect();
 
         associatedPuzzle.Display(); // display the puzzle associated with this item

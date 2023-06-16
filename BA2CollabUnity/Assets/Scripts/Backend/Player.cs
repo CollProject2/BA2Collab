@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     //Singelton instance
     public static Player instance = null;
+    public int missingBlocks;
 
     //Properties
     public Vector3 currentPosition { get; private set; }
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     public Vector3 velocity;
     private CharacterController characterController;
     public Animator animator;
+    public bool canMove { get; private set; }
     // adjust in unity editor
     public float speed;
     public float gravity;
@@ -38,11 +40,12 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
-
+        canMove = false;
         //Initialise
         characterController = GetComponent<CharacterController>();
         currentPosition = new Vector3(0, 0, 0);
         inventory = new List<Item>();
+        missingBlocks = 3;
     }
 
     private void Update()
@@ -53,10 +56,16 @@ public class Player : MonoBehaviour
         HandleAnimation();
     }
 
+    public void SetCanMove(bool moveState)
+    {
+        canMove = moveState;
+    }
+
     //Methods 
     //TODO add stopping of walking while playing animation
     public void HandleMovement()
     {
+        if (!canMove) return;
         // Read input for horizontal and vertical movement
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
@@ -107,6 +116,7 @@ public class Player : MonoBehaviour
         //add item to inventory
         inventory.Add(item);
         
+        SetCanMove(false);
         // trigger pickUp anim
         animator.SetTrigger("pickUp");
         animator.SetBool("isMoving",false);
@@ -120,11 +130,15 @@ public class Player : MonoBehaviour
 
     public void RecallMemory()
     {
+        //hide puyyle UI 
         UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
+        //start memory
         inventory[^1].associatedPuzzle.associatedMemory.Unlock();
+        //hide puzzle
         inventory[^1].associatedPuzzle.Hide();
+        //hide item
         inventory[^1].Hide();
-        // recalling memory => playing an animation or cutscene, or displaying some text or images
+        SetCanMove(true);
     }
 
     public void BeginNewChapter()
