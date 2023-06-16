@@ -4,10 +4,10 @@ using UnityEngine;
 
 public enum RotationDirection
 {
-    Up,
-    Down,
-    Left,
-    Right
+    Up = 0,
+    Down = 1,
+    Left = 2,
+    Right = 3
 }
 public enum BlockFace
 {
@@ -24,8 +24,6 @@ public class PuzzleBlock : MonoBehaviour
     public GameObject faceDetector;
     public int index;
     private bool isRotating = false;
-
-
     public BlockFace CurrentFace;
 
     private void OnMouseDown()
@@ -96,11 +94,11 @@ public class PuzzleBlock : MonoBehaviour
     }
 
     public void SetState(string faceName)
-    {
+    {//TODO: clarification code
         switch (faceName)
         {
             case "face1":
-                CurrentFace = BlockFace.Front;
+                CurrentFace = BlockFace.Front; 
                 break;
             case "face2":
                 CurrentFace = BlockFace.Back;

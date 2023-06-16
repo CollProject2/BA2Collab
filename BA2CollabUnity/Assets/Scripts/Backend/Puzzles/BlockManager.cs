@@ -40,6 +40,7 @@ public class BlockManager : MonoBehaviour
                 break;
         }
     }
+
     public void SetCurrentBlock(PuzzleBlock block)
     {
         currentBlock = block;
@@ -55,10 +56,9 @@ public class BlockManager : MonoBehaviour
         return true;
     }
 
-
     public void CallCheck()
     {
-        if (CheckWinCondition(BlockFace.Top))
+        if (CheckWinCondition(BlockFace.Top)) // give wincon
             Player.instance.RecallMemory();
     }
 

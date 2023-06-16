@@ -19,10 +19,9 @@ public class BlockFaceTrigger : MonoBehaviour
     {
         if (other.CompareTag("BlockFaceDetector") && !hasBeenTriggered)
         {
-            puzzleBlock.SetState(this.name);
+            puzzleBlock.SetState(name);
             hasBeenTriggered = true;
         }
-        
     }
 
     private void OnTriggerExit(Collider other)
