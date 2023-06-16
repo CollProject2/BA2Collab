@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
 {
     //Singelton instance
     public static Player instance = null;
+    public int missingBlocks;
 
     //Properties
     public Vector3 currentPosition { get; private set; }
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
         characterController = GetComponent<CharacterController>();
         currentPosition = new Vector3(0, 0, 0);
         inventory = new List<Item>();
+        missingBlocks = 3;
     }
 
     private void Update()
@@ -77,7 +79,7 @@ public class Player : MonoBehaviour
             velocity.y -= gravity * Time.deltaTime;
 
         // Apply the movement
-        characterController.Move(direction.normalized * Time.deltaTime * speed + (velocity * Time.deltaTime));
+        characterController.Move(new Vector3(0,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
     }
 
     private void HandleAnimation()
@@ -120,11 +122,14 @@ public class Player : MonoBehaviour
 
     public void RecallMemory()
     {
+        //hide puyyle UI 
         UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
+        //start memory
         inventory[^1].associatedPuzzle.associatedMemory.Unlock();
+        //hide puzzle
         inventory[^1].associatedPuzzle.Hide();
+        //hide item
         inventory[^1].Hide();
-        // recalling memory => playing an animation or cutscene, or displaying some text or images
     }
 
     public void BeginNewChapter()
