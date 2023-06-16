@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
             velocity.y -= gravity * Time.deltaTime;
 
         // Apply the movement
-        characterController.Move(direction.normalized * Time.deltaTime * speed + (velocity * Time.deltaTime));
+        characterController.Move(new Vector3(0,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
     }
 
     private void HandleAnimation()
