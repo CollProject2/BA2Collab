@@ -65,7 +65,6 @@ public class PuzzleBlock : MonoBehaviour
     {
         // Randomly select a face index (0-5)
         int randomFaceIndex = Random.Range(0, 6);
-
         Vector3 targetEulerAngles = Vector3.zero;
 
         switch (randomFaceIndex)

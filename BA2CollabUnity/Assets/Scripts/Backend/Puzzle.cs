@@ -13,75 +13,10 @@ public class Puzzle : MonoBehaviour
     private void Awake()
     {
         isSolved = false;
-        Hide();
     }
-
-    //constructor for puzzle todo
-    public void InitializePuzzle(string name, PlayerMemory memory, int puzzleNumber)
+    public void StartPuzzle(Puzzle associatedPuzzle)
     {
-        puzzleName = name;
-        associatedMemory = memory;
-        puzzleID = puzzleNumber;
-
+        Instantiate(associatedPuzzle);
     }
 
-    //Methods
-    public void Display()
-    {
-        gameObject.SetActive(true);
-    }
-    public void Hide()
-    {
-        Debug.Log("set puzzle deactive");
-        //gameObject.SetActive(false);
-    }
-
-    public void StartPuzzle()
-    {
-        //GetComponentInChildren<MeshRenderer>().enabled = true;
-
-        //select right puzzle
-        switch (puzzleID)
-        {
-            case 0:
-                this.AddComponent<PuzzleOne>();
-                break;
-            case 1:
-                this.AddComponent<PuzzleTwo>();
-                break;
-            case 2:
-                this.AddComponent<PuzzleTwo>();
-                break;
-            default:
-                break;
-        }
-
-    }
-    public void Solve()
-    {
-        //when solved, unlock a memory 
-        isSolved = true;
-
-        //let player handle the rest
-        Player.instance.RecallMemory();
-    }
-
-
-}
-
-public class PuzzleOne : Puzzle
-{
-    public void Awake()
-    {
-        Display();
-    }
-}
-
-public class PuzzleTwo : Puzzle
-{
-    
-}
-public class PuzzleThree : Puzzle
-{
-   
 }

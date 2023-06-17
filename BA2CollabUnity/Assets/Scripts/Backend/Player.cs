@@ -129,7 +129,7 @@ public class Player : MonoBehaviour
     public void SolvePuzzle(Puzzle puzzle)
     {
         // do solving puzzle things here: displaying a UI
-        puzzle.StartPuzzle();
+        puzzle.StartPuzzle(puzzle);
     }
 
     public void RecallMemory()
@@ -138,9 +138,6 @@ public class Player : MonoBehaviour
         UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
         //start memory
         inventory[^1].associatedPuzzle.associatedMemory.Unlock();
-        //hide puzzle
-        inventory[^1].associatedPuzzle.Hide();
-        //SetCanMove(true);
     }
 
     public void BeginNewChapter()

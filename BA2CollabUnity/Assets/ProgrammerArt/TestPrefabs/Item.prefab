@@ -151,6 +151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c24e9f7c91dc9468363a3dff767e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  associatedPuzzle: {fileID: 6141796943611359074, guid: 19f9c6b3ea324ae4dbd868dd2c6c5629,
+  associatedPuzzle: {fileID: 2373655692706506375, guid: 5348b2f920b8eaa48925c133e6c2311b,
     type: 3}
   modelObj: {fileID: 552350473}

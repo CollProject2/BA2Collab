@@ -50,8 +50,11 @@ public class BlockManager : MonoBehaviour
     {
         foreach (PuzzleBlock block in gridBlocks)
         {
-            if (block.isActiveAndEnabled && block.CurrentFace != blockFace)
-                return false;
+            if (block.isActiveAndEnabled)
+            {
+                if (block.CurrentFace != blockFace)
+                    return false;
+            }
         }
         return true;
     }
@@ -59,7 +62,11 @@ public class BlockManager : MonoBehaviour
     public void CallCheck()
     {
         if (CheckWinCondition(BlockFace.Top)) // give wincon
+        {
             Player.instance.RecallMemory();
+            gameObject.SetActive(false);
+        }
+            
     }
 
     public void RotateBlockAt(int index, RotationDirection direction)
