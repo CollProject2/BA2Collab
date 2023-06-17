@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfbf3dee1875ef4499d48610543685d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedMemory: {fileID: 7269236173917848016, guid: 035805fa26a88574ba6e68e0a7aad8fe,
+    type: 3}
 --- !u!212 &6141796943611359076
 SpriteRenderer:
   m_ObjectHideFlags: 0

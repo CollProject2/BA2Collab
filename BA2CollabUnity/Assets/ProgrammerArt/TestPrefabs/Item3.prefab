@@ -125,4 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c24e9f7c91dc9468363a3dff767e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedPuzzle: {fileID: 4549289635917850914, guid: daaf3421ec0de82479da42505589857b,
+    type: 3}
   modelObj: {fileID: 207801180240327337}

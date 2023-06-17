@@ -7,7 +7,7 @@ public class Puzzle : MonoBehaviour
     public bool isSolved { get; set; }
     public string puzzleName { get; private set; }
     public int puzzleID { get; private set; }
-    public PlayerMemory associatedMemory { get; private set; }
+    public PlayerMemory associatedMemory;
 
     //Init
     private void Awake()
