@@ -21,6 +21,7 @@ public class PauseMenuUI : MonoBehaviour
             else
             {
                 HidePauseMenuUI();
+                Player.instance.SetCanMove(true);
             }
         }
     }
@@ -33,7 +34,6 @@ public class PauseMenuUI : MonoBehaviour
     //Hide, Resume Game
     private void HidePauseMenuUI()
     {
-        Player.instance.SetCanMove(true);
         // run player or set time scale to 1
         pauseMenuPanel.SetActive(false);
         isDisplayed = false;
