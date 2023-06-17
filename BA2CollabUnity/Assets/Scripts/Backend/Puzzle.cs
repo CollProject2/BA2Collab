@@ -17,6 +17,9 @@ public class Puzzle : MonoBehaviour
     public void StartPuzzle(Puzzle associatedPuzzle)
     {
         Instantiate(associatedPuzzle);
+        
+        //startPuzzle solving Music from AudioManager, get the event ref from FMODEvents
+        AudioManager.instance.InitializeMemoryMusic(FMODEvents.instance.memoryMusic_1);
     }
 
 }

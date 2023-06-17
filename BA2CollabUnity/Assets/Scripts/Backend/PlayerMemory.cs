@@ -16,6 +16,9 @@ public class PlayerMemory : MonoBehaviour
         // TEST, memory objects can also hold their own flowcharts, for now I put them together on a manager.
         // Liwa: The memory of the linked associated item is the last one in the list
         UIManager.instance.dialogues.StartDialogue(memoryName);
+        
+        // when it is Unlocked MemoryMusic parameter changes and switch to to the endpart
+        AudioManager.instance.SetMemoryParameter("PuzzleSolvingState",1);
     }
     //specific memory stuff
 
