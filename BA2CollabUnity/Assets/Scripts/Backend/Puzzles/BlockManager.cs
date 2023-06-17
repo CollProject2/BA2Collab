@@ -64,7 +64,7 @@ public class BlockManager : MonoBehaviour
         if (CheckWinCondition(BlockFace.Top)) // give wincon
         {
             Player.instance.RecallMemory();
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
             
     }
