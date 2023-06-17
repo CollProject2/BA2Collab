@@ -5416,7 +5416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 70.5, y: 156}
+  scrollPos: {x: 226.5, y: 32}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 400
@@ -5428,7 +5428,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 438292234}
+  - {fileID: 438292248}
   selectedCommands: []
   variables: []
   description: 
@@ -5765,7 +5765,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 314.5
-    y: 106.5
+    y: 107.5
     width: 102
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -23793,10 +23793,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MemoryUnlocked_1: {fileID: 438292235}
-  memoryNames:
-  - StartBlock
-  - Memory1
-  - Memory2
 --- !u!1 &1702856337 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7845af96aebf7584ca7f049b4768f445,
