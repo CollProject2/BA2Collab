@@ -39,7 +39,7 @@ public class Item : MonoBehaviour
         Player.instance.CollectItem(this); // player adds item to inventory
         itemCollider.enabled = false;
         AnimateItemOnCollect();
-
+        Instantiate(associatedPuzzle.gameObject, transform.position, transform.rotation);
         associatedPuzzle.Display(); // display the puzzle associated with this item
         UIManager.instance.puzzleUI.DisplayUIPuzzle(associatedPuzzle.puzzleID); // Open the first UI puzzle , we just added this puzzle to the inventory so -1 to have the correct puzzle index (we start at 0)
         Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
