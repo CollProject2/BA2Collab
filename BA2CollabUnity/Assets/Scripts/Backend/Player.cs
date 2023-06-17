@@ -140,8 +140,6 @@ public class Player : MonoBehaviour
         inventory[^1].associatedPuzzle.associatedMemory.Unlock();
         //hide puzzle
         inventory[^1].associatedPuzzle.Hide();
-        //hide item
-        inventory[^1].Hide();
         //SetCanMove(true);
     }
 

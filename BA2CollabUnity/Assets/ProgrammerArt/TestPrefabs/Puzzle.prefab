@@ -74,6 +74,8 @@ GameObject:
   - component: {fileID: 6141796943611359074}
   - component: {fileID: 6141796943611359076}
   - component: {fileID: 5525164817616299690}
+  - component: {fileID: 8456775982123647213}
+  - component: {fileID: 623833179430570431}
   m_Layer: 0
   m_Name: Puzzle
   m_TagString: Untagged
@@ -193,6 +195,30 @@ MonoBehaviour:
   - {fileID: 5072211649053500921}
   - {fileID: 5567927057139969252}
   - {fileID: 609555017669472159}
+--- !u!114 &8456775982123647213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141796943611359073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfbf3dee1875ef4499d48610543685d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &623833179430570431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6141796943611359073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &369008227844033221
 PrefabInstance:
   m_ObjectHideFlags: 0

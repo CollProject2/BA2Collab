@@ -10,12 +10,6 @@ public class Environment : MonoBehaviour
     //Singelton instance
     public static Environment instance = null;
     //Properties
-    public List<Item> items { get; private set; }
-    public List<Puzzle> puzzles { get; private set; }
-    public List<PlayerMemory> memory { get; private set; }
-    public float rotationAngle { get; private set; }
-    public List<Vector3> rotationPoints { get; private set; }
-
     [Header("Stage Turn")]
     public bool canTurnStage = true;
     [SerializeField] private GameObject turningEnviroment;
@@ -24,18 +18,6 @@ public class Environment : MonoBehaviour
     [SerializeField] private float turnDuration;
     [SerializeField] private AnimationCurve turnEase;
     public List<DoorAdjuster> doors;
-
-
-
-    //Init
-    public void InitializeEnvironment(List<Item> itemList, List<Puzzle> puzzleList, List<PlayerMemory> memoryList)
-    {
-        items = itemList;
-        puzzles = puzzleList;
-        memory = memoryList;
-        rotationAngle = 0.0f;
-        rotationPoints = new List<Vector3>();
-    }
 
     private void Awake()
     {
@@ -60,31 +42,6 @@ public class Environment : MonoBehaviour
     private void Update()
     {
         GroundObjectCheck();
-    }
-
-    //Methods
-    public void Display()
-    {
-       gameObject.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void Rotate(float newAngle)
-    {
-        rotationAngle = newAngle;
-    }
-
-    public void CheckForRotationPoint(Vector3 playerPosition)
-    {
-        foreach (var e in rotationPoints)
-        {
-            if (playerPosition == e)
-                Rotate(5);//test value
-        }
     }
 
     void GroundObjectCheck()

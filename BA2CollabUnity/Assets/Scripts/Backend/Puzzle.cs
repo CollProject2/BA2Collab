@@ -32,6 +32,7 @@ public class Puzzle : MonoBehaviour
     }
     public void Hide()
     {
+        Debug.Log("set puzzle deactive");
         gameObject.SetActive(false);
     }
 

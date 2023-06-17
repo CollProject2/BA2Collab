@@ -6,8 +6,7 @@ public class Item : MonoBehaviour
 {
     // Properties
     public string itemName { get; private set; }
-    public Puzzle associatedPuzzle { get; private set; }
-    public PuzzleUI associatedPuzzleUI { get; private set; }
+    public Puzzle associatedPuzzle;
     private Collider itemCollider;
     
     public GameObject modelObj;
@@ -31,7 +30,7 @@ public class Item : MonoBehaviour
     public void Hide()
     {
         //gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 
     // Methods
