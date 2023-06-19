@@ -5338,6 +5338,10 @@ GameObject:
   - component: {fileID: 438292251}
   - component: {fileID: 438292250}
   - component: {fileID: 438292249}
+  - component: {fileID: 438292252}
+  - component: {fileID: 438292255}
+  - component: {fileID: 438292254}
+  - component: {fileID: 438292253}
   m_Layer: 0
   m_Name: Flowchart_Memory Unlocked 1
   m_TagString: Untagged
@@ -5397,6 +5401,8 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 438292253}
+  - {fileID: 438292252}
   - {fileID: 438292233}
   - {fileID: 438292238}
   - {fileID: 438292239}
@@ -5429,8 +5435,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 438292248}
-  selectedCommands: []
+  - {fileID: 438292234}
+  selectedCommands:
+  - {fileID: 438292253}
   variables: []
   description: 
   stepPause: 0
@@ -5611,6 +5618,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 438292254}
   - {fileID: 438292244}
   - {fileID: 438292243}
   - {fileID: 438292241}
@@ -5776,6 +5784,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 438292255}
   - {fileID: 438292247}
   - {fileID: 438292246}
   - {fileID: 438292245}
@@ -5823,6 +5832,73 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 15
   indentLevel: 0
+--- !u!114 &438292252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438292231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce56b7642cfc8a498f0dd48b4150ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 18
+  indentLevel: 0
+  <textSfx>k__BackingField:
+    Guid:
+      Data1: 1406387885
+      Data2: 1193247585
+      Data3: -1916751949
+      Data4: 1363931949
+    Path: event:/TextSounds/TextSoundEffect
+  writer: {fileID: 1385413982}
+--- !u!114 &438292253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438292231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e1b9b9bd174dc4488071470e6459ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 21
+  indentLevel: 0
+  ageToSet: 0
+--- !u!114 &438292254
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438292231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e1b9b9bd174dc4488071470e6459ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 20
+  indentLevel: 0
+  ageToSet: 0
+--- !u!114 &438292255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438292231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e1b9b9bd174dc4488071470e6459ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 19
+  indentLevel: 0
+  ageToSet: 55
 --- !u!1 &447981355
 GameObject:
   m_ObjectHideFlags: 0
@@ -19900,8 +19976,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTextObject: {fileID: 1706613848}
   punchObject: {fileID: 1644056869}
-  writingSpeed: 40
-  punctuationPause: 0.5
+  writingSpeed: 50
+  punctuationPause: 0.15
   hiddenTextColor: {r: 1, g: 1, b: 1, a: 0}
   writeWholeWords: 0
   forceRichText: 1
@@ -28723,6 +28799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b339d5280ba40e64eab033d7180295ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textSoundAge: 0
 --- !u!4 &1790665255
 Transform:
   m_ObjectHideFlags: 0

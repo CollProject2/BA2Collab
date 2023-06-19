@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using Fungus;
 
 public class AudioManager : MonoBehaviour
 {
@@ -15,7 +16,17 @@ public class AudioManager : MonoBehaviour
     private List<StudioEventEmitter> eventEmitters;
     
     private EventInstance memoryEventInstance;
+
+    [Header("Parameters")] 
+    public float textSoundAge = 0;
+    
+    //Singleton
     public static AudioManager instance { get; private set; }
+
+    private void Start()
+    {
+        textSoundAge = 0;
+    }
 
     private void Awake()
     {
@@ -44,6 +55,12 @@ public class AudioManager : MonoBehaviour
     {
         memoryEventInstance.setParameterByName(parameterName, parameterValue);
     }
+
+    public void SetTextSoundAge(int age)
+    {
+        textSoundAge = age;
+    }
+    
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
