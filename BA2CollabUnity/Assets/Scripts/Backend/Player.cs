@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
     public void RecallMemory()
     {
         //hide puyyle UI 
-        UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
+        //UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
         //start memory
         inventory[^1].associatedPuzzle.associatedMemory.Unlock();
     }

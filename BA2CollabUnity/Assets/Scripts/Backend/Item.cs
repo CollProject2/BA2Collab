@@ -35,7 +35,7 @@ public class Item : MonoBehaviour
         AnimateItemOnCollect();
         InteractParticle.SetActive(false);
 
-        UIManager.instance.puzzleUI.DisplayUIPuzzle(associatedPuzzle.puzzleID); // Open the first UI puzzle , we just added this puzzle to the inventory so -1 to have the correct puzzle index (we start at 0)
+        //UIManager.instance.puzzleUI.DisplayUIPuzzle(associatedPuzzle.puzzleID); // Open the first UI puzzle , we just added this puzzle to the inventory so -1 to have the correct puzzle index (we start at 0)
         Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
         
     }

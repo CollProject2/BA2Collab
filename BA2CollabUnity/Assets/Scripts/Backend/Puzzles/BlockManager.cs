@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,8 @@ public class BlockManager : MonoBehaviour
     public PuzzleBlock[] gridBlocks = new PuzzleBlock[9]; // 3x3 grid flattened to 1D
     //Singelton instance
     public static BlockManager instance = null;
+
+    public float delayAfterPuzzleEnd = 2.5f;
 
     private void Awake()
     {
@@ -44,6 +47,7 @@ public class BlockManager : MonoBehaviour
     public void SetCurrentBlock(PuzzleBlock block)
     {
         currentBlock = block;
+        block.canMoveOut = true;
     }
 
     private bool CheckWinCondition(BlockFace blockFace)
@@ -64,9 +68,17 @@ public class BlockManager : MonoBehaviour
         if (CheckWinCondition(BlockFace.Top)) // give wincon
         {
             Player.instance.RecallMemory();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            Invoke("OnPuzzleFinishedMove", delayAfterPuzzleEnd);
         }
             
+    }
+
+    private void OnPuzzleFinishedMove()
+    {
+        gameObject.transform
+            .DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position,
+                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve);
     }
 
     public void RotateBlockAt(int index, RotationDirection direction)

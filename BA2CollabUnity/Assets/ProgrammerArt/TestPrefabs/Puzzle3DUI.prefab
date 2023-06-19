@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3675862977220214056}
   - component: {fileID: 2453894874869521736}
   - component: {fileID: 1124549671254230112}
+  - component: {fileID: 381805543335746157}
+  - component: {fileID: 8469761716388121429}
   m_Layer: 0
   m_Name: MDL_arrow_up
   m_TagString: Untagged
@@ -83,6 +85,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &381805543335746157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87741996136408688}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0095506, y: 0.010011072, z: 0.0016647457}
+  m_Center: {x: -0.0011776817, y: -0.00000026182258, z: 0.00022478063}
+--- !u!114 &8469761716388121429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 87741996136408688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f46bbf4f927147910986badb48006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7029509280061693354}
+        m_TargetAssemblyTypeName: BlockPuzzleButton, Assembly-CSharp
+        m_MethodName: OnButtonClickBlock
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &609328032271600172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,6 +1382,8 @@ GameObject:
   - component: {fileID: 6767409498016586889}
   - component: {fileID: 6983951475530427306}
   - component: {fileID: 4680053900812295814}
+  - component: {fileID: 5356019824845356217}
+  - component: {fileID: 2093645225738657410}
   m_Layer: 0
   m_Name: MDL_arrow_right
   m_TagString: Untagged
@@ -1412,6 +1456,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5356019824845356217
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473113532637709408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0100110695, y: 0.009550599, z: 0.0018640272}
+  m_Center: {x: -0.00000026188437, y: -0.0011776815, z: 0.00032444016}
+--- !u!114 &2093645225738657410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4473113532637709408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f46bbf4f927147910986badb48006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7029509280061693354}
+        m_TargetAssemblyTypeName: BlockPuzzleButton, Assembly-CSharp
+        m_MethodName: OnButtonClickBlock
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4543579094161965964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1872,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5980714897263086919}
+  - component: {fileID: -7029509280061693354}
   m_Layer: 0
   m_Name: Puzzle3DUI
   m_TagString: Untagged
@@ -1802,7 +1887,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5980714897263086916}
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 4.2197995, z: -17.744398}
   m_LocalScale: {x: 0.78, y: 0.78, z: 0.78}
   m_ConstrainProportionsScale: 0
@@ -1836,7 +1921,19 @@ Transform:
   - {fileID: 5070623731481609799}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &-7029509280061693354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5980714897263086916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c659940500bf8304599d3ef33ee18c04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6458123032786809580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1931,6 +2028,8 @@ GameObject:
   - component: {fileID: 8183633733055855305}
   - component: {fileID: 9222473350081531075}
   - component: {fileID: 222775290390569739}
+  - component: {fileID: 7717611455792235281}
+  - component: {fileID: 5177416057500608644}
   m_Layer: 0
   m_Name: MDL_arrow_left
   m_TagString: Untagged
@@ -2003,6 +2102,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7717611455792235281
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723536173502970211}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.010011072, y: 0.009550601, z: 0.0019067853}
+  m_Center: {x: -0.00000027676487, y: 0.0011776779, z: 0.0003458078}
+--- !u!114 &5177416057500608644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6723536173502970211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f46bbf4f927147910986badb48006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7029509280061693354}
+        m_TargetAssemblyTypeName: BlockPuzzleButton, Assembly-CSharp
+        m_MethodName: OnButtonClickBlock
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7083917405188917949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2180,6 +2319,8 @@ GameObject:
   - component: {fileID: 2376861732084413015}
   - component: {fileID: 7101487902888672974}
   - component: {fileID: 874659743377369991}
+  - component: {fileID: 896170454508177966}
+  - component: {fileID: 3751801086916273386}
   m_Layer: 0
   m_Name: MDL_arrow_down
   m_TagString: Untagged
@@ -2252,6 +2393,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &896170454508177966
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396238137805030053}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0095505975, y: 0.010011071, z: 0.0017977203}
+  m_Center: {x: 0.0011776817, y: -0.0000002617476, z: 0.0002912791}
+--- !u!114 &3751801086916273386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8396238137805030053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868f46bbf4f927147910986badb48006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPressed:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7029509280061693354}
+        m_TargetAssemblyTypeName: BlockPuzzleButton, Assembly-CSharp
+        m_MethodName: OnButtonClickBlock
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &8506615469147570345
 GameObject:
   m_ObjectHideFlags: 0

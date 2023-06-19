@@ -1,5 +1,7 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public enum RotationDirection
@@ -26,9 +28,30 @@ public class PuzzleBlock : MonoBehaviour
     private bool isRotating = false;
     public BlockFace CurrentFace;
 
+    public bool canMoveOut = false;
+
+    private void Start()
+    {
+        canMoveOut = false;
+    }
+
     private void OnMouseDown()
     {
+        //!!!!!!!!!!!!!!!!!!!!
+        // adjust end positionons of theblocks and the 
+        //!!!!!!!!!!!!!!!!!!!
+        if (BlockManager.instance.currentBlock != null && BlockManager.instance.currentBlock != this)
+        {
+            BlockManager.instance.currentBlock.transform.DOMove(new Vector3(BlockManager.instance.currentBlock.transform.position.x, BlockManager.instance.currentBlock.transform.position.y, transform.position.z), 1).OnComplete(()=>canMoveOut = true);
+        }
         BlockManager.instance.SetCurrentBlock(this);
+
+        if (canMoveOut)
+        {
+            canMoveOut = false;
+            transform.DOMove(new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), 1);
+        }
+        
     }
 
     public void RotateBlock(RotationDirection direction)
