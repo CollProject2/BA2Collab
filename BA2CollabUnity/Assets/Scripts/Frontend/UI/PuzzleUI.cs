@@ -9,6 +9,16 @@ public class PuzzleUI : MonoBehaviour
     public List<GameObject> puzzleImages;
     public float openingDuration;
 
+    [Header("Block Puzzle Position")] 
+    public Transform blockPuzzleActivePos;
+    public Transform blockPuzzleInstantiatePos;
+
+    [Header("Durations")] 
+    public float blockPuzzleMoveDur;
+
+    [Header("AnimationCurve")] 
+    public AnimationCurve blockPuzzleCurve;
+
     public void OnButtonClickBlock(int direction)
     {
         if(BlockManager.instance.currentBlock != null)

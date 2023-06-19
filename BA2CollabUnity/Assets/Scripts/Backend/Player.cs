@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Fungus;
 using UnityEngine;
 
@@ -129,8 +130,10 @@ public class Player : MonoBehaviour
     public void SolvePuzzle(Puzzle puzzle)
     {
         // do solving puzzle things here: displaying a UI
-        puzzle.StartPuzzle(puzzle);
+        puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
+        
     }
+    
 
     public void RecallMemory()
     {

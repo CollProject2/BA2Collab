@@ -1,4 +1,6 @@
-﻿using Unity.VisualScripting;
+﻿using DG.Tweening;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Puzzle : MonoBehaviour
@@ -9,14 +11,19 @@ public class Puzzle : MonoBehaviour
     public int puzzleID { get; private set; }
     public PlayerMemory associatedMemory;
 
+    [CanBeNull] public GameObject puzzleObj;
+
     //Init
     private void Awake()
     {
         isSolved = false;
     }
-    public void StartPuzzle(Puzzle associatedPuzzle)
+    public void StartPuzzle(Puzzle associatedPuzzle, Transform puzzleSpawn)
     {
-        Instantiate(associatedPuzzle);
+        puzzleObj = Instantiate(associatedPuzzle,puzzleSpawn.position,puzzleSpawn.rotation).gameObject;
+        puzzleObj.transform
+            .DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
+            .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve);
         
         //startPuzzle solving Music from AudioManager, get the event ref from FMODEvents
         AudioManager.instance.InitializeMemoryMusic(FMODEvents.instance.memoryMusic_1);
