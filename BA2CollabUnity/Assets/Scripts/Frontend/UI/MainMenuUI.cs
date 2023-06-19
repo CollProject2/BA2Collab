@@ -13,6 +13,7 @@ public class MainMenuUI : MonoBehaviour
     [Header("Objects")]
     [SerializeField] private GameObject mainMenuPanel;
     [SerializeField] private GameObject title;
+    [SerializeField] private GameObject flower;
     [SerializeField] private GameObject startButton;
     [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject curtainL;
@@ -22,6 +23,7 @@ public class MainMenuUI : MonoBehaviour
     [Header("Positions")]
     [SerializeField] private Transform camEndPos;
     [SerializeField] private Transform titleActivePos;
+    [SerializeField] private Transform flowerActivePos;
     [SerializeField] private Transform startButtonActivePos;
     [SerializeField] private Transform exitButtonActivePos;
     [SerializeField] private Transform TEMPUIAwayPos;
@@ -29,6 +31,7 @@ public class MainMenuUI : MonoBehaviour
     [Header("Durations")]
     [SerializeField] private float cameraZoomDuration = 2;
     [SerializeField] private float titleMoveDuration = 4;
+    [SerializeField] private float flowerMoveDuration = 3;
     [SerializeField] private float startButtonMoveDuration = 2;
     [SerializeField] private float exitButtonMoveDuration = 2;
     [SerializeField] private float curtainOpenDuration = 2;
@@ -97,7 +100,7 @@ public class MainMenuUI : MonoBehaviour
     void MainMenuSequence()
     {
         FadeToTransparent();
-        MoveTitleUp();
+        MoveTitleAndFlowerDown();
     }
 
     void FadeToTransparent()
@@ -106,9 +109,10 @@ public class MainMenuUI : MonoBehaviour
         mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 0), 4);
     }
 
-    void MoveTitleUp()
+    void MoveTitleAndFlowerDown()
     {
         title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
+        flower.transform.DOMove(flowerActivePos.position, flowerMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
     }
 
     void MoveMenuButtonsIn()
@@ -128,6 +132,7 @@ public class MainMenuUI : MonoBehaviour
         startButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         exitButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         title.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
+        flower.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
 
     }
 
