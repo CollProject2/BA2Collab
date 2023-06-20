@@ -14,11 +14,13 @@ public class Item : MonoBehaviour
     
     private float distWithPlayer;
     public float interactRange = 3;
+    private bool isHidden;
     
 
     private void Awake()
     {
         itemCollider = gameObject.GetComponent<Collider>();
+        isHidden = false;
     }
 
     private void Update()
@@ -50,6 +52,7 @@ public class Item : MonoBehaviour
         modelObj.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f).OnComplete(() =>
         {
             modelObj.transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(HideItemModel);
+            isHidden = true;
         });
     }
 
@@ -68,7 +71,7 @@ public class Item : MonoBehaviour
 
     private void Interact()
     {
-        if (distWithPlayer < interactRange)
+        if (distWithPlayer < interactRange && !Player.instance.isSolving && !isHidden)
         {
             // open HUD to give visual feedback
             InteractParticle.gameObject.SetActive(true);

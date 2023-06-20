@@ -16,7 +16,8 @@ public class Player : MonoBehaviour
     private CharacterController characterController;
     public Animator animator;
 
-    public bool canMove = false;
+    public bool canMove;
+    public bool isSolving;
     // adjust in unity editor
     public float speed;
     public float gravity;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour
             Destroy(this);
         }
         canMove = false;
+        isSolving = false;
         //Initialise
         characterController = GetComponent<CharacterController>();
         currentPosition = new Vector3(0, 0, 0);
@@ -97,6 +99,8 @@ public class Player : MonoBehaviour
     {
         if(Environment.instance.canTurnStage == false) return;
         //animate character
+        if(isSolving) return;
+
         if (direction.magnitude > 0)
         {
             animator.SetBool("isMoving",true);
@@ -122,6 +126,7 @@ public class Player : MonoBehaviour
         inventory.Add(item);
         
         SetCanMove(false);
+        isSolving = true;
         // trigger pickUp anim
         animator.SetTrigger("pickUp");
         animator.SetBool("isMoving",false);
@@ -137,6 +142,7 @@ public class Player : MonoBehaviour
 
     public void RecallMemory()
     {
+        isSolving = false;
         //hide puyyle UI 
         //UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
         //start memory
