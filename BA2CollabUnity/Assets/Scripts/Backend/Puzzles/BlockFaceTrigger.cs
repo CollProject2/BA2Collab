@@ -1,22 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BlockFaceTrigger : MonoBehaviour
 {
-    PuzzleBlock puzzleBlock;
-    private bool hasBeenTriggered;
+    private PuzzleBlock puzzleBlock;
+    private bool hasBeenTriggered = false;
+    private const string DetectorTag = "BlockFaceDetector";
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        hasBeenTriggered = false;
         puzzleBlock = GetComponentInParent<PuzzleBlock>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("BlockFaceDetector") && !hasBeenTriggered)
+        if (other.CompareTag(DetectorTag) && !hasBeenTriggered)
         {
             puzzleBlock.SetState(name);
             hasBeenTriggered = true;
@@ -25,6 +22,9 @@ public class BlockFaceTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        hasBeenTriggered = false;
+        if (other.CompareTag(DetectorTag))
+        {
+            hasBeenTriggered = false;
+        }
     }
 }
