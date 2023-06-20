@@ -8,6 +8,9 @@ public class BlockManager : MonoBehaviour
     public PuzzleBlock[] gridBlocks = new PuzzleBlock[9]; // 3x3 grid flattened to 1D
     //Singelton instance
     public static BlockManager instance = null;
+    
+    //each one ?
+    private Quaternion solutionRotation;
 
     public float delayAfterPuzzleEnd = 2.5f;
 
@@ -23,6 +26,8 @@ public class BlockManager : MonoBehaviour
             Destroy(this);
         }
         DisplayNextBlock();
+        
+        solutionRotation = Quaternion.Euler(-90,0,0);
     }
 
     public void ActivateBlocks()
@@ -69,11 +74,8 @@ public class BlockManager : MonoBehaviour
     {
         foreach (PuzzleBlock block in gridBlocks)
         {
-            if (block.isActiveAndEnabled)
-            {
-                if (block.CurrentFace != blockFace)
-                    return false;
-            }
+            if ( block.isActiveAndEnabled && block.CurrentFace != blockFace)
+                return false;
         }
         return true;
     }
@@ -88,6 +90,20 @@ public class BlockManager : MonoBehaviour
             Invoke("OnPuzzleFinishedMove", delayAfterPuzzleEnd);
         }
             
+    }
+
+    public bool CheckRotation(PuzzleBlock puzzleBlock)
+    {
+        float rotationDiff;
+        rotationDiff = Quaternion.Angle(solutionRotation, puzzleBlock.transform.rotation);
+        if (rotationDiff < 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void OnPuzzleFinishedMove()

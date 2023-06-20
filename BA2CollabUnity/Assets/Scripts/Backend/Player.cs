@@ -130,6 +130,7 @@ public class Player : MonoBehaviour
         // trigger pickUp anim
         animator.SetTrigger("pickUp");
         animator.SetBool("isMoving",false);
+        direction = Vector3.zero;
     }
 
     public void SolvePuzzle(Puzzle puzzle)
@@ -142,7 +143,7 @@ public class Player : MonoBehaviour
 
     public void RecallMemory()
     {
-        isSolving = false;
+        animator.SetBool("isMoving",false);
         //hide puyyle UI 
         //UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
         //start memory

@@ -9778,7 +9778,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 314.5
-    y: 107.5
+    y: 106.5
     width: 102
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
