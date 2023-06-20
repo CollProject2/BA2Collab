@@ -1,6 +1,5 @@
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class BlockManager : MonoBehaviour
 {
@@ -8,7 +7,7 @@ public class BlockManager : MonoBehaviour
     public PuzzleBlock[] gridBlocks = new PuzzleBlock[9]; // 3x3 grid flattened to 1D
     //Singelton instance
     public static BlockManager instance = null;
-    
+
     //each one ?
     private Quaternion solutionRotation;
 
@@ -26,8 +25,8 @@ public class BlockManager : MonoBehaviour
             Destroy(this);
         }
         DisplayNextBlock();
-        
-        solutionRotation = Quaternion.Euler(-90,0,0);
+
+        solutionRotation = Quaternion.Euler(-90, 0, 0);
     }
 
     public void ActivateBlocks()
@@ -74,8 +73,11 @@ public class BlockManager : MonoBehaviour
     {
         foreach (PuzzleBlock block in gridBlocks)
         {
-            if ( block.isActiveAndEnabled && block.CurrentFace != blockFace)
+            if (block.isActiveAndEnabled)
+            {
+                if (block.CurrentFace != blockFace || !CheckRotation(block))
                 return false;
+            }
         }
         return true;
     }
@@ -89,28 +91,22 @@ public class BlockManager : MonoBehaviour
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
             Invoke("OnPuzzleFinishedMove", delayAfterPuzzleEnd);
         }
-            
+
     }
 
     public bool CheckRotation(PuzzleBlock puzzleBlock)
     {
-        float rotationDiff;
-        rotationDiff = Quaternion.Angle(solutionRotation, puzzleBlock.transform.rotation);
-        if (rotationDiff < 1)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
+        float difference = Quaternion.Angle(puzzleBlock.transform.localRotation, targetRotation);
+
+        return Mathf.Abs(difference) < 0.1f;
     }
 
     private void OnPuzzleFinishedMove()
     {
         gameObject.transform
             .DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position,
-                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> Destroy(gameObject));
+                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(() => Destroy(gameObject));
     }
 
     public void RotateBlockAt(int index, RotationDirection direction)

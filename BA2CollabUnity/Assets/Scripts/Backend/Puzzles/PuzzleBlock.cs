@@ -1,4 +1,3 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -25,7 +24,7 @@ public class PuzzleBlock : MonoBehaviour
 {
     public GameObject faceDetector;
     public int index;
-    private bool isRotating = false;
+    public bool isRotating;
     public BlockFace CurrentFace;
 
     public bool canMoveOut = false;
@@ -38,7 +37,7 @@ public class PuzzleBlock : MonoBehaviour
     private void Start()
     {
         canMoveOut = true;
-        
+        isRotating = false;
     }
 
     private void OnMouseDown()
@@ -58,7 +57,7 @@ public class PuzzleBlock : MonoBehaviour
             canMoveOut = false;
             faceDetector.transform.DOMove(activeFaceDetectorPos.position, 1);
         }
-        
+
     }
 
     public void RotateBlock(RotationDirection direction)
@@ -82,10 +81,14 @@ public class PuzzleBlock : MonoBehaviour
                 rotateAmount = new Vector3(0, 90, 0);
                 break;
         }
+        transform.DORotate(rotateAmount, 0.3f, RotateMode.WorldAxisAdd).OnComplete(() => IsDone() );
 
-        transform.DORotate(rotateAmount, 0.3f, RotateMode.WorldAxisAdd).OnComplete(() => isRotating = false);
     }
-
+    public void IsDone()
+    {
+        isRotating = false;
+        BlockManager.instance.CallCheck(); 
+    }
     private void Awake()
     {
         SetRandomRotation();
@@ -127,7 +130,7 @@ public class PuzzleBlock : MonoBehaviour
         switch (faceName)
         {
             case "face1":
-                CurrentFace = BlockFace.Front; 
+                CurrentFace = BlockFace.Front;
                 break;
             case "face2":
                 CurrentFace = BlockFace.Back;
@@ -145,6 +148,5 @@ public class PuzzleBlock : MonoBehaviour
                 CurrentFace = BlockFace.Right;
                 break;
         }
-        BlockManager.instance.CallCheck();
     }
 }
