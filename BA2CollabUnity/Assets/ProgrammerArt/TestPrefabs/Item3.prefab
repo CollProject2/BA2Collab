@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91c24e9f7c91dc9468363a3dff767e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  associatedPuzzle: {fileID: 2373655692706506375, guid: b5208d6174c9d3b4693ab3b169a258a1,
+  associatedPuzzle: {fileID: 2373655692706506375, guid: 58161339659ece741b6ce5cd7ac88bf3,
     type: 3}
   modelObj: {fileID: 207801180240327337}
   InteractParticle: {fileID: 1383109548687485082}

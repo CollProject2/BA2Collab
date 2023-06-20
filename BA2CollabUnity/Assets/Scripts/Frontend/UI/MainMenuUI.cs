@@ -92,6 +92,8 @@ public class MainMenuUI : MonoBehaviour
     {
         look = true;
         Player.instance.SetCanMove(true);
+        LightManager.instance.TurnOffFrontStageLights();
+        LightManager.instance.TurnOnPlayerLights();
     }
 
     // the sequence of events when we start the game and re load the scene
