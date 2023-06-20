@@ -337,14 +337,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 1
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 1
   defaultBlockPos: {fileID: 5131503598027073213}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &757606978166831910
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,14 +959,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 8
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 8
   defaultBlockPos: {fileID: 2412444911425502717}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &1883335651814607117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,14 +1213,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 3
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 3
   defaultBlockPos: {fileID: 6869374427690234582}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &2145662761258183151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,14 +1410,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 7
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 7
   defaultBlockPos: {fileID: 7991588429764692678}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &2317068665719016540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2336,14 +2328,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 0
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 0
   defaultBlockPos: {fileID: 6708012532543673125}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &3722881112727432089
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,14 +2724,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 2
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 2
   defaultBlockPos: {fileID: 7987833304700096398}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &4489153600627476248
 GameObject:
   m_ObjectHideFlags: 0
@@ -3847,14 +3835,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 6
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 6
   defaultBlockPos: {fileID: 4086652167602386741}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &5988777478583672010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,14 +4752,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 5
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 5
   defaultBlockPos: {fileID: 6707988842583931625}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &7248312044814019620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5366,14 +5350,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 383186481040327842}
-  index: 4
-  isRotating: 0
   CurrentFace: 0
-  canMoveOut: 0
+  interactable: 0
+  index: 4
   defaultBlockPos: {fileID: 2989135777309816043}
   defaultFaceDetectorPos: {fileID: 7496088133942093246}
   activeFaceDetectorPos: {fileID: 7119802009134102123}
-  interactable: 0
 --- !u!1 &8647314041416521882
 GameObject:
   m_ObjectHideFlags: 0
