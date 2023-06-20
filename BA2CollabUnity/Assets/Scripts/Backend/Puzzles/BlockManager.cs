@@ -25,6 +25,22 @@ public class BlockManager : MonoBehaviour
         DisplayNextBlock();
     }
 
+    public void ActivateBlocks()
+    {
+        foreach (var block in gridBlocks)
+        {
+            block.interactable = true;
+        }
+    }
+
+    public void DeactivateBlocks()
+    {
+        foreach (var block in gridBlocks)
+        {
+            block.interactable = false;
+        }
+    }
+
     public void DisplayNextBlock()
     {
         switch (Player.instance.missingBlocks)
@@ -47,7 +63,6 @@ public class BlockManager : MonoBehaviour
     public void SetCurrentBlock(PuzzleBlock block)
     {
         currentBlock = block;
-        block.canMoveOut = true;
     }
 
     private bool CheckWinCondition(BlockFace blockFace)
@@ -68,7 +83,8 @@ public class BlockManager : MonoBehaviour
         if (CheckWinCondition(BlockFace.Top)) // give wincon
         {
             Player.instance.RecallMemory();
-            //Destroy(gameObject);
+            DeactivateBlocks();
+            currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
             Invoke("OnPuzzleFinishedMove", delayAfterPuzzleEnd);
         }
             
@@ -78,7 +94,7 @@ public class BlockManager : MonoBehaviour
     {
         gameObject.transform
             .DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position,
-                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve);
+                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> Destroy(gameObject));
     }
 
     public void RotateBlockAt(int index, RotationDirection direction)

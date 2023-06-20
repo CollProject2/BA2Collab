@@ -29,27 +29,34 @@ public class PuzzleBlock : MonoBehaviour
     public BlockFace CurrentFace;
 
     public bool canMoveOut = false;
+    public Transform defaultBlockPos;
+    public Transform defaultFaceDetectorPos;
+    public Transform activeFaceDetectorPos;
+    public bool interactable = false;
+    //public GameObject objectModel;
 
     private void Start()
     {
-        canMoveOut = false;
+        canMoveOut = true;
+        
     }
 
     private void OnMouseDown()
     {
-        //!!!!!!!!!!!!!!!!!!!!
-        // adjust end positionons of theblocks and the 
-        //!!!!!!!!!!!!!!!!!!!
-        if (BlockManager.instance.currentBlock != null && BlockManager.instance.currentBlock != this)
-        {
-            BlockManager.instance.currentBlock.transform.DOMove(new Vector3(BlockManager.instance.currentBlock.transform.position.x, BlockManager.instance.currentBlock.transform.position.y, transform.position.z), 1).OnComplete(()=>canMoveOut = true);
-        }
-        BlockManager.instance.SetCurrentBlock(this);
-
+        if (!interactable) return;
         if (canMoveOut)
         {
-            canMoveOut = false;
+            if (BlockManager.instance.currentBlock != this)
+            {
+                BlockManager.instance.currentBlock.canMoveOut = true;
+                BlockManager.instance.currentBlock.transform.DOMove(BlockManager.instance.currentBlock.defaultBlockPos.position, 1);
+                faceDetector.transform.DOMove(defaultFaceDetectorPos.position, 1);
+            }
+
+            BlockManager.instance.SetCurrentBlock(this);
             transform.DOMove(new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), 1);
+            canMoveOut = false;
+            faceDetector.transform.DOMove(activeFaceDetectorPos.position, 1);
         }
         
     }

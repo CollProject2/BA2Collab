@@ -23,7 +23,7 @@ public class Puzzle : MonoBehaviour
         puzzleObj = Instantiate(associatedPuzzle,puzzleSpawn.position,puzzleSpawn.rotation).gameObject;
         puzzleObj.transform
             .DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
-            .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve);
+            .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> BlockManager.instance.ActivateBlocks());
         
         //startPuzzle solving Music from AudioManager, get the event ref from FMODEvents
         AudioManager.instance.InitializeMemoryMusic(FMODEvents.instance.memoryMusic_1);
