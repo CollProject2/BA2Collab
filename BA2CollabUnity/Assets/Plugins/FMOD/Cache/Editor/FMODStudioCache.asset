@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638213145257701785
+  lastModified: 638227834844925945
   FileSizes:
   - Name: 
-    Value: 806
+    Value: 1102
   Exists: 1
 --- !u!114 &-4025464701835835941
 MonoBehaviour:
@@ -35,7 +35,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638218355549241736
+  lastModified: 638227834845195183
   FileSizes: []
   Exists: 1
 --- !u!114 &-3227535647774278028
@@ -53,7 +53,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638218355549231818
+  lastModified: 638227834844909374
   FileSizes: []
   Exists: 1
 --- !u!114 &-35345361026848262
@@ -92,14 +92,17 @@ MonoBehaviour:
   - {fileID: -5143897097376029460}
   - {fileID: -3227535647774278028}
   - {fileID: -4025464701835835941}
+  - {fileID: 8776475477020645263}
   EditorEvents:
   - {fileID: 4333426495449838960}
+  - {fileID: 2722496842294283583}
+  - {fileID: 3397208660156601694}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638218355549241736
+  cacheTime: 638227834845195183
   cacheVersion: 131603
 --- !u!114 &1784499567279226234
 MonoBehaviour:
@@ -129,6 +132,62 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &2722496842294283583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Memory/Memory_Test
+  m_EditorClassIdentifier: 
+  Path: event:/Memory/Memory_Test
+  Guid:
+    Data1: 632116923
+    Data2: 1232058193
+    Data3: -793040237
+    Data4: -755213393
+  Banks:
+  - {fileID: 8776475477020645263}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8828023277134063912}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 28545
+--- !u!114 &3397208660156601694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/TextSounds/TextSoundEffect
+  m_EditorClassIdentifier: 
+  Path: event:/TextSounds/TextSoundEffect
+  Guid:
+    Data1: 1406387885
+    Data2: 1193247585
+    Data3: -1916751949
+    Data4: 1363931949
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6420497515404571880}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 265
 --- !u!114 &4333426495449838960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +216,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6420497515404571880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/TextSoundEffect/TextSoundAge
+  m_EditorClassIdentifier: 
+  Name: TextSoundAge
+  StudioPath: 
+  Min: 0
+  Max: 75
+  Default: 0
+  ID:
+    data1: 602432111
+    data2: 1923994226
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &6651897055698001300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,4 +279,46 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 884992
+  Exists: 1
+--- !u!114 &8776475477020645263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/MemoryMusic.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Audio/FmodBanks/Desktop/MemoryMusic.bank
+  Name: MemoryMusic
+  StudioPath: bank:/MemoryMusic
+  lastModified: 638227824731328878
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8828023277134063912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Memory_Test/PuzzleSolvingState
+  m_EditorClassIdentifier: 
+  Name: PuzzleSolvingState
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2621804344
+    data2: 468799429
+  Type: 0
+  IsGlobal: 0
+  Labels: []
   Exists: 1

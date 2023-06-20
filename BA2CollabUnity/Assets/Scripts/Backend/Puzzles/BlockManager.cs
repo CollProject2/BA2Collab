@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,8 @@ public class BlockManager : MonoBehaviour
     public PuzzleBlock[] gridBlocks = new PuzzleBlock[9]; // 3x3 grid flattened to 1D
     //Singelton instance
     public static BlockManager instance = null;
+
+    public float delayAfterPuzzleEnd = 2.5f;
 
     private void Awake()
     {
@@ -20,6 +23,22 @@ public class BlockManager : MonoBehaviour
             Destroy(this);
         }
         DisplayNextBlock();
+    }
+
+    public void ActivateBlocks()
+    {
+        foreach (var block in gridBlocks)
+        {
+            block.interactable = true;
+        }
+    }
+
+    public void DeactivateBlocks()
+    {
+        foreach (var block in gridBlocks)
+        {
+            block.interactable = false;
+        }
     }
 
     public void DisplayNextBlock()
@@ -50,8 +69,11 @@ public class BlockManager : MonoBehaviour
     {
         foreach (PuzzleBlock block in gridBlocks)
         {
-            if (block.isActiveAndEnabled && block.CurrentFace != blockFace)
-                return false;
+            if (block.isActiveAndEnabled)
+            {
+                if (block.CurrentFace != blockFace)
+                    return false;
+            }
         }
         return true;
     }
@@ -59,7 +81,20 @@ public class BlockManager : MonoBehaviour
     public void CallCheck()
     {
         if (CheckWinCondition(BlockFace.Top)) // give wincon
+        {
             Player.instance.RecallMemory();
+            DeactivateBlocks();
+            currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
+            Invoke("OnPuzzleFinishedMove", delayAfterPuzzleEnd);
+        }
+            
+    }
+
+    private void OnPuzzleFinishedMove()
+    {
+        gameObject.transform
+            .DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position,
+                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> Destroy(gameObject));
     }
 
     public void RotateBlockAt(int index, RotationDirection direction)

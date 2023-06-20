@@ -8,12 +8,9 @@ public class Dialogues : MonoBehaviour
     // Properties
     public Flowchart MemoryUnlocked_1;
 
-    public List<string> memoryNames;
-
-
     // executes the block inside the given flowchart
-    public void StartDialogue(int memoryNum)
+    public void StartDialogue(string memoryName)
     {
-        MemoryUnlocked_1.ExecuteBlock(memoryNames[memoryNum]); // string dependency
+        MemoryUnlocked_1.ExecuteBlock(memoryName); // string dependency
     }
 }

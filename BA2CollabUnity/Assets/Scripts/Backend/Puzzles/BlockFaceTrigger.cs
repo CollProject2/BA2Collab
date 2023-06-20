@@ -5,7 +5,6 @@ using UnityEngine;
 public class BlockFaceTrigger : MonoBehaviour
 {
     PuzzleBlock puzzleBlock;
-
     private bool hasBeenTriggered;
 
     // Start is called before the first frame update

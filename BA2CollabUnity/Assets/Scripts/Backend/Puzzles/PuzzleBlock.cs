@@ -1,5 +1,7 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public enum RotationDirection
@@ -26,9 +28,37 @@ public class PuzzleBlock : MonoBehaviour
     private bool isRotating = false;
     public BlockFace CurrentFace;
 
+    public bool canMoveOut = false;
+    public Transform defaultBlockPos;
+    public Transform defaultFaceDetectorPos;
+    public Transform activeFaceDetectorPos;
+    public bool interactable = false;
+    //public GameObject objectModel;
+
+    private void Start()
+    {
+        canMoveOut = true;
+        
+    }
+
     private void OnMouseDown()
     {
-        BlockManager.instance.SetCurrentBlock(this);
+        if (!interactable) return;
+        if (canMoveOut)
+        {
+            if (BlockManager.instance.currentBlock != this)
+            {
+                BlockManager.instance.currentBlock.canMoveOut = true;
+                BlockManager.instance.currentBlock.transform.DOMove(BlockManager.instance.currentBlock.defaultBlockPos.position, 1);
+                faceDetector.transform.DOMove(defaultFaceDetectorPos.position, 1);
+            }
+
+            BlockManager.instance.SetCurrentBlock(this);
+            transform.DOMove(new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), 1);
+            canMoveOut = false;
+            faceDetector.transform.DOMove(activeFaceDetectorPos.position, 1);
+        }
+        
     }
 
     public void RotateBlock(RotationDirection direction)
@@ -65,7 +95,6 @@ public class PuzzleBlock : MonoBehaviour
     {
         // Randomly select a face index (0-5)
         int randomFaceIndex = Random.Range(0, 6);
-
         Vector3 targetEulerAngles = Vector3.zero;
 
         switch (randomFaceIndex)

@@ -1,4 +1,6 @@
-﻿using Unity.VisualScripting;
+﻿using DG.Tweening;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Puzzle : MonoBehaviour
@@ -7,80 +9,24 @@ public class Puzzle : MonoBehaviour
     public bool isSolved { get; set; }
     public string puzzleName { get; private set; }
     public int puzzleID { get; private set; }
-    public PlayerMemory associatedMemory { get; private set; }
+    public PlayerMemory associatedMemory;
+
+    [CanBeNull] public GameObject puzzleObj;
 
     //Init
     private void Awake()
     {
         isSolved = false;
-        Hide();
     }
-
-    //constructor for puzzle todo
-    public void InitializePuzzle(string name, PlayerMemory memory, int puzzleNumber)
+    public void StartPuzzle(Puzzle associatedPuzzle, Transform puzzleSpawn)
     {
-        puzzleName = name;
-        associatedMemory = memory;
-        puzzleID = puzzleNumber;
-
+        puzzleObj = Instantiate(associatedPuzzle,puzzleSpawn.position,puzzleSpawn.rotation).gameObject;
+        puzzleObj.transform
+            .DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
+            .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> BlockManager.instance.ActivateBlocks());
+        
+        //startPuzzle solving Music from AudioManager, get the event ref from FMODEvents
+        AudioManager.instance.InitializeMemoryMusic(FMODEvents.instance.memoryMusic_1);
     }
 
-    //Methods
-    public void Display()
-    {
-        gameObject.SetActive(true);
-    }
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void StartPuzzle()
-    {
-        //GetComponentInChildren<MeshRenderer>().enabled = true;
-
-        //select right puzzle
-        switch (puzzleID)
-        {
-            case 0:
-                this.AddComponent<PuzzleOne>();
-                break;
-            case 1:
-                this.AddComponent<PuzzleTwo>();
-                break;
-            case 2:
-                this.AddComponent<PuzzleTwo>();
-                break;
-            default:
-                break;
-        }
-
-    }
-    public void Solve()
-    {
-        //when solved, unlock a memory 
-        isSolved = true;
-
-        //let player handle the rest
-        Player.instance.RecallMemory();
-    }
-
-
-}
-
-public class PuzzleOne : Puzzle
-{
-    public void Awake()
-    {
-        Display();
-    }
-}
-
-public class PuzzleTwo : Puzzle
-{
-    
-}
-public class PuzzleThree : Puzzle
-{
-   
 }

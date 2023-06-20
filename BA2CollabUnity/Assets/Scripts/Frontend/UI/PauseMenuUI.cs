@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +5,7 @@ public class PauseMenuUI : MonoBehaviour
 {
     // the UI panel appears instantly now, in the future we will have a sequence
     // zoom out, close curtains, open related buttons....
-    
+
     //Properties
     public bool isDisplayed { get; private set; }
     [SerializeField] private GameObject pauseMenuPanel;
@@ -24,6 +21,7 @@ public class PauseMenuUI : MonoBehaviour
             else
             {
                 HidePauseMenuUI();
+                Player.instance.SetCanMove(true);
             }
         }
     }
@@ -40,15 +38,16 @@ public class PauseMenuUI : MonoBehaviour
         pauseMenuPanel.SetActive(false);
         isDisplayed = false;
     }
-    
+
     //Display, Pause Game
     private void DisplayPauseMenuUI()
     {
         // stop player or set time scale to 0
+        Player.instance.SetCanMove(false);
         pauseMenuPanel.SetActive(true);
         isDisplayed = true;
     }
-    
+
     // exit game
     public void ExitGameButton()
     {

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Fungus;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class Player : MonoBehaviour
     public Vector3 velocity;
     private CharacterController characterController;
     public Animator animator;
+
+    public bool canMove = false;
     // adjust in unity editor
     public float speed;
     public float gravity;
@@ -39,7 +42,7 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
-
+        canMove = false;
         //Initialise
         characterController = GetComponent<CharacterController>();
         currentPosition = new Vector3(0, 0, 0);
@@ -55,10 +58,18 @@ public class Player : MonoBehaviour
         HandleAnimation();
     }
 
+    public void SetCanMove(bool moveState)
+    {
+        Debug.Log("player movement change");
+        canMove = moveState;
+    }
+
     //Methods 
     //TODO add stopping of walking while playing animation
     public void HandleMovement()
     {
+        if (!canMove) return;
+        if( Environment.instance.canTurnStage == false ) return;
         // Read input for horizontal and vertical movement
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
@@ -79,11 +90,12 @@ public class Player : MonoBehaviour
             velocity.y -= gravity * Time.deltaTime;
 
         // Apply the movement
-        characterController.Move(new Vector3(0,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
+        characterController.Move(new Vector3(direction.normalized.x,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
     }
 
     private void HandleAnimation()
     {
+        if(Environment.instance.canTurnStage == false) return;
         //animate character
         if (direction.magnitude > 0)
         {
@@ -109,6 +121,7 @@ public class Player : MonoBehaviour
         //add item to inventory
         inventory.Add(item);
         
+        SetCanMove(false);
         // trigger pickUp anim
         animator.SetTrigger("pickUp");
         animator.SetBool("isMoving",false);
@@ -117,19 +130,17 @@ public class Player : MonoBehaviour
     public void SolvePuzzle(Puzzle puzzle)
     {
         // do solving puzzle things here: displaying a UI
-        puzzle.StartPuzzle();
+        puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
+        
     }
+    
 
     public void RecallMemory()
     {
         //hide puyyle UI 
-        UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
+        //UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
         //start memory
         inventory[^1].associatedPuzzle.associatedMemory.Unlock();
-        //hide puzzle
-        inventory[^1].associatedPuzzle.Hide();
-        //hide item
-        inventory[^1].Hide();
     }
 
     public void BeginNewChapter()
