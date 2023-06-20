@@ -60,24 +60,24 @@ Material:
     m_Ints: []
     m_Floats:
     - _DisortStrenght: 3
-    - _DisortStrength: 0.01
-    - _DistortionOnTexture: 0.78
+    - _DisortStrength: 1.71
+    - _DistortionOnTexture: 0.572
     - _Metalic: 0.246
     - _Metallic: 0
     - _NormalStrenght: 0.01
-    - _NormalStrength: 0.1
+    - _NormalStrength: 1.56
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReflectionStrenght: 0.05
-    - _ReflectionStrength: 0.1
+    - _ReflectionStrength: 0
     - _RefractionStrenght: 1.15
-    - _Smoothness: 0.192
+    - _Smoothness: 0.362
     - _Strenght: 0.12
-    - _Tiling: 400
+    - _Tiling: 422
     m_Colors:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _Tiling: {r: 0.1, g: 0.1, b: 0, a: 0}
-    - _TintColor: {r: 1, g: 1, b: 1, a: 1}
+    - _TintColor: {r: 0.80833924, g: 0.990566, b: 0.95251465, a: 0.68235296}
   m_BuildTextureStacks: []
 --- !u!114 &1748688521998277390
 MonoBehaviour:
