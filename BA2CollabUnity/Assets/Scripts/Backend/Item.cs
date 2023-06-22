@@ -60,17 +60,11 @@ public class Item : MonoBehaviour
         });
     }
 
-    //check distance to player from item
-    private float CheckDistanceWithPlayer()
-    {
-        return Vector3.Distance(Player.instance.transform.position, transform.position);
-    }
-
     //Interact with the player
     private void Interact()
     {
         //if the player is in range of the item, not solving a puzzle and the puzzle is not hidden
-        if (CheckDistanceWithPlayer() < interactRange && !Player.instance.isSolving && !isHidden)
+        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving && !isHidden)
         {
             // open HUD to give visual feedback
             InteractParticle.SetActive(true);

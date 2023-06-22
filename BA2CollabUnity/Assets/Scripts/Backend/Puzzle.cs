@@ -10,7 +10,7 @@ public class Puzzle : MonoBehaviour
     public int puzzleID { get; private set; }
     public PlayerMemory associatedMemory;
 
-    [CanBeNull] public GameObject puzzleObj;
+    [CanBeNull] private GameObject puzzleObj;
 
 
     public void StartPuzzle(Puzzle associatedPuzzle, Transform puzzleSpawn)

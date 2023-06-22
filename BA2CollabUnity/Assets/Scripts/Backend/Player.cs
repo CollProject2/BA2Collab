@@ -1,3 +1,4 @@
+using FMOD;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -61,7 +62,6 @@ public class Player : MonoBehaviour
 
     public void SetCanMove(bool moveState)
     {
-        Debug.Log("player movement change");
         canMove = moveState;
     }
 
@@ -111,6 +111,10 @@ public class Player : MonoBehaviour
         //set position to null to prevent walking off
         direction = Vector3.zero;
     }
+    public float CheckDistanceWithPlayer(Vector3 position)
+    {
+        return Vector3.Distance(Player.instance.transform.position, position);
+    }
 
     public void SolvePuzzle(Puzzle puzzle)
     {
@@ -118,9 +122,9 @@ public class Player : MonoBehaviour
         puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
     }
 
-    public void RecallMemory()
+    public void RecallMemory(PlayerMemory memory)
     {
-        inventory[^1].associatedPuzzle.associatedMemory.Unlock();
+        memory.Unlock();
     }
 
     public void BeginNewChapter()

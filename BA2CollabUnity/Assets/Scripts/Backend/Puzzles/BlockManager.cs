@@ -5,6 +5,7 @@ using UnityEngine;
 public class BlockManager : MonoBehaviour
 {
     public PuzzleBlock currentBlock;
+    private Puzzle puzzle;
     public List<PuzzleBlock> gridBlocks = new();
     public static BlockManager instance = null;
 
@@ -26,6 +27,7 @@ public class BlockManager : MonoBehaviour
         {
             instance = this;
         }
+        puzzle = GetComponentInParent<Puzzle>();
         DisplayNextBlock();
     }
 
@@ -85,7 +87,7 @@ public class BlockManager : MonoBehaviour
             //disable block interaction
             DeactivateBlocks();
             //recall memory
-            Player.instance.RecallMemory();
+            Player.instance.RecallMemory(puzzle.associatedMemory);
             //move the last block in place
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
             //call the function after the delay
