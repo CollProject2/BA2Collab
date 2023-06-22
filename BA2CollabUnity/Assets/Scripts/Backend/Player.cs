@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     public bool canMove;
     public bool isSolving;
+    public bool hasPoster;
 
     public int currentStage;
     public int missingBlocks;
@@ -41,6 +42,7 @@ public class Player : MonoBehaviour
         }
 
         //init variables 
+        hasPoster = false;
         smoothTime = 0.05f;
         canMove = false;
         isSolving = false;
@@ -124,6 +126,7 @@ public class Player : MonoBehaviour
 
     public void RecallMemory(PlayerMemory memory)
     {
+        SetCanMove(false);
         memory.Unlock();
     }
 

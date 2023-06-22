@@ -15,6 +15,7 @@ public class Poster : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Player.instance.RecallMemory(posterMemory);
+                Player.instance.hasPoster = true;
                 Destroy(gameObject);
             }
         }
