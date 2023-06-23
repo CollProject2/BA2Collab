@@ -1,108 +1,121 @@
 using DG.Tweening;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class BlockManager : MonoBehaviour
 {
     public PuzzleBlock currentBlock;
-    public PuzzleBlock[] gridBlocks = new PuzzleBlock[9]; // 3x3 grid flattened to 1D
-    //Singelton instance
+    private Puzzle puzzle;
+    public List<PuzzleBlock> gridBlocks = new();
     public static BlockManager instance = null;
 
+    //need to make this a list
+    private Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
+
+    private Dictionary<int, int[]> blockDisplayMapping = new Dictionary<int, int[]>()
+    {
+        { 0, new int[] {0, 1, 2} },
+        { 1, new int[] {0, 1} },
+        { 2, new int[] {0} }
+    };
 
     private void Awake()
     {
-        //Singelton
+        //singleton
         if (instance == null)
         {
             instance = this;
         }
-        else
-        {
-            Destroy(this);
-        }
+        puzzle = GetComponentInParent<Puzzle>();
         DisplayNextBlock();
     }
 
-    public void ActivateBlocks()
-    {
-        foreach (var block in gridBlocks)
-        {
-            block.interactable = true;
-        }
-    }
-
-    public void DeactivateBlocks()
-    {
-        foreach (var block in gridBlocks)
-        {
-            block.interactable = false;
-        }
-    }
-
-    public void DisplayNextBlock()
-    {
-        switch (Player.instance.missingBlocks)
-        {
-            case 0:
-                gridBlocks[0].gameObject.SetActive(true);
-                gridBlocks[1].gameObject.SetActive(true);
-                gridBlocks[2].gameObject.SetActive(true);
-                break;
-            case 1:
-                gridBlocks[1].gameObject.SetActive(true);
-                gridBlocks[0].gameObject.SetActive(true);
-                break;
-            case 2:
-                gridBlocks[0].gameObject.SetActive(true);
-                break;
-        }
-    }
-
+    //set this as the current block
     public void SetCurrentBlock(PuzzleBlock block)
     {
         currentBlock = block;
     }
 
+    //make the blocks clickable
+    public void ActivateBlocks()
+    {
+        gridBlocks.ForEach(block => block.interactable = true);
+    }
+
+    //make the blocks unclickable
+    public void DeactivateBlocks()
+    {
+        gridBlocks.ForEach(block => block.interactable = false);
+    }
+
+    //display the next block if we collected a block
+    public void DisplayNextBlock()
+    {
+        //respective key with respective objects that need to be displayed
+        if (blockDisplayMapping.ContainsKey(Player.instance.missingBlocks))
+        {
+            //block array that has the map with the key
+            int[] blockIndexes = blockDisplayMapping[Player.instance.missingBlocks];
+            foreach (int index in blockIndexes)
+            {
+                //set active
+                gridBlocks[index].gameObject.SetActive(true);
+            }
+        }
+    }
+
+    //check if the block has the right position/rotation
     private bool CheckWinCondition(BlockFace blockFace)
     {
         foreach (PuzzleBlock block in gridBlocks)
         {
-            if (block.isActiveAndEnabled)
+            if (block.gameObject.activeSelf)
             {
-                if (block.CurrentFace != blockFace)
+                if (block.CurrentFace != blockFace || !CheckRotation(block))
                     return false;
             }
         }
         return true;
     }
 
+    //check wincon and finish up the puzzle
     public void CallCheck()
     {
-        if (CheckWinCondition(BlockFace.Top)) // give wincon
+        if (CheckWinCondition(BlockFace.Top))
         {
-            Player.instance.RecallMemory();
+            //disable block interaction
             DeactivateBlocks();
+            //recall memory
+            Player.instance.RecallMemory(puzzle.associatedMemory);
+            //move the last block in place
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
-            Invoke("OnPuzzleFinishedMove", delayAfterPuzzleEnd);
+            //call the function after the delay
+            Invoke(nameof(OnPuzzleFinishedMove), delayAfterPuzzleEnd);
         }
-            
     }
 
+    //checks if we have the right rotation of the image
+    public bool CheckRotation(PuzzleBlock puzzleBlock)
+    {
+        float difference = Quaternion.Angle(puzzleBlock.transform.localRotation, targetRotation);
+        return Mathf.Abs(difference) < 0.1f;
+    }
+
+    //move the puzzle away
     private void OnPuzzleFinishedMove()
     {
-        gameObject.transform
-            .DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position,
-                UIManager.instance.puzzleUI.blockPuzzleMoveDur).SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> Destroy(gameObject));
+        gameObject.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
+            .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve)
+            .OnComplete(() => Destroy(gameObject));
     }
 
+    //rotate the block with the given index in the list
     public void RotateBlockAt(int index, RotationDirection direction)
     {
-        if (index >= 0 && index < gridBlocks.Length) // Check that index is within array bounds
+        if (index >= 0 && index < gridBlocks.Count)
         {
             gridBlocks[index].RotateBlock(direction);
         }
     }
 }
-

@@ -12,67 +12,64 @@ public class Item : MonoBehaviour
     public GameObject modelObj;
     public GameObject InteractParticle;
     
-    private float distWithPlayer;
     public float interactRange = 3;
+    private bool isHidden;
     
 
     private void Awake()
     {
         itemCollider = gameObject.GetComponent<Collider>();
+        isHidden = false;
     }
 
     private void Update()
     {
-        CheckDistanceWithPlayer();
+        //update distance
         Interact();
     }
 
     // Methods
     public void Collect()
     {
-        Player.instance.CollectItem(this); // player adds item to inventory
+        //adds item to player inventory
+        Player.instance.CollectItem(this); 
+        //disables collider
         itemCollider.enabled = false;
+        //animates item on collect
         AnimateItemOnCollect();
+        //closes HUD when activating the puzzle 
         InteractParticle.SetActive(false);
-
-        //UIManager.instance.puzzleUI.DisplayUIPuzzle(associatedPuzzle.puzzleID); // Open the first UI puzzle , we just added this puzzle to the inventory so -1 to have the correct puzzle index (we start at 0)
+        //solves the puzzle associated with the item
         Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
         
     }
     
+    //set model inactive
     void HideItemModel()
     {
         modelObj.SetActive(true);
     }
 
+    //animate item on collect
     public void AnimateItemOnCollect()
     {
         modelObj.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f).OnComplete(() =>
         {
             modelObj.transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(HideItemModel);
+            isHidden = true;
         });
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            //Collect();
-        }
-    }
-
-    private void CheckDistanceWithPlayer()
-    {
-        distWithPlayer = Vector3.Distance(Player.instance.transform.position, transform.position);
-    }
-
+    //Interact with the player
     private void Interact()
     {
-        if (distWithPlayer < interactRange)
+        //if the player is in range of the item, not solving a puzzle and the puzzle is not hidden
+        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving && !isHidden)
         {
             // open HUD to give visual feedback
-            InteractParticle.gameObject.SetActive(true);
+            InteractParticle.SetActive(true);
             
+            //press E to collect
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Collect();
@@ -80,9 +77,9 @@ public class Item : MonoBehaviour
         }
         else
         {
-            InteractParticle.gameObject.SetActive(false);
+            // close HUD
+            InteractParticle.SetActive(false);
         }
     }
 
-    //specific item stuff
 }

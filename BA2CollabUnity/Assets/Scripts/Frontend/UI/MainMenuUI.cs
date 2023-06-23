@@ -66,8 +66,6 @@ public class MainMenuUI : MonoBehaviour
     {
         if (look)
         {
-            Camera.main.transform.position = new Vector3(Camera.main.transform.position.x,
-                Player.instance.transform.position.y + offSetY, Camera.main.transform.position.z);
             Camera.main.transform.LookAt(tempFocus.transform);
         }
 
@@ -87,13 +85,15 @@ public class MainMenuUI : MonoBehaviour
     private void CameraZoomSequence()
     {
         Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
-        Camera.main.transform.DORotate(new Vector3(21, 0, 0), cameraZoomDuration).OnComplete(Look);
+        Camera.main.transform.DORotate(new Vector3(2.28f, 0, 0), cameraZoomDuration).OnComplete(Look);
     }
 
     private void Look()
     {
         look = true;
         Player.instance.SetCanMove(true);
+        LightManager.instance.TurnOffFrontStageLights();
+        LightManager.instance.TurnOnPlayerLights();
     }
 
     // the sequence of events when we start the game and re load the scene

@@ -1,39 +1,37 @@
+using FMOD;
 using System.Collections.Generic;
-using DG.Tweening;
-using Fungus;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    //Singelton instance
-    public static Player instance = null;
-    public int missingBlocks;
-
-    //Properties
-    public Vector3 currentPosition { get; private set; }
-    public List<Item> inventory { get; private set; }
-    public Vector3 velocity;
     private CharacterController characterController;
     public Animator animator;
+    public static Player instance = null;
 
-    public bool canMove = false;
-    // adjust in unity editor
+    private Vector3 direction;
+    public Vector3 velocity;
+    public Vector3 currentPosition { get; private set; }
+
+    public List<Item> inventory { get; private set; }
+
+    [SerializeField]
+    private float smoothTime;
+    private float currentVelocity;
     public float speed;
     public float gravity;
 
-    private Vector3 movementVector;
-    private Vector3 direction;
-    [SerializeField] private float smoothTime = 0.05f;
-    private float currentVelocity;
-    
-    
+    public bool canMove;
+    public bool isSolving;
+    public bool hasPoster;
 
     public int currentStage;
+    public int missingBlocks;
 
+    private readonly Vector3 initialPosition = new(0, 0, 0);
+    private readonly float initialVelocityY = -2f;
 
     private void Awake()
     {
-        //Singelton
         if (instance == null)
         {
             instance = this;
@@ -42,17 +40,23 @@ public class Player : MonoBehaviour
         {
             Destroy(this);
         }
+
+        //init variables 
+        hasPoster = false;
+        smoothTime = 0.05f;
         canMove = false;
-        //Initialise
+        isSolving = false;
         characterController = GetComponent<CharacterController>();
-        currentPosition = new Vector3(0, 0, 0);
+        currentPosition = initialPosition;
         inventory = new List<Item>();
         missingBlocks = 3;
     }
 
     private void Update()
     {
-        // Apply the movement
+        if (!canMove || !Environment.instance.canTurnStage)
+            return;
+
         HandleMovement();
         HandleRotation();
         HandleAnimation();
@@ -60,57 +64,37 @@ public class Player : MonoBehaviour
 
     public void SetCanMove(bool moveState)
     {
-        Debug.Log("player movement change");
         canMove = moveState;
     }
 
-    //Methods 
-    //TODO add stopping of walking while playing animation
     public void HandleMovement()
     {
-        if (!canMove) return;
-        if( Environment.instance.canTurnStage == false ) return;
-        // Read input for horizontal and vertical movement
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
         direction = new Vector3(moveX, 0.0f, moveZ);
-        // movementVector = transform.right * moveX + transform.forward * moveZ;
-        //
-        // //normalise so all directions are the same speed (s/o to Jonas)
-        // if (movementVector.magnitude > 1)
-        //     movementVector = movementVector.normalized;
-        //
-        // movementVector = speed * Time.deltaTime * movementVector;
-
-        // Check if character is grounded, if not add gravity
+        //gravity
         if (characterController.isGrounded)
-            velocity.y = -2f;
+            velocity.y = initialVelocityY;
         else
             velocity.y -= gravity * Time.deltaTime;
-
-        // Apply the movement
-        characterController.Move(new Vector3(direction.normalized.x,direction.normalized.y,direction.normalized.z) * Time.deltaTime * speed + (velocity * Time.deltaTime));
+        //move
+        characterController.Move(speed * Time.deltaTime * direction.normalized + (velocity * Time.deltaTime));
     }
 
     private void HandleAnimation()
     {
-        if(Environment.instance.canTurnStage == false) return;
-        //animate character
-        if (direction.magnitude > 0)
-        {
-            animator.SetBool("isMoving",true);
-        }
-        else if (direction.magnitude <= 0)
-        {
-            animator.SetBool("isMoving",false);
-        }
+        //no animation while solving
+        if (isSolving) return;
+
+        //set is moving
+        animator.SetBool("isMoving", direction.magnitude > 0);
     }
 
     private void HandleRotation()
     {
-        if(direction.sqrMagnitude == 0) return;
-        
+        if (direction.sqrMagnitude == 0) return;
+
         var targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
         var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref currentVelocity, smoothTime);
         transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
@@ -118,34 +102,36 @@ public class Player : MonoBehaviour
 
     public void CollectItem(Item item)
     {
-        //add item to inventory
         inventory.Add(item);
-        
+        //disable movement when solving
         SetCanMove(false);
-        // trigger pickUp anim
+        //we solve
+        isSolving = true;
+        //set animation
         animator.SetTrigger("pickUp");
-        animator.SetBool("isMoving",false);
+        animator.SetBool("isMoving", false);
+        //set position to null to prevent walking off
+        direction = Vector3.zero;
+    }
+    public float CheckDistanceWithPlayer(Vector3 position)
+    {
+        return Vector3.Distance(Player.instance.transform.position, position);
     }
 
     public void SolvePuzzle(Puzzle puzzle)
     {
-        // do solving puzzle things here: displaying a UI
+        // instantiate the puzzle prefab
         puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
-        
     }
-    
 
-    public void RecallMemory()
+    public void RecallMemory(PlayerMemory memory)
     {
-        //hide puyyle UI 
-        //UIManager.instance.puzzleUI.HideUIPuzzle(inventory[^1].associatedPuzzle.puzzleID); // inventory[^1] = the last element of the inventory list 
-        //start memory
-        inventory[^1].associatedPuzzle.associatedMemory.Unlock();
+        SetCanMove(false);
+        memory.Unlock();
     }
 
     public void BeginNewChapter()
     {
-        // checking if all parameters are true if so trigger new things
         currentStage++;
     }
 }
