@@ -67,6 +67,26 @@ public class AudioManager : MonoBehaviour
         eventInstances.Add(eventInstance);
         return eventInstance;
     }
+    // get path of event
+    public string GetInstantiatedEventName(FMOD.Studio.EventInstance instance)
+    {
+        string result;
+        FMOD.Studio.EventDescription description;
+
+        instance.getDescription(out description);
+        description.getPath(out result);
+
+        // expect the result in the form event:/folder/sub-folder/eventName
+        return result; 
+
+    }
+    
+    // for instances that will be destroyed quickly;
+    public EventInstance CreateUnlistedInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        return eventInstance;
+    }
     
     private void CleanUp()
     {
