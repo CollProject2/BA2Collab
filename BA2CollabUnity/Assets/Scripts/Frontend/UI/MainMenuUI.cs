@@ -85,15 +85,16 @@ public class MainMenuUI : MonoBehaviour
     private void CameraZoomSequence()
     {
         Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
-        Camera.main.transform.DORotate(new Vector3(2.28f, 0, 0), cameraZoomDuration).OnComplete(Look);
+        Camera.main.transform.DORotate(new Vector3(2.28f, 0, 0), cameraZoomDuration).OnComplete(OnCameraZoomEnd);
     }
 
-    private void Look()
+    private void OnCameraZoomEnd()
     {
         look = true;
         Player.instance.SetCanMove(true);
         LightManager.instance.TurnOffFrontStageLights();
         LightManager.instance.TurnOnPlayerLights();
+        UIManager.instance.dialogues.dialogueBox.MoveToActivePos();
     }
 
     // the sequence of events when we start the game and re load the scene
@@ -144,6 +145,7 @@ public class MainMenuUI : MonoBehaviour
         CameraZoomSequence();
         OpenCurtains();
         MoveButtonsAndTitleAway(); // TEMPorary
+        
         isDisplayed = false;
     }
     public void ExitGameButton()

@@ -7,6 +7,7 @@ public class Dialogues : MonoBehaviour
 {
     // Properties
     public Flowchart MemoryUnlocked_1;
+    public DialogueBox dialogueBox;
 
     // executes the block inside the given flowchart
     public void StartDialogue(string memoryName)
