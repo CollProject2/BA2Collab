@@ -1,19 +1,18 @@
-using System;
-using System.Collections.Generic;
 using DG.Tweening;
 using JetBrains.Annotations;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-    
+
     //Singelton instance
     public static Environment instance = null;
     //Properties
     [Header("Stage Turn")]
     public bool canTurnStage = true;
     [SerializeField] private GameObject turningEnviroment;
-    [SerializeField] [CanBeNull] private GameObject stageGround;
+    [SerializeField][CanBeNull] private GameObject stageGround;
     [SerializeField] private GameObject groundChecker;
     [SerializeField] private float turnDuration;
     [SerializeField] private AnimationCurve turnEase;
@@ -64,7 +63,7 @@ public class Environment : MonoBehaviour
         Player.instance.SetCanMove(false);
         Player.instance.transform.parent = stageGround.transform;
         canTurnStage = false;
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0,60,0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
+        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, 60, 0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
     }
 
     public void TurnEnvironmentCounterClockWise()
@@ -73,9 +72,9 @@ public class Environment : MonoBehaviour
         Player.instance.SetCanMove(false);
         Player.instance.transform.parent = stageGround.transform;
         canTurnStage = false;
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0,-60,0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
+        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -60, 0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
     }
-    
+
     void EndOfTurn()
     {
         Player.instance.SetCanMove(true);
@@ -85,10 +84,11 @@ public class Environment : MonoBehaviour
     //adjusts all doors on start and on each turn call.
     void AdjustAllDoorsOnTurn()
     {
+        if (doors == null) return;
         foreach (var door in doors)
         {
             door.AdjustDoors();
         }
     }
-    
+
 }

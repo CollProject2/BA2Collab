@@ -23,6 +23,7 @@ public class Player : MonoBehaviour
     public bool canMove;
     public bool isSolving;
     public bool hasPoster;
+    public bool hasGlasses;
 
     public int currentStage;
     public int missingBlocks;
