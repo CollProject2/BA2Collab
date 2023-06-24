@@ -17,6 +17,7 @@ public class WallPosterPuzzle : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GetComponent<MeshRenderer>().enabled = true;
+                Player.instance.hasGlasses = true;
                 Player.instance.RecallMemory(posterMemory2);
             }
         }
