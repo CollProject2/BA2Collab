@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public bool isSolving;
     public bool hasPoster;
     public bool hasGlasses;
+    public bool hasBear;
 
     public int currentStage;
     public int missingBlocks;

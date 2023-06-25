@@ -6,6 +6,8 @@ TagManager:
   tags:
   - BlockFaceDetector
   - StageGround
+  - Letter
+  - Number
   layers:
   - Default
   - TransparentFX
