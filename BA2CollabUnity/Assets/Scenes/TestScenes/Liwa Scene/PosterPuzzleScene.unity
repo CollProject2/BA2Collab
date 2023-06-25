@@ -26457,40 +26457,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 70884692}
     m_Modifications:
-    - target: {fileID: 109181958844776129, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: id
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552888655919616834, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: id
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5888076534367128194, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: id
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6205855580992414150, guid: 3cb4b9b5b2777b243870c9cce4967c04,
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205855580992414150, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 100.00003
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205855580992414150, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205855580992414150, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6205855580992414150, guid: 3cb4b9b5b2777b243870c9cce4967c04,
         type: 3}
@@ -26546,11 +26516,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LockPuzzle
-      objectReference: {fileID: 0}
-    - target: {fileID: 6725123743114197884, guid: 3cb4b9b5b2777b243870c9cce4967c04,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cb4b9b5b2777b243870c9cce4967c04, type: 3}

@@ -7,7 +7,7 @@ public class LockDetector : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
+
         if (other.CompareTag("Number"))
         {
             LockManager.instance.isRight[other.gameObject.GetComponentInParent<Number>().id].solved = true;
