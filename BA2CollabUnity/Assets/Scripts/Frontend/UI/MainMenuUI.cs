@@ -1,5 +1,7 @@
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
@@ -22,6 +24,7 @@ public class MainMenuUI : MonoBehaviour
 
     [Header("Positions")]
     [SerializeField] private Transform camEndPos;
+    [SerializeField] private Transform camBeginPos;
     [SerializeField] private Transform titleActivePos;
     [SerializeField] private Transform flowerActivePos;
     [SerializeField] private Transform startButtonActivePos;
@@ -54,11 +57,12 @@ public class MainMenuUI : MonoBehaviour
     public float offSetX = 2;
 
     public bool look = false;
+    private bool canPause = false;
+    private bool canStart = false;
 
     private void Start()
     {
         // starts without input
-        DisplayMainMenuUI();
         MainMenuSequence();
     }
 
@@ -69,6 +73,11 @@ public class MainMenuUI : MonoBehaviour
             Camera.main.transform.LookAt(tempFocus.transform);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseMenuSequence();
+        }
+
         TurnMandala();
     }
 
@@ -77,20 +86,22 @@ public class MainMenuUI : MonoBehaviour
         mandala.transform.Rotate(Vector3.forward, mandalaTurnSpeed * Time.deltaTime);
     }
 
-    void DisplayMainMenuUI()
-    {
-        isDisplayed = true;
-        mainMenuPanel.SetActive(true);
-    }
+    
     private void CameraZoomSequence()
     {
         Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
         Camera.main.transform.DORotate(new Vector3(2.28f, 0, 0), cameraZoomDuration).OnComplete(OnCameraZoomEnd);
     }
+    private void CameraZoomOutSequence()
+    {
+        Camera.main.transform.DOMove(camBeginPos.transform.position, cameraZoomDuration);
+        Camera.main.transform.DORotate(new Vector3(-1.97f, 0, 0), cameraZoomDuration).OnComplete(() => UIManager.instance.dialogues.dialogueBox.MoveToPassivePos());
+    }
 
     private void OnCameraZoomEnd()
     {
         look = true;
+        canPause = true;
         Player.instance.SetCanMove(true);
         LightManager.instance.TurnOffFrontStageLights();
         LightManager.instance.TurnOnPlayerLights();
@@ -102,6 +113,19 @@ public class MainMenuUI : MonoBehaviour
     {
         FadeToTransparent();
         MoveTitleAndFlowerDown();
+    }
+
+    void PauseMenuSequence()
+    {
+        if (canPause == false) return;
+        canPause = false;
+        look = false;
+        CameraZoomOutSequence();
+        Player.instance.SetCanMove(false);
+        LightManager.instance.TurnOffPlayerLights();
+        LightManager.instance.TurnOnFrontStageLights();
+        MoveMenuButtonsIn();
+        CloseCurtains();
     }
 
     void FadeToTransparent()
@@ -120,13 +144,21 @@ public class MainMenuUI : MonoBehaviour
     void MoveMenuButtonsIn()
     {
         startButton.transform.DOMove(startButtonActivePos.position, startButtonMoveDuration).SetEase(buttonCurve);
-        exitButton.transform.DOMove(exitButtonActivePos.position, exitButtonMoveDuration).SetEase(buttonCurve);
+        exitButton.transform.DOMove(exitButtonActivePos.position, exitButtonMoveDuration).SetEase(buttonCurve)
+            .OnComplete(() => canStart = true);
     }
 
     void OpenCurtains()
     {
         curtainL.transform.DOScaleX(targetScaleX, curtainOpenDuration).SetEase(Ease.Linear);
         curtainR.transform.DOScaleX(targetScaleX, curtainOpenDuration).SetEase(Ease.Linear);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.curtainOpening,transform.position);
+    }
+    
+    void CloseCurtains()
+    {
+        curtainL.transform.DOScaleX(82, curtainOpenDuration).SetEase(Ease.Linear);
+        curtainR.transform.DOScaleX(82, curtainOpenDuration).SetEase(Ease.Linear);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.curtainOpening,transform.position);
     }
 
@@ -142,6 +174,7 @@ public class MainMenuUI : MonoBehaviour
     //Buttons
     public void StartGameButton()
     {
+        if (canStart == false) return; 
         mainMenuPanel.SetActive(false);
         mandala.GetComponent<SpriteRenderer>().DOColor(new Color(1, 1, 1, 0), 1);
         CameraZoomSequence();
@@ -153,5 +186,11 @@ public class MainMenuUI : MonoBehaviour
     public void ExitGameButton()
     {
         Application.Quit();
+    }
+    
+    public void MainMenuButton()
+    {
+        //load scene ? kinda works like restart game
+        SceneManager.LoadScene(0);
     }
 }

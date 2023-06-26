@@ -34,6 +34,11 @@ public class DialogueBox : MonoBehaviour
         dialogueBoxParent.transform.DOMove(dialogueBoxActivePos.position, dialogueBoxMoveDur)
             .SetEase(dialogueBoxMoveCurve);
     }
+    public void MoveToPassivePos()
+    {
+        dialogueBoxParent.transform.DOMove(dialogueBoxPassivePos.position, dialogueBoxMoveDur)
+            .SetEase(dialogueBoxMoveCurve);
+    }
 
     public void MoveToPlayingTextPos()
     {

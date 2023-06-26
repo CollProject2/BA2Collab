@@ -42,6 +42,11 @@ public class LightManager : MonoBehaviour
         stage1.SetActive(false);
         stage2.SetActive(false);
     }
+    public void TurnOnFrontStageLights()
+    {
+        stage1.SetActive(true);
+        stage2.SetActive(true);
+    }
 
     public void TurnOnPlayerLights()
     {
@@ -56,6 +61,18 @@ public class LightManager : MonoBehaviour
         playerLightPurple.transform.DOLookAt(new Vector3(Player.instance.transform.position.x,Player.instance.transform.position.y -0.88f, Player.instance.transform.position.z), 1).SetEase(Ease.OutBack);
         playerLightWhite.transform.DOLookAt(new Vector3(Player.instance.transform.position.x,Player.instance.transform.position.y -0.88f, Player.instance.transform.position.z), 1).SetEase(Ease.OutBack);
         playerLightYellow.transform.DOLookAt(new Vector3(Player.instance.transform.position.x,Player.instance.transform.position.y -0.88f, Player.instance.transform.position.z), 1).SetEase(Ease.OutBack).OnComplete(() => canLookatPlayer = true );
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.lightOpen,transform.position);
+    }
+    
+    public void TurnOffPlayerLights()
+    {
+        playerLightBlue.SetActive(false);
+        playerLightPurple.SetActive(false);
+        playerLightWhite.SetActive(false);
+        playerLightYellow.SetActive(false);
+        frontWarmOrange.SetActive(false);
+        doorlightLeft.SetActive(false);
+        doorlightRight.SetActive(false);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.lightOpen,transform.position);
     }
 }
