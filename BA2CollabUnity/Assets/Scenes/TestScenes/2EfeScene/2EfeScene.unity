@@ -11020,6 +11020,8 @@ MonoBehaviour:
   canMove: 0
   isSolving: 0
   hasPoster: 0
+  hasGlasses: 0
+  hasBear: 0
   currentStage: 0
   missingBlocks: 0
 --- !u!143 &468105194
@@ -28834,6 +28836,41 @@ MonoBehaviour:
       Data3: -793040237
       Data4: -755213393
     Path: event:/Memory/Memory_Test
+  <curtainOpening>k__BackingField:
+    Guid:
+      Data1: 263846555
+      Data2: 1296788351
+      Data3: 76300728
+      Data4: 290515329
+    Path: event:/SFX/CurtainOpen
+  <lightOpen>k__BackingField:
+    Guid:
+      Data1: -1910729407
+      Data2: 1207931390
+      Data3: 815580298
+      Data4: 1010073132
+    Path: event:/SFX/LightsOpen
+  <titleDown>k__BackingField:
+    Guid:
+      Data1: 1679041209
+      Data2: 1233908206
+      Data3: -1055839864
+      Data4: 1368892729
+    Path: event:/SFX/TitleDown
+  <titleUp>k__BackingField:
+    Guid:
+      Data1: -1087163918
+      Data2: 1200675168
+      Data3: 508931720
+      Data4: 1364534557
+    Path: event:/SFX/TitleUp
+  <startButtonClick>k__BackingField:
+    Guid:
+      Data1: -1898866680
+      Data2: 1096508267
+      Data3: 383938475
+      Data4: -83117720
+    Path: event:/SFX/StartButtonClick
 --- !u!1 &1560610162
 GameObject:
   m_ObjectHideFlags: 0

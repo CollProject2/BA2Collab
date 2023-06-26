@@ -56,6 +56,6 @@ public class LightManager : MonoBehaviour
         playerLightPurple.transform.DOLookAt(new Vector3(Player.instance.transform.position.x,Player.instance.transform.position.y -0.88f, Player.instance.transform.position.z), 1).SetEase(Ease.OutBack);
         playerLightWhite.transform.DOLookAt(new Vector3(Player.instance.transform.position.x,Player.instance.transform.position.y -0.88f, Player.instance.transform.position.z), 1).SetEase(Ease.OutBack);
         playerLightYellow.transform.DOLookAt(new Vector3(Player.instance.transform.position.x,Player.instance.transform.position.y -0.88f, Player.instance.transform.position.z), 1).SetEase(Ease.OutBack).OnComplete(() => canLookatPlayer = true );
-
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.lightOpen,transform.position);
     }
 }

@@ -114,6 +114,7 @@ public class MainMenuUI : MonoBehaviour
     {
         title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
         flower.transform.DOMove(flowerActivePos.position, flowerMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.titleDown,transform.position);
     }
 
     void MoveMenuButtonsIn()
@@ -126,6 +127,7 @@ public class MainMenuUI : MonoBehaviour
     {
         curtainL.transform.DOScaleX(targetScaleX, curtainOpenDuration).SetEase(Ease.Linear);
         curtainR.transform.DOScaleX(targetScaleX, curtainOpenDuration).SetEase(Ease.Linear);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.curtainOpening,transform.position);
     }
 
     void MoveButtonsAndTitleAway()
@@ -134,7 +136,7 @@ public class MainMenuUI : MonoBehaviour
         exitButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         title.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         flower.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
-
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.titleUp,transform.position);
     }
 
     //Buttons
@@ -145,7 +147,7 @@ public class MainMenuUI : MonoBehaviour
         CameraZoomSequence();
         OpenCurtains();
         MoveButtonsAndTitleAway(); // TEMPorary
-        
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.startButtonClick,transform.position);
         isDisplayed = false;
     }
     public void ExitGameButton()
