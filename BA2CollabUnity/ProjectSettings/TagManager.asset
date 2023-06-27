@@ -8,6 +8,7 @@ TagManager:
   - StageGround
   - Letter
   - Number
+  - TextBlock
   layers:
   - Default
   - TransparentFX

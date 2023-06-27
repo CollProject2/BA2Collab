@@ -32,7 +32,7 @@ public class PlantManager : MonoBehaviour
     }
     public void CallCheck()
     {
-        if (ShelvesAreSolved())
+        if (PlantIsClean())
         {
             isActive = false;
             //recall memory
@@ -50,10 +50,10 @@ public class PlantManager : MonoBehaviour
     //rotate the block with the given index in the list
     public void RemoveLeafAt(int index)
     {
-        leafList[index].RemoveLeaf();
+        leafList.RemoveAt(index);
     }
 
-    private bool ShelvesAreSolved()
+    private bool PlantIsClean()
     {
         foreach (Leaf v in leafList)
             if (!v.removed) return false;
