@@ -5,19 +5,38 @@ using UnityEngine;
 
 public class Environment : MonoBehaviour
 {
-
+    public enum CurrentRoom
+    {
+        Office,
+        Bedroom,
+        Entrance,
+        LivingDiningRoom,
+        ScreeningRoom,
+        VideoPrep,
+        Garden,
+        Conservatory,
+    }
     //Singelton instance
     public static Environment instance = null;
     //Properties
+    [Header("Rooms")]
+    [SerializeField] private GameObject bedroom;
+    [SerializeField] private GameObject office;
+    [SerializeField] private GameObject entrance;
+    [SerializeField] private GameObject livingRoom;
+    [SerializeField] private GameObject screeningRoom;
+    [SerializeField] private GameObject videoRoom;
+    [SerializeField] private GameObject garden;
+    [SerializeField] private GameObject conservatory;
     [Header("Stage Turn")]
     public bool canTurnStage = true;
-    [SerializeField] private GameObject turningEnviroment;
-    [SerializeField][CanBeNull] private GameObject stageGround;
+    public GameObject turningEnviroment;
+    [CanBeNull] public GameObject stageGround;
     [SerializeField] private GameObject groundChecker;
-    [SerializeField] private float turnDuration;
-    [SerializeField] private AnimationCurve turnEase;
-    public List<DoorAdjuster> doors;
-
+    public float turnDuration;
+    public AnimationCurve turnEase;
+    
+    public CurrentRoom currentRoom;
     private void Awake()
     {
         //Singelton
@@ -35,7 +54,8 @@ public class Environment : MonoBehaviour
 
     private void Start()
     {
-        AdjustAllDoorsOnTurn();
+        //AdjustAllDoorsOnTurn();
+        currentRoom = CurrentRoom.Bedroom;
     }
 
     private void Update()
@@ -57,38 +77,107 @@ public class Environment : MonoBehaviour
         }
     }
 
-    public void TurnEnvironmentClockWise()
-    {
-        AdjustAllDoorsOnTurn();
-        Player.instance.SetCanMove(false);
-        Player.instance.transform.parent = stageGround.transform;
-        canTurnStage = false;
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, 60, 0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
-    }
-
-    public void TurnEnvironmentCounterClockWise()
-    {
-        AdjustAllDoorsOnTurn();
-        Player.instance.SetCanMove(false);
-        Player.instance.transform.parent = stageGround.transform;
-        canTurnStage = false;
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -60, 0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
-    }
-
-    void EndOfTurn()
-    {
-        Player.instance.SetCanMove(true);
-        Player.instance.transform.parent = null;
-        canTurnStage = true;
-    }
+    
     //adjusts all doors on start and on each turn call.
-    void AdjustAllDoorsOnTurn()
+    // void AdjustAllDoorsOnTurn()
+    // {
+    //     if (doors == null) return;
+    //     foreach (var door in doors)
+    //     {
+    //         //door.AdjustDoors();
+    //     }
+    // }
+    
+    // Rooms
+
+    public void SetActiveBedroom(bool roomState)
     {
-        if (doors == null) return;
-        foreach (var door in doors)
+        if (roomState)
         {
-            door.AdjustDoors();
+            bedroom.SetActive(true);
+        }
+        else
+        {
+            bedroom.SetActive(false);
         }
     }
-
+    public void SetActiveOffice(bool roomState)
+    {
+        if (roomState)
+        {
+            office.SetActive(true);
+        }
+        else
+        {
+            office.SetActive(false);
+        }
+    }
+    public void SetActiveEntrance(bool roomState)
+    {
+        if (roomState)
+        {
+            entrance.SetActive(true);
+        }
+        else
+        {
+            entrance.SetActive(false);
+        }
+    }
+    public void SetActiveLivingDiningRoom(bool roomState)
+    {
+        if (roomState)
+        {
+            livingRoom.SetActive(true);
+        }
+        else
+        {
+            livingRoom.SetActive(false);
+        }
+    }
+    public void SetActiveScreeningRoom(bool roomState)
+    {
+        if (roomState)
+        {
+            screeningRoom.SetActive(true);
+        }
+        else
+        {
+            screeningRoom.SetActive(false);
+        }
+    }
+    public void SetActiveVideoPrep(bool roomState)
+    {
+        if (roomState)
+        {
+            videoRoom.SetActive(true);
+        }
+        else
+        {
+            videoRoom.SetActive(false);
+        }
+    }
+    public void SetActiveGarden(bool roomState)
+    {
+        if (roomState)
+        {
+            garden.SetActive(true);
+        }
+        else
+        {
+            garden.SetActive(false);
+        }
+    }
+    public void SetActiveConservatory(bool roomState)
+    {
+        if (roomState)
+        {
+            conservatory.SetActive(true);
+        }
+        else
+        {
+            conservatory.SetActive(false);
+        }
+    }
 }
+
+

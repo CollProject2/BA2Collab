@@ -13,7 +13,7 @@ public class MainMenuUI : MonoBehaviour
     public bool isDisplayed { get; private set; }
 
     [Header("Objects")]
-    [SerializeField] private GameObject mainMenuPanel;
+    public GameObject mainMenuPanel;
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject flower;
     [SerializeField] private GameObject startButton;
@@ -111,7 +111,7 @@ public class MainMenuUI : MonoBehaviour
     // the sequence of events when we start the game and re load the scene
     void MainMenuSequence()
     {
-        FadeToTransparent();
+        FadeToTransparent(4);
         MoveTitleAndFlowerDown();
     }
 
@@ -128,10 +128,15 @@ public class MainMenuUI : MonoBehaviour
         CloseCurtains();
     }
 
-    void FadeToTransparent()
+    public void FadeToTransparent(float duration)
     {
         // Tweens the alpha value to zero
-        mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 0), 4);
+        mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 0), duration);
+    }
+    public void FadeToBlack(float duration)
+    {
+        // Tweens the alpha value to 1
+        mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), duration);
     }
 
     void MoveTitleAndFlowerDown()
