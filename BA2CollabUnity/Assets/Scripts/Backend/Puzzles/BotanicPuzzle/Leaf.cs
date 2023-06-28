@@ -43,6 +43,7 @@ public class Leaf : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         removed = true;
         PlantManager.instance.CallCheck();
+        Destroy(this);
     }
 
 }

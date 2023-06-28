@@ -16,41 +16,22 @@ public class PlantManager : MonoBehaviour
         {
             instance = this;
         }
+        else
+        {
+            Debug.LogError("PlantManager already exists");
+            Destroy(this);
+        }
         // isActive = false;
-
-    }
-    private void Update()
-    {
-        Player.instance.SetCanMove(false);
-        if (currentLeaf != null && isActive) { CheckInput(); }
     }
 
-    //set this as the current block
-    public void SetCurrentLeaf(Leaf leaf)
-    {
-        currentLeaf = leaf;
-    }
     public void CallCheck()
     {
-        if (PlantIsClean())
+        if (PlantIsClean() && isActive)
         {
             isActive = false;
-            //recall memory
             Player.instance.RecallMemory(associatedMemory);
             Destroy(this);
         }
-
-    }
-
-    private void CheckInput()
-    {
-
-    }
-
-    //rotate the block with the given index in the list
-    public void RemoveLeafAt(int index)
-    {
-        leafList.RemoveAt(index);
     }
 
     private bool PlantIsClean()
