@@ -20,6 +20,7 @@ public class Bear : MonoBehaviour
             {
                 Player.instance.RecallMemory(bearMemory);
                 Player.instance.hasBear = true;
+                ItemUIManager.Instance.ToggleItem(2);
                 Destroy(gameObject);
             }
         }

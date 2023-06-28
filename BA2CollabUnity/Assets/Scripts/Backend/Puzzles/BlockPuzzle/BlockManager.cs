@@ -55,6 +55,7 @@ public class BlockManager : MonoBehaviour
         //respective key with respective objects that need to be displayed
         if (blockDisplayMapping.ContainsKey(Player.instance.missingBlocks))
         {
+            ItemUIManager.Instance.ToggleItem(6 - Player.instance.missingBlocks);
             //block array that has the map with the key
             int[] blockIndexes = blockDisplayMapping[Player.instance.missingBlocks];
             foreach (int index in blockIndexes)

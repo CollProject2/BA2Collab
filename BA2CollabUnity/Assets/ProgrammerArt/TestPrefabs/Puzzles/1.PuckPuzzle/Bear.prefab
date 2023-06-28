@@ -114,4 +114,4 @@ MonoBehaviour:
   bearMemory: {fileID: 5173908792637292018, guid: 45c1775b34236ac428e1fcf6b58aeba1,
     type: 3}
   interactRange: 1
-  isInteractable: 0
+  isInteractable: 1

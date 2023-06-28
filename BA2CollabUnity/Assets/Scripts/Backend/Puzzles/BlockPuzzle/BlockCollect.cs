@@ -10,6 +10,7 @@ public class BlockCollect : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Player.instance.missingBlocks--;
+            ItemUIManager.Instance.ToggleItem(6-Player.instance.missingBlocks);
             //do other things yay u collected a block
             Destroy(gameObject);
         }

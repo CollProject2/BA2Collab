@@ -32,6 +32,7 @@ public class Glasses : MonoBehaviour
             {
                 isActive = !isActive;
                 ActivateGlasses(isActive);
+                ItemUIManager.Instance.ToggleItem(1);
             }
 
             if (isActive && canSwitch)

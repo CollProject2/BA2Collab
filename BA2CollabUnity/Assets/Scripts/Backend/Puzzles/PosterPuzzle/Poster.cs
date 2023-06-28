@@ -16,6 +16,7 @@ public class Poster : MonoBehaviour
             {
                 Player.instance.RecallMemory(posterMemory);
                 Player.instance.hasPoster = true;
+                ItemUIManager.Instance.ToggleItem(0);
                 Destroy(gameObject);
             }
         }
