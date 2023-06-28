@@ -18,6 +18,8 @@ public class Environment : MonoBehaviour
     }
     //Singelton instance
     public static Environment instance = null;
+
+    public StageMovingParts stageMovingParts;
     //Properties
     [Header("Rooms")]
     [SerializeField] private GameObject bedroom;
@@ -67,7 +69,7 @@ public class Environment : MonoBehaviour
 
     private void Start()
     {
-        currentRoom = CurrentRoom.Bedroom;
+        
     }
 
     private void Update()
@@ -187,6 +189,7 @@ public class Environment : MonoBehaviour
         else
         {
             videoRoom.SetActive(false);
+            videoDoor_scr.SetActive(false);
         }
     }
     public void SetActiveGarden(bool roomState)

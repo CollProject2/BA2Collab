@@ -116,16 +116,16 @@ public class StageTurnTrigger : MonoBehaviour
             case RoomToLoad.ScreeningRoom:
                 // from livingroom to screening room, no turn
                 TpToScreeningRoom();
+                VideoRoomToScreeningRoomExeption();
                 break;
             case RoomToLoad.VideoPrep:
                 Environment.instance.SetActiveVideoPrep(true);
+                StartCoroutine(DelayForLoadingGardenAndConservatory());
                 Environment.instance.DeactivateScreenToLivDoor();
                 break;
             case RoomToLoad.Garden:
-                Environment.instance.SetActiveGarden(true);
                 break;
             case RoomToLoad.Conservatory:
-                Environment.instance.SetActiveConservatory(true);
                 break;
         }
     }
@@ -176,7 +176,7 @@ public class StageTurnTrigger : MonoBehaviour
                         
                     Player.instance.TeleportPlayer(Environment.instance.playerTeleportPosScreeningRoom);
                     UnloadRoom();
-                    StartCoroutine(Delay());
+                    StartCoroutine(DelayForTP());
                     UIManager.instance.MainMenuUI.FadeToTransparent(1);
 
                 });
@@ -203,7 +203,7 @@ public class StageTurnTrigger : MonoBehaviour
                         
                     Player.instance.TeleportPlayer(Environment.instance.playerTeleportPosLivingRoom);
                     UnloadRoom();
-                    StartCoroutine(Delay());
+                    StartCoroutine(DelayForTP());
                     UIManager.instance.MainMenuUI.FadeToTransparent(1);
                     //add delay here and reset properties and unload area
                 });
@@ -214,7 +214,7 @@ public class StageTurnTrigger : MonoBehaviour
         }
     }
 
-    IEnumerator Delay()
+    IEnumerator DelayForTP()
     {
         yield return new WaitForSeconds(1);
         Player.instance.SetCanMove(true);
@@ -231,6 +231,27 @@ public class StageTurnTrigger : MonoBehaviour
                 break;
         }
         
+    }
+    IEnumerator DelayForLoadingGardenAndConservatory()
+    {
+        // the timing is important, -0.5 so it loads the garden before the turning is complete, the scripts get unloaded at the end of turn.
+        yield return new WaitForSeconds(Environment.instance.turnDuration - 0.5f);
+
+        
+        if (roomToLoad == RoomToLoad.VideoPrep && theRoomThisDoorBelong == RoomToLoad.ScreeningRoom)
+        {
+            Environment.instance.SetActiveGarden(true);
+            Environment.instance.SetActiveConservatory(true);
+        }
+    }
+
+    void VideoRoomToScreeningRoomExeption()
+    {
+        if (roomToLoad == RoomToLoad.ScreeningRoom && theRoomThisDoorBelong == RoomToLoad.VideoPrep)
+        {
+            Environment.instance.SetActiveGarden(false);
+            Environment.instance.SetActiveConservatory(false);
+        }
     }
     
     
