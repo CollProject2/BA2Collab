@@ -100,18 +100,20 @@ public class StageTurnTrigger : MonoBehaviour
         switch (roomToLoad)
         {
             case RoomToLoad.Bedroom:
-                Environment.instance.SetActiveBedroom(true);
+                TpToBedroom();
                 break;
             case RoomToLoad.Office:
                 Environment.instance.SetActiveOffice(true);
+                Environment.instance.DeactivateBedroomToEntrance();
                 break;
             case RoomToLoad.Entrance:
-                Environment.instance.SetActiveEntrance(true);
+                TpToEntrance();
                 Environment.instance.DeactivateLivingToScrDoor();
                 break;
             case RoomToLoad.LivingDiningRoom:
                 // works only if the door is set to no turn -> from screening room to living room transition
                 TpToLivingRoom();
+                Environment.instance.DeactivateEntranceToBedRoom();
                 break;
             case RoomToLoad.ScreeningRoom:
                 // from livingroom to screening room, no turn
@@ -213,6 +215,59 @@ public class StageTurnTrigger : MonoBehaviour
             Environment.instance.SetActiveLivingDiningRoom(true);
         }
     }
+    
+    void TpToEntrance()
+    {
+        if (turnDirection == TurnDirection.noTurn)
+        {
+            UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
+            UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
+                () =>
+                {
+                    Environment.instance.SetActiveEntrance(true);
+                    Player.instance.SetCanMove(false);
+                    Player.instance.animator.SetBool("isMoving",false);
+                    Environment.instance.canTurnStage = false;
+                    Environment.instance.turningEnviroment.transform.rotation = Quaternion.Euler(0,180,0); 
+                    Player.instance.TeleportPlayer(Environment.instance.playerTeleportPosEntrance);
+                    UnloadRoom();
+                    StartCoroutine(DelayForTP());
+                    UIManager.instance.MainMenuUI.FadeToTransparent(1);
+
+                });
+        }
+        else
+        {
+            Environment.instance.SetActiveEntrance(true);
+            
+        }
+    }
+    void TpToBedroom()
+    {
+        if (turnDirection == TurnDirection.noTurn)
+        {
+            UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
+            UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
+                () =>
+                {
+                    Environment.instance.SetActiveBedroom(true);
+                    Player.instance.SetCanMove(false);
+                    Player.instance.animator.SetBool("isMoving",false);
+                    Environment.instance.canTurnStage = false;
+                    Environment.instance.turningEnviroment.transform.rotation = Quaternion.Euler(0,0,0);   
+                    Player.instance.TeleportPlayer(Environment.instance.playerTeleportPosBedroom);
+                    UnloadRoom();
+                    StartCoroutine(DelayForTP());
+                    UIManager.instance.MainMenuUI.FadeToTransparent(1);
+
+                });
+        }
+        else
+        {
+            Environment.instance.SetActiveBedroom(true);
+            
+        }
+    }
 
     IEnumerator DelayForTP()
     {
@@ -223,12 +278,19 @@ public class StageTurnTrigger : MonoBehaviour
 
         switch (roomToLoad)
         {
+            case RoomToLoad.Bedroom:
+                Environment.instance.DeactivateEntranceToBedRoom();
+                break;
+            case RoomToLoad.Entrance:
+                Environment.instance.DeactivateBedroomToEntrance();
+                break;
             case RoomToLoad.LivingDiningRoom:
                 Environment.instance.DeactivateScreenToLivDoor();
                 break;
             case RoomToLoad.ScreeningRoom:
                 Environment.instance.DeactivateLivingToScrDoor();
                 break;
+            
         }
         
     }

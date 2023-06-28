@@ -50,6 +50,8 @@ public class Environment : MonoBehaviour
     public AnimationCurve turnEase;
     public Transform playerTeleportPosScreeningRoom;
     public Transform playerTeleportPosLivingRoom;
+    public Transform playerTeleportPosEntrance;
+    public Transform playerTeleportPosBedroom;
     
     public CurrentRoom currentRoom;
     private void Awake()
@@ -103,6 +105,16 @@ public class Environment : MonoBehaviour
     {
         screenDoor_liv.SetActive(false);
     }
+
+    public void DeactivateEntranceToBedRoom()
+    {
+        entrenceDoor_bed.SetActive(false);
+    }
+
+    public void DeactivateBedroomToEntrance()
+    {
+        bedroomDoor_ent.SetActive(false);
+    }
     // Rooms
 
     #region RoomLoaderUnloaders
@@ -118,7 +130,6 @@ public class Environment : MonoBehaviour
         else
         {
             bedroom.SetActive(false);
-            bedroomDoor_ent.SetActive(false);
             bedroomDoor_ofc.SetActive(false);
         }
     }
@@ -147,7 +158,6 @@ public class Environment : MonoBehaviour
         {
             entrance.SetActive(false);
             entranceDoor_liv.SetActive(false);
-            entrenceDoor_bed.SetActive(false);
         }
     }
     public void SetActiveLivingDiningRoom(bool roomState)
