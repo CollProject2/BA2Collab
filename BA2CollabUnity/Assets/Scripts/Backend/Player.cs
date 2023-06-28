@@ -136,4 +136,11 @@ public class Player : MonoBehaviour
     {
         currentStage++;
     }
+
+    public void TeleportPlayer(Transform tpPos)
+    {
+        characterController.enabled = false;
+        transform.position = tpPos.position;
+        characterController.enabled = true;
+    }
 }

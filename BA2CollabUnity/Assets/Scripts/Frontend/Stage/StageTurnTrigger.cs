@@ -107,30 +107,19 @@ public class StageTurnTrigger : MonoBehaviour
                 break;
             case RoomToLoad.Entrance:
                 Environment.instance.SetActiveEntrance(true);
+                Environment.instance.DeactivateLivingToScrDoor();
                 break;
             case RoomToLoad.LivingDiningRoom:
-                Environment.instance.SetActiveLivingDiningRoom(true);
+                // works only if the door is set to no turn -> from screening room to living room transition
+                TpToLivingRoom();
                 break;
             case RoomToLoad.ScreeningRoom:
-                // scene go dark and come back
-                UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
-                UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
-                    () =>
-                    {
-                        Environment.instance.SetActiveScreeningRoom(true);
-                        Player.instance.SetCanMove(false);
-                        Player.instance.animator.SetBool("isMoving",false);
-                        Environment.instance.canTurnStage = false;
-                        
-                        // teleport player
-                        UIManager.instance.MainMenuUI.FadeToTransparent(1);
-                        //add delay here and reset properties and unload area
-                    });
-                
-                
+                // from livingroom to screening room, no turn
+                TpToScreeningRoom();
                 break;
             case RoomToLoad.VideoPrep:
                 Environment.instance.SetActiveVideoPrep(true);
+                Environment.instance.DeactivateScreenToLivDoor();
                 break;
             case RoomToLoad.Garden:
                 Environment.instance.SetActiveGarden(true);
@@ -170,6 +159,78 @@ public class StageTurnTrigger : MonoBehaviour
                 Environment.instance.SetActiveConservatory(false);
                 break;
         }
+    }
+
+    void TpToScreeningRoom()
+    {
+        if (turnDirection == TurnDirection.noTurn)
+        {
+            UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
+            UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
+                () =>
+                {
+                    Environment.instance.SetActiveScreeningRoom(true);
+                    Player.instance.SetCanMove(false);
+                    Player.instance.animator.SetBool("isMoving",false);
+                    Environment.instance.canTurnStage = false;
+                        
+                    Player.instance.TeleportPlayer(Environment.instance.playerTeleportPosScreeningRoom);
+                    UnloadRoom();
+                    StartCoroutine(Delay());
+                    UIManager.instance.MainMenuUI.FadeToTransparent(1);
+
+                });
+        }
+        else
+        {
+            Environment.instance.SetActiveScreeningRoom(true);
+        }
+        
+    }
+
+    void TpToLivingRoom()
+    {
+        if (turnDirection == TurnDirection.noTurn)
+        {
+            UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
+            UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
+                () =>
+                {
+                    Environment.instance.SetActiveLivingDiningRoom(true);
+                    Player.instance.SetCanMove(false);
+                    Player.instance.animator.SetBool("isMoving",false);
+                    Environment.instance.canTurnStage = false;
+                        
+                    Player.instance.TeleportPlayer(Environment.instance.playerTeleportPosLivingRoom);
+                    UnloadRoom();
+                    StartCoroutine(Delay());
+                    UIManager.instance.MainMenuUI.FadeToTransparent(1);
+                    //add delay here and reset properties and unload area
+                });
+        }
+        else
+        {
+            Environment.instance.SetActiveLivingDiningRoom(true);
+        }
+    }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1);
+        Player.instance.SetCanMove(true);
+        Environment.instance.canTurnStage = true;
+        gameObject.GetComponent<Collider>().enabled = true;
+
+        switch (roomToLoad)
+        {
+            case RoomToLoad.LivingDiningRoom:
+                Environment.instance.DeactivateScreenToLivDoor();
+                break;
+            case RoomToLoad.ScreeningRoom:
+                Environment.instance.DeactivateLivingToScrDoor();
+                break;
+        }
+        
     }
     
     

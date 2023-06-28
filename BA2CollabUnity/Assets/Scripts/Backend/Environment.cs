@@ -28,6 +28,17 @@ public class Environment : MonoBehaviour
     [SerializeField] private GameObject videoRoom;
     [SerializeField] private GameObject garden;
     [SerializeField] private GameObject conservatory;
+    [Header("Doors")] 
+    [SerializeField] private GameObject bedroomDoor_ent;
+    [SerializeField] private GameObject bedroomDoor_ofc;
+    [SerializeField] private GameObject officeDoor_bed;
+    [SerializeField] private GameObject entrenceDoor_bed;
+    [SerializeField] private GameObject entranceDoor_liv;
+    [SerializeField] private GameObject livingDoor_ent;
+    [SerializeField] private GameObject livingDoor_scr;
+    [SerializeField] private GameObject screenDoor_liv;
+    [SerializeField] private GameObject screenDoor_vid;
+    [SerializeField] private GameObject videoDoor_scr;
     [Header("Stage Turn")]
     public bool canTurnStage = true;
     public GameObject turningEnviroment;
@@ -35,6 +46,8 @@ public class Environment : MonoBehaviour
     [SerializeField] private GameObject groundChecker;
     public float turnDuration;
     public AnimationCurve turnEase;
+    public Transform playerTeleportPosScreeningRoom;
+    public Transform playerTeleportPosLivingRoom;
     
     public CurrentRoom currentRoom;
     private void Awake()
@@ -54,7 +67,6 @@ public class Environment : MonoBehaviour
 
     private void Start()
     {
-        //AdjustAllDoorsOnTurn();
         currentRoom = CurrentRoom.Bedroom;
     }
 
@@ -78,27 +90,34 @@ public class Environment : MonoBehaviour
     }
 
     
-    //adjusts all doors on start and on each turn call.
-    // void AdjustAllDoorsOnTurn()
-    // {
-    //     if (doors == null) return;
-    //     foreach (var door in doors)
-    //     {
-    //         //door.AdjustDoors();
-    //     }
-    // }
-    
+    //Doors 
+    // these doors have slightly different functionalities, Unloading them separetely
+    public void DeactivateLivingToScrDoor()
+    {
+        livingDoor_scr.SetActive(false);
+    }
+
+    public void DeactivateScreenToLivDoor()
+    {
+        screenDoor_liv.SetActive(false);
+    }
     // Rooms
+
+    #region RoomLoaderUnloaders
 
     public void SetActiveBedroom(bool roomState)
     {
         if (roomState)
         {
             bedroom.SetActive(true);
+            bedroomDoor_ent.SetActive(true);
+            bedroomDoor_ofc.SetActive(true);
         }
         else
         {
             bedroom.SetActive(false);
+            bedroomDoor_ent.SetActive(false);
+            bedroomDoor_ofc.SetActive(false);
         }
     }
     public void SetActiveOffice(bool roomState)
@@ -106,10 +125,12 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             office.SetActive(true);
+            officeDoor_bed.SetActive(true);
         }
         else
         {
             office.SetActive(false);
+            officeDoor_bed.SetActive(false);
         }
     }
     public void SetActiveEntrance(bool roomState)
@@ -117,10 +138,14 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             entrance.SetActive(true);
+            entranceDoor_liv.SetActive(true);
+            entrenceDoor_bed.SetActive(true);
         }
         else
         {
             entrance.SetActive(false);
+            entranceDoor_liv.SetActive(false);
+            entrenceDoor_bed.SetActive(false);
         }
     }
     public void SetActiveLivingDiningRoom(bool roomState)
@@ -128,10 +153,14 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             livingRoom.SetActive(true);
+            livingDoor_ent.SetActive(true);
+            livingDoor_scr.SetActive(true);
         }
         else
         {
             livingRoom.SetActive(false);
+            livingDoor_ent.SetActive(false);
+            
         }
     }
     public void SetActiveScreeningRoom(bool roomState)
@@ -139,10 +168,13 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             screeningRoom.SetActive(true);
+            screenDoor_liv.SetActive(true);
+            screenDoor_vid.SetActive(true);
         }
         else
         {
             screeningRoom.SetActive(false);
+            screenDoor_vid.SetActive(false);
         }
     }
     public void SetActiveVideoPrep(bool roomState)
@@ -150,6 +182,7 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             videoRoom.SetActive(true);
+            videoDoor_scr.SetActive(true);
         }
         else
         {
@@ -178,6 +211,9 @@ public class Environment : MonoBehaviour
             conservatory.SetActive(false);
         }
     }
+
+    #endregion
+    
 }
 
 
