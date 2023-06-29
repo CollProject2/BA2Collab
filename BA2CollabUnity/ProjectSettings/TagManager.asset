@@ -9,6 +9,7 @@ TagManager:
   - Letter
   - Number
   - TextBlock
+  - PP
   layers:
   - Default
   - TransparentFX
