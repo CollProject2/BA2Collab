@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
     public bool hasPoster;
     public bool hasGlasses;
     public bool hasBear;
+    
+    
 
     public int currentStage;
     public int missingBlocks;
@@ -142,5 +144,10 @@ public class Player : MonoBehaviour
         characterController.enabled = false;
         transform.position = tpPos.position;
         characterController.enabled = true;
+    }
+
+    public void SetCharacterController(bool state)
+    {
+        characterController.enabled = state;
     }
 }

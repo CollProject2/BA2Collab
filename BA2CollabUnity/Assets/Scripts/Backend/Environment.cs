@@ -93,6 +93,21 @@ public class Environment : MonoBehaviour
         }
     }
 
+    public void TurnEnvironmentAtStart()
+    {
+        Player.instance.transform.parent = turningEnviroment.transform;
+        Player.instance.SetCharacterController(false);
+        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0),2).SetEase(turnEase).OnComplete(
+            ()=>
+            {
+                Player.instance.transform.parent = null;
+                Player.instance.SetCharacterController(true);
+                LightManager.instance.TurnOnPlayerLights();
+                DeactivateEntranceToBedRoomDoor();
+                SetActiveEntrance(false);
+            });
+    }
+
     
     //Doors 
     // these doors have slightly different functionalities, Unloading them separetely
@@ -106,7 +121,7 @@ public class Environment : MonoBehaviour
         screenDoor_liv.SetActive(false);
     }
 
-    public void DeactivateEntranceToBedRoom()
+    public void DeactivateEntranceToBedRoomDoor()
     {
         entrenceDoor_bed.SetActive(false);
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.263
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.033484384, g: 0.035280734, b: 0.031843655, a: 0.263}
+  m_IndirectSpecularColor: {r: 0.0334845, g: 0.035280813, b: 0.0318437, a: 0.263}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -28087,6 +28087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 615bb33636e59ac47b9b883cab13b7cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageMovingParts: {fileID: 0}
   bedroom: {fileID: 3674330687858740907}
   office: {fileID: 353198697493884676}
   entrance: {fileID: 5916632978635320547}
@@ -28145,6 +28146,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   playerTeleportPosScreeningRoom: {fileID: 262928268}
   playerTeleportPosLivingRoom: {fileID: 1373247686}
+  playerTeleportPosEntrance: {fileID: 0}
+  playerTeleportPosBedroom: {fileID: 0}
   currentRoom: 0
 --- !u!64 &1560610164
 MeshCollider:
@@ -47124,8 +47127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811733154757177}
-  backwardCollider: {fileID: 7716648332718970774}
 --- !u!114 &2175640182562826811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47138,8 +47139,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811732740250826}
-  backwardCollider: {fileID: 7716648332867465573}
 --- !u!114 &2175640182967702241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47152,8 +47151,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811733673616400}
-  backwardCollider: {fileID: 7716648332198595007}
 --- !u!114 &2175640183249818775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47166,8 +47163,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811733429281382}
-  backwardCollider: {fileID: 7716648332449157065}
 --- !u!114 &2175640183330329462
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47180,8 +47175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811733365155207}
-  backwardCollider: {fileID: 7716648332578097192}
 --- !u!114 &2175640183709014675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47194,8 +47187,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811731606776930}
-  backwardCollider: {fileID: 7716648333999030733}
 --- !u!114 &2175640183794179105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47208,8 +47199,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811731823602384}
-  backwardCollider: {fileID: 7716648334115194751}
 --- !u!114 &2175640183949264633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47222,8 +47211,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811732507111432}
-  backwardCollider: {fileID: 7716648333162929575}
 --- !u!114 &2175640184293883999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47236,8 +47223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811732183856814}
-  backwardCollider: {fileID: 7716648333492804353}
 --- !u!114 &2175640184336858295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47250,8 +47235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72ca89b54b0971f4ba9b39076b9dcb6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardCollider: {fileID: 2078811732358859334}
-  backwardCollider: {fileID: 7716648333584066537}
 --- !u!4 &2195680342197484969
 Transform:
   m_ObjectHideFlags: 0

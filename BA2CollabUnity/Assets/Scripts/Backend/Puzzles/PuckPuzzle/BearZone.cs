@@ -3,9 +3,10 @@ using UnityEngine;
 public class BearZone : MonoBehaviour
 {
     public PlayerMemory bearMemory;
-    public GameObject bear;
     public int interactRange;
     bool isPlaced;
+    public Animator boxAnimator;
+    public GameObject interactParticle;
 
     private void Awake()
     {
@@ -20,10 +21,10 @@ public class BearZone : MonoBehaviour
             //press E to collect
             if (Input.GetKeyDown(KeyCode.E))
             {
-                Instantiate(bear);
-                bear.transform.position = new Vector3(32, 0.5f, 3); //hardcoded for now
+                // put bear in box
+                boxAnimator.SetTrigger("PutBearInBox");
                 ChangeValues();
-                Destroy(gameObject);
+                
             }
         }
         else

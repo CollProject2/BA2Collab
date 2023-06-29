@@ -29,12 +29,7 @@ public class StageTurnTrigger : MonoBehaviour
     public TurnDirection turnDirection;
     public RoomToLoad roomToLoad;
     public RoomToLoad theRoomThisDoorBelong;
-    private DoorAdjuster doorAdjuster;
-
-    private void Awake()
-    {
-        doorAdjuster = gameObject.GetComponentInParent<DoorAdjuster>();
-    }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -113,7 +108,7 @@ public class StageTurnTrigger : MonoBehaviour
             case RoomToLoad.LivingDiningRoom:
                 // works only if the door is set to no turn -> from screening room to living room transition
                 TpToLivingRoom();
-                Environment.instance.DeactivateEntranceToBedRoom();
+                Environment.instance.DeactivateEntranceToBedRoomDoor();
                 break;
             case RoomToLoad.ScreeningRoom:
                 // from livingroom to screening room, no turn
@@ -279,7 +274,7 @@ public class StageTurnTrigger : MonoBehaviour
         switch (roomToLoad)
         {
             case RoomToLoad.Bedroom:
-                Environment.instance.DeactivateEntranceToBedRoom();
+                Environment.instance.DeactivateEntranceToBedRoomDoor();
                 break;
             case RoomToLoad.Entrance:
                 Environment.instance.DeactivateBedroomToEntrance();

@@ -22,6 +22,10 @@ public class LightManager : MonoBehaviour
     [SerializeField] private GameObject frontWarmOrange;
     [SerializeField] private GameObject doorlightRight;
     [SerializeField] private GameObject doorlightLeft;
+    
+    [Header("BedroomLights")]
+    [SerializeField] private GameObject bedroomOfficeDoorHighlight;
+
 
     public bool canLookatPlayer = false;
     private void Awake()
@@ -74,5 +78,10 @@ public class LightManager : MonoBehaviour
         doorlightLeft.SetActive(false);
         doorlightRight.SetActive(false);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.lightOpen,transform.position);
+    }
+
+    public void OpenBedroomOfficeDoorHighlights()
+    {
+        bedroomOfficeDoorHighlight.SetActive(true);
     }
 }

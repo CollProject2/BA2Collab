@@ -104,8 +104,13 @@ public class MainMenuUI : MonoBehaviour
         canPause = true;
         Player.instance.SetCanMove(true);
         LightManager.instance.TurnOffFrontStageLights();
-        LightManager.instance.TurnOnPlayerLights();
         UIManager.instance.dialogues.dialogueBox.MoveToActivePos();
+        Invoke("StartFirstDialogue", 1);
+    }
+
+    void StartFirstDialogue()
+    {
+        UIManager.instance.dialogues.StartDialogue("OnGameStartCall");
     }
 
     // the sequence of events when we start the game and re load the scene
@@ -141,7 +146,7 @@ public class MainMenuUI : MonoBehaviour
 
     void MoveTitleAndFlowerDown()
     {
-        title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
+        title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(titleMoveCurve);
         flower.transform.DOMove(flowerActivePos.position, flowerMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.titleDown,transform.position);
     }
@@ -184,6 +189,7 @@ public class MainMenuUI : MonoBehaviour
         mandala.GetComponent<SpriteRenderer>().DOColor(new Color(1, 1, 1, 0), 1);
         CameraZoomSequence();
         OpenCurtains();
+        
         MoveButtonsAndTitleAway(); // TEMPorary
         AudioManager.instance.PlayOneShot(FMODEvents.instance.startButtonClick,transform.position);
         isDisplayed = false;
