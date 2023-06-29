@@ -766,7 +766,7 @@ PrefabInstance:
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.12
+      value: -1.49
       objectReference: {fileID: 0}
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
@@ -776,7 +776,7 @@ PrefabInstance:
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.75063026
       objectReference: {fileID: 0}
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
@@ -786,7 +786,7 @@ PrefabInstance:
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.6607225
       objectReference: {fileID: 0}
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
@@ -801,7 +801,7 @@ PrefabInstance:
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -82.71
       objectReference: {fileID: 0}
     - target: {fileID: 164709832945011114, guid: 4fffca986eea0174e9aaee4944cb88b2,
         type: 3}
@@ -812,26 +812,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MDL_Flower_01
-      objectReference: {fileID: 0}
-    - target: {fileID: 1633230266314199621, guid: 4fffca986eea0174e9aaee4944cb88b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7331624974534483417, guid: 4fffca986eea0174e9aaee4944cb88b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8715770437061226362, guid: 4fffca986eea0174e9aaee4944cb88b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8728566705110048781, guid: 4fffca986eea0174e9aaee4944cb88b2,
-        type: 3}
-      propertyPath: m_Mass
-      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4fffca986eea0174e9aaee4944cb88b2, type: 3}

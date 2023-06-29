@@ -8,6 +8,7 @@ public class BlockManager : MonoBehaviour
     private Puzzle puzzle;
     public List<PuzzleBlock> gridBlocks = new();
     public static BlockManager instance = null;
+    public bool isInteractable;
 
     //need to make this a list
     private Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
@@ -24,9 +25,11 @@ public class BlockManager : MonoBehaviour
     {
         //singleton
         if (instance == null)
-        {
+        
             instance = this;
-        }
+        else
+            Destroy(this);
+
         puzzle = GetComponentInParent<Puzzle>();
         DisplayNextBlock();
     }
@@ -35,6 +38,29 @@ public class BlockManager : MonoBehaviour
     public void SetCurrentBlock(PuzzleBlock block)
     {
         currentBlock = block;
+    }
+    public void OnButtonClickBlock(int direction)
+    {
+        if (currentBlock != null)
+            RotateBlockAt(currentBlock.index, (RotationDirection)direction);
+    }
+    private void Update()
+    {
+        if (!isInteractable) return;
+        CheckInput();
+
+    }
+    private void CheckInput()
+    {
+        //check if the player pressed the respective key
+        if (Input.GetKeyDown(KeyCode.A))
+            OnButtonClickBlock(1);
+        if (Input.GetKeyDown(KeyCode.D))
+            OnButtonClickBlock(3);
+        if (Input.GetKeyDown(KeyCode.W))
+            OnButtonClickBlock(0);
+        if (Input.GetKeyDown(KeyCode.S))
+            OnButtonClickBlock(1);
     }
 
     //make the blocks clickable
@@ -58,11 +84,10 @@ public class BlockManager : MonoBehaviour
             ItemUIManager.Instance.ToggleItem(6 - Player.instance.missingBlocks);
             //block array that has the map with the key
             int[] blockIndexes = blockDisplayMapping[Player.instance.missingBlocks];
+            
             foreach (int index in blockIndexes)
-            {
-                //set active
                 gridBlocks[index].gameObject.SetActive(true);
-            }
+            
         }
     }
 
@@ -115,8 +140,7 @@ public class BlockManager : MonoBehaviour
     public void RotateBlockAt(int index, RotationDirection direction)
     {
         if (index >= 0 && index < gridBlocks.Count)
-        {
             gridBlocks[index].RotateBlock(direction);
-        }
+        
     }
 }

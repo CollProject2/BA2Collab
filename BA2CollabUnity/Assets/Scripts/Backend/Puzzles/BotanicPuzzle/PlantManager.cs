@@ -12,15 +12,11 @@ public class PlantManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
+        if (instance == null)       
+            instance = this;        
         else
-        {
-            Debug.LogError("PlantManager already exists");
             Destroy(this);
-        }
+        
         // isActive = false;
     }
 

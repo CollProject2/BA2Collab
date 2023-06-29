@@ -1682,7 +1682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   associatedMemory: {fileID: 8281019019743828014, guid: 65d9e12319ffa8a4cb65e9c48b234dc6,
     type: 3}
-  puzzleObj: {fileID: 0}
 --- !u!114 &2409819287273843289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1705,7 @@ MonoBehaviour:
   - {fileID: 4610559047045968619}
   - {fileID: 8444906673542498542}
   - {fileID: 6959430692921966288}
+  isInteractable: 1
   delayAfterPuzzleEnd: 2.5
 --- !u!1 &2849351543498190924
 GameObject:
@@ -5953,21 +5953,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5980714897263086919, guid: 418ace74b40bccd42b0df2b51a2e9047,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980714897263086919, guid: 418ace74b40bccd42b0df2b51a2e9047,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980714897263086919, guid: 418ace74b40bccd42b0df2b51a2e9047,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.22
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980714897263086919, guid: 418ace74b40bccd42b0df2b51a2e9047,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -6015,11 +6000,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5980714897263086919, guid: 418ace74b40bccd42b0df2b51a2e9047,
-        type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 418ace74b40bccd42b0df2b51a2e9047, type: 3}

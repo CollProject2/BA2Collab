@@ -1682,7 +1682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   associatedMemory: {fileID: 5173908792637292018, guid: dcdecb53317682f47b5ab9c510aea55c,
     type: 3}
-  puzzleObj: {fileID: 0}
 --- !u!114 &2409819287273843289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1706,6 +1705,7 @@ MonoBehaviour:
   - {fileID: 4610559047045968619}
   - {fileID: 8444906673542498542}
   - {fileID: 6959430692921966288}
+  isInteractable: 1
   delayAfterPuzzleEnd: 2.5
 --- !u!1 &2849351543498190924
 GameObject:
