@@ -7,6 +7,8 @@ public class BearZone : MonoBehaviour
     bool isPlaced;
     public Animator boxAnimator;
     public GameObject interactParticle;
+    private bool isInteractable;
+    
 
     private void Awake()
     {
@@ -14,6 +16,15 @@ public class BearZone : MonoBehaviour
     }
     public void Update()
     {
+        if (isInteractable)
+        {
+            Interact();;
+        }
+    }
+
+    void Interact()
+    {
+        
         if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !isPlaced && Player.instance.hasBear)
         {
             // open HUD to give visual feedback
@@ -24,13 +35,16 @@ public class BearZone : MonoBehaviour
                 // put bear in box
                 boxAnimator.SetTrigger("PutBearInBox");
                 ChangeValues();
-                
+                isInteractable = false;
+
             }
         }
-        else
-        {
-            // close HUD
-        }
+        
+    }
+
+    public void SetBoxActive()
+    {
+        isInteractable = true;
     }
 
     private void ChangeValues()

@@ -8,7 +8,7 @@ public class OpenBedRoomOfficeDoorHighlights : Command
 {
     public override void OnEnter()
     {
-        LightManager.instance.OpenBedroomOfficeDoorHighlights();
+        LightManager.instance.OpenBedroomOfficeDoorHighlights(true);
         Continue();
     }
 }

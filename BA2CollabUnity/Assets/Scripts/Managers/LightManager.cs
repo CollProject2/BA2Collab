@@ -25,6 +25,9 @@ public class LightManager : MonoBehaviour
     
     [Header("BedroomLights")]
     [SerializeField] private GameObject bedroomOfficeDoorHighlight;
+    
+    [Header("OfficeLights")]
+    [SerializeField] private GameObject OfficeMovingBoxhighlight;
 
 
     public bool canLookatPlayer = false;
@@ -80,8 +83,13 @@ public class LightManager : MonoBehaviour
         AudioManager.instance.PlayOneShot(FMODEvents.instance.lightOpen,transform.position);
     }
 
-    public void OpenBedroomOfficeDoorHighlights()
+    public void OpenBedroomOfficeDoorHighlights(bool state)
     {
-        bedroomOfficeDoorHighlight.SetActive(true);
+        bedroomOfficeDoorHighlight.SetActive(state);
+    }
+
+    public void OpenOfficeMovingBoxHighLight(bool state)
+    {
+        OfficeMovingBoxhighlight.SetActive(state);
     }
 }

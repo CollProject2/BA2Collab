@@ -33,6 +33,7 @@ public class Puzzle2DManager : MonoBehaviour
             //recall memory
             Player.instance.RecallMemory(associatedMemory);
             DeactivatePuzzle();
+            
         }
 
     }
