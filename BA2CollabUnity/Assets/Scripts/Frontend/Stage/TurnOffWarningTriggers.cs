@@ -11,6 +11,7 @@ public class TurnOffWarningTriggers : MonoBehaviour
     {
         foreach (var warning in Warnings)
         {
+            if(warning !=null)
             Destroy(warning.gameObject);
         }
         

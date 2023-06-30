@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
     public bool hasPoster;
     public bool hasGlasses;
     public bool hasBear;
+    public bool hasMovingBox;
     
     
 

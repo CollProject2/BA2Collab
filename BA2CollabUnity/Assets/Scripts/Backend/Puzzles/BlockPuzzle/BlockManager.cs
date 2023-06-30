@@ -54,7 +54,7 @@ public class BlockManager : MonoBehaviour
     {
         //check if the player pressed the respective key
         if (Input.GetKeyDown(KeyCode.A))
-            OnButtonClickBlock(1);
+            OnButtonClickBlock(2);
         if (Input.GetKeyDown(KeyCode.D))
             OnButtonClickBlock(3);
         if (Input.GetKeyDown(KeyCode.W))
@@ -116,8 +116,6 @@ public class BlockManager : MonoBehaviour
             Player.instance.RecallMemory(puzzle.associatedMemory);
             //move the last block in place
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
-            //call the function after the delay
-            Invoke(nameof(OnPuzzleFinishedMove), delayAfterPuzzleEnd);
         }
     }
 
@@ -129,7 +127,7 @@ public class BlockManager : MonoBehaviour
     }
 
     //move the puzzle away
-    private void OnPuzzleFinishedMove()
+    public void OnPuzzleFinishedMove()
     {
         gameObject.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
             .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve)

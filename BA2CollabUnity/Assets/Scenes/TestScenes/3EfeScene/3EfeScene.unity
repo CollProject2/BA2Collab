@@ -1685,6 +1685,87 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: -7511558181221131132, guid: 7845af96aebf7584ca7f049b4768f445, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7845af96aebf7584ca7f049b4768f445, type: 3}
+--- !u!1001 &187561481
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 335212936}
+    m_Modifications:
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344310, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 8072581995215344311, guid: eb2e0f34239da324a8f0950a8f73feb1,
+        type: 3}
+      propertyPath: isHidden
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8072581995215344316, guid: eb2e0f34239da324a8f0950a8f73feb1, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: eb2e0f34239da324a8f0950a8f73feb1, type: 3}
+--- !u!4 &187561482 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8072581995215344307, guid: eb2e0f34239da324a8f0950a8f73feb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 187561481}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &192580820
 GameObject:
   m_ObjectHideFlags: 0
@@ -8254,9 +8335,22 @@ Transform:
   m_Children:
   - {fileID: 1347235656}
   - {fileID: 1527930261}
+  - {fileID: 187561482}
   m_Father: {fileID: 1129560131826136510}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &343580408 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8072581995215344311, guid: eb2e0f34239da324a8f0950a8f73feb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 187561481}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91c24e9f7c91dc9468363a3dff767e16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &347192420
 GameObject:
   m_ObjectHideFlags: 0
@@ -9996,6 +10090,7 @@ GameObject:
   - component: {fileID: 438292298}
   - component: {fileID: 438292297}
   - component: {fileID: 438292295}
+  - component: {fileID: 438292301}
   m_Layer: 0
   m_Name: Flowchart_Memory Unlocked 1
   m_TagString: Untagged
@@ -10044,14 +10139,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: 390.05765
-    y: -3.702156
-    width: 109.75609
+    x: -107.31058
+    y: 306.82434
+    width: 134.21051
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
   itemId: 0
-  blockName: StartBlock
+  blockName: Office3dPuzzle
   description: 
   eventHandler: {fileID: 0}
   commandList:
@@ -10068,6 +10163,7 @@ MonoBehaviour:
   - {fileID: 438292266}
   - {fileID: 438292237}
   - {fileID: 438292256}
+  - {fileID: 438292301}
   - {fileID: 438292251}
   suppressAllAutoSelections: 0
 --- !u!114 &438292235
@@ -10083,11 +10179,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 734.7569, y: 137.40932}
+  scrollPos: {x: 770.37946, y: 152.42854}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 542
-  zoom: 0.8200002
+  zoom: 0.7600002
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -10247,7 +10343,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 696.2342
     y: -5.7021637
-    width: 103.65852
+    width: 101.31577
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10416,7 +10512,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 551.73413
     y: -5.2021637
-    width: 102.43901
+    width: 101.31577
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10795,7 +10891,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -116.220604
     y: 3.488018
-    width: 146.34145
+    width: 146.05261
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -10913,7 +11009,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -116.525894
     y: 75.63995
-    width: 123.170715
+    width: 119.736824
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11016,9 +11112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -117.60107
-    y: 198.1985
-    width: 152.439
+    x: -110.28398
+    y: 145.75945
+    width: 148.68417
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11261,7 +11357,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 23.888214
     y: 74.79423
-    width: 147.56096
+    width: 142.10522
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11304,9 +11400,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -107.60107
-    y: 276.1985
-    width: 149.99997
+    x: -113.69863
+    y: 228.63748
+    width: 146.05261
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11393,6 +11489,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemId: 63
+  indentLevel: 0
+--- !u!114 &438292301
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438292231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 845f8bfcfb511c742b858b0610ee9c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 70
   indentLevel: 0
 --- !u!1 &441738906
 GameObject:
@@ -12182,6 +12292,7 @@ MonoBehaviour:
   hasPoster: 0
   hasGlasses: 0
   hasBear: 0
+  hasMovingBox: 0
   currentStage: 0
   missingBlocks: 0
 --- !u!143 &468105194
@@ -34159,9 +34270,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bearMemory: {fileID: 5173908792637292018, guid: 39b3273b8f9731645839704ebaa4463f,
     type: 3}
-  interactRange: 2
+  interactRange: 0.5
   boxAnimator: {fileID: 2282374337246714256}
   interactParticle: {fileID: 481991416}
+  bearModel: {fileID: 4986899576417554600, guid: 3b1125c6b9d3f474bb390507588629d6,
+    type: 3}
+  puzzleItemOffice3d: {fileID: 343580408}
 --- !u!65 &1527930263
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -52400,7 +52514,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2089023980
 Transform:
   m_ObjectHideFlags: 0

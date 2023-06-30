@@ -20,7 +20,7 @@ public class FrameItem : MonoBehaviour
     [SerializeField] private float framePuzzleMovementDuration;
     private void Awake()
     {
-        interactRange = 2;
+        interactRange = 0.5f;
         framePuzzleObj.SetActive(false);
         canCloseFrame = false;
         isInteractable = true;
