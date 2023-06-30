@@ -41,8 +41,6 @@ public class FrameItem : MonoBehaviour
         interactParticle.SetActive(true);
         if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
         {
-            // open HUD to give visual feedback
-            interactParticle.SetActive(true);
             //press E to collect
             if (Input.GetKeyDown(KeyCode.E))
             {

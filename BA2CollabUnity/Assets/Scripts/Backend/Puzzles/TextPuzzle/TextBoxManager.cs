@@ -37,7 +37,7 @@ public class TextBoxManager : MonoBehaviour
             isActive = false;
             //recall memory
             Player.instance.RecallMemory(associatedMemory);
-            Destroy(this);
+            
         }
     }
 
