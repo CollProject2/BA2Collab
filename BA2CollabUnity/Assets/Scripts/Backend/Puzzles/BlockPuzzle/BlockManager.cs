@@ -73,6 +73,7 @@ public class BlockManager : MonoBehaviour
     public void DeactivateBlocks()
     {
         gridBlocks.ForEach(block => block.interactable = false);
+        isInteractable = false;
     }
 
     //display the next block if we collected a block

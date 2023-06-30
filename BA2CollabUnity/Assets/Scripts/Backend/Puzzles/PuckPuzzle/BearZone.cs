@@ -4,6 +4,7 @@ using UnityEngine;
 public class BearZone : MonoBehaviour
 {
     public PlayerMemory bearMemory;
+    public MovingBox2 movingBox2;
     public float interactRange;
     bool isPlaced;
     public Animator boxAnimator;
@@ -45,7 +46,16 @@ public class BearZone : MonoBehaviour
                 var bear = Instantiate(bearModel,
                     new Vector3(transform.position.x, transform.position.y + 1, transform.position.z),
                     transform.rotation);
-                bear.transform.DOMove(transform.position, 1).OnComplete(()=>puzzleItemOffice3d.SetIsHidden(false) );
+                bear.transform.DOMove(transform.position, 1).OnComplete(()=>
+                {
+                    bear.transform.parent = transform;
+                    bear.SetActive(false);
+                    puzzleItemOffice3d.SetIsHidden(false);
+                    movingBox2.enabled = true;
+                    
+                    Destroy(this);
+                });
+                
             }
         }
         

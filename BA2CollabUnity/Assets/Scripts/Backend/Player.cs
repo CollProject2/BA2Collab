@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     private Vector3 direction;
     public Vector3 velocity;
+    public Transform playerCarrypos;
     public Vector3 currentPosition { get; private set; }
 
     public List<Item> inventory { get; private set; }

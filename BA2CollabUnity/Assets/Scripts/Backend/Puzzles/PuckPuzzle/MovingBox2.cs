@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class MovingBox2 : MonoBehaviour
 {
     public PlayerMemory movingBox2Memory;
-    public int interactRange;
+    public float interactRange;
     bool isPlaced;
     public GameObject interactParticle;
     private bool isInteractable;
@@ -27,7 +28,7 @@ public class MovingBox2 : MonoBehaviour
     {
         interactParticle.SetActive(true);
 
-        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !isPlaced && Player.instance.hasMovingBox)
+        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !isPlaced && !Player.instance.hasMovingBox)
         {
             //press E to collect
             if (Input.GetKeyDown(KeyCode.E))
@@ -41,6 +42,17 @@ public class MovingBox2 : MonoBehaviour
     private void PickUpBox()
     {
         //pick up box stuff 
+        // change player anim 
+        // move the box or make it invisible and then put it on player
+        interactParticle.SetActive(false);
+        Player.instance.SetCanMove(false);
+        transform.DOMove(Player.instance.playerCarrypos.position, 1).OnComplete(
+            () =>
+            {
+                transform.parent = Player.instance.transform;
+                Player.instance.SetCanMove(true);
+            });
+        
     }
 
     public void SetBoxActive()
@@ -52,6 +64,7 @@ public class MovingBox2 : MonoBehaviour
     {
         isPlaced = true;
         isInteractable = false;
+        Player.instance.hasMovingBox = true;
         Player.instance.RecallMemory(movingBox2Memory);
     }
 }
