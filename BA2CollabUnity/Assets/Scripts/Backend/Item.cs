@@ -14,12 +14,6 @@ public class Item : MonoBehaviour
     public float interactRange;
     public bool isHidden;
     
-
-    private void Awake()
-    {
-        //setIsHidden(true);
-    }
-
     private void Update()
     {
         //update distance
@@ -44,14 +38,11 @@ public class Item : MonoBehaviour
                 Collect();
             }
         }
-        
     }
     public void Collect()
     {
         //adds item to player inventory
         Player.instance.CollectItem(this);
-        //animates item on collect
-        AnimateItemOnCollect();
         //closes HUD when activating the puzzle 
         InteractParticle.SetActive(false);
         //solves the puzzle associated with the item
@@ -59,28 +50,11 @@ public class Item : MonoBehaviour
         SetIsHidden(true);
         
     }
-    
-    //set model inactive
-    void HideItemModel()
-    {
-        modelObj.SetActive(true);
-    }
-
+   
     public void SetIsHidden(bool state)
     {
         isHidden = state;
     }
 
-    //animate item on collect
-    public void AnimateItemOnCollect()
-    {
-        modelObj.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f).OnComplete(() =>
-        {
-            modelObj.transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(HideItemModel);
-            
-        });
-    }
-
-    
 
 }
