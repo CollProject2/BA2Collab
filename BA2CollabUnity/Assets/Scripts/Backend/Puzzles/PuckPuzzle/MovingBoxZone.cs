@@ -9,8 +9,8 @@ public class MovingBoxZone : MonoBehaviour
     public float interactRange;
     bool isPlaced;
     public GameObject interactParticle;
-    private bool isInteractable;
     public GameObject movingBox;
+    
 
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class MovingBoxZone : MonoBehaviour
     }
     public void Update()
     {
-        if (isInteractable)
+        if (Player.instance.hasMovingBox)
         {
             Interact(); ;
         }
@@ -27,29 +27,32 @@ public class MovingBoxZone : MonoBehaviour
     void Interact()
     {
         interactParticle.SetActive(true);
-        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !isPlaced && Player.instance.hasMovingBox)
+        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !isPlaced)
         {
             //press E to collect
-            if (Input.GetKeyDown(KeyCode.E))  
-                ChangeValues();     
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                ChangeValues();  
+                PutDownBox();
+            }
         }
-
     }
     public void PutDownBox()
     {
         Player.instance.animator.SetBool("isMoving", false);
-        movingBox.transform.DOMove(transform.position, 1).OnComplete(() => ChangeValues()) ;
+        Player.instance.hasMovingBox = false;
+        interactParticle.SetActive(false);
+        movingBox.transform.DOMove(transform.position, 1).OnComplete(() =>
+        {
+            movingBox.transform.parent = null;
+            ChangeValues();
+        }) ;
     }
-    public void SetBoxActive()
-    {
-        isInteractable = true;
-    }
+    
 
     private void ChangeValues()
     {
         isPlaced = true;
-        isInteractable = false;
-        Player.instance.hasMovingBox = false;
         Player.instance.RecallMemory(movingBoxDropMemory);
     }
 }

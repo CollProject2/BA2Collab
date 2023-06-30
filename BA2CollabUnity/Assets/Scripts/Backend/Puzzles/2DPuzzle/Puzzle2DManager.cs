@@ -7,6 +7,7 @@ public class Puzzle2DManager : MonoBehaviour
     public List<PicturePiece> isRight = new();
     public static Puzzle2DManager instance = null;
     public PicturePiece currentPicturePiece;
+    public bool isInteractable;
 
     private void Awake()
     {
@@ -14,11 +15,13 @@ public class Puzzle2DManager : MonoBehaviour
             instance = this;
         else
             Destroy(this);
-        
+
+        isInteractable = false;
+
     }
     private void Update()
     {
-        if (currentPicturePiece != null ) { CheckInput(); }
+        if (currentPicturePiece != null && isInteractable ) { CheckInput(); }
     }
 
     //set this as the current block
@@ -33,7 +36,8 @@ public class Puzzle2DManager : MonoBehaviour
             //recall memory
             Player.instance.RecallMemory(associatedMemory);
             DeactivatePuzzle();
-            
+            isInteractable = false;
+
         }
 
     }

@@ -56,6 +56,7 @@ public class FrameItem : MonoBehaviour
         //closes HUD when activating the puzzle 
         interactParticle.SetActive(false);
         InstantiateAndMove();
+        Puzzle2DManager.instance.isInteractable = true;
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
         isInteractable = false;
