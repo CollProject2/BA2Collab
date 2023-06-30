@@ -6,7 +6,7 @@ using UnityEngine;
 public class FrameItem : MonoBehaviour
 {
     public GameObject interactParticle;
-    private float interactRange;
+    public float interactRange;
     private bool canCloseFrame;
     private bool isInteractable;
 
@@ -20,7 +20,6 @@ public class FrameItem : MonoBehaviour
     [SerializeField] private float framePuzzleMovementDuration;
     private void Awake()
     {
-        interactRange = 0.5f;
         framePuzzleObj.SetActive(false);
         canCloseFrame = false;
         isInteractable = true;

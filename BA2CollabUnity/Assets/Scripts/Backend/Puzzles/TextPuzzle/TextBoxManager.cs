@@ -19,11 +19,7 @@ public class TextBoxManager : MonoBehaviour
         // isActive = false;
 
     }
-    private void Update()
-    {
-        Player.instance.SetCanMove(false);
-    }
-  
+
     //set this as the current block
     public void SetCurrentTextBlock(TextBlock textBlock)
     {

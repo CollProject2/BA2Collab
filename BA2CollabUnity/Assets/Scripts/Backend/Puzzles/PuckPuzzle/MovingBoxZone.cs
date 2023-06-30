@@ -33,6 +33,7 @@ public class MovingBoxZone : MonoBehaviour
             //press E to collect
             if (Input.GetKeyDown(KeyCode.E))
             {
+                Player.instance.hasMovingBox = false;
                 ChangeValues();  
                 PutDownBox();
             }
@@ -41,12 +42,11 @@ public class MovingBoxZone : MonoBehaviour
     public void PutDownBox()
     {
         Player.instance.animator.SetBool("isMoving", false);
-        Player.instance.hasMovingBox = false;
         interactParticle.SetActive(false);
         movingBox.transform.DOMove(transform.position, 1).OnComplete(() =>
         {
             movingBox.transform.parent = null;
-            ChangeValues();
+            Destroy(this);
         }) ;
     }
     
