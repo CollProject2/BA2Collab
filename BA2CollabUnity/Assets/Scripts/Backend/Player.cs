@@ -1,4 +1,3 @@
-using FMOD;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,8 +26,8 @@ public class Player : MonoBehaviour
     public bool hasGlasses;
     public bool hasBear;
     public bool hasMovingBox;
-    
-    
+
+
 
     public int currentStage;
     public int missingBlocks;
@@ -85,7 +84,8 @@ public class Player : MonoBehaviour
         else
             velocity.y -= gravity * Time.deltaTime;
         //move
-        characterController.Move(speed * Time.deltaTime * direction.normalized + (velocity * Time.deltaTime));
+        if (characterController.enabled)
+            characterController.Move(speed * Time.deltaTime * direction.normalized + (velocity * Time.deltaTime));
     }
 
     private void HandleAnimation()

@@ -7,7 +7,6 @@ public class FrameItem : MonoBehaviour
 {
     public GameObject interactParticle;
     public float interactRange;
-    private bool canCloseFrame;
     private bool isInteractable;
 
 
@@ -21,7 +20,6 @@ public class FrameItem : MonoBehaviour
     private void Awake()
     {
         framePuzzleObj.SetActive(false);
-        canCloseFrame = false;
         isInteractable = true;
 
     }
@@ -61,9 +59,8 @@ public class FrameItem : MonoBehaviour
 
     void InstantiateAndMove()
     {
-        canCloseFrame = false;
         framePuzzleObj.SetActive(true);
-        framePuzzleObj.transform.DOMove(activePos.position, framePuzzleMovementDuration).OnComplete(() => canCloseFrame = true);
+        framePuzzleObj.transform.DOMove(activePos.position, framePuzzleMovementDuration);
     }
 
     public void Move2DPuzzleAway()

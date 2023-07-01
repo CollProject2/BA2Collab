@@ -11,7 +11,6 @@ public class MoveTextPuzzleAway : Command
     public override void OnEnter()
     {
         TextFrameItem.MoveTextPuzzleAway();
-        
         medallionItem.SetInteractable(true);
         Continue();
     }

@@ -12,10 +12,9 @@ public class WordDetector : MonoBehaviour
             {
                 other.gameObject.GetComponent<TextBlock>().solved = true;
                 other.gameObject.GetComponent<TextBlock>().isInteractable = false;
-                Destroy(this);
                 TextBoxManager.instance.CallCheck();
+                Destroy(this);
             }
-
         }
     }
 }

@@ -5,7 +5,6 @@ public class TextFrameItem : MonoBehaviour
 {
     public GameObject interactParticle;
     private float interactRange;
-    private bool canCloseFrame;
     private bool isInteractable;
 
 
@@ -20,7 +19,6 @@ public class TextFrameItem : MonoBehaviour
     {
         interactRange = 1.5f;
         textPuzzle.SetActive(false);
-        canCloseFrame = false;
         isInteractable = true;
 
     }
@@ -30,7 +28,6 @@ public class TextFrameItem : MonoBehaviour
         if (!isInteractable) return;
 
         Interact();
-
     }
 
     public void Interact()
@@ -59,9 +56,8 @@ public class TextFrameItem : MonoBehaviour
 
     void InstantiateAndMove()
     {
-        canCloseFrame = false;
         textPuzzle.SetActive(true);
-        textPuzzle.transform.DOMove(activePos.position, textPuzzleMovementDuration).OnComplete(() => canCloseFrame = true);
+        textPuzzle.transform.DOMove(activePos.position, textPuzzleMovementDuration);
     }
 
     public void MoveTextPuzzleAway()

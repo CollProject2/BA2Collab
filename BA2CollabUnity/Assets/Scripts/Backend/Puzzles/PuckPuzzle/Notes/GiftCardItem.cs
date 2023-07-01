@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -10,24 +7,18 @@ public class GiftCardItem : MonoBehaviour
     public GameObject shelfDoor;
     public float interactRange;
     private bool isInteractable;
-    private bool canCloseNote;
-    
+
 
     public string giftCardMemory;
 
-    [Header("object")] 
+    [Header("object")]
     [SerializeField] private GameObject giftCardUI;
     [Header("positions")]
     [SerializeField] private Transform initPos;
     [SerializeField] private Transform activePos;
     [Header("Duration")]
     [SerializeField] private float noteMovementDuration;
-    private void Awake()
-    {
-        
-        canCloseNote = false;
-    }
-    
+
 
     public void SetInteractable(bool state)
     {
@@ -36,10 +27,9 @@ public class GiftCardItem : MonoBehaviour
 
     private void Update()
     {
-        if (isInteractable)
-        {
-            Interact();  
-        }
+        if (!isInteractable) return;
+
+        Interact();
     }
 
     public void Interact()
@@ -51,12 +41,10 @@ public class GiftCardItem : MonoBehaviour
             interactParticle.SetActive(true);
             //press E to collect
             if (Input.GetKeyDown(KeyCode.E))
-            {
                 Collect();
-            }
         }
     }
-    
+
     public void Collect()
     {
         //closes HUD when activating the puzzle 
@@ -68,22 +56,20 @@ public class GiftCardItem : MonoBehaviour
         isInteractable = false;
     }
 
-    
+
 
     void InstantiateAndMove()
     {
-        canCloseNote = false;
         giftCardUI.SetActive(true);
         giftCardUI.transform.DOMove(activePos.position, noteMovementDuration).OnComplete(() =>
         {
             UIManager.instance.dialogues.StartDialogue(giftCardMemory);
-            canCloseNote = true;
         });
     }
 
     public void MoveNoteAway()
     {
-        giftCardUI.transform.DOMove(initPos.position, noteMovementDuration).OnComplete(()=>
+        giftCardUI.transform.DOMove(initPos.position, noteMovementDuration).OnComplete(() =>
         {
             giftCardUI.SetActive(false);
             OpenShelfDoor();
@@ -92,6 +78,6 @@ public class GiftCardItem : MonoBehaviour
 
     public void OpenShelfDoor()
     {
-        shelfDoor.transform.DOLocalRotate(new Vector3(0, 0, 0), noteMovementDuration).OnComplete(()=>Destroy(this));
+        shelfDoor.transform.DOLocalRotate(new Vector3(0, 0, 0), noteMovementDuration).OnComplete(() => Destroy(this));
     }
 }
