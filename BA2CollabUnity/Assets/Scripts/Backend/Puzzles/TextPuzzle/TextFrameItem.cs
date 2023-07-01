@@ -65,7 +65,11 @@ public class TextFrameItem : MonoBehaviour
         textPuzzle.transform.DOMove(initPos.position, textPuzzleMovementDuration).OnComplete(() =>
         {
             textPuzzle.SetActive(false);
+            TextBoxManager.instance.ResetOnAwake();
+            Destroy(textPuzzle.gameObject);
             Destroy(this);
         });
     }
+    
+    
 }

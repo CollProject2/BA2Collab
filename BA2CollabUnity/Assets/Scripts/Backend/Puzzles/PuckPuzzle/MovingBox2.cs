@@ -45,6 +45,7 @@ public class MovingBox2 : MonoBehaviour
         // change player anim 
         // move the box or make it invisible and then put it on player
         interactParticle.SetActive(false);
+        LightManager.instance.OpenOfficeMovingBoxHighLight(false);
         Player.instance.SetCanMove(false);
         transform.DOMove(Player.instance.playerCarrypos.position, 1).OnComplete(
             () =>

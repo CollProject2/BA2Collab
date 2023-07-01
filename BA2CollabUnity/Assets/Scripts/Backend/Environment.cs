@@ -146,6 +146,7 @@ public class Environment : MonoBehaviour
         {
             bedroom.SetActive(false);
             bedroomDoor_ofc.SetActive(false);
+            LightManager.instance.OpenBedroomOfficeDoorHighlights(false);
         }
     }
     public void SetActiveOffice(bool roomState)
@@ -187,7 +188,7 @@ public class Environment : MonoBehaviour
         {
             livingRoom.SetActive(false);
             livingDoor_ent.SetActive(false);
-            
+            LightManager.instance.OpenLivingRoomEntranceDoorHighLight(false);
         }
     }
     public void SetActiveScreeningRoom(bool roomState)

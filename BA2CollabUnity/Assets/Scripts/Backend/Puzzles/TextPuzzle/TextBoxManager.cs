@@ -17,6 +17,7 @@ public class TextBoxManager : MonoBehaviour
         if (instance == null)
             instance = this;
         // isActive = false;
+        ResetOnAwake();
 
     }
 
@@ -47,5 +48,13 @@ public class TextBoxManager : MonoBehaviour
     internal void MoveText(GameObject gameObject, Transform transform)
     {
         gameObject.transform.position = transform.position;
+    }
+
+    public void ResetOnAwake()
+    {
+        foreach (TextBlock v in isRight)
+        {
+            v.solved = false;
+        }
     }
 }

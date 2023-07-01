@@ -10,10 +10,6 @@ public class LissandrasCabinet : MonoBehaviour
     public float interactRange;
     public bool isInteractable;
 
-
-    public string cabinetMemory;
-    
-
     [Header("object")] 
     [SerializeField] private GameObject cabinetDoor;
     [Header("positions")]
@@ -22,36 +18,15 @@ public class LissandrasCabinet : MonoBehaviour
     [Header("Duration")]
     [SerializeField] private float cabinetDoorMovementDuration;
     
-    
-
-    public void SetInteractable(bool state)
-    {
-        isInteractable = state;
-    }
-
     private void Update()
     {
-        if (isInteractable)
+        if (isInteractable && isActiveAndEnabled)
         {
-            Interact();  
+            InstantiateAndMove();
+            isInteractable = false;
         }
     }
 
-    public void Interact()
-    {
-        interactParticle.SetActive(true);
-        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
-        {
-            // open HUD to give visual feedback
-            interactParticle.SetActive(true);
-            //press E to collect
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Collect();
-            }
-        }
-    }
-    
     public void Collect()
     {
         //closes HUD when activating the puzzle 
@@ -63,20 +38,16 @@ public class LissandrasCabinet : MonoBehaviour
         isInteractable = false;
     }
 
-    
-
     void InstantiateAndMove()
     {
         cabinetDoor.SetActive(true);
-        cabinetDoor.transform.DOMove(cabinetDoorActivePos.position, cabinetDoorMovementDuration).OnComplete(() =>
+        cabinetDoor.transform.DOMove(cabinetDoorActivePos.position, 1).OnComplete(() =>
         {
-            UIManager.instance.dialogues.StartDialogue(cabinetMemory);
-            CubeObject.transform.DOMove(cubeActivePos.position, 1);
-
+            CubeObject.transform.DOMove(cubeActivePos.position, 1).OnComplete(() =>
+            {
+                CubeObject.GetComponent<BlockCollect>().SetInteractable(true);
+                Destroy(this);
+            });
         });
     }
-
-    
-
-    
 }
