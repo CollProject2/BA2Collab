@@ -6,9 +6,11 @@ using UnityEngine;
 public class MoveMedallionPuzzleAway : Command
 {
     public MedallionItem medallionItem;
+    public GiftCardItem giftCardItem;
     public override void OnEnter()
     {
         medallionItem.MoveMedallionAway();
+        giftCardItem.SetInteractable(true);
         Continue();
     }
 }
