@@ -28,7 +28,8 @@ public class LightManager : MonoBehaviour
     
     [Header("OfficeLights")]
     [SerializeField] private GameObject OfficeMovingBoxhighlight;
-
+    [Header("EntranceLights")]
+    [SerializeField] private GameObject EntranceLivingRoomhighlight;
 
     public bool canLookatPlayer = false;
     private void Awake()
@@ -92,4 +93,10 @@ public class LightManager : MonoBehaviour
     {
         OfficeMovingBoxhighlight.SetActive(state);
     }
+    
+    public void OpenEntranceLivingRoomDoorHighLight(bool state)
+    {
+        EntranceLivingRoomhighlight.SetActive(state);
+    }
+    
 }

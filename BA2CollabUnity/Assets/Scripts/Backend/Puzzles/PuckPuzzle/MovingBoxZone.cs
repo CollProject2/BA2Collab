@@ -45,7 +45,7 @@ public class MovingBoxZone : MonoBehaviour
         interactParticle.SetActive(false);
         movingBox.transform.DOMove(transform.position, 1).OnComplete(() =>
         {
-            movingBox.transform.parent = null;
+            movingBox.transform.parent = this.gameObject.transform;
             Destroy(this);
         }) ;
     }

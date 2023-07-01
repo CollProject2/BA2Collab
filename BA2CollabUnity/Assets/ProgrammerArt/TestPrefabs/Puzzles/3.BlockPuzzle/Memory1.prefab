@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05645c5d9566994a9e87eb4957efd5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  memoryName: Memory1
+  memoryName: BlockPuzzleMemoryLivingRoom

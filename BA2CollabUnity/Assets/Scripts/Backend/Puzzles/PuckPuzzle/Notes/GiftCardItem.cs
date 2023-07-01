@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -6,14 +7,16 @@ using UnityEngine;
 public class GiftCardItem : MonoBehaviour
 {
     public GameObject interactParticle;
+    public GameObject shelfDoor;
     public float interactRange;
     private bool isInteractable;
     private bool canCloseNote;
+    
 
     public string giftCardMemory;
 
     [Header("object")] 
-    [SerializeField] private GameObject giftCard;
+    [SerializeField] private GameObject giftCardUI;
     [Header("positions")]
     [SerializeField] private Transform initPos;
     [SerializeField] private Transform activePos;
@@ -24,6 +27,7 @@ public class GiftCardItem : MonoBehaviour
         
         canCloseNote = false;
     }
+    
 
     public void SetInteractable(bool state)
     {
@@ -69,8 +73,8 @@ public class GiftCardItem : MonoBehaviour
     void InstantiateAndMove()
     {
         canCloseNote = false;
-        giftCard.SetActive(true);
-        giftCard.transform.DOMove(activePos.position, noteMovementDuration).OnComplete(() =>
+        giftCardUI.SetActive(true);
+        giftCardUI.transform.DOMove(activePos.position, noteMovementDuration).OnComplete(() =>
         {
             UIManager.instance.dialogues.StartDialogue(giftCardMemory);
             canCloseNote = true;
@@ -79,10 +83,15 @@ public class GiftCardItem : MonoBehaviour
 
     public void MoveNoteAway()
     {
-        giftCard.transform.DOMove(initPos.position, noteMovementDuration).OnComplete(()=>
+        giftCardUI.transform.DOMove(initPos.position, noteMovementDuration).OnComplete(()=>
         {
-            giftCard.SetActive(false);
-            Destroy(this);
+            giftCardUI.SetActive(false);
+            OpenShelfDoor();
         });
+    }
+
+    public void OpenShelfDoor()
+    {
+        shelfDoor.transform.DOLocalRotate(new Vector3(0, 0, 0), noteMovementDuration).OnComplete(()=>Destroy(this));
     }
 }
