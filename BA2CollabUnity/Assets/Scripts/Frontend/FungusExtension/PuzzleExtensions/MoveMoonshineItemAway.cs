@@ -7,9 +7,12 @@ using Fungus;
 public class MoveMoonshineItemAway : Command
 {
     public MoonShineItem moonshineItem;
+    public GameObject triggerZoneToEntrance;
     public override void OnEnter()
     {
         moonshineItem.MoveMoonshineLenternAway();
+        triggerZoneToEntrance.SetActive(true);
+        
         Continue();
     }
 }

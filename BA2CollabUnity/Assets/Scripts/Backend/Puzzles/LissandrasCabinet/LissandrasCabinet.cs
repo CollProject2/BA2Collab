@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
-public class MoonShineItem : MonoBehaviour
+public class LissandrasCabinet : MonoBehaviour
 {
     public GameObject interactParticle;
-    public string moonshineLenternMemory;
+    public GameObject CubeObject;
     public float interactRange;
-    private bool isInteractable;
-    private bool canCloseNote;
-    
+    public bool isInteractable;
 
+
+    public string cabinetMemory;
     
 
     [Header("object")] 
-    [SerializeField] private GameObject moonShineLenternItem;
+    [SerializeField] private GameObject cabinetDoor;
     [Header("positions")]
-    [SerializeField] private Transform initPos;
-    [SerializeField] private Transform activePos;
+    [SerializeField] private Transform cubeActivePos;
+    [SerializeField] private Transform cabinetDoorActivePos;
     [Header("Duration")]
-    [SerializeField] private float lenternMovementDuration;
+    [SerializeField] private float cabinetDoorMovementDuration;
     
     
 
@@ -67,24 +67,16 @@ public class MoonShineItem : MonoBehaviour
 
     void InstantiateAndMove()
     {
-        moonShineLenternItem.SetActive(true);
-        moonShineLenternItem.transform.DOScale(new Vector3(3.5f, 3.5f, 3.5f), lenternMovementDuration);
-        moonShineLenternItem.transform.DOMove(activePos.position, lenternMovementDuration).OnComplete(() =>
+        cabinetDoor.SetActive(true);
+        cabinetDoor.transform.DOMove(cabinetDoorActivePos.position, cabinetDoorMovementDuration).OnComplete(() =>
         {
-            UIManager.instance.dialogues.StartDialogue(moonshineLenternMemory);
-            
+            UIManager.instance.dialogues.StartDialogue(cabinetMemory);
+            CubeObject.transform.DOMove(cubeActivePos.position, 1);
+
         });
     }
 
-    public void MoveMoonshineLenternAway()
-    {
-        moonShineLenternItem.transform.DOScale(new Vector3(1, 1, 1), lenternMovementDuration);
-        moonShineLenternItem.transform.DOMove(initPos.position, lenternMovementDuration).OnComplete(()=>
-        {
-            LightManager.instance.OpenLivingRoomEntranceDoorHighLight(true);
-            
-        });
-    }
+    
 
-   
+    
 }
