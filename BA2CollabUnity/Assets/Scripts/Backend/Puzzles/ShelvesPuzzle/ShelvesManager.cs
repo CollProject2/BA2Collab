@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ShelvesManager : MonoBehaviour
 {
-    public PlayerMemory associatedMemory;
+    public string associatedMemory;
     public bool isActive;
     public List<Letter> isRight = new();
     public static ShelvesManager instance = null;

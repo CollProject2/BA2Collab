@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Bear : MonoBehaviour
 {
-    public PlayerMemory bearMemory;
+    public string bearMemory;
     public GameObject interactParticle;
     public int interactRange;
     public bool isInteractable;

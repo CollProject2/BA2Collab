@@ -7,7 +7,7 @@ using UnityEngine;
 public class TextBoxManager : MonoBehaviour
 {
     public static TextBoxManager instance = null;
-    public PlayerMemory associatedMemory;
+    public string associatedMemory;
     public bool isActive;
     public List<TextBlock> isRight = new();
     public TextBlock currentTextBlock;

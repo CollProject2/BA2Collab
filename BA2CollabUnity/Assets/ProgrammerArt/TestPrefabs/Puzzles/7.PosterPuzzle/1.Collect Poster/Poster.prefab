@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 7500083974445887420}
   - component: {fileID: 9198554609000333842}
   - component: {fileID: 692100239028143232}
-  - component: {fileID: 7061616235467130738}
-  - component: {fileID: 2580288430043976408}
   - component: {fileID: 7955599645947593310}
   m_Layer: 0
   m_Name: Poster
@@ -86,34 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7061616235467130738
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8968686593426502314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &2580288430043976408
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8968686593426502314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 1
-  m_Height: 4.0051413
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.14075239, z: 9.199573e-16}
 --- !u!114 &7955599645947593310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -129,3 +99,4 @@ MonoBehaviour:
   posterMemory: {fileID: 5173908792637292018, guid: 0c686b93ddd3b1d49b10d60b7bd70424,
     type: 3}
   interactRange: 4
+  isInteractable: 0

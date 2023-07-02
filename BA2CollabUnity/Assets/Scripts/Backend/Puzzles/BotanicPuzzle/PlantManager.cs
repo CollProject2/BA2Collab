@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlantManager : MonoBehaviour
 {
-    public PlayerMemory associatedMemory;
+    public string associatedMemory;
     public bool isActive;
     public List<Leaf> leafList = new();
     public static PlantManager instance = null;

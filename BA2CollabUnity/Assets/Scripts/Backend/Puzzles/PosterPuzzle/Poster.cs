@@ -2,10 +2,23 @@ using UnityEngine;
 
 public class Poster : MonoBehaviour
 {
-    public PlayerMemory posterMemory;
-    public int interactRange;
+    public string posterMemory;
+    public float interactRange;
+    public bool isInteractable;
     
     public void Update()
+    {
+        if (!isInteractable) return;
+
+        Interact(); 
+       
+    }
+    public void SetInteractable(bool state)
+    {
+        isInteractable = state;
+    }
+
+    void Interact()
     {
         if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
         {
@@ -16,13 +29,12 @@ public class Poster : MonoBehaviour
             {
                 Player.instance.RecallMemory(posterMemory);
                 Player.instance.hasPoster = true;
+                Player.instance.SetCanMove(false);
+                Player.instance.animator.SetBool("isMoving", false);
+                SetInteractable(false);
                 ItemUIManager.Instance.ToggleItem(0);
                 Destroy(gameObject);
             }
-        }
-        else
-        {
-            // close HUD
         }
     }
 

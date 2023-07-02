@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class WallPosterPuzzle : MonoBehaviour
 {
-    public PlayerMemory posterMemory2;
-    public int interactRange;
+    public string posterGapMemory;
+    public float interactRange;
+    public bool isInteractable;
 
     public void Update()
+    {
+        if (!isInteractable) return;
+
+        Interact();
+    }
+
+    void Interact()
     {
         if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving && Player.instance.hasPoster)
         {
@@ -17,13 +25,12 @@ public class WallPosterPuzzle : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 GetComponent<MeshRenderer>().enabled = true;
-                Player.instance.hasGlasses = true;
-                Player.instance.RecallMemory(posterMemory2);
+                isInteractable = false;
+                Player.instance.SetCanMove(false);
+                Player.instance.animator.SetBool("isMoving", false);
+                //Player.instance.hasGlasses = true;
+                Player.instance.RecallMemory(posterGapMemory);
             }
-        }
-        else
-        {
-            // close HUD
         }
     }
 }

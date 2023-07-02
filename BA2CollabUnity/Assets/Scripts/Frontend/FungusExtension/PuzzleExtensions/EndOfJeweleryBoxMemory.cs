@@ -6,8 +6,11 @@ using UnityEngine;
 public class EndOfJeweleryBoxMemory : Command
 {
     public JeweleryBoxAndRing JeweleryBoxAndRing;
+    public Item protestPhotoItem;
     public override void OnEnter()
     {
         JeweleryBoxAndRing.MoveMedallionAway();
+        protestPhotoItem.enabled = true;
+        Continue();
     }
 }

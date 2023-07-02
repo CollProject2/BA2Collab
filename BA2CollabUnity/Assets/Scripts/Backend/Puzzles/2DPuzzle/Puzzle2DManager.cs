@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Puzzle2DManager : MonoBehaviour
 {
-    public PlayerMemory associatedMemory;
+    public string associatedMemory;
     public List<PicturePiece> isRight = new();
     public static Puzzle2DManager instance = null;
     public PicturePiece currentPicturePiece;

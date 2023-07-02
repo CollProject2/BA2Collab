@@ -130,10 +130,10 @@ public class Player : MonoBehaviour
         puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
     }
 
-    public void RecallMemory(PlayerMemory memory)
+    public void RecallMemory(string memory)
     {
         SetCanMove(false);
-        memory.Unlock();
+        UIManager.instance.dialogues.StartDialogue(memory);
     }
 
     public void BeginNewChapter()

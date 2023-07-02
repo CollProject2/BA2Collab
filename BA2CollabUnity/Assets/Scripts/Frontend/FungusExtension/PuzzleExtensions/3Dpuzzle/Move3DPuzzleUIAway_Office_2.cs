@@ -6,10 +6,12 @@ using UnityEngine;
 public class Move3DPuzzleUIAway_Office_2 : Command
 {
     public JeweleryBoxAndRing jeweleryBoxAndRing;
+    public Item officeItem3dpuzzle;
     public override void OnEnter()
     {
         BlockManager.instance.OnPuzzleFinishedMove();
         jeweleryBoxAndRing.isInteractable = true;
+        Destroy(officeItem3dpuzzle);
         Continue();
     }
 }

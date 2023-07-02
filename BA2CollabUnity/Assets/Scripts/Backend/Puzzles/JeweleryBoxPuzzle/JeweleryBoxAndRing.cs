@@ -50,11 +50,12 @@ public class JeweleryBoxAndRing : MonoBehaviour
     public void Collect()
     {
         //closes HUD when activating the puzzle 
+        isInteractable = false;
         interactParticle.SetActive(false);
         InstantiateAndMove();
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
+        
     }
 
     void InstantiateAndMove()

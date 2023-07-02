@@ -8,7 +8,7 @@ public class Puzzle : MonoBehaviour
     //Properties
     public string puzzleName { get; private set; }
     public int puzzleID { get; private set; }
-    public PlayerMemory associatedMemory;
+    public string associatedMemory;
 
     [CanBeNull] private GameObject puzzleObj;
 

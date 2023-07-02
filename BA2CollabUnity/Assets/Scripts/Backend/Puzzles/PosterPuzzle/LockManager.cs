@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LockManager : MonoBehaviour
 {
-    public PlayerMemory associatedMemory;
+    public string associatedMemory;
     public bool isActive;
     public List<Number> isRight = new();
     public static LockManager instance = null;

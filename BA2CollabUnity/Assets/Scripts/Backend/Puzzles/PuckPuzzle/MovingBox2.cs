@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MovingBox2 : MonoBehaviour
 {
-    public PlayerMemory movingBox2Memory;
+    public string PickUpBoxAndBearMemory;
     public float interactRange;
     bool isPlaced;
     public GameObject interactParticle;
@@ -66,6 +66,6 @@ public class MovingBox2 : MonoBehaviour
         isPlaced = true;
         isInteractable = false;
         Player.instance.hasMovingBox = true;
-        Player.instance.RecallMemory(movingBox2Memory);
+        Player.instance.RecallMemory(PickUpBoxAndBearMemory);
     }
 }

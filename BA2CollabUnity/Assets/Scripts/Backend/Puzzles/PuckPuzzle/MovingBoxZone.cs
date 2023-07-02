@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class MovingBoxZone : MonoBehaviour
 {
-    public PlayerMemory movingBoxDropMemory;
+    public string movingBoxDropMemory;
     public TextFrameItem textFrameItem;
     public float interactRange;
     bool isPlaced;

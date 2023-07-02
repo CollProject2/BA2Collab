@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class BearZone : MonoBehaviour
 {
-    public PlayerMemory bearMemory;
+    public string bearDropMemory;
     public MovingBox2 movingBox2;
     public float interactRange;
     bool isPlaced;
@@ -70,6 +70,6 @@ public class BearZone : MonoBehaviour
     {
         isPlaced = true;
         Player.instance.hasBear = false;
-        Player.instance.RecallMemory(bearMemory);
+        Player.instance.RecallMemory(bearDropMemory);
     }
 }
