@@ -61,7 +61,7 @@ public class JeweleryBoxAndRing : MonoBehaviour
     void InstantiateAndMove()
     {
         JeweleryPuzzleObj.transform.DOMove(activePos.position, jeweleryMoveDuration);
-        JeweleryPuzzleObj.transform.DOScale(new Vector3(8.7f, 8.7f, 8.7f), jeweleryBoxOpenDur);
+        JeweleryPuzzleObj.transform.DOScale(new Vector3(5f, 5f, 5f), jeweleryBoxOpenDur);
         JeweleryPuzzleObj.transform.DORotate(new Vector3(-12, 0, 0), jeweleryMoveDuration).OnComplete(() =>
         {
             jeweleryBoxPivot.transform.DOLocalRotate(new Vector3(0, 0, -96), jeweleryBoxOpenDur).OnComplete(() =>

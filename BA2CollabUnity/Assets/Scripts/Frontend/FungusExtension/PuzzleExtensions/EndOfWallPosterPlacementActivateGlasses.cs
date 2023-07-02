@@ -9,5 +9,6 @@ public class EndOfWallPosterPlacementActivateGlasses :Command
     public override void OnEnter()
     {
         glassesItem.isInteractable = true;
+        Continue();
     }
 }

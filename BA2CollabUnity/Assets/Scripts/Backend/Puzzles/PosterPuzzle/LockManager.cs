@@ -32,7 +32,9 @@ public class LockManager : MonoBehaviour
         if (RowsAreCorrect())
         {
             isActive = false;
+            
             lockbox.OpenLockBox();
+            
             Destroy(this);
         }
 
