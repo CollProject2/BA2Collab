@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class LockManager : MonoBehaviour
 {
-    public string associatedMemory;
+    public Lockbox lockbox;
     public bool isActive;
     public List<Number> isRight = new();
     public static LockManager instance = null;
@@ -32,8 +32,7 @@ public class LockManager : MonoBehaviour
         if (RowsAreCorrect())
         {
             isActive = false;
-            //recall memory
-            Player.instance.RecallMemory(associatedMemory);
+            lockbox.OpenLockBox();
             Destroy(this);
         }
 
