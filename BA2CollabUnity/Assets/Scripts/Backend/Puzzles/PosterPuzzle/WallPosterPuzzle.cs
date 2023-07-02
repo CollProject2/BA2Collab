@@ -28,7 +28,6 @@ public class WallPosterPuzzle : MonoBehaviour
                 isInteractable = false;
                 Player.instance.SetCanMove(false);
                 Player.instance.animator.SetBool("isMoving", false);
-                //Player.instance.hasGlasses = true;
                 Player.instance.RecallMemory(posterGapMemory);
             }
         }

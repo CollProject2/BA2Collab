@@ -10,14 +10,14 @@ public class Glasses : MonoBehaviour
     public Material[] matb;
     public Material[] matn;
     public GameObject[] posters;
-    public bool isActive;
+    public bool isInteractable;
     public bool left;
     private bool canSwitch;
 
 
     private void Awake()
     {
-        isActive = false;
+        isInteractable = false;
         left = false;
         canSwitch = false;
 
@@ -30,12 +30,12 @@ public class Glasses : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                isActive = !isActive;
-                ActivateGlasses(isActive);
+                isInteractable = !isInteractable;
+                ActivateGlasses(isInteractable);
                 ItemUIManager.Instance.ToggleItem(1);
             }
 
-            if (isActive && canSwitch)
+            if (isInteractable && canSwitch)
             {
                 if (Input.GetKeyDown(KeyCode.A))
                 {
