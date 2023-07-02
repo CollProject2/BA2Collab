@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ public class Lockbox : MonoBehaviour
 
 
     [Header("object")]
+    [SerializeField] private GameObject lockItemObj;
     [SerializeField] private GameObject lockPuzzleObj;
 
     [SerializeField] private GameObject lockBoxPivot;
@@ -19,6 +21,8 @@ public class Lockbox : MonoBehaviour
     [Header("positions")]
     [SerializeField] private Transform initPos;
     [SerializeField] private Transform activePos;
+    [SerializeField] private Transform puzzleInitPos;
+    [SerializeField] private Transform puzzleIActivePos;
     [SerializeField] private Transform projectorPicturesInitPos;
     [SerializeField] private Transform projectorPictureActivePos;
     [Header("Duration")]
@@ -31,6 +35,12 @@ public class Lockbox : MonoBehaviour
 
         Interact();
     }
+
+    private void Start()
+    {
+        OpenLockBox();
+    }
+
 
     public void Interact()
     {
@@ -48,7 +58,8 @@ public class Lockbox : MonoBehaviour
         //closes HUD when activating the puzzle 
         isInteractable = false;
         interactParticle.SetActive(false);
-        lockPuzzleObj.transform.DOMove(activePos.position, lockBoxMoveDuration);
+        lockPuzzleObj.SetActive(true);
+        lockPuzzleObj.transform.DOMove(puzzleIActivePos.position, lockBoxMoveDuration);
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
     }
@@ -56,9 +67,11 @@ public class Lockbox : MonoBehaviour
     //for end of lock puzzle
     public void OpenLockBox()
     {
+        lockPuzzleObj.transform.DOMove(puzzleInitPos.position, lockBoxMoveDuration/2);
         //solve puzzle 
-        lockPuzzleObj.transform.DOScale(new Vector3(8.7f, 8.7f, 8.7f), lockBoxOpenDur);
-        lockPuzzleObj.transform.DORotate(new Vector3(-12, 0, 0), lockBoxMoveDuration).OnComplete(() =>
+        lockItemObj.transform.DOMove(activePos.position, lockBoxMoveDuration);
+        lockItemObj.transform.DOScale(new Vector3(5f, 5, 5), lockBoxOpenDur);
+        lockItemObj.transform.DORotate(new Vector3(5, 180, 0), lockBoxMoveDuration).OnComplete(() =>
         {
             lockBoxPivot.transform.DOLocalRotate(new Vector3(0, 0, -96), lockBoxOpenDur).OnComplete(() =>
             {
@@ -66,21 +79,24 @@ public class Lockbox : MonoBehaviour
                 projectorPictures.transform.DOMove(projectorPictureActivePos.position, lockBoxMoveDuration / 2).SetEase(Ease.InOutSine).OnComplete(() =>
                 {
                     UIManager.instance.dialogues.StartDialogue(LockBoxMemory);
+                    
                 });
             });
         });
     }
 
+    
+
     //for end of fungus 
     public void MoveLockBoxAway()
     {
-
+        
         projectorPictures.transform.DOMove(projectorPicturesInitPos.position, lockBoxMoveDuration).OnComplete(() =>
         {
             lockBoxPivot.transform.DOLocalRotate(new Vector3(0, 0, 0), lockBoxMoveDuration);
-            lockPuzzleObj.transform.DOMove(initPos.position, lockBoxMoveDuration);
-            lockPuzzleObj.transform.DOScale(new Vector3(1, 1, 1), lockBoxOpenDur);
-            lockPuzzleObj.transform.DORotate(new Vector3(0, 0, 0), lockBoxMoveDuration);
+            lockItemObj.transform.DOMove(initPos.position, lockBoxMoveDuration);
+            lockItemObj.transform.DOScale(new Vector3(1, 1, 1), lockBoxOpenDur);
+            lockItemObj.transform.DORotate(new Vector3(0, 0, 0), lockBoxMoveDuration);
         });
 
     }

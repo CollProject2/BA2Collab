@@ -8,6 +8,7 @@ public class GlassesItem : MonoBehaviour
 {
     public GameObject interactParticle;
     public Glasses glasses;
+    public Lockbox lockBox;
     public GameObject glassesModel;
     public float interactRange;
     public bool isInteractable;
@@ -50,13 +51,14 @@ public class GlassesItem : MonoBehaviour
     {
         glassesModel.SetActive(true);
         Player.instance.hasGlasses = true;
+        lockBox.isInteractable = true;
         glassesModel.transform.DOLocalMove(new Vector3(0, -1, 3), 1).OnComplete(() =>
         {
             glassesModel.transform.DOLocalMove(new Vector3(0, -1, 0.16f), 1).OnComplete(() =>
             {
                 glassesModel.transform.DOLocalMove(new Vector3(0, -1, -1), 1);
                 glasses.gameObject.SetActive(true);
-                glasses.isInteractable = true;
+                glasses.InitializeGlasses();
             });
         });
         
