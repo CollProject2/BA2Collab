@@ -9,9 +9,9 @@ public class BlockManager : MonoBehaviour
     public List<PuzzleBlock> gridBlocks = new();
     public static BlockManager instance = null;
     public bool isInteractable;
+    public BlockFace wincon;
 
-    //need to make this a list
-    private Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
+    public Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
 
     private Dictionary<int, int[]> blockDisplayMapping = new Dictionary<int, int[]>()
@@ -25,7 +25,7 @@ public class BlockManager : MonoBehaviour
     {
         //singleton
         if (instance == null)
-        
+
             instance = this;
         else
             Destroy(this);
@@ -85,31 +85,18 @@ public class BlockManager : MonoBehaviour
             ItemUIManager.Instance.ToggleItem(6 - Player.instance.missingBlocks);
             //block array that has the map with the key
             int[] blockIndexes = blockDisplayMapping[Player.instance.missingBlocks];
-            
+
             foreach (int index in blockIndexes)
                 gridBlocks[index].gameObject.SetActive(true);
-            
+
         }
     }
 
-    //check if the block has the right position/rotation
-    private bool CheckWinCondition(BlockFace blockFace)
-    {
-        foreach (PuzzleBlock block in gridBlocks)
-        {
-            if (block.gameObject.activeSelf)
-            {
-                if (block.CurrentFace != blockFace || !CheckRotation(block))
-                    return false;
-            }
-        }
-        return true;
-    }
 
     //check wincon and finish up the puzzle
     public void CallCheck()
     {
-        if (CheckWinCondition(BlockFace.Top))
+        if (CheckWinCondition())
         {
             //disable block interaction
             DeactivateBlocks();
@@ -119,13 +106,19 @@ public class BlockManager : MonoBehaviour
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
         }
     }
-
-    //checks if we have the right rotation of the image
-    public bool CheckRotation(PuzzleBlock puzzleBlock)
+    
+    private bool CheckWinCondition()
     {
-        float difference = Quaternion.Angle(puzzleBlock.transform.localRotation, targetRotation);
-        return Mathf.Abs(difference) < 0.1f;
+        //check if all blocks are solved
+        foreach (PuzzleBlock block in gridBlocks)
+        {
+            if (!block.solved && block.isActiveAndEnabled)
+                return false;
+        }
+        return true;
     }
+
+
 
     //move the puzzle away
     public void OnPuzzleFinishedMove()
@@ -140,6 +133,6 @@ public class BlockManager : MonoBehaviour
     {
         if (index >= 0 && index < gridBlocks.Count)
             gridBlocks[index].RotateBlock(direction);
-        
+
     }
 }

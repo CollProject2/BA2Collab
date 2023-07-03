@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -44,6 +45,9 @@ public class PuzzleBlock : MonoBehaviour
     public GameObject faceDetector;
     public BlockFace CurrentFace;
 
+    public bool solved;
+    public bool rightRotation;
+    public bool rightFace;
     private bool isRotating;
     private bool canMoveOut;
     public bool interactable;
@@ -105,14 +109,7 @@ public class PuzzleBlock : MonoBehaviour
         //we set rotating to true
         isRotating = true;
         //rotate and will call the wincon check and turn rotating false after the rotation is complete
-        transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete(IsDone);
-    }
-
-    //function that gets called once the rotating of the block is done
-    public void IsDone()
-    {
-        isRotating = false;
-        BlockManager.instance.CallCheck();
+        transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete( ()=> isRotating = false);
     }
 
     //set the puzzle random to start 
@@ -127,5 +124,27 @@ public class PuzzleBlock : MonoBehaviour
     public void SetState(string faceName)
     {
         CurrentFace = faceNameToBlockFace[faceName];
+    }
+    //checks if we have the right rotation of the image
+    public bool CheckRotation()
+    {
+        float difference = Quaternion.Angle(transform.localRotation, BlockManager.instance.targetRotation);
+        return Mathf.Abs(difference) < 0.1f;
+    }
+    //check if the block has the right position/rotation
+    public bool CheckFaceCondition()
+    {
+        return CurrentFace == BlockManager.instance.wincon;
+    }
+    private void SetSolved()
+    {
+        solved = rightFace && rightRotation;
+    }
+    public void SetCurrentConditions()
+    {
+        if (CheckFaceCondition()) rightFace = true;
+        if (CheckRotation()) rightRotation = true;
+        SetSolved();
+        BlockManager.instance.CallCheck();
     }
 }
