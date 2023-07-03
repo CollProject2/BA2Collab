@@ -9,6 +9,7 @@ public class ShelvesManager : MonoBehaviour
     public static ShelvesManager instance = null;
     public Letter currentLetter;
     public List<GameObject> particles;
+    private bool doOnce;
 
     private void Awake()
     {
@@ -23,13 +24,8 @@ public class ShelvesManager : MonoBehaviour
             CheckInput();
     }
 
-    //call this from the projector 
-    public void InitShelvesAfterProjector()
-    {
-        isInteractable = true;
-        SetParticleSystem(isInteractable);
-    }
-
+    
+    
     //set this as the current block
     public void SetCurrentLetter(Letter letter)
     {
@@ -45,6 +41,7 @@ public class ShelvesManager : MonoBehaviour
         if (ShelvesAreSolved())
         {
             isInteractable = false;
+            doOnce = true;
             SetParticleSystem(isInteractable);
             Player.instance.SetCanMove(true);
             //recall memory
@@ -57,11 +54,16 @@ public class ShelvesManager : MonoBehaviour
 
     public void SetParticleSystem(bool enabled)
     {
-        foreach (var particle in particles) { particle.SetActive(enabled); }
+        if (doOnce)
+        {
+            foreach (var particle in particles) { particle.SetActive(enabled); } 
+        }
+        doOnce = false;
     }
 
     private void CheckInput()
     {
+        SetParticleSystem(true);
         if (Input.GetKeyDown(KeyCode.A))
             RotateLetterAt(currentLetter.id, RotationLR.Left);
         else if (Input.GetKeyDown(KeyCode.D))

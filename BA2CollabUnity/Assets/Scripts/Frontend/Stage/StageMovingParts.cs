@@ -15,17 +15,6 @@ public class StageMovingParts : MonoBehaviour
     // [Header("Durations")]
     // [Header("Curves")]
 
-    public void OnVideoRoomDoorInteract()
-    {
-        videoRoomDoor.transform.DOMove(
-            new Vector3(videoRoomDoor.transform.position.x, videoRoomDoor.transform.position.y + 6,
-                videoRoomDoor.transform.position.z), 2);
-        videoRoomWall1.transform.DOMove(
-            new Vector3(videoRoomWall1.transform.position.x - 6, videoRoomWall1.transform.position.y,
-                videoRoomWall1.transform.position.z), 2);
-        videoRoomWall2.transform.DOMove(
-            new Vector3(videoRoomWall2.transform.position.x + 6, videoRoomWall2.transform.position.y,
-                videoRoomWall2.transform.position.z), 2);
-    }
+    
     
 }

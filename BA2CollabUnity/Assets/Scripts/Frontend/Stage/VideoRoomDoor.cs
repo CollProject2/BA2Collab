@@ -1,28 +1,29 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class VideoRoomDoor : MonoBehaviour
 {
-    public float interactRange;
-    private void Update()
-    {
-        InteractWithDoor();
-    }
+    [Header("Objects")]
+    [SerializeField] private GameObject middleDoor;
     
-    private void InteractWithDoor()
+
+    [Header("Positions")]
+    [SerializeField] private Transform middleDoorEndPos;
+    
+
+    [Header("Durations")]
+    [SerializeField] private float doorMoveDuration = 2;
+    
+    private void OnTriggerEnter(Collider other)
     {
-        // add here a condition to check if the video room projector puzzle is solved
-        
-        //if the player is in range of the item, not solving a puzzle and the puzzle is not hidden
-        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
-        {
-            //press E to collect
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-               Environment.instance.stageMovingParts.OnVideoRoomDoorInteract();
-            }
-        }
+        MoveObjects();
+    }
+
+    private void MoveObjects()
+    {
+        middleDoor.transform.DOMove(middleDoorEndPos.position, doorMoveDuration);
     }
 }

@@ -6,6 +6,7 @@ public class ProjectorPuzzle : MonoBehaviour
 {
     public GameObject interactParticle;
     public GameObject projectorLight;
+    public ShelvesManager shelvesManager;
     public float interactRange;
     private bool isInteractable;
     
@@ -70,6 +71,8 @@ public class ProjectorPuzzle : MonoBehaviour
                 image.SetActive(false);
             }
             projectorLight.SetActive(false);
+            // call shelf
+            shelvesManager.isInteractable = true;
         }
         
     }

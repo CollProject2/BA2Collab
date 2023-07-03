@@ -28,6 +28,7 @@ public class Environment : MonoBehaviour
     [SerializeField] private GameObject livingRoom;
     [SerializeField] private GameObject screeningRoom;
     [SerializeField] private GameObject videoRoom;
+    [SerializeField] private GameObject trashedVideoRoom;
     [SerializeField] private GameObject garden;
     [SerializeField] private GameObject conservatory;
     [Header("Doors")] 
@@ -52,6 +53,8 @@ public class Environment : MonoBehaviour
     public Transform playerTeleportPosLivingRoom;
     public Transform playerTeleportPosEntrance;
     public Transform playerTeleportPosBedroom;
+
+    public bool trashTheVideoRoom;
     
     public CurrentRoom currentRoom;
     private void Awake()
@@ -209,12 +212,21 @@ public class Environment : MonoBehaviour
     {
         if (roomState)
         {
-            videoRoom.SetActive(true);
+            if (!trashTheVideoRoom)
+            {
+                videoRoom.SetActive(true);
+            }
+            else
+            {
+                trashedVideoRoom.SetActive(true);
+            }
+            
             videoDoor_scr.SetActive(true);
         }
         else
         {
             videoRoom.SetActive(false);
+            trashedVideoRoom.SetActive(false);
             videoDoor_scr.SetActive(false);
         }
     }

@@ -35,11 +35,7 @@ public class Lockbox : MonoBehaviour
 
         Interact();
     }
-
-    private void Start()
-    {
-        OpenLockBox();
-    }
+    
 
 
     public void Interact()
