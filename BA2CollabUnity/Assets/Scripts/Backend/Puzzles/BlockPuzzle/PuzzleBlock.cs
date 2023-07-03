@@ -45,9 +45,7 @@ public class PuzzleBlock : MonoBehaviour
     public GameObject faceDetector;
     public BlockFace CurrentFace;
 
-    public bool solved;
     public bool rightRotation;
-    public bool rightFace;
     private bool isRotating;
     private bool canMoveOut;
     public bool interactable;
@@ -111,8 +109,8 @@ public class PuzzleBlock : MonoBehaviour
         //rotate and will call the wincon check and turn rotating false after the rotation is complete
         transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete( ()=>
         {
-            SetCurrentConditions();
             isRotating = false;
+            SetCurrentConditions();
         });
     }
 
@@ -136,19 +134,10 @@ public class PuzzleBlock : MonoBehaviour
         return Mathf.Abs(difference) < 0.3f;
     }
     //check if the block has the right position/rotation
-    public bool CheckFaceCondition()
-    {
-        return CurrentFace == BlockManager.instance.wincon;
-    }
-    private void SetSolved()
-    {
-        solved = rightFace && rightRotation;
-    }
+
     public void SetCurrentConditions()
     {
-        if (CheckFaceCondition()) rightFace = true;
         if (CheckRotation()) rightRotation = true;
-        SetSolved();
         BlockManager.instance.CallCheck();
     }
 }

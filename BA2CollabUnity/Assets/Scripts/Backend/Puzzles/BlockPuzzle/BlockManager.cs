@@ -109,18 +109,19 @@ public class BlockManager : MonoBehaviour
             solved = true;
         }
     }
-    
+
     private bool CheckWinCondition()
     {
-        //check if all blocks are solved
         foreach (PuzzleBlock block in gridBlocks)
         {
-            if (!block.solved && block.isActiveAndEnabled)
-                return false;
+            if (block.isActiveAndEnabled)
+            {
+                if ((block.CurrentFace != wincon || !block.rightRotation))
+                    return false;
+            }
         }
         return true;
     }
-
 
 
     //move the puzzle away

@@ -340,7 +340,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 1
   defaultBlockPos: {fileID: 5131503598027073213}
@@ -965,7 +964,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 8
   defaultBlockPos: {fileID: 2412444911425502717}
@@ -1222,7 +1220,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 3
   defaultBlockPos: {fileID: 6869374427690234582}
@@ -1422,7 +1419,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 7
   defaultBlockPos: {fileID: 7991588429764692678}
@@ -1717,7 +1713,7 @@ MonoBehaviour:
   - {fileID: 8444906673542498542}
   - {fileID: 6959430692921966288}
   isInteractable: 1
-  wincon: 0
+  wincon: 4
   targetRotation: {x: 0.70710677, y: 0, z: 0, w: -0.70710677}
   delayAfterPuzzleEnd: 2.5
 --- !u!1 &2849351543498190924
@@ -2344,7 +2340,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 0
   defaultBlockPos: {fileID: 6708012532543673125}
@@ -2743,7 +2738,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 2
   defaultBlockPos: {fileID: 7987833304700096398}
@@ -3857,7 +3851,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 6
   defaultBlockPos: {fileID: 4086652167602386741}
@@ -4777,7 +4770,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 5
   defaultBlockPos: {fileID: 6707988842583931625}
@@ -5378,7 +5370,6 @@ MonoBehaviour:
   CurrentFace: 0
   solved: 0
   rightRotation: 0
-  rightFace: 0
   interactable: 0
   index: 4
   defaultBlockPos: {fileID: 2989135777309816043}
