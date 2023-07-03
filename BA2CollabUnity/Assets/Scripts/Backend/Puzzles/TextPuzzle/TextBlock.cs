@@ -6,15 +6,12 @@ public class TextBlock : MonoBehaviour
     public bool solved;
     public bool isInteractable;
     private bool isDragging = false;
-    private Vector3 startPosition;
+    public Transform startPosition;
     private Vector3 offset;
 
     private void Awake()
     {
         solved = false;
-        startPosition = transform.position;
-
-        //isInteractable = false;
     }
     private void OnMouseDown()
     {
@@ -40,8 +37,13 @@ public class TextBlock : MonoBehaviour
         // Check if the block is placed;
         if (!solved)
             // Return the block to its starting position.
-            transform.position = startPosition;
+            transform.position = startPosition.position;
         
+    }
+
+    public void SetPosition(Transform pos)
+    {
+        transform.position = pos.position;
     }
 
     void OnMouseDrag()
@@ -55,8 +57,8 @@ public class TextBlock : MonoBehaviour
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mousePos);
 
             Vector3 targetPos = mouseWorldPos + offset;
-
-            gameObject.transform.position = targetPos;
+            if(!solved)
+                gameObject.transform.position = targetPos;
         }
     }
 
