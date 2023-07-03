@@ -8,7 +8,9 @@ public class PlantManager : MonoBehaviour
     public bool isActive;
     public List<Leaf> leafList = new();
     public static PlantManager instance = null;
+    public Item puzzleEntranceLast;
     public Leaf currentLeaf;
+    
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class PlantManager : MonoBehaviour
         {
             isActive = false;
             Player.instance.RecallMemory(associatedMemory);
+            puzzleEntranceLast.isHidden = false;
             Destroy(this);
         }
     }

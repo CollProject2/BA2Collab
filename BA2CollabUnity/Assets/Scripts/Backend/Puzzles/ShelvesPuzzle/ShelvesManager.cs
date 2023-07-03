@@ -16,12 +16,17 @@ public class ShelvesManager : MonoBehaviour
         if (instance == null)
             instance = this;
         isInteractable = false;
+        doOnce = true;
     }
 
     private void Update()
     {
-        if (currentLetter != null && isInteractable)
-            CheckInput();
+        if (isInteractable)
+        {
+            SetParticleSystem(true);
+            if (currentLetter != null)
+                CheckInput();
+        }
     }
 
     
@@ -55,15 +60,12 @@ public class ShelvesManager : MonoBehaviour
     public void SetParticleSystem(bool enabled)
     {
         if (doOnce)
-        {
             foreach (var particle in particles) { particle.SetActive(enabled); } 
-        }
         doOnce = false;
     }
 
     private void CheckInput()
     {
-        SetParticleSystem(true);
         if (Input.GetKeyDown(KeyCode.A))
             RotateLetterAt(currentLetter.id, RotationLR.Left);
         else if (Input.GetKeyDown(KeyCode.D))

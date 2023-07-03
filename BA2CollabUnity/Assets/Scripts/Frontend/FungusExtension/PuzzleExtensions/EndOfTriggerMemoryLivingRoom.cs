@@ -7,11 +7,9 @@ using UnityEngine;
 
 public class EndOfTriggerMemoryLivingRoom : Command
 {
-    public LissandrasCabinet lissandrasCabinet;
     public override void OnEnter()
     {
         LightManager.instance.OpenEntranceBedRoomDoorHighLight(true);
-        lissandrasCabinet.isInteractable = true;
         Continue();
     }
 }

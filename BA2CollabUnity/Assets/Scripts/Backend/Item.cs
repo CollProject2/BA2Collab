@@ -18,7 +18,7 @@ public class Item : MonoBehaviour
     {
         //update distance
         if(!isHidden)
-        Interact();
+                Interact();
     }
 
     // Methods

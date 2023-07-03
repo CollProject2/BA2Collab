@@ -1,18 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Fungus;
-[CommandInfo("puzzle","movemoonshineLenternAwayLivingRoom","moves puzzle out of screen")]
+using UnityEngine;
+[CommandInfo("puzzle", "movemoonshineLenternAwayLivingRoom", "moves puzzle out of screen")]
 
 public class MoveMoonshineItemAway : Command
 {
     public MoonShineItem moonshineItem;
     public GameObject triggerZoneToEntrance;
+    public LissandrasCabinet lissandrasCabinet;
     public override void OnEnter()
     {
         moonshineItem.MoveMoonshineLenternAway();
         triggerZoneToEntrance.SetActive(true);
-        
+        lissandrasCabinet.isInteractable = true;
         Continue();
     }
 }
