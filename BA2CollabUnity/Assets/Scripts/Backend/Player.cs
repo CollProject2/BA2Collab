@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     public bool hasBear;
     public bool hasMovingBox;
 
-
+    public bool inGarden;
 
     public int currentStage;
     public int missingBlocks;
@@ -55,6 +55,7 @@ public class Player : MonoBehaviour
         currentPosition = initialPosition;
         inventory = new List<Item>();
         missingBlocks = 3;
+        inGarden = false;
     }
 
     private void Update()
@@ -127,7 +128,16 @@ public class Player : MonoBehaviour
     public void SolvePuzzle(Puzzle puzzle)
     {
         // instantiate the puzzle prefab
-        puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
+        // if player is in garden change puzzle spawn and active pos
+        if (!inGarden)
+        {
+            puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
+        }
+        else if (inGarden)
+        {
+            puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.gardenBlockPuzzleInstantiatePos);
+        }
+
     }
 
     public void RecallMemory(string memory)

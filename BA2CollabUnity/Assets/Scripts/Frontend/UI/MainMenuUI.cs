@@ -25,6 +25,9 @@ public class MainMenuUI : MonoBehaviour
     [Header("Positions")]
     [SerializeField] private Transform camEndPos;
     [SerializeField] private Transform camBeginPos;
+    //new
+    [SerializeField] private Transform camPosAtGarden;
+    
     [SerializeField] private Transform titleActivePos;
     [SerializeField] private Transform flowerActivePos;
     [SerializeField] private Transform startButtonActivePos;

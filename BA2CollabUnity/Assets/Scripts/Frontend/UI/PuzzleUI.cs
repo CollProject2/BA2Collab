@@ -12,6 +12,9 @@ public class PuzzleUI : MonoBehaviour
     [Header("Block Puzzle Position")] 
     public Transform blockPuzzleActivePos;
     public Transform blockPuzzleInstantiatePos;
+    
+    public Transform gardenBlockPuzzleActivePos;
+    public Transform gardenBlockPuzzleInstantiatePos;
 
     [Header("Durations")] 
     public float blockPuzzleMoveDur;
