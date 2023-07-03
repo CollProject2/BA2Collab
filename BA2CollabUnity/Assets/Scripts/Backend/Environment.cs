@@ -13,6 +13,7 @@ public class Environment : MonoBehaviour
         LivingDiningRoom,
         ScreeningRoom,
         VideoPrep,
+        TrashedVideoPrep,
         Garden,
         Conservatory,
     }
@@ -72,10 +73,6 @@ public class Environment : MonoBehaviour
         //make lists new init here so they are empty on awake
     }
 
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {
@@ -105,6 +102,7 @@ public class Environment : MonoBehaviour
             {
                 Player.instance.transform.parent = null;
                 Player.instance.SetCharacterController(true);
+                currentRoom = CurrentRoom.Bedroom;
                 LightManager.instance.TurnOnPlayerLights();
                 DeactivateEntranceToBedRoomDoor();
                 SetActiveEntrance(false);
@@ -144,6 +142,7 @@ public class Environment : MonoBehaviour
             bedroom.SetActive(true);
             bedroomDoor_ent.SetActive(true);
             bedroomDoor_ofc.SetActive(true);
+            currentRoom = CurrentRoom.Bedroom;
         }
         else
         {
@@ -158,6 +157,7 @@ public class Environment : MonoBehaviour
         {
             office.SetActive(true);
             officeDoor_bed.SetActive(true);
+            currentRoom = CurrentRoom.Office;
         }
         else
         {
@@ -172,6 +172,7 @@ public class Environment : MonoBehaviour
             entrance.SetActive(true);
             entranceDoor_liv.SetActive(true);
             entrenceDoor_bed.SetActive(true);
+            currentRoom = CurrentRoom.Entrance;
         }
         else
         {
@@ -186,6 +187,7 @@ public class Environment : MonoBehaviour
             livingRoom.SetActive(true);
             livingDoor_ent.SetActive(true);
             livingDoor_scr.SetActive(true);
+            currentRoom = CurrentRoom.LivingDiningRoom;
         }
         else
         {
@@ -201,6 +203,7 @@ public class Environment : MonoBehaviour
             screeningRoom.SetActive(true);
             screenDoor_liv.SetActive(true);
             screenDoor_vid.SetActive(true);
+            currentRoom = CurrentRoom.ScreeningRoom;
         }
         else
         {
@@ -215,10 +218,12 @@ public class Environment : MonoBehaviour
             if (!trashTheVideoRoom)
             {
                 videoRoom.SetActive(true);
+                currentRoom = CurrentRoom.VideoPrep;
             }
             else
             {
                 trashedVideoRoom.SetActive(true);
+                currentRoom = CurrentRoom.TrashedVideoPrep;
             }
             
             videoDoor_scr.SetActive(true);
@@ -235,6 +240,7 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             garden.SetActive(true);
+            currentRoom = CurrentRoom.Garden;
         }
         else
         {
@@ -246,6 +252,7 @@ public class Environment : MonoBehaviour
         if (roomState)
         {
             conservatory.SetActive(true);
+            currentRoom = CurrentRoom.Conservatory;
         }
         else
         {

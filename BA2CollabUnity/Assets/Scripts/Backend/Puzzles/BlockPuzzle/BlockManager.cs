@@ -13,6 +13,7 @@ public class BlockManager : MonoBehaviour
 
     public Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
+    private bool solved;
 
     private Dictionary<int, int[]> blockDisplayMapping = new Dictionary<int, int[]>()
     {
@@ -32,6 +33,7 @@ public class BlockManager : MonoBehaviour
 
         puzzle = GetComponentInParent<Puzzle>();
         DisplayNextBlock();
+        solved = false;
     }
 
     //set this as the current block
@@ -96,7 +98,7 @@ public class BlockManager : MonoBehaviour
     //check wincon and finish up the puzzle
     public void CallCheck()
     {
-        if (CheckWinCondition())
+        if (CheckWinCondition() && !solved)
         {
             //disable block interaction
             DeactivateBlocks();
@@ -104,6 +106,7 @@ public class BlockManager : MonoBehaviour
             Player.instance.RecallMemory(puzzle.associatedMemory);
             //move the last block in place
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
+            solved = true;
         }
     }
     

@@ -7,7 +7,6 @@ public class OpenDialogueBox : Command
 {
     public override void OnEnter()
     {
-        UIManager.instance.dialogues.dialogueBox.dialogueIsPlaying = true;
         UIManager.instance.dialogues.dialogueBox.MoveToPlayingTextPos();
         Continue();
     }

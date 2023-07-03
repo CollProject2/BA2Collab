@@ -74,6 +74,5 @@ public class ProjectorPuzzle : MonoBehaviour
             // call shelf
             shelvesManager.isInteractable = true;
         }
-        
     }
 }

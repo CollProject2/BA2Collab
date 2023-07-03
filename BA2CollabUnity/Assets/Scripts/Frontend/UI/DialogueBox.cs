@@ -23,7 +23,7 @@ public class DialogueBox : MonoBehaviour
     [Header("Curves")]
     [SerializeField] private AnimationCurve dialogueBoxMoveCurve;
     
-    [Header("Items to Show")]
+    
     
 
     public bool dialogueIsPlaying;
@@ -42,6 +42,7 @@ public class DialogueBox : MonoBehaviour
 
     public void MoveToPlayingTextPos()
     {
+        dialogueIsPlaying = true;
         dialogueBoxParent.transform.DOMove(dialoguePlayingTextPos.position, dialogueBoxMoveDur)
             .SetEase(dialogueBoxMoveCurve);
         dialogueBoxTurningPart.transform.DORotate(new Vector3(-110,0,0),dialogueBoxTurnDur,RotateMode.LocalAxisAdd);
@@ -51,6 +52,6 @@ public class DialogueBox : MonoBehaviour
     {
         dialogueBoxParent.transform.DOMove(dialogueBoxActivePos.position, dialogueBoxMoveDur)
             .SetEase(dialogueBoxMoveCurve);
-        dialogueBoxTurningPart.transform.DORotate(new Vector3(110,0,0),dialogueBoxTurnDur,RotateMode.LocalAxisAdd);
+        dialogueBoxTurningPart.transform.DORotate(new Vector3(110,0,0),dialogueBoxTurnDur,RotateMode.LocalAxisAdd).OnComplete(()=>dialogueIsPlaying = false);
     }
 }

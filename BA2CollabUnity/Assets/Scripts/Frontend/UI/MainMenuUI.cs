@@ -23,11 +23,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject mandala;
 
     [Header("Positions")]
-    [SerializeField] private Transform camEndPos;
-    [SerializeField] private Transform camBeginPos;
-    //new
-    [SerializeField] private Transform camPosAtGarden;
-    
+
     [SerializeField] private Transform titleActivePos;
     [SerializeField] private Transform flowerActivePos;
     [SerializeField] private Transform startButtonActivePos;
@@ -35,7 +31,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Transform TEMPUIAwayPos;
 
     [Header("Durations")]
-    [SerializeField] private float cameraZoomDuration = 2;
+    
     [SerializeField] private float titleMoveDuration = 4;
     [SerializeField] private float flowerMoveDuration = 3;
     [SerializeField] private float startButtonMoveDuration = 2;
@@ -54,13 +50,13 @@ public class MainMenuUI : MonoBehaviour
     public float mandalaTurnSpeed = 15f;
 
 
-    public GameObject tempFocus;
+    
     public float offSetY = 2;
     public float offSetZ = 2;
     public float offSetX = 2;
 
-    public bool look = false;
-    private bool canPause = false;
+    
+    public bool canPause = false;
     private bool canStart = false;
 
     private void Start()
@@ -71,10 +67,7 @@ public class MainMenuUI : MonoBehaviour
 
     private void Update()
     {
-        if (look)
-        {
-            Camera.main.transform.LookAt(tempFocus.transform);
-        }
+        
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
@@ -90,31 +83,6 @@ public class MainMenuUI : MonoBehaviour
     }
 
     
-    private void CameraZoomSequence()
-    {
-        Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
-        Camera.main.transform.DORotate(new Vector3(6.945f, 0, 0), cameraZoomDuration).OnComplete(OnCameraZoomEnd);
-    }
-    private void CameraZoomOutSequence()
-    {
-        Camera.main.transform.DOMove(camBeginPos.transform.position, cameraZoomDuration);
-        Camera.main.transform.DORotate(new Vector3(-1.97f, 0, 0), cameraZoomDuration).OnComplete(() => UIManager.instance.dialogues.dialogueBox.MoveToPassivePos());
-    }
-
-    private void OnCameraZoomEnd()
-    {
-        look = true;
-        canPause = true;
-        Player.instance.SetCanMove(true);
-        LightManager.instance.TurnOffFrontStageLights();
-        UIManager.instance.dialogues.dialogueBox.MoveToActivePos();
-        Invoke("StartFirstDialogue", 1);
-    }
-
-    void StartFirstDialogue()
-    {
-        UIManager.instance.dialogues.StartDialogue("OnGameStartCall");
-    }
 
     // the sequence of events when we start the game and re load the scene
     void MainMenuSequence()
@@ -127,8 +95,8 @@ public class MainMenuUI : MonoBehaviour
     {
         if (canPause == false) return;
         canPause = false;
-        look = false;
-        CameraZoomOutSequence();
+        CameraManager.instance.look = false;
+        CameraManager.instance.CameraZoomOutSequence();
         Player.instance.SetCanMove(false);
         LightManager.instance.TurnOffPlayerLights();
         LightManager.instance.TurnOnFrontStageLights();
@@ -190,7 +158,7 @@ public class MainMenuUI : MonoBehaviour
         if (canStart == false) return; 
         mainMenuPanel.SetActive(false);
         mandala.GetComponent<SpriteRenderer>().DOColor(new Color(1, 1, 1, 0), 1);
-        CameraZoomSequence();
+        CameraManager.instance.CameraZoomSequence();
         OpenCurtains();
         
         MoveButtonsAndTitleAway(); // TEMPorary

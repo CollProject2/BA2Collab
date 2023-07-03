@@ -76,7 +76,7 @@ public class PuzzleBlock : MonoBehaviour
     private void OnMouseDown()
     {
         //prevent clicking before the puzzle is loaded
-        if (!interactable) return;
+        if (!interactable ) return;
 
         //prevent double clicking a block
         if (canMoveOut)
@@ -109,7 +109,11 @@ public class PuzzleBlock : MonoBehaviour
         //we set rotating to true
         isRotating = true;
         //rotate and will call the wincon check and turn rotating false after the rotation is complete
-        transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete( ()=> isRotating = false);
+        transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete( ()=>
+        {
+            SetCurrentConditions();
+            isRotating = false;
+        });
     }
 
     //set the puzzle random to start 
@@ -129,7 +133,7 @@ public class PuzzleBlock : MonoBehaviour
     public bool CheckRotation()
     {
         float difference = Quaternion.Angle(transform.localRotation, BlockManager.instance.targetRotation);
-        return Mathf.Abs(difference) < 0.1f;
+        return Mathf.Abs(difference) < 0.3f;
     }
     //check if the block has the right position/rotation
     public bool CheckFaceCondition()

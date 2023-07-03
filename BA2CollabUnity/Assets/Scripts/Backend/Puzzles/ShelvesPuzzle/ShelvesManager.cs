@@ -21,11 +21,15 @@ public class ShelvesManager : MonoBehaviour
 
     private void Update()
     {
-        if (isInteractable)
+        if (Environment.instance.currentRoom == Environment.CurrentRoom.LivingDiningRoom && isInteractable)
         {
             SetParticleSystem(true);
             if (currentLetter != null)
-                CheckInput();
+                CheckInput(); 
+        }
+        else
+        {
+            currentLetter = null;
         }
     }
 

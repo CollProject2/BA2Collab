@@ -7,7 +7,7 @@ public class CloseDialogueBox : Command
 {
     public override void OnEnter()
     {
-        UIManager.instance.dialogues.dialogueBox.dialogueIsPlaying = false;
+        
         UIManager.instance.dialogues.dialogueBox.OnDialogueEnd();
         Continue();
     }
