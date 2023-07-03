@@ -7,7 +7,7 @@ public class Bear : MonoBehaviour
 {
     public string bearMemory;
     public GameObject interactParticle;
-    public int interactRange;
+    public float interactRange;
     public bool isInteractable;
 
     private void Awake()
