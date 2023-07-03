@@ -1,7 +1,9 @@
+using System.Collections;
 using DG.Tweening;
 using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Environment : MonoBehaviour
 {
@@ -261,6 +263,36 @@ public class Environment : MonoBehaviour
     }
 
     #endregion
+
+    public void TeleportToEntrance()
+    {
+        UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
+        UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
+            () =>
+            {
+                SetActiveEntrance(true);
+                Player.instance.SetCanMove(false);
+                Player.instance.animator.SetBool("isMoving",false);
+                canTurnStage = false;
+                        
+                Player.instance.TeleportPlayer(playerTeleportPosEntrance);
+                SetActiveConservatory(false);
+                SetActiveGarden(false);
+                SetActiveVideoPrep(false);
+                StartCoroutine(DelayForEntranceTP(1));
+                UIManager.instance.MainMenuUI.FadeToTransparent(1);
+
+            });
+    }
+    
+    IEnumerator DelayForEntranceTP(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        Player.instance.SetCanMove(true);
+        canTurnStage = true;
+        
+
+    }
     
 }
 

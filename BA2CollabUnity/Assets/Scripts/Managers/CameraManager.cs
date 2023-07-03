@@ -58,6 +58,11 @@ public class CameraManager : MonoBehaviour
         Camera.main.transform.DOMove(camPosAtGarden.transform.position, cameraZoomDuration);
         tempFocus.transform.DOMove(TempPosGarden.position, cameraZoomDuration);
     }
+    public void CameraZoomOutFromGarden()
+    {
+        Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
+        tempFocus.transform.DOMove(TempPosInit.position, cameraZoomDuration);
+    }
 
     private void OnCameraZoomEnd()
     {
