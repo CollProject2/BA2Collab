@@ -1,7 +1,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-public class LockboxItem : InteractableItem
+public class LockBoxItem : InteractableItem
 {
     public string LockBoxMemory;
     [Header("object")]
@@ -10,8 +10,6 @@ public class LockboxItem : InteractableItem
     [SerializeField] private GameObject lockBoxPivot;
     [SerializeField] private GameObject projectorPictures;
     [Header("positions")]
-    [SerializeField] private Transform initPos;
-    [SerializeField] private Transform activePos;
     [SerializeField] private Transform puzzleInitPos;
     [SerializeField] private Transform puzzleIActivePos;
     [SerializeField] private Transform projectorPicturesInitPos;

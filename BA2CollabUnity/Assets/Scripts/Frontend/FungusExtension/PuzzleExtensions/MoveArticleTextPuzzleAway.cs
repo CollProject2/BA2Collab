@@ -9,7 +9,7 @@ public class MoveArticleTextPuzzleAway : Command
     public Item blockPuzzle;
     public override void OnEnter()
     {
-        theatreItem.MoveTextPuzzleAway();
+        theatreItem.MoveItemAway();
         blockPuzzle.enabled = true;
         Continue();
     }

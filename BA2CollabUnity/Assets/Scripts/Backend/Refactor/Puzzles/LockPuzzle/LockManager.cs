@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LockManager : MonoBehaviour
 {
-    public LockboxItem lockbox;
+    public LockBoxItem lockbox;
     public bool isComplete;
     public bool isActive;
     public List<Number> isRight = new();

@@ -6,11 +6,9 @@ using Fungus;
 
 public class Move3DPuzzleUIAway : Command
 {
-    public MovingBox2 movingBox2;
     public override void OnEnter()
     {
         BlockManager.instance.OnPuzzleFinishedMove();
-        movingBox2.SetBoxActive();
         Continue();
     }
 }

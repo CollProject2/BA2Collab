@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class GlassesItem : InteractableItem
 {
-    public Glasses glasses;
-    public Lockbox lockBox;
+    public GlassesManager glasses;
     [SerializeField] private GameObject glassesModel;
 
     protected override void Interact()
@@ -30,7 +29,6 @@ public class GlassesItem : InteractableItem
     {
         glassesModel.SetActive(true);
         Player.instance.hasGlasses = true;
-        lockBox.isInteractable = true;
         glassesModel.transform.DOLocalMove(new Vector3(0, -1, 3), 1).OnComplete(() =>
         {
             glassesModel.transform.DOLocalMove(new Vector3(0, -1, 0.16f), 1).OnComplete(() =>

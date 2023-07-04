@@ -6,7 +6,7 @@ using UnityEngine;
 public class ChangePicturesProjector : Command
 {
     public int picIndex;
-    public ProjectorPuzzle projector;
+    public ProjectorItem projector;
     public override void OnEnter()
     {
         projector.ShowPicture(picIndex);

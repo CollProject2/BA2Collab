@@ -40,7 +40,7 @@ public class StoryManager : MonoBehaviour
     public PosterItem posterItem;
     public WallPosterItem wallPosterItem;
     public GlassesItem glassesItem;
-    public LockboxItem lockBoxItem;
+    public LockBoxItem lockBoxItem;
     public ProjectorItem projectorItem;
     public SecretDrawerItem secrectDrawerItem;
 

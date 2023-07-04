@@ -6,12 +6,11 @@ using Fungus;
 
 public class Move2DPuzzleUIAway : Command
 {
-    public FrameItem frameItem;
-    public BearZone bearZone;
+    public FamilyPhotoFrameItem frameItem;
+    public MovingBoxItem bearZone;
     public override void OnEnter()
     {
-        frameItem.Move2DPuzzleAway();
-        bearZone.SetBoxActive();
+        frameItem.MoveItemAway();
         LightManager.instance.OpenOfficeMovingBoxHighLight(true);
         Continue();
     }

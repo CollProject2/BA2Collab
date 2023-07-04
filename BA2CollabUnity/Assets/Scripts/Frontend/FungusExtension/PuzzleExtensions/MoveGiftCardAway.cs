@@ -12,9 +12,8 @@ public class MoveGiftCardAway : Command
     
     public override void OnEnter()
     {
-        giftCardItem.MoveNoteAway();
+        giftCardItem.MoveItemAway();
         blockCollect.SetInteractable(true);
-        
         Continue();
     }
 
