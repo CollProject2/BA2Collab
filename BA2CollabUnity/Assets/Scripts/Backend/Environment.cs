@@ -175,6 +175,7 @@ public class Environment : MonoBehaviour
             entranceDoor_liv.SetActive(true);
             entrenceDoor_bed.SetActive(true);
             currentRoom = CurrentRoom.Entrance;
+            LightManager.instance.ChangeColor(LightManager.instance.entranceRoomColor); // experimental
         }
         else
         {
@@ -190,6 +191,7 @@ public class Environment : MonoBehaviour
             livingDoor_ent.SetActive(true);
             livingDoor_scr.SetActive(true);
             currentRoom = CurrentRoom.LivingDiningRoom;
+            LightManager.instance.ChangeColor(LightManager.instance.livingRoomColor);
         }
         else
         {

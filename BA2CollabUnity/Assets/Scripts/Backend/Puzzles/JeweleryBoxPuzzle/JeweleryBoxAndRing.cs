@@ -34,6 +34,7 @@ public class JeweleryBoxAndRing : MonoBehaviour
         
 
     }
+    
 
     public void Interact()
     {
@@ -61,12 +62,11 @@ public class JeweleryBoxAndRing : MonoBehaviour
     void InstantiateAndMove()
     {
         JeweleryPuzzleObj.transform.DOMove(activePos.position, jeweleryMoveDuration);
-        JeweleryPuzzleObj.transform.DOScale(new Vector3(5f, 5f, 5f), jeweleryBoxOpenDur);
-        JeweleryPuzzleObj.transform.DORotate(new Vector3(-12, 0, 0), jeweleryMoveDuration).OnComplete(() =>
+        JeweleryPuzzleObj.transform.DOScale(new Vector3(5f, 5f, 5f), jeweleryBoxOpenDur).OnComplete(() =>
         {
-            jeweleryBoxPivot.transform.DOLocalRotate(new Vector3(0, 0, -96), jeweleryBoxOpenDur).OnComplete(() =>
+            jeweleryBoxPivot.transform.DOLocalRotate(new Vector3(80, 180, jeweleryBoxPivot.transform.rotation.z), jeweleryBoxOpenDur).OnComplete(() =>
             {
-                Ring.transform.DOLocalRotate(new Vector3(0, 540, 0),jeweleryMoveDuration, RotateMode.FastBeyond360);
+                
                 Ring.transform.DOMove(ringActivePos.position, jeweleryMoveDuration/2).SetEase(Ease.InOutSine).OnComplete(() =>
                 {
                     UIManager.instance.dialogues.StartDialogue(jeweleryMemory);
@@ -80,10 +80,9 @@ public class JeweleryBoxAndRing : MonoBehaviour
 
         Ring.transform.DOMove(ringInitPos.position, jeweleryMoveDuration).OnComplete(() =>
         {
-            jeweleryBoxPivot.transform.DOLocalRotate(new Vector3(0, 0, 0), jeweleryMoveDuration);
+            jeweleryBoxPivot.transform.DOLocalRotate(new Vector3(0, 180, jeweleryBoxPivot.transform.rotation.z), jeweleryBoxOpenDur);
             JeweleryPuzzleObj.transform.DOMove(initPos.position, jeweleryMoveDuration);
             JeweleryPuzzleObj.transform.DOScale(new Vector3(1, 1, 1), jeweleryBoxOpenDur);
-            JeweleryPuzzleObj.transform.DORotate(new Vector3(0, 0, 0), jeweleryMoveDuration);
         });
 
     }

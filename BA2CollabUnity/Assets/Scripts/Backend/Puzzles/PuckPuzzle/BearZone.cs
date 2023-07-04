@@ -49,7 +49,6 @@ public class BearZone : MonoBehaviour
                 bear.transform.DOMove(transform.position, 1).OnComplete(()=>
                 {
                     bear.transform.parent = transform;
-                    bear.SetActive(false);
                     puzzleItemOffice3d.SetIsHidden(false);
                     movingBox2.enabled = true;
                     

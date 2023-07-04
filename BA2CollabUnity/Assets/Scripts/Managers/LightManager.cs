@@ -7,6 +7,10 @@ public class LightManager : MonoBehaviour
 {
     public static LightManager instance;
 
+    public Color livingRoomColor;
+    public Color entranceRoomColor;
+    public List<Light> bgLights;
+
     [Header("Player Lights")] 
     [SerializeField] private GameObject playerLightYellow;
     [SerializeField] private GameObject playerLightWhite;
@@ -45,6 +49,14 @@ public class LightManager : MonoBehaviour
         else
         {
             Destroy(this);
+        }
+    }
+
+    public void ChangeColor(Color color)
+    {
+        foreach (var light in bgLights)
+        {
+            light.DOColor(color, 2);
         }
     }
 
