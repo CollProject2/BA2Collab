@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -52,6 +53,8 @@ public class LightManager : MonoBehaviour
         }
     }
 
+   
+
     public void ChangeColor(Color color)
     {
         foreach (var light in bgLights)
@@ -59,6 +62,8 @@ public class LightManager : MonoBehaviour
             light.DOColor(color, 2);
         }
     }
+
+    
 
     public void TurnOffFrontStageLights()
     {

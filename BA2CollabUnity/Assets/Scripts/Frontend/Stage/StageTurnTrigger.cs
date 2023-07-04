@@ -41,6 +41,7 @@ public class StageTurnTrigger : MonoBehaviour
     public void TurnEnvironmentClockWise()
     {
         //AdjustAllDoorsOnTurn();
+        PartiallyUnloadRoom();
         Player.instance.SetCanMove(false);
         Player.instance.transform.parent = Environment.instance.stageGround.transform;
         Environment.instance.canTurnStage = false;
@@ -50,6 +51,7 @@ public class StageTurnTrigger : MonoBehaviour
     public void TurnEnvironmentCounterClockWise()
     {
         //AdjustAllDoorsOnTurn();
+        PartiallyUnloadRoom();
         Player.instance.SetCanMove(false);
         Player.instance.transform.parent = Environment.instance.stageGround.transform;
         Environment.instance.canTurnStage = false;
@@ -126,7 +128,37 @@ public class StageTurnTrigger : MonoBehaviour
                 break;
         }
     }
-
+    void PartiallyUnloadRoom()
+    {
+        switch (theRoomThisDoorBelong)
+        {
+            case RoomToLoad.Bedroom:
+                Environment.instance.partialLoader_BedRoom.PartiallyUnload();
+                break;
+            case RoomToLoad.Office:
+                Environment.instance.partialLoader_Office.PartiallyUnload();
+                break;
+            case RoomToLoad.Entrance:
+                
+                break;
+            case RoomToLoad.LivingDiningRoom:
+                Environment.instance.partialLoader_LivingRoom.PartiallyUnload();
+                break;
+            case RoomToLoad.ScreeningRoom:
+                
+                break;
+            case RoomToLoad.VideoPrep:
+                
+                break;
+            case RoomToLoad.Garden:
+                
+                break;
+            case RoomToLoad.Conservatory:
+                
+                break;
+        }
+    }
+    
     void UnloadRoom()
     {
         switch (theRoomThisDoorBelong)
@@ -215,6 +247,7 @@ public class StageTurnTrigger : MonoBehaviour
     {
         if (turnDirection == TurnDirection.noTurn)
         {
+            PartiallyUnloadRoom();
             UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
             UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
                 () =>
@@ -241,6 +274,7 @@ public class StageTurnTrigger : MonoBehaviour
     {
         if (turnDirection == TurnDirection.noTurn)
         {
+            PartiallyUnloadRoom();
             UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
             UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
                 () =>

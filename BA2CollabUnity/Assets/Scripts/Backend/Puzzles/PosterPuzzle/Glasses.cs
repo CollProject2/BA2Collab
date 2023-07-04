@@ -15,6 +15,7 @@ public class Glasses : MonoBehaviour
 
     public GlassesState glassesState;
     public GameObject[] glasses;
+    public GameObject glasesBorder;
     public Material[] mat3d;
     public Material[] matr;
     public Material[] matb;
@@ -37,6 +38,7 @@ public class Glasses : MonoBehaviour
     {
         glasses[0].GetComponent<MeshRenderer>().enabled = true;
         glasses[1].GetComponent<MeshRenderer>().enabled = true;
+        glasesBorder.SetActive(true);
         Player.instance.canMove = false;
         canSwitch = true;
         glassesState = GlassesState.threeD;
@@ -51,12 +53,14 @@ public class Glasses : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q)) // take off glasses 
             {
                 glassesState = GlassesState.off;
+                CameraManager.instance.CameraZoomOutScreeningRoom();
                 glassesItem.isInteractable = true;
                 Player.instance.hasGlasses = false;
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
                 glassesState = GlassesState.threeD;
+                
                 
                 ItemUIManager.Instance.ToggleItem(1);
             }
@@ -99,6 +103,7 @@ public class Glasses : MonoBehaviour
                 
                 glasses[0].GetComponent<MeshRenderer>().enabled = false;
                 glasses[1].GetComponent<MeshRenderer>().enabled = false;
+                glasesBorder.SetActive(false);
                 Player.instance.canMove = true;
                 canSwitch = false;
                 

@@ -12,7 +12,7 @@ public class CameraManager : MonoBehaviour
     [SerializeField] private Transform camEndPos;
     [SerializeField] private Transform camBeginPos;
     [SerializeField] private Transform camPosAtGarden;
-
+    [SerializeField] private Transform camPosAtScreeningRoom;
     [SerializeField] private Transform TempPosInit;
     [SerializeField] private Transform TempPosGarden;
     
@@ -63,6 +63,16 @@ public class CameraManager : MonoBehaviour
         Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
         tempFocus.transform.DOMove(TempPosInit.position, cameraZoomDuration);
     }
+
+    public void CameraZoomInScreeningRoom()
+    {
+        Camera.main.transform.DOMove(camPosAtScreeningRoom.transform.position, cameraZoomDuration);
+    }
+    public void CameraZoomOutScreeningRoom()
+    {
+        Camera.main.transform.DOMove(camEndPos.transform.position, cameraZoomDuration);
+    }
+
 
     private void OnCameraZoomEnd()
     {

@@ -45,6 +45,7 @@ public class GlassesItem : MonoBehaviour
         Player.instance.animator.SetBool("isMoving", false);
         ActivateGlassesOnCamera();
         isInteractable = false;
+        CameraManager.instance.CameraZoomInScreeningRoom();
     }
 
     public void ActivateGlassesOnCamera()

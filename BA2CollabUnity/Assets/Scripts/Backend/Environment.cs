@@ -22,7 +22,7 @@ public class Environment : MonoBehaviour
     //Singelton instance
     public static Environment instance = null;
 
-    public StageMovingParts stageMovingParts;
+    
     //Properties
     [Header("Rooms")]
     [SerializeField] private GameObject bedroom;
@@ -34,6 +34,12 @@ public class Environment : MonoBehaviour
     [SerializeField] private GameObject trashedVideoRoom;
     [SerializeField] private GameObject garden;
     [SerializeField] private GameObject conservatory;
+
+    [Header("Partially Loaded Part")] 
+    public PartialRoomLoader partialLoader_BedRoom;
+    public PartialRoomLoader partialLoader_Office;
+    public PartialRoomLoader partialLoader_LivingRoom;
+    
     [Header("Doors")] 
     [SerializeField] private GameObject bedroomDoor_ent;
     [SerializeField] private GameObject bedroomDoor_ofc;
@@ -97,6 +103,7 @@ public class Environment : MonoBehaviour
 
     public void TurnEnvironmentAtStart()
     {
+        partialLoader_BedRoom.PartialLoad();
         Player.instance.transform.parent = turningEnviroment.transform;
         Player.instance.SetCharacterController(false);
         turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0),2).SetEase(turnEase).OnComplete(
@@ -145,6 +152,7 @@ public class Environment : MonoBehaviour
             bedroomDoor_ent.SetActive(true);
             bedroomDoor_ofc.SetActive(true);
             currentRoom = CurrentRoom.Bedroom;
+            partialLoader_BedRoom.PartialLoad();
         }
         else
         {
@@ -160,6 +168,7 @@ public class Environment : MonoBehaviour
             office.SetActive(true);
             officeDoor_bed.SetActive(true);
             currentRoom = CurrentRoom.Office;
+            partialLoader_Office.PartialLoad();
         }
         else
         {
@@ -192,6 +201,7 @@ public class Environment : MonoBehaviour
             livingDoor_scr.SetActive(true);
             currentRoom = CurrentRoom.LivingDiningRoom;
             LightManager.instance.ChangeColor(LightManager.instance.livingRoomColor);
+            partialLoader_LivingRoom.PartialLoad();
         }
         else
         {
