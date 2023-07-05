@@ -8,6 +8,7 @@ public class MovingBoxItem : InteractableItem
         DroppingPuck,
         PickingUpBox,
         DroppingBox,
+        BoxDropped,
         End
     }
 
@@ -37,44 +38,42 @@ public class MovingBoxItem : InteractableItem
                     Player.instance.hasBear = false;
                     UIManager.instance.dialogues.StartDialogue(bearDropMemory);
                     Collect();
-                    UpdateBoxState();
                     break;
                 case MovingBoxState.PickingUpBox:
                     UIManager.instance.dialogues.StartDialogue(PickUpBoxAndBearMemory);
-                    PickUpBox();
-                    UpdateBoxState();
+                    PickUpBox();;
                     break;
                 case MovingBoxState.DroppingBox:
-                    UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
+                    
                     PutDownBox();
-                    UpdateBoxState();
+                    
                     break;
                 case MovingBoxState.End:
                     UIManager.instance.dialogues.StartDialogue(endingMemory);
                     break;
             }
-            SetIsComplete(true);
+            
         }
     }
 
     public override void Collect()
     {
-        ChangeValues();
         var bear = Instantiate(bearModel, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
         bear.transform.DOMove(transform.position, 1).OnComplete(() =>
         {
             bear.transform.parent = transform;
+            ChangeValues();
         });
     }
 
     private void PickUpBox()
     {
-        ChangeValues();
+        
         transform.DOMove(Player.instance.playerCarrypos.position, 1).OnComplete(
             () =>
             {
                 transform.parent = Player.instance.transform;
-                Player.instance.SetCanMove(true);
+                ChangeValues();
             });
 
     }
@@ -83,10 +82,11 @@ public class MovingBoxItem : InteractableItem
     {
         if (Player.instance.CheckDistanceWithPlayer(boxPos.position) < interactRange && !Player.instance.isSolving)
         {
-            ChangeValues();
             gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
             {
+                UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
                 gameObject.transform.parent = boxPos;
+                ChangeValues();
             });
         }
        
@@ -104,7 +104,7 @@ public class MovingBoxItem : InteractableItem
                 boxState = MovingBoxState.DroppingBox;
                 break;
             case MovingBoxState.DroppingBox:
-                boxState = MovingBoxState.End;
+                boxState = MovingBoxState.BoxDropped;
                 break;
         }
     }
@@ -131,7 +131,8 @@ public class MovingBoxItem : InteractableItem
                 interactParticle.SetActive(false);
                 break;
         }
-
+        SetIsComplete(true);
+        UpdateBoxState();
 
     }
 

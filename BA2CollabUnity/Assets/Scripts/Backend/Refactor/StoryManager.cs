@@ -172,7 +172,7 @@ public class StoryManager : MonoBehaviour
                 }
                 break;
             case GameState.MovingBoxItemDropped:
-                if (movingBoxItem.boxState == MovingBoxState.End)
+                if (movingBoxItem.boxState == MovingBoxState.BoxDropped)
                 {
                     degreeItem.SetInteractable(true);
                     CurrentState = GameState.DegreeItem;
