@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class MedallionItem : InteractableItem
 {
+
+    [Header("positions")]
+    [SerializeField] protected Transform initPos;
+    [SerializeField] protected Transform activePos;
     [SerializeField] private GameObject medallionPuzzleObj;
     [SerializeField] private GameObject medallionPivot;
     [SerializeField] private GameObject letter;
     [SerializeField] private float medallionMovementDuration;
     [SerializeField] private float medallionOpenDuration;
     public string medallionMemory;
-
-    protected override void Interact()
-    {
-        base.Interact();
-    }
 
     public override void Collect()
     {
@@ -22,10 +21,10 @@ public class MedallionItem : InteractableItem
         Puzzle2DManager.instance.isInteractable = true;
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
+        SetIsComplete(true);
     }
 
-    protected override void InstantiateAndMove()
+    public void InstantiateAndMove()
     {
         medallionPuzzleObj.SetActive(true);
         medallionPuzzleObj.transform.DOMove(activePos.position, medallionMovementDuration);
@@ -40,7 +39,7 @@ public class MedallionItem : InteractableItem
         });
     }
 
-    public override void MoveItemAway()
+    public void MoveItemAway()
     {
         letter.SetActive(false);
         medallionPivot.transform.DORotate(new Vector3(0, -90, 1), medallionOpenDuration).OnComplete(() =>

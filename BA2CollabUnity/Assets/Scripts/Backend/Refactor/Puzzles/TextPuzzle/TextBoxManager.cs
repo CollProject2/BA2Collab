@@ -8,7 +8,7 @@ public class TextBoxManager : MonoBehaviour
 {
     public static TextBoxManager instance = null;
     public string associatedMemory;
-    public bool isActive;
+    public bool isInteractable;
     public List<TextBlock> isRight = new();
     public TextBlock currentTextBlock;
     private bool isComplete;
@@ -17,7 +17,7 @@ public class TextBoxManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        // isActive = false;
+
         ResetOnAwake();
 
     }
@@ -32,10 +32,10 @@ public class TextBoxManager : MonoBehaviour
     {
         if (WordsAreCorrect())
         {
-            isActive = false;
-            //recall memory
-            Player.instance.RecallMemory(associatedMemory);
-            
+            UIManager.instance.dialogues.StartDialogue(associatedMemory);
+            isInteractable = false;
+            isComplete = true;
+            StoryManager.instance.AdvanceGameState();
         }
     }
     public bool IsComplete()
@@ -64,6 +64,6 @@ public class TextBoxManager : MonoBehaviour
 
     internal void Activate()
     {
-        throw new NotImplementedException();
+        isInteractable = true;
     }
 }

@@ -12,7 +12,6 @@ public class WordDetector : MonoBehaviour
             {
                 other.gameObject.GetComponent<TextBlock>().solved = true;
                 other.gameObject.GetComponent<TextBlock>().SetPosition(endPosition);
-                other.gameObject.GetComponent<TextBlock>().isInteractable = false;
                 TextBoxManager.instance.CallCheck();
                 Destroy(this);
             }

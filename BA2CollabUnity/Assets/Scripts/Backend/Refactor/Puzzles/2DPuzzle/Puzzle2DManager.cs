@@ -19,7 +19,6 @@ public class Puzzle2DManager : MonoBehaviour
             Destroy(this);
 
         isInteractable = false;
-
     }
 
     public bool IsComplete()
@@ -45,7 +44,8 @@ public class Puzzle2DManager : MonoBehaviour
             Player.instance.RecallMemory(associatedMemory);
             DeactivatePuzzle();
             isInteractable = false;
-
+            isComplete = true;
+            StoryManager.instance.AdvanceGameState();
         }
 
     }
@@ -81,6 +81,6 @@ public class Puzzle2DManager : MonoBehaviour
 
     internal void Activate()
     {
-        throw new NotImplementedException();
+        isInteractable = true;
     }
 }

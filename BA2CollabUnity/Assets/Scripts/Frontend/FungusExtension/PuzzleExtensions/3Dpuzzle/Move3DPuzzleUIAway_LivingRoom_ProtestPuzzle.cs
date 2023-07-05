@@ -6,12 +6,9 @@ using UnityEngine;
 
 public class Move3DPuzzleUIAway_LivingRoom_ProtestPuzzle : Command
 {
-    public Item livingRoom_ProtestPuzzleItem;
     public override void OnEnter()
     {
         BlockManager.instance.OnPuzzleFinishedMove();
-        Destroy(livingRoom_ProtestPuzzleItem);
         Continue();
-        
     }
 }

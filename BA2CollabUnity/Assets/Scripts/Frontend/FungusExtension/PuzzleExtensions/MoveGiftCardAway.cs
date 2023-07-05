@@ -8,12 +8,10 @@ using Fungus;
 public class MoveGiftCardAway : Command
 {
     public GiftCardItem giftCardItem;
-    public BlockCollect blockCollect;
-    
+
     public override void OnEnter()
     {
         giftCardItem.MoveItemAway();
-        blockCollect.SetInteractable(true);
         Continue();
     }
 

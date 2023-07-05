@@ -6,23 +6,13 @@ public class GlassesItem : InteractableItem
     public GlassesManager glasses;
     [SerializeField] private GameObject glassesModel;
 
-    protected override void Interact()
-    {
-        base.Interact();
-    }
-
     public override void Collect()
     {
         interactParticle.SetActive(false);
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
         ActivateGlassesOnCamera();
-        isInteractable = false;
-    }
-
-    public override void MoveItemAway()
-    {
-        // move glasses away 
+        SetIsComplete(true);
     }
 
     public void ActivateGlassesOnCamera()
@@ -39,6 +29,7 @@ public class GlassesItem : InteractableItem
             });
         });
     }
+
 }
 
 

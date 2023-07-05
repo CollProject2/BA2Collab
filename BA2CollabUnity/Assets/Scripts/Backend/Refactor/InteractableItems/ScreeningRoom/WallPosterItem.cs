@@ -18,9 +18,4 @@ public class WallPosterItem : InteractableItem
         Player.instance.animator.SetBool("isMoving", false);
         Player.instance.RecallMemory(posterGapMemory);
     }
-
-    public override void MoveItemAway()
-    {
-        // Implementation on how wall poster puzzle moves away
-    }
 }

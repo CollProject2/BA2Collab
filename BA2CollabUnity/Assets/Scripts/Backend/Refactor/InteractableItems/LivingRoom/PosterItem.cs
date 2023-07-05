@@ -4,10 +4,6 @@ public class PosterItem : InteractableItem
 {
     public string posterMemory;
 
-    protected override void Interact()
-    {
-        base.Interact();
-    }
 
     public override void Collect()
     {
@@ -16,13 +12,8 @@ public class PosterItem : InteractableItem
         Player.instance.hasPoster = true;
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
         ItemUIManager.Instance.ToggleItem(0);
+        SetIsComplete(true);
         Destroy(gameObject);
-    }
-
-    public override void MoveItemAway()
-    {
-        // Not needed in this case
     }
 }

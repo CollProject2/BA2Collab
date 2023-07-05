@@ -6,11 +6,9 @@ using UnityEngine;
 public class MoveArticleTextPuzzleAway : Command
 {
     public TheatreArticleItem theatreItem;
-    public Item blockPuzzle;
     public override void OnEnter()
     {
         theatreItem.MoveItemAway();
-        blockPuzzle.enabled = true;
         Continue();
     }
 }

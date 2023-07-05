@@ -8,23 +8,25 @@ public class DegreeItem : InteractableItem
 
     [Header("Duration")]
     [SerializeField] private float textPuzzleMovementDuration;
-
+    [Header("positions")]
+    [SerializeField] protected Transform initPos;
+    [SerializeField] protected Transform activePos;
     public override void Collect()
     {
         interactParticle.SetActive(false);
         InstantiateAndMove();
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
+        SetIsComplete(true); 
     }
 
-    protected override void InstantiateAndMove()
+    public void InstantiateAndMove()
     {
         textPuzzle.SetActive(true);
         textPuzzle.transform.DOMove(activePos.position, textPuzzleMovementDuration);
     }
 
-    public override void MoveItemAway()
+    public void MoveItemAway()
     {
         textPuzzle.transform.DOMove(initPos.position, textPuzzleMovementDuration).OnComplete(() =>
         {

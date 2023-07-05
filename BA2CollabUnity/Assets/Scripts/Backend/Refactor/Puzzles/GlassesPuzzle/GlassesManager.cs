@@ -24,8 +24,8 @@ public class GlassesManager : MonoBehaviour
     
     public bool left;
     private bool canSwitch;
-    public GlassesItem glassesItem;
     public bool isComplete;
+    public bool isInteractable;
 
 
     private void Awake()
@@ -48,12 +48,14 @@ public class GlassesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Player.instance.hasGlasses)
+        if (Player.instance.hasGlasses && isInteractable)
         {
             if (Input.GetKeyDown(KeyCode.Q)) // take off glasses 
             {
                 glassesState = GlassesState.off;
                 Player.instance.hasGlasses = false;
+                isComplete = true;
+                StoryManager.instance.AdvanceGameState();
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -162,6 +164,6 @@ public class GlassesManager : MonoBehaviour
 
     internal void Activate()
     {
-        throw new NotImplementedException();
+        isInteractable = true;
     }
 }

@@ -6,10 +6,9 @@ using UnityEngine;
 public class PlantManager : MonoBehaviour
 {
     public string associatedMemory;
-    public bool isActive;
+    public bool isIntaractable;
     public List<Leaf> leafList = new();
     public static PlantManager instance = null;
-    public Item puzzleEntranceLast;
     public Leaf currentLeaf;
     public bool isComplete;
     
@@ -21,16 +20,17 @@ public class PlantManager : MonoBehaviour
         else
             Destroy(this);
         
-        // isActive = false;
+        isIntaractable = false;
     }
 
     public void CallCheck()
     {
-        if (PlantIsClean() && isActive)
+        if (PlantIsClean() && isIntaractable)
         {
-            isActive = false;
-            Player.instance.RecallMemory(associatedMemory);
-            puzzleEntranceLast.isHidden = false;
+            isIntaractable = false;
+            UIManager.instance.dialogues.StartDialogue(associatedMemory);
+            isComplete = true;
+            StoryManager.instance.AdvanceGameState();
             Destroy(this);
         }
     }
@@ -48,6 +48,6 @@ public class PlantManager : MonoBehaviour
 
     internal void Activate()
     {
-        throw new NotImplementedException();
+        isIntaractable = true;
     }
 }

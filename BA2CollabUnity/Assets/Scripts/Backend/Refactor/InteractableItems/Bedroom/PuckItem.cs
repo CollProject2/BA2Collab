@@ -2,22 +2,20 @@ using DG.Tweening;
 
 public class PuckItem : InteractableItem
 {
+    public string puckMemory;
     public override void Collect()
     {
         interactParticle.SetActive(false);
-        InstantiateAndMove();
+        UIManager.instance.dialogues.StartDialogue(puckMemory);
+
+
+        Player.instance.hasBear = true;
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
-    }
 
-    public override void MoveItemAway()
-    {
-        itemObject.transform.DOMove(initPos.position, itemMovementDuration).OnComplete(() =>
-        {
-            itemObject.SetActive(false);
-            Destroy(this);
-        });
+        ItemUIManager.Instance.ToggleItem(2);
+        SetIsComplete(true);
+        Destroy(gameObject);
     }
 
 }

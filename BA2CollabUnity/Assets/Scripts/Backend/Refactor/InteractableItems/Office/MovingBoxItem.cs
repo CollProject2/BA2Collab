@@ -1,24 +1,24 @@
 using DG.Tweening;
-using System;
 using UnityEngine;
 
 public class MovingBoxItem : InteractableItem
 {
     public enum MovingBoxState
     {
-        BearBox,
-        PickedUp,
-        Dropped,
+        DroppingPuck,
+        PickingUpBox,
+        DroppingBox,
         End
     }
 
     public MovingBoxState boxState;
     public Animator boxAnimator;
     public GameObject bearModel;
-    public Item puzzleItemOffice3d;
     public string bearDropMemory;
+    public string PickUpBoxAndBearMemory;
     public string movingBoxDropMemory;
     public string endingMemory;
+    public Transform boxPos;
 
     protected override void Awake()
     {
@@ -39,76 +39,102 @@ public class MovingBoxItem : InteractableItem
         {
             switch (boxState)
             {
-                case MovingBoxState.BearBox:
+                case MovingBoxState.DroppingPuck:
+                    Player.instance.hasBear = false;
+                    UIManager.instance.dialogues.StartDialogue(bearDropMemory);
                     Collect();
                     break;
-                case MovingBoxState.PickedUp:
-                    MoveItemAway();
+                case MovingBoxState.PickingUpBox:
+                    UIManager.instance.dialogues.StartDialogue(PickUpBoxAndBearMemory);
+                    PickUpBox();
                     break;
-                case MovingBoxState.Dropped:
-                    Player.instance.RecallMemory(movingBoxDropMemory);
+                case MovingBoxState.DroppingBox:
+                    UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
+                    PutDownBox();
                     break;
                 case MovingBoxState.End:
-                    Player.instance.RecallMemory(endingMemory);
+                    UIManager.instance.dialogues.StartDialogue(endingMemory);
                     break;
             }
+            SetIsComplete(true);
         }
     }
 
     public override void Collect()
     {
-        // Put bear in the box
-        boxAnimator.SetTrigger("PutBearInBox");
         ChangeValues();
-        isInteractable = false;
-        Player.instance.animator.SetBool("isMoving", false);
-        ItemUIManager.Instance.ToggleItem(2);
         var bear = Instantiate(bearModel, new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
         bear.transform.DOMove(transform.position, 1).OnComplete(() =>
         {
             bear.transform.parent = transform;
-            puzzleItemOffice3d.SetIsHidden(false);
-            isInteractable = true;
         });
     }
 
-    public override void MoveItemAway()
+    private void PickUpBox()
     {
-        // Move the box away
-        isInteractable = false;
-        transform.DOMove(initPos.position, itemMovementDuration).OnComplete(() =>
+        ChangeValues();
+        transform.DOMove(Player.instance.playerCarrypos.position, 1).OnComplete(
+            () =>
+            {
+                transform.parent = Player.instance.transform;
+                Player.instance.SetCanMove(true);
+            });
+
+    }
+
+    public void PutDownBox()
+    {
+        if (Player.instance.CheckDistanceWithPlayer(boxPos.position) < interactRange && !Player.instance.isSolving)
         {
-            isInteractable = true;
-            boxState = MovingBoxState.End;
-        });
+            ChangeValues();
+            gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
+            {
+                gameObject.transform.parent = boxPos;
+            });
+        }
+       
     }
 
     private void UpdateBoxState()
     {
+        // Check the conditions for transitioning to the next state
         switch (boxState)
         {
-            case MovingBoxState.BearBox:
-                // Check the conditions for transitioning to the next state
+            case MovingBoxState.DroppingPuck:
                 if (Player.instance.hasBear)
-                {
-                    boxState = MovingBoxState.PickedUp;
-                }
+                    boxState = MovingBoxState.PickingUpBox;
                 break;
-            case MovingBoxState.PickedUp:
-                // Check the conditions for transitioning to the next state
+            case MovingBoxState.PickingUpBox:
                 if (!Player.instance.hasMovingBox)
-                {
-                    boxState = MovingBoxState.Dropped;
-                }
+                    boxState = MovingBoxState.DroppingBox;
                 break;
         }
     }
 
     private void ChangeValues()
     {
-        Player.instance.hasBear = false;
-        Player.instance.hasMovingBox = true;
-        Player.instance.RecallMemory(bearDropMemory);
+        switch (boxState)
+        {
+            case MovingBoxState.DroppingPuck:
+                boxAnimator.SetTrigger("PutBearInBox");
+                Player.instance.hasBear = false;
+                break;
+            case MovingBoxState.PickingUpBox:
+                Player.instance.hasMovingBox = true;
+                interactParticle.SetActive(false);
+                LightManager.instance.OpenOfficeMovingBoxHighLight(false);
+                Player.instance.SetCanMove(false);
+                break;
+            case MovingBoxState.DroppingBox:
+                Player.instance.hasMovingBox = false;
+                interactParticle.SetActive(false);
+                break;
+            case MovingBoxState.End:
+                interactParticle.SetActive(false);
+                break;
+        }
+
+
     }
 
 }

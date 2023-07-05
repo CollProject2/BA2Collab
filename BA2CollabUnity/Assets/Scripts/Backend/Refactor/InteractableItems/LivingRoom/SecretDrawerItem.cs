@@ -9,6 +9,12 @@ public class SecretDrawerItem : InteractableItem
     [Header("object")]
     [SerializeField] private GameObject secretCabinetDoor;
 
+    [Header("object")]
+    [SerializeField] protected GameObject itemObject;
+    [Header("positions")]
+    [SerializeField] protected Transform initPos;
+    [SerializeField] protected Transform activePos;
+
     protected override void Update()
     {
         base.Update();
@@ -19,27 +25,17 @@ public class SecretDrawerItem : InteractableItem
         }
     }
 
-    public override void Collect()
-    {
-        // UI manager stuff
-    }
-
-    public override void MoveItemAway()
+    public  void InstantiateAndMove()
     {
         secretCabinetDoor.transform.DOLocalRotate(new Vector3(-50, -121.215f, 0), 1).OnComplete(() =>
         {
-            CubeObject.GetComponent<BlockCollect>().SetInteractable(true);
+            CubeObject.GetComponent<BlockCollectItem>().SetInteractable(true);
             Destroy(this);
         });
     }
 
-    internal bool HasCollectedBlock()
+    public override void Collect()
     {
-        throw new NotImplementedException();
-    }
-
-    internal void Collect3DPuzzleBlock()
-    {
-        throw new NotImplementedException();
+        
     }
 }

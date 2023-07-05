@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public Transform playerCarrypos;
     public Vector3 currentPosition { get; private set; }
 
-    public List<Item> inventory { get; private set; }
+    //public List<Item> inventory { get; private set; }
 
     [SerializeField]
     private float smoothTime;
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         isSolving = false;
         characterController = GetComponent<CharacterController>();
         currentPosition = initialPosition;
-        inventory = new List<Item>();
+        //inventory = new List<Item>();
         missingBlocks = 3;
         inGarden = false;
     }
@@ -71,6 +71,8 @@ public class Player : MonoBehaviour
     public void SetCanMove(bool moveState)
     {
         canMove = moveState;
+        if(moveState == false)
+            animator.SetBool("isMoving", moveState);
     }
 
     public void HandleMovement()
@@ -107,38 +109,11 @@ public class Player : MonoBehaviour
         transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
     }
 
-    public void CollectItem(Item item)
-    {
-        inventory.Add(item);
-        //disable movement when solving
-        SetCanMove(false);
-        //we solve
-        isSolving = true;
-        //set animation
-        animator.SetTrigger("pickUp");
-        animator.SetBool("isMoving", false);
-        //set position to null to prevent walking off
-        direction = Vector3.zero;
-    }
     public float CheckDistanceWithPlayer(Vector3 position)
     {
         return Vector3.Distance(Player.instance.transform.position, position);
     }
 
-    public void SolvePuzzle(Puzzle puzzle)
-    {
-        // instantiate the puzzle prefab
-        // if player is in garden change puzzle spawn and active pos
-        if (!inGarden)
-        {
-            puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
-        }
-        else if (inGarden)
-        {
-            puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.gardenBlockPuzzleInstantiatePos);
-        }
-
-    }
 
     public void RecallMemory(string memory)
     {

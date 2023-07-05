@@ -1,7 +1,13 @@
 using DG.Tweening;
+using UnityEngine;
 
 public class FamilyPhotoFrameItem : InteractableItem
 {
+    [Header("object")]
+    [SerializeField] protected GameObject framePuzzleObj;
+    [Header("positions")]
+    [SerializeField] protected Transform initPos;
+    [SerializeField] protected Transform activePos;
 
     public override void Collect()
     {
@@ -9,17 +15,23 @@ public class FamilyPhotoFrameItem : InteractableItem
         InstantiateAndMove();
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
+        SetIsComplete(true);
+
     }
 
-    public override void MoveItemAway()
+    public void InstantiateAndMove()
     {
-        itemObject.transform.DOMove(initPos.position, itemMovementDuration).OnComplete(() =>
+        framePuzzleObj.SetActive(true);
+        framePuzzleObj.transform.DOMove(activePos.position, itemMovementDuration);
+    }
+
+    public void MoveItemAway()
+    {
+        framePuzzleObj.transform.DOMove(initPos.position, itemMovementDuration).OnComplete(() =>
         {
-            itemObject.SetActive(false);
+            framePuzzleObj.SetActive(false);
             Destroy(this);
         });
     }
-
 
 }

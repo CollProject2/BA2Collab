@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class LockManager : MonoBehaviour
 {
     public LockBoxItem lockbox;
     public bool isComplete;
-    public bool isActive;
+    public bool isInteractable;
     public List<Number> isRight = new();
     public static LockManager instance = null;
     public Number currentRow;
@@ -15,13 +14,13 @@ public class LockManager : MonoBehaviour
     {
         if (instance == null)
             instance = this;
-        // isActive = false;
-
+        else
+            Destroy(this);
     }
+
     private void Update()
     {
-        Player.instance.SetCanMove(false);
-        if (currentRow != null && isActive) { CheckInput(); }
+        if (currentRow != null && isInteractable) { Player.instance.SetCanMove(false); CheckInput(); }
     }
 
     //set this as the current block
@@ -33,11 +32,10 @@ public class LockManager : MonoBehaviour
     {
         if (RowsAreCorrect())
         {
-            isActive = false;
-            
             lockbox.OpenLockBox();
-            
-            Destroy(this);
+            isInteractable = false;
+            isComplete = true;
+            StoryManager.instance.AdvanceGameState();
         }
 
     }
@@ -66,9 +64,8 @@ public class LockManager : MonoBehaviour
             if (!v.solved) return false;
         return true;
     }
-
     internal void Activate()
     {
-        throw new NotImplementedException();
+        isInteractable = true;
     }
 }

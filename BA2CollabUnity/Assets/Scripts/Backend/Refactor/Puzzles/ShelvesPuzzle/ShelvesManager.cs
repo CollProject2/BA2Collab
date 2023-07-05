@@ -58,8 +58,8 @@ public class ShelvesManager : MonoBehaviour
             Player.instance.SetCanMove(true);
             //recall memory
             Player.instance.RecallMemory(associatedMemory);
-            //activate 3d cube in garden
-            Destroy(this);
+            isComplete = true;
+            StoryManager.instance.AdvanceGameState();
         }
 
     }
@@ -92,9 +92,12 @@ public class ShelvesManager : MonoBehaviour
             if (!v.solved) return false;
         return true;
     }
-
+    public void DestroyitemScript()
+    {
+        Destroy(this);
+    }
     internal void Activate()
     {
-        throw new System.NotImplementedException();
+        isInteractable = true;
     }
 }

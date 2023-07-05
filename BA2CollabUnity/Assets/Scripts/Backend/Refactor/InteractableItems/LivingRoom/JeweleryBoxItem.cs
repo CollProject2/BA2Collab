@@ -5,6 +5,10 @@ public class JeweleryBoxItem : InteractableItem
 {
     public string jeweleryMemory;
 
+    [Header("positions")]
+    [SerializeField] protected Transform initPos;
+    [SerializeField] protected Transform activePos;
+
     [Header("object")]
     [SerializeField] private GameObject JeweleryPuzzleObj;
     [SerializeField] private GameObject jeweleryBoxPivot;
@@ -27,7 +31,7 @@ public class JeweleryBoxItem : InteractableItem
         isInteractable = false;
     }
 
-    public override void MoveItemAway()
+    public void MoveItemAway()
     {
         Ring.transform.DOMove(ringInitPos.position, itemMovementDuration).OnComplete(() =>
         {
@@ -37,7 +41,7 @@ public class JeweleryBoxItem : InteractableItem
         });
     }
 
-    protected override void InstantiateAndMove()
+    public void InstantiateAndMove()
     {
         JeweleryPuzzleObj.transform.DOMove(activePos.position, itemMovementDuration);
         JeweleryPuzzleObj.transform.DOScale(new Vector3(5f, 5f, 5f), jeweleryBoxOpenDur).OnComplete(() =>

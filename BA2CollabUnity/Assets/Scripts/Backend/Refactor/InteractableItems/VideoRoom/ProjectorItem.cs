@@ -5,21 +5,10 @@ using UnityEngine;
 public class ProjectorItem : InteractableItem
 {
     public GameObject projectorLight;
-    public ShelvesManager shelvesManager;
     public List<GameObject> imagesToShow;
 
     public string projectorSlideShowMemory;
 
-    protected override void Interact()
-    {
-        base.Interact();
-        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
-        {
-            //press E to collect
-            if (Input.GetKeyDown(KeyCode.E))
-                Collect();
-        }
-    }
 
     public override void Collect()
     {
@@ -29,12 +18,7 @@ public class ProjectorItem : InteractableItem
         ShowPicture(0);
         Player.instance.animator.SetBool("isMoving", false);
         UIManager.instance.dialogues.StartDialogue(projectorSlideShowMemory);
-        isInteractable = false;
-    }
-
-    public override void MoveItemAway()
-    {
-        //it stays lol
+        SetIsComplete(true);
     }
 
     public void ShowPicture(int picIndex)
@@ -55,8 +39,7 @@ public class ProjectorItem : InteractableItem
                 image.SetActive(false);
             }
             projectorLight.SetActive(false);
-            // call shelf
-            shelvesManager.isInteractable = true;
         }
     }
+
 }

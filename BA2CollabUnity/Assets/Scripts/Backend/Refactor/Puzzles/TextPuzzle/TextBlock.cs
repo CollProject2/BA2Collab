@@ -4,7 +4,6 @@ public class TextBlock : MonoBehaviour
 {
     public int id;
     public bool solved;
-    public bool isInteractable;
     private bool isDragging = false;
     public Transform startPosition;
     private Vector3 offset;
@@ -13,10 +12,11 @@ public class TextBlock : MonoBehaviour
     {
         solved = false;
     }
+
     private void OnMouseDown()
     {
         //prevent clicking before the puzzle is loaded
-        if (!isInteractable) return;
+        if (!TextBoxManager.instance.isInteractable) return;
 
         //set the new Letter as the current letter
         TextBoxManager.instance.SetCurrentTextBlock(this);
@@ -62,8 +62,4 @@ public class TextBlock : MonoBehaviour
         }
     }
 
-    private void IsDone()
-    {
-        LockManager.instance.CallCheck();
-    }
 }

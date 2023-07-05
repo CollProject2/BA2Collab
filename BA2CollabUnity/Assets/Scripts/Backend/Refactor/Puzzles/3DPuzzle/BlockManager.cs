@@ -112,6 +112,8 @@ public class BlockManager : MonoBehaviour
             //move the last block in place
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
             solved = true;
+            isComplete = true;
+            StoryManager.instance.AdvanceGameState();
         }
     }
 
@@ -144,9 +146,13 @@ public class BlockManager : MonoBehaviour
             gridBlocks[index].RotateBlock(direction);
 
     }
+    public void DestroyPuzzle()
+    {
+        Destroy(gameObject);
+    }
 
     internal void Activate()
     {
-        throw new NotImplementedException();
+        isInteractable = true;
     }
 }

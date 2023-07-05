@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class LockBoxItem : InteractableItem
 {
+
+    [Header("positions")]
+    [SerializeField] protected Transform initPos;
+    [SerializeField] protected Transform activePos;
     public string LockBoxMemory;
     [Header("object")]
     [SerializeField] private GameObject lockItemObj;
@@ -18,10 +22,6 @@ public class LockBoxItem : InteractableItem
     [SerializeField] private float lockBoxMoveDuration;
     [SerializeField] private float lockBoxOpenDur;
 
-    protected override void Interact()
-    {
-        base.Interact();
-    }
 
     public override void Collect()
     {
@@ -30,10 +30,10 @@ public class LockBoxItem : InteractableItem
         lockPuzzleObj.transform.DOMove(puzzleIActivePos.position, lockBoxMoveDuration);
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
+        SetIsComplete(true);
     }
 
-    public override void MoveItemAway()
+    public void MoveItemAway()
     {
         projectorPictures.transform.DOMove(projectorPicturesInitPos.position, lockBoxMoveDuration).OnComplete(() =>
         {
@@ -63,4 +63,5 @@ public class LockBoxItem : InteractableItem
             });
         });
     }
+
 }
