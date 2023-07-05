@@ -6,11 +6,11 @@ using Fungus;
 [CommandInfo("puzzle","moveTextPuzzleAway","moves puzzle out of screen")]
 public class MoveTextPuzzleAway : Command
 {
-    public TextFrameItem TextFrameItem;
+    public DegreeItem degreeItem;
     public MedallionItem medallionItem;
     public override void OnEnter()
     {
-        TextFrameItem.MoveTextPuzzleAway();
+        degreeItem.MoveItemAway();
         medallionItem.SetInteractable(true);
         Continue();
     }

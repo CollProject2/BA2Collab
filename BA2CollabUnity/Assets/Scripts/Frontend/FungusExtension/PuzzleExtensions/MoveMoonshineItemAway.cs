@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class MoveMoonshineItemAway : Command
 {
-    public MoonShineItem moonshineItem;
+    public MoonShineLanternItem moonshineItem;
     public GameObject triggerZoneToEntrance;
-    public LissandrasCabinet lissandrasCabinet;
     public override void OnEnter()
     {
-        moonshineItem.MoveMoonshineLenternAway();
+        moonshineItem.MoveMoonshineLanternAway();
         triggerZoneToEntrance.SetActive(true);
-        lissandrasCabinet.isInteractable = true;
         Continue();
     }
 }

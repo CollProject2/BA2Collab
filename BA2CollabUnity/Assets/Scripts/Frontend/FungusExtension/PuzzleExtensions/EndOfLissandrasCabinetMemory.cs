@@ -6,10 +6,10 @@ using UnityEngine;
 
 public class EndOfLissandrasCabinetMemory : Command
 {
-    public TheatreArticleItem theatreArticleItem;
+    
     public override void OnEnter()
     {
-        theatreArticleItem.enabled = true;
+        
         Continue();
     }
 }

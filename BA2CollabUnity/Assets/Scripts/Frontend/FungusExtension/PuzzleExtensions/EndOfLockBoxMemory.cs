@@ -6,13 +6,10 @@ using UnityEngine;
 
 public class EndOfLockBoxMemory : Command
 {
-    public Lockbox lockBox;
-    public ProjectorPuzzle projector;
-
+    public LockBoxItem lockBox;
     public override void OnEnter()
     {
-        lockBox.MoveLockBoxAway();
-        projector.SetInteractable(true);
+        lockBox.MoveItemAway();
         Continue();
     }
 }

@@ -5,12 +5,10 @@ using UnityEngine;
 [CommandInfo("puzzle","EndOfJeweleryBoxMemory","moves puzzle out of screen")]
 public class EndOfJeweleryBoxMemory : Command
 {
-    public JeweleryBoxAndRing JeweleryBoxAndRing;
-    public Item protestPhotoItem;
+    public JeweleryBoxItem JeweleryBoxAndRing;
     public override void OnEnter()
     {
-        JeweleryBoxAndRing.MoveMedallionAway();
-        protestPhotoItem.enabled = true;
+        JeweleryBoxAndRing.MoveItemAway();
         Continue();
     }
 }

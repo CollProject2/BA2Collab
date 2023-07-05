@@ -18,6 +18,7 @@ public class Puzzle : MonoBehaviour
         //spawn the puzzle prefab
         puzzleObj = Instantiate(associatedPuzzle,puzzleSpawn.position,puzzleSpawn.rotation).gameObject;
         //tween it in the UI
+        StoryManager.instance.blockManager = puzzleObj.GetComponentInChildren<BlockManager>();
 
         if (!Player.instance.inGarden)
         {

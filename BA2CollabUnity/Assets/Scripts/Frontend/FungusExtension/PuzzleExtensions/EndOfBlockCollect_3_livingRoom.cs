@@ -6,10 +6,8 @@ using UnityEngine;
 
 public class EndOfBlockCollect_3_livingRoom : Command
 {
-    public Item newFamilyPhotoItem; 
     public override void OnEnter()
     {
-        newFamilyPhotoItem.enabled = true;
         Environment.instance.trashTheVideoRoom = true;
         Continue();
     }
