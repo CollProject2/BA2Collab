@@ -59,7 +59,6 @@ public class ShelvesManager : InteractableItem
             //recall memory
             Player.instance.RecallMemory(associatedMemory);
             isComplete = true;
-            StoryManager.instance.AdvanceGameState();
         }
 
     }

@@ -30,7 +30,7 @@ public class Letter : MonoBehaviour
     private void OnMouseDown()
     {
         //prevent clicking before the puzzle is loaded
-        if (!isInteractable) return;
+        if (!isInteractable || ShelvesManager.instance.IsComplete()) return;
 
         //set the new Letter as the current letter
         ShelvesManager.instance.SetCurrentLetter(this);

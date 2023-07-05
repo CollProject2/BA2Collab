@@ -283,6 +283,7 @@ public class Environment : MonoBehaviour
                 SetActiveVideoPrep(false);
                 StartCoroutine(DelayForEntranceTP(1));
                 UIManager.instance.MainMenuUI.FadeToTransparent(1);
+                CameraManager.instance.CameraZoomOutFromGarden();
 
             });
     }

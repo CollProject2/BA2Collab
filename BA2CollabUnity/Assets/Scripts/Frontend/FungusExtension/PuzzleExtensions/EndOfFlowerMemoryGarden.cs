@@ -8,7 +8,6 @@ public class EndOfFlowerMemoryGarden : Command
     public override void OnEnter()
     {
         Environment.instance.TeleportToEntrance();
-        CameraManager.instance.CameraZoomOutFromGarden();
         Continue();
     }
 }
