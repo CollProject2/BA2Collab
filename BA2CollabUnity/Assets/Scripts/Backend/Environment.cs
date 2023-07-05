@@ -1,42 +1,71 @@
-using System;
-using System.Collections.Generic;
+using System.Collections;
 using DG.Tweening;
 using JetBrains.Annotations;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Environment : MonoBehaviour
 {
-    
+    public enum CurrentRoom
+    {
+        Office,
+        Bedroom,
+        Entrance,
+        LivingDiningRoom,
+        ScreeningRoom,
+        VideoPrep,
+        TrashedVideoPrep,
+        Garden,
+        Conservatory,
+    }
     //Singelton instance
     public static Environment instance = null;
-    //Properties
-    public List<Item> items { get; private set; }
-    public List<Puzzle> puzzles { get; private set; }
-    public List<PlayerMemory> memory { get; private set; }
-    public float rotationAngle { get; private set; }
-    public List<Vector3> rotationPoints { get; private set; }
 
+    
+    //Properties
+    [Header("Rooms")]
+    [SerializeField] private GameObject bedroom;
+    [SerializeField] private GameObject office;
+    [SerializeField] private GameObject entrance;
+    [SerializeField] private GameObject livingRoom;
+    [SerializeField] private GameObject screeningRoom;
+    [SerializeField] private GameObject videoRoom;
+    [SerializeField] private GameObject trashedVideoRoom;
+    [SerializeField] private GameObject garden;
+    [SerializeField] private GameObject conservatory;
+
+    [Header("Partially Loaded Part")] 
+    public PartialRoomLoader partialLoader_BedRoom;
+    public PartialRoomLoader partialLoader_Office;
+    public PartialRoomLoader partialLoader_LivingRoom;
+    
+    [Header("Doors")] 
+    [SerializeField] private GameObject bedroomDoor_ent;
+    [SerializeField] private GameObject bedroomDoor_ofc;
+    [SerializeField] private GameObject officeDoor_bed;
+    [SerializeField] private GameObject entrenceDoor_bed;
+    [SerializeField] private GameObject entranceDoor_liv;
+    [SerializeField] private GameObject livingDoor_ent;
+    [SerializeField] private GameObject livingDoor_scr;
+    [SerializeField] private GameObject screenDoor_liv;
+    [SerializeField] private GameObject screenDoor_vid;
+    [SerializeField] private GameObject videoDoor_scr;
     [Header("Stage Turn")]
     public bool canTurnStage = true;
-    [SerializeField] private GameObject turningEnviroment;
-    [SerializeField] [CanBeNull] private GameObject stageGround;
+    public GameObject turningEnviroment;
+    [CanBeNull] public GameObject stageGround;
     [SerializeField] private GameObject groundChecker;
-    [SerializeField] private float turnDuration;
-    [SerializeField] private AnimationCurve turnEase;
-    public List<DoorAdjuster> doors;
+    public float turnDuration;
+    public AnimationCurve turnEase;
+    public Transform playerTeleportPosScreeningRoom;
+    public Transform playerTeleportPosLivingRoom;
+    public Transform playerTeleportPosEntrance;
+    public Transform playerTeleportPosBedroom;
 
-
-
-    //Init
-    public void InitializeEnvironment(List<Item> itemList, List<Puzzle> puzzleList, List<PlayerMemory> memoryList)
-    {
-        items = itemList;
-        puzzles = puzzleList;
-        memory = memoryList;
-        rotationAngle = 0.0f;
-        rotationPoints = new List<Vector3>();
-    }
-
+    public bool trashTheVideoRoom;
+    
+    public CurrentRoom currentRoom;
     private void Awake()
     {
         //Singelton
@@ -52,39 +81,10 @@ public class Environment : MonoBehaviour
         //make lists new init here so they are empty on awake
     }
 
-    private void Start()
-    {
-        AdjustAllDoorsOnTurn();
-    }
 
     private void Update()
     {
         GroundObjectCheck();
-    }
-
-    //Methods
-    public void Display()
-    {
-       gameObject.SetActive(true);
-    }
-
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void Rotate(float newAngle)
-    {
-        rotationAngle = newAngle;
-    }
-
-    public void CheckForRotationPoint(Vector3 playerPosition)
-    {
-        foreach (var e in rotationPoints)
-        {
-            if (playerPosition == e)
-                Rotate(5);//test value
-        }
     }
 
     void GroundObjectCheck()
@@ -101,37 +101,211 @@ public class Environment : MonoBehaviour
         }
     }
 
-    public void TurnEnvironmentClockWise()
+    public void TurnEnvironmentAtStart()
     {
-        AdjustAllDoorsOnTurn();
-        Player.instance.SetCanMove(false);
-        Player.instance.transform.parent = stageGround.transform;
-        canTurnStage = false;
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0,60,0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
+        partialLoader_BedRoom.PartialLoad();
+        Player.instance.transform.parent = turningEnviroment.transform;
+        Player.instance.SetCharacterController(false);
+        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0),2).SetEase(turnEase).OnComplete(
+            ()=>
+            {
+                Player.instance.transform.parent = null;
+                Player.instance.SetCharacterController(true);
+                currentRoom = CurrentRoom.Bedroom;
+                LightManager.instance.TurnOnPlayerLights();
+                DeactivateEntranceToBedRoomDoor();
+                SetActiveEntrance(false);
+            });
     }
 
-    public void TurnEnvironmentCounterClockWise()
+    
+    //Doors 
+    // these doors have slightly different functionalities, Unloading them separetely
+    public void DeactivateLivingToScrDoor()
     {
-        AdjustAllDoorsOnTurn();
-        Player.instance.SetCanMove(false);
-        Player.instance.transform.parent = stageGround.transform;
-        canTurnStage = false;
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0,-60,0), turnDuration).SetEase(turnEase).OnComplete(EndOfTurn);
+        livingDoor_scr.SetActive(false);
+    }
+
+    public void DeactivateScreenToLivDoor()
+    {
+        screenDoor_liv.SetActive(false);
+    }
+
+    public void DeactivateEntranceToBedRoomDoor()
+    {
+        entrenceDoor_bed.SetActive(false);
+    }
+
+    public void DeactivateBedroomToEntrance()
+    {
+        bedroomDoor_ent.SetActive(false);
+    }
+    // Rooms
+
+    #region RoomLoaderUnloaders
+
+    public void SetActiveBedroom(bool roomState)
+    {
+        if (roomState)
+        {
+            bedroom.SetActive(true);
+            bedroomDoor_ent.SetActive(true);
+            bedroomDoor_ofc.SetActive(true);
+            currentRoom = CurrentRoom.Bedroom;
+            partialLoader_BedRoom.PartialLoad();
+        }
+        else
+        {
+            bedroom.SetActive(false);
+            bedroomDoor_ofc.SetActive(false);
+            LightManager.instance.OpenBedroomOfficeDoorHighlights(false);
+        }
+    }
+    public void SetActiveOffice(bool roomState)
+    {
+        if (roomState)
+        {
+            office.SetActive(true);
+            officeDoor_bed.SetActive(true);
+            currentRoom = CurrentRoom.Office;
+            partialLoader_Office.PartialLoad();
+        }
+        else
+        {
+            office.SetActive(false);
+            officeDoor_bed.SetActive(false);
+        }
+    }
+    public void SetActiveEntrance(bool roomState)
+    {
+        if (roomState)
+        {
+            entrance.SetActive(true);
+            entranceDoor_liv.SetActive(true);
+            entrenceDoor_bed.SetActive(true);
+            currentRoom = CurrentRoom.Entrance;
+            LightManager.instance.ChangeColor(LightManager.instance.entranceRoomColor); // experimental
+        }
+        else
+        {
+            entrance.SetActive(false);
+            entranceDoor_liv.SetActive(false);
+        }
+    }
+    public void SetActiveLivingDiningRoom(bool roomState)
+    {
+        if (roomState)
+        {
+            livingRoom.SetActive(true);
+            livingDoor_ent.SetActive(true);
+            livingDoor_scr.SetActive(true);
+            currentRoom = CurrentRoom.LivingDiningRoom;
+            LightManager.instance.ChangeColor(LightManager.instance.livingRoomColor);
+            partialLoader_LivingRoom.PartialLoad();
+        }
+        else
+        {
+            livingRoom.SetActive(false);
+            livingDoor_ent.SetActive(false);
+            LightManager.instance.OpenLivingRoomEntranceDoorHighLight(false);
+        }
+    }
+    public void SetActiveScreeningRoom(bool roomState)
+    {
+        if (roomState)
+        {
+            screeningRoom.SetActive(true);
+            screenDoor_liv.SetActive(true);
+            screenDoor_vid.SetActive(true);
+            currentRoom = CurrentRoom.ScreeningRoom;
+        }
+        else
+        {
+            screeningRoom.SetActive(false);
+            screenDoor_vid.SetActive(false);
+        }
+    }
+    public void SetActiveVideoPrep(bool roomState)
+    {
+        if (roomState)
+        {
+            if (!trashTheVideoRoom)
+            {
+                videoRoom.SetActive(true);
+                currentRoom = CurrentRoom.VideoPrep;
+            }
+            else
+            {
+                trashedVideoRoom.SetActive(true);
+                currentRoom = CurrentRoom.TrashedVideoPrep;
+            }
+            
+            videoDoor_scr.SetActive(true);
+        }
+        else
+        {
+            videoRoom.SetActive(false);
+            trashedVideoRoom.SetActive(false);
+            videoDoor_scr.SetActive(false);
+        }
+    }
+    public void SetActiveGarden(bool roomState)
+    {
+        if (roomState)
+        {
+            garden.SetActive(true);
+            currentRoom = CurrentRoom.Garden;
+        }
+        else
+        {
+            garden.SetActive(false);
+        }
+    }
+    public void SetActiveConservatory(bool roomState)
+    {
+        if (roomState)
+        {
+            conservatory.SetActive(true);
+            currentRoom = CurrentRoom.Conservatory;
+        }
+        else
+        {
+            conservatory.SetActive(false);
+        }
+    }
+
+    #endregion
+
+    public void TeleportToEntrance()
+    {
+        UIManager.instance.MainMenuUI.mainMenuPanel.SetActive(true);
+        UIManager.instance.MainMenuUI.mainMenuPanel.gameObject.GetComponent<Image>().DOColor(new Color(0, 0, 0, 1), 1).OnComplete(
+            () =>
+            {
+                SetActiveEntrance(true);
+                Player.instance.SetCanMove(false);
+                Player.instance.animator.SetBool("isMoving",false);
+                canTurnStage = false;
+                        
+                Player.instance.TeleportPlayer(playerTeleportPosEntrance);
+                SetActiveConservatory(false);
+                SetActiveGarden(false);
+                SetActiveVideoPrep(false);
+                StartCoroutine(DelayForEntranceTP(1));
+                UIManager.instance.MainMenuUI.FadeToTransparent(1);
+
+            });
     }
     
-    void EndOfTurn()
+    IEnumerator DelayForEntranceTP(float duration)
     {
+        yield return new WaitForSeconds(duration);
         Player.instance.SetCanMove(true);
-        Player.instance.transform.parent = null;
         canTurnStage = true;
-    }
-    //adjusts all doors on start and on each turn call.
-    void AdjustAllDoorsOnTurn()
-    {
-        foreach (var door in doors)
-        {
-            door.AdjustDoors();
-        }
+        
+
     }
     
 }
+
+

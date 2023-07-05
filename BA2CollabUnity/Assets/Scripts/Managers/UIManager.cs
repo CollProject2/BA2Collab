@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     //Properties
     public Dialogues dialogues;
     public PuzzleUI puzzleUI;
+    public MainMenuUI MainMenuUI;
     
     private void Awake()
     {

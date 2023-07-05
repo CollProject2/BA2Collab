@@ -6,66 +6,55 @@ public class Item : MonoBehaviour
 {
     // Properties
     public string itemName { get; private set; }
-    public Puzzle associatedPuzzle { get; private set; }
-    public PuzzleUI associatedPuzzleUI { get; private set; }
-    private Collider itemCollider;
-    
+    public Puzzle associatedPuzzle;
+
     public GameObject modelObj;
-
-    private void Awake()
+    public GameObject InteractParticle;
+    
+    public float interactRange;
+    public bool isHidden;
+    
+    private void Update()
     {
-        itemCollider = gameObject.GetComponent<Collider>();
-    }
-
-    // initItem
-    public void InitializeItem(string name, Puzzle puzzle)
-    {
-        itemName = name;
-        associatedPuzzle = puzzle;
-    }
-
-    public void Display()
-    {
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
-    }
-    public void Hide()
-    {
-        //gameObject.GetComponent<MeshRenderer>().enabled = false;
-        gameObject.SetActive(false);
+        //update distance
+        if(!isHidden)
+                Interact();
     }
 
     // Methods
-    public void Collect()
+    //Interact with the player
+    private void Interact()
     {
-        Player.instance.CollectItem(this); // player adds item to inventory
-        itemCollider.enabled = false;
-        AnimateItemOnCollect();
-
-        associatedPuzzle.Display(); // display the puzzle associated with this item
-        UIManager.instance.puzzleUI.DisplayUIPuzzle(associatedPuzzle.puzzleID); // Open the first UI puzzle , we just added this puzzle to the inventory so -1 to have the correct puzzle index (we start at 0)
-        Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
-    }
-    
-    void HideItemModel()
-    {
-        modelObj.SetActive(true);
-        
-    }
-    public void AnimateItemOnCollect()
-    {
-        modelObj.transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 0.5f).OnComplete(() =>
+        InteractParticle.SetActive(true);
+        //if the player is in range of the item, not solving a puzzle and the puzzle is not hidden
+        if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
         {
-            modelObj.transform.DOScale(new Vector3(0, 0, 0), 0.5f).OnComplete(HideItemModel);
-        });
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Collect();
+            // open HUD to give visual feedback
+           
+            
+            //press E to collect
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Collect();
+            }
         }
     }
+    public void Collect()
+    {
+        //adds item to player inventory
+        Player.instance.CollectItem(this);
+        //closes HUD when activating the puzzle 
+        InteractParticle.SetActive(false);
+        //solves the puzzle associated with the item
+        Player.instance.SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
+        SetIsHidden(true);
+        
+    }
+   
+    public void SetIsHidden(bool state)
+    {
+        isHidden = state;
+    }
 
-    //specific item stuff
+
 }

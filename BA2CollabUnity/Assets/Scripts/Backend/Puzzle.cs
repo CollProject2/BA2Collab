@@ -1,86 +1,40 @@
-﻿using Unity.VisualScripting;
+﻿using DG.Tweening;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Puzzle : MonoBehaviour
 {
     //Properties
-    public bool isSolved { get; set; }
     public string puzzleName { get; private set; }
     public int puzzleID { get; private set; }
-    public PlayerMemory associatedMemory { get; private set; }
+    public string associatedMemory;
 
-    //Init
-    private void Awake()
+    [CanBeNull] private GameObject puzzleObj;
+
+
+    public void StartPuzzle(Puzzle associatedPuzzle, Transform puzzleSpawn)
     {
-        isSolved = false;
-        Hide();
-    }
+        //spawn the puzzle prefab
+        puzzleObj = Instantiate(associatedPuzzle,puzzleSpawn.position,puzzleSpawn.rotation).gameObject;
+        //tween it in the UI
 
-    //constructor for puzzle todo
-    public void InitializePuzzle(string name, PlayerMemory memory, int puzzleNumber)
-    {
-        puzzleName = name;
-        associatedMemory = memory;
-        puzzleID = puzzleNumber;
-
-    }
-
-    //Methods
-    public void Display()
-    {
-        gameObject.SetActive(true);
-    }
-    public void Hide()
-    {
-        gameObject.SetActive(false);
-    }
-
-    public void StartPuzzle()
-    {
-        //GetComponentInChildren<MeshRenderer>().enabled = true;
-
-        //select right puzzle
-        switch (puzzleID)
+        if (!Player.instance.inGarden)
         {
-            case 0:
-                this.AddComponent<PuzzleOne>();
-                break;
-            case 1:
-                this.AddComponent<PuzzleTwo>();
-                break;
-            case 2:
-                this.AddComponent<PuzzleTwo>();
-                break;
-            default:
-                break;
+            puzzleObj.transform
+                .DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
+                .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> BlockManager.instance.ActivateBlocks());
         }
-
+        else if (Player.instance.inGarden)
+        {
+            puzzleObj.transform
+                .DOMove(UIManager.instance.puzzleUI.gardenBlockPuzzleActivePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
+                .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> BlockManager.instance.ActivateBlocks());
+        }
+        
+        
+        //startPuzzle solving Music from AudioManager, get the event ref from FMODEvents
+        AudioManager.instance.InitializeMemoryMusic(FMODEvents.instance.memoryMusic_1);
     }
-    public void Solve()
-    {
-        //when solved, unlock a memory 
-        isSolved = true;
 
-        //let player handle the rest
-        Player.instance.RecallMemory();
-    }
-
-
-}
-
-public class PuzzleOne : Puzzle
-{
-    public void Awake()
-    {
-        Display();
-    }
-}
-
-public class PuzzleTwo : Puzzle
-{
-    
-}
-public class PuzzleThree : Puzzle
-{
-   
 }

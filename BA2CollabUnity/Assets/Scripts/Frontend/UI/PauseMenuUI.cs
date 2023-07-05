@@ -16,7 +16,7 @@ public class PauseMenuUI : MonoBehaviour
         {
             if (!isDisplayed)
             {
-                DisplayPauseMenuUI();
+                //DisplayPauseMenuUI();
             }
             else
             {

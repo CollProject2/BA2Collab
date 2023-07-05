@@ -1218,7 +1218,7 @@ namespace Fungus
         /// <summary>
         /// Reset the commands and variables in the Flowchart.
         /// </summary>
-        public virtual void Reset(bool resetCommands, bool resetVariables)
+        public virtual void ResetValues(bool resetCommands, bool resetVariables)
         {
             if (resetCommands)
             {

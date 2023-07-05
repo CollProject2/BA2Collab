@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestScenes/OldScenes/Efe Scene.unity
-    guid: 03190e8f0b1352047a7da3b16ff566e1
+    path: Assets/Scenes/TestScenes/2EfeScene/2EfeScene.unity
+    guid: 8ae7e79f73a00cd44b50d51c0c4bff2f
   m_configObjects: {}
