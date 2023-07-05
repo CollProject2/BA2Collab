@@ -8,13 +8,7 @@ public class SecretDrawerItem : InteractableItem
 
     [Header("object")]
     [SerializeField] private GameObject secretCabinetDoor;
-
-    [Header("object")]
-    [SerializeField] protected GameObject itemObject;
-    [Header("positions")]
-    [SerializeField] protected Transform initPos;
-    [SerializeField] protected Transform activePos;
-
+    
     protected override void Update()
     {
         base.Update();

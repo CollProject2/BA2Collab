@@ -1,18 +1,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShelvesManager : MonoBehaviour
+public class ShelvesManager : InteractableItem
 {
     public string associatedMemory;
-    public bool isInteractable;
     public List<Letter> isRight = new();
     public static ShelvesManager instance = null;
     public Letter currentLetter;
     public List<GameObject> particles;
     private bool doOnce;
-    private bool isComplete;
+    
 
-    private void Awake()
+    protected override void Awake()
     {
         if (instance == null)
             instance = this;
@@ -20,7 +19,7 @@ public class ShelvesManager : MonoBehaviour
         doOnce = true;
     }
 
-    private void Update()
+    protected override void Update()
     {
         if (Environment.instance.currentRoom == Environment.CurrentRoom.LivingDiningRoom && isInteractable)
         {
@@ -33,9 +32,10 @@ public class ShelvesManager : MonoBehaviour
             currentLetter = null;
         }
     }
-    public bool IsComplete()
+
+    public override void Collect()
     {
-        return isComplete;
+        
     }
 
     //set this as the current block
@@ -95,9 +95,5 @@ public class ShelvesManager : MonoBehaviour
     public void DestroyitemScript()
     {
         Destroy(this);
-    }
-    internal void Activate()
-    {
-        isInteractable = true;
     }
 }

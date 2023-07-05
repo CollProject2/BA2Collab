@@ -1,4 +1,5 @@
 using DG.Tweening;
+using UnityEngine;
 
 public class PuckItem : InteractableItem
 {
@@ -15,7 +16,8 @@ public class PuckItem : InteractableItem
 
         ItemUIManager.Instance.ToggleItem(2);
         SetIsComplete(true);
-        Destroy(gameObject);
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        //Destroy(gameObject);
     }
 
 }

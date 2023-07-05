@@ -25,6 +25,7 @@ public abstract class InteractableItem : MonoBehaviour
     public virtual void SetIsComplete(bool state)
     {
         isInteractable = !state;
+        isComplete = state;
         StoryManager.instance.AdvanceGameState();
     }
 

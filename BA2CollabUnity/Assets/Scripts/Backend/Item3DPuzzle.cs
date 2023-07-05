@@ -7,6 +7,7 @@ public class Item3DPuzzle : InteractableItem
 {
     // Properties
     public Puzzle associatedPuzzle;
+     
     
     public override void Collect()
     {
@@ -19,6 +20,7 @@ public class Item3DPuzzle : InteractableItem
         interactParticle.SetActive(false);
         //solves the puzzle associated with the item
         SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
+        SetIsComplete(true);
     }
     public void SolvePuzzle(Puzzle puzzle)
     {

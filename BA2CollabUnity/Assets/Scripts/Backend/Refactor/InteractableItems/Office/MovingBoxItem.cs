@@ -27,12 +27,6 @@ public class MovingBoxItem : InteractableItem
         Player.instance.hasMovingBox = false;
     }
 
-    protected override void Update()
-    {
-        base.Update();
-        UpdateBoxState();
-    }
-
     protected override void Interact()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -43,14 +37,17 @@ public class MovingBoxItem : InteractableItem
                     Player.instance.hasBear = false;
                     UIManager.instance.dialogues.StartDialogue(bearDropMemory);
                     Collect();
+                    UpdateBoxState();
                     break;
                 case MovingBoxState.PickingUpBox:
                     UIManager.instance.dialogues.StartDialogue(PickUpBoxAndBearMemory);
                     PickUpBox();
+                    UpdateBoxState();
                     break;
                 case MovingBoxState.DroppingBox:
                     UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
                     PutDownBox();
+                    UpdateBoxState();
                     break;
                 case MovingBoxState.End:
                     UIManager.instance.dialogues.StartDialogue(endingMemory);
@@ -101,12 +98,13 @@ public class MovingBoxItem : InteractableItem
         switch (boxState)
         {
             case MovingBoxState.DroppingPuck:
-                if (Player.instance.hasBear)
-                    boxState = MovingBoxState.PickingUpBox;
+                boxState = MovingBoxState.PickingUpBox;
                 break;
             case MovingBoxState.PickingUpBox:
-                if (!Player.instance.hasMovingBox)
-                    boxState = MovingBoxState.DroppingBox;
+                boxState = MovingBoxState.DroppingBox;
+                break;
+            case MovingBoxState.DroppingBox:
+                boxState = MovingBoxState.End;
                 break;
         }
     }

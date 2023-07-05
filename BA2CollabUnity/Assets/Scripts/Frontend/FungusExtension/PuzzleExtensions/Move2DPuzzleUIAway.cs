@@ -7,7 +7,6 @@ using Fungus;
 public class Move2DPuzzleUIAway : Command
 {
     public FamilyPhotoFrameItem frameItem;
-    public MovingBoxItem bearZone;
     public override void OnEnter()
     {
         frameItem.MoveItemAway();

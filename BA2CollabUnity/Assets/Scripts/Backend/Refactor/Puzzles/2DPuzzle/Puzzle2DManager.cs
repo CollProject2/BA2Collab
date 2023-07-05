@@ -45,7 +45,6 @@ public class Puzzle2DManager : MonoBehaviour
             DeactivatePuzzle();
             isInteractable = false;
             isComplete = true;
-            StoryManager.instance.AdvanceGameState();
         }
 
     }
