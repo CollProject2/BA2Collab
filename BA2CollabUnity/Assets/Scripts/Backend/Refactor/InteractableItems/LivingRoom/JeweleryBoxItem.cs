@@ -28,7 +28,7 @@ public class JeweleryBoxItem : InteractableItem
         InstantiateAndMove();
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
-        isInteractable = false;
+        SetIsComplete(true);
     }
 
     public void MoveItemAway()

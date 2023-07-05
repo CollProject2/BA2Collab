@@ -30,8 +30,6 @@ public class PlantManager : MonoBehaviour
             isIntaractable = false;
             UIManager.instance.dialogues.StartDialogue(associatedMemory);
             isComplete = true;
-            StoryManager.instance.AdvanceGameState();
-            Destroy(this);
         }
     }
 

@@ -17,5 +17,6 @@ public class WallPosterItem : InteractableItem
         Player.instance.SetCanMove(false);
         Player.instance.animator.SetBool("isMoving", false);
         Player.instance.RecallMemory(posterGapMemory);
+        SetIsComplete(true);
     }
 }

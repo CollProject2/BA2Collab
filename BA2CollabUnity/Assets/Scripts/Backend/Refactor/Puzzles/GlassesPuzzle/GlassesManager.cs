@@ -26,6 +26,7 @@ public class GlassesManager : MonoBehaviour
     private bool canSwitch;
     public bool isComplete;
     public bool isInteractable;
+    public GameObject border;
 
 
     private void Awake()
@@ -39,6 +40,7 @@ public class GlassesManager : MonoBehaviour
     {
         glasses[0].GetComponent<MeshRenderer>().enabled = true;
         glasses[1].GetComponent<MeshRenderer>().enabled = true;
+        border.SetActive(true);
         Player.instance.canMove = false;
         canSwitch = true;
         glassesState = GlassesState.threeD;
@@ -102,6 +104,7 @@ public class GlassesManager : MonoBehaviour
                 
                 glasses[0].GetComponent<MeshRenderer>().enabled = false;
                 glasses[1].GetComponent<MeshRenderer>().enabled = false;
+                border.SetActive(false);
                 Player.instance.canMove = true;
                 canSwitch = false;
                 

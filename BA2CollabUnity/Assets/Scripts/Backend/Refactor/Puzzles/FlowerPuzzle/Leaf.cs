@@ -22,6 +22,7 @@ public class Leaf : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (!PlantManager.instance.isIntaractable) return;
         // Translate the GameObject's position to the screen's point
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
@@ -31,6 +32,7 @@ public class Leaf : MonoBehaviour
 
     void OnMouseDrag()
     {
+        if (!PlantManager.instance.isIntaractable) return;
         // Every frame that the mouse button is held down over the object, adjust its position to follow the mouse cursor
         Vector3 cursorPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
         Vector3 cursorPosition = Camera.main.ScreenToWorldPoint(cursorPoint) + offset;
@@ -39,6 +41,7 @@ public class Leaf : MonoBehaviour
 
     void OnMouseUp()
     {
+        if (!PlantManager.instance.isIntaractable) return;
         // When the mouse button is released, trigger the leaf's falling physics
         GetComponent<Rigidbody>().isKinematic = false;
         removed = true;

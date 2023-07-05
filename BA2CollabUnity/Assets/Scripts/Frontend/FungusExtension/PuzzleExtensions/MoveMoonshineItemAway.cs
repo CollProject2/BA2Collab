@@ -8,7 +8,7 @@ public class MoveMoonshineItemAway : Command
     public GameObject triggerZoneToEntrance;
     public override void OnEnter()
     {
-        moonshineItem.MoveItemAway();
+        moonshineItem.MoveMoonshineLanternAway();
         triggerZoneToEntrance.SetActive(true);
         Continue();
     }
