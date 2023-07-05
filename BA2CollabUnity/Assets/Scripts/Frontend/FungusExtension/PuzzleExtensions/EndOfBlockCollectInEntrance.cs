@@ -11,7 +11,7 @@ public class EndOfBlockCollectInEntrance : Command
     {
         LightManager.instance.OpenEntranceLivingRoomDoorHighLight(true);
         itemInLivingroom.gameObject.SetActive(true);
-        itemInLivingroom.GetComponent<Item>().isHidden = false;
+        itemInLivingroom.GetComponent<Item>().enabled = true;
         Continue();
     }
 }
