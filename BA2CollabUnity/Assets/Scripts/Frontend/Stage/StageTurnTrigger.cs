@@ -139,7 +139,6 @@ public class StageTurnTrigger : MonoBehaviour
                 Environment.instance.partialLoader_Office.PartiallyUnload();
                 break;
             case RoomToLoad.Entrance:
-                
                 break;
             case RoomToLoad.LivingDiningRoom:
                 Environment.instance.partialLoader_LivingRoom.PartiallyUnload();

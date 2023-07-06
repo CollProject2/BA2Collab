@@ -36,9 +36,9 @@ public class Environment : MonoBehaviour
     [SerializeField] private GameObject conservatory;
 
     [Header("Partially Loaded Part")] 
-    public PartialRoomLoader partialLoader_BedRoom;
-    public PartialRoomLoader partialLoader_Office;
-    public PartialRoomLoader partialLoader_LivingRoom;
+    [CanBeNull] public PartialRoomLoader partialLoader_BedRoom;
+    [CanBeNull] public PartialRoomLoader partialLoader_Office;
+    [CanBeNull] public PartialRoomLoader partialLoader_LivingRoom;
     
     [Header("Doors")] 
     [SerializeField] private GameObject bedroomDoor_ent;
