@@ -17,7 +17,6 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject title;
     [SerializeField] private GameObject flower;
     [SerializeField] private GameObject startButton;
-    [SerializeField] private GameObject exitButton;
     [SerializeField] private GameObject curtainL;
     [SerializeField] private GameObject curtainR;
     [SerializeField] private GameObject mandala;
@@ -26,8 +25,6 @@ public class MainMenuUI : MonoBehaviour
 
     [SerializeField] private Transform titleActivePos;
     [SerializeField] private Transform flowerActivePos;
-    [SerializeField] private Transform startButtonActivePos;
-    [SerializeField] private Transform exitButtonActivePos;
     [SerializeField] private Transform TEMPUIAwayPos;
 
     [Header("Durations")]
@@ -35,7 +32,6 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private float titleMoveDuration = 4;
     [SerializeField] private float flowerMoveDuration = 3;
     [SerializeField] private float startButtonMoveDuration = 2;
-    [SerializeField] private float exitButtonMoveDuration = 2;
     [SerializeField] private float curtainOpenDuration = 2;
 
     [Header("Scale")]
@@ -117,22 +113,22 @@ public class MainMenuUI : MonoBehaviour
 
     void MoveTitleAndFlowerDown()
     {
-        title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(titleMoveCurve);
+        title.transform.DOMove(titleActivePos.position, titleMoveDuration).SetEase(buttonCurve);
         flower.transform.DOMove(flowerActivePos.position, flowerMoveDuration).SetEase(titleMoveCurve).OnComplete(MoveMenuButtonsIn);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.titleDown,transform.position);
     }
 
     void MoveMenuButtonsIn()
     {
-        startButton.transform.DOMove(startButtonActivePos.position, startButtonMoveDuration).SetEase(buttonCurve);
-        exitButton.transform.DOMove(exitButtonActivePos.position, exitButtonMoveDuration).SetEase(buttonCurve)
-            .OnComplete(() => canStart = true);
+        startButton.transform.DOLocalRotate(new Vector3(0,0,-40), startButtonMoveDuration,RotateMode.LocalAxisAdd).SetEase(buttonCurve).OnComplete(() => canStart = true);
     }
 
     void OpenCurtains()
     {
-        curtainL.transform.DOScaleX(targetScaleX, curtainOpenDuration).SetEase(Ease.Linear);
-        curtainR.transform.DOScaleX(targetScaleX, curtainOpenDuration).SetEase(Ease.Linear);
+        curtainR.transform.DOLocalMoveX(0.8f, 6);
+        curtainL.transform.DOLocalMoveX(-0.8f, 6);
+        curtainL.transform.DOLocalRotate(new Vector3(0, 0, 35), curtainOpenDuration,RotateMode.LocalAxisAdd);
+        curtainR.transform.DOLocalRotate(new Vector3(0, 0, -35), curtainOpenDuration, RotateMode.LocalAxisAdd);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.curtainOpening,transform.position);
     }
     
@@ -146,7 +142,6 @@ public class MainMenuUI : MonoBehaviour
     void MoveButtonsAndTitleAway()
     {
         startButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
-        exitButton.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         title.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         flower.transform.DOMove(TEMPUIAwayPos.position, startButtonMoveDuration).SetEase(menuAwayCurve);
         AudioManager.instance.PlayOneShot(FMODEvents.instance.titleUp,transform.position);
