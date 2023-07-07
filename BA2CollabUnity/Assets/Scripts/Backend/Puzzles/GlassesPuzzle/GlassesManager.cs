@@ -22,7 +22,7 @@ public class GlassesManager : MonoBehaviour
     public Material[] matb;
     public Material[] matn;
     public GameObject[] posters;
-    
+    public GlassesItem glassesItem;
 
     public bool left;
     private bool canSwitch;
@@ -58,8 +58,8 @@ public class GlassesManager : MonoBehaviour
             {
                 glassesState = GlassesState.off;
                 Player.instance.hasGlasses = false;
-                //UIItemManager.instance.UseItem();
                 isComplete = true;
+                glassesItem.ResetValues();
             }
             if (Input.GetKeyDown(KeyCode.E))
                 glassesState = GlassesState.threeD;

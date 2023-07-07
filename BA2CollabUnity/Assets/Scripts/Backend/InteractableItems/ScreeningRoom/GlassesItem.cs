@@ -27,6 +27,13 @@ public class GlassesItem : InteractableItem
             });
         });
     }
+    public void ResetValues()
+    {
+        isInteractable = true;
+        interactParticle.SetActive(true);
+        Player.instance.SetCanMove(true);
+        isCollected = false;
+    }
 
 }
 
