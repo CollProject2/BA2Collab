@@ -38,16 +38,14 @@ public class UIItemManager : MonoBehaviour
         {
             var item = itemManager.items[i];
 
-            if (itemManager.IsItemCollected(item))
-            {
-                var activeObject = activeUIObjects[i];
-                var defaultObject = defaultUIObjects[i];
+            var activeObject = activeUIObjects[i];
+            var defaultObject = defaultUIObjects[i];
 
-                activeObject.SetActive(!itemManager.IsItemUsed(item));
-                defaultObject.SetActive(itemManager.IsItemUsed(item));
+            bool isItemCollected = itemManager.IsItemCollected(item);
+            bool isItemUsed = itemManager.IsItemUsed(item);
 
-                return;
-            }
+            activeObject.SetActive(isItemCollected && !isItemUsed);
+            defaultObject.SetActive(!isItemCollected || isItemUsed);
         }
     }
 

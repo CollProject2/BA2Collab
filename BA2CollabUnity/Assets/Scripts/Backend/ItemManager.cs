@@ -23,6 +23,13 @@ public class ItemManager : MonoBehaviour
             itemUsage[item.gameObject] = false;
         }
     }
+    private void LogDictionaryValues()
+    {
+        foreach (var keyValuePair in itemStatus)
+        {
+            Debug.Log($"Key: {keyValuePair.Key}, Value: {keyValuePair.Value}");
+        }
+    }
 
     public void CollectItem(InteractableItem item)
     {
@@ -30,6 +37,7 @@ public class ItemManager : MonoBehaviour
         {
             itemStatus[item.gameObject] = true;
         }
+        LogDictionaryValues();
     }
 
     public bool IsItemCollected(InteractableItem item)

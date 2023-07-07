@@ -211,6 +211,7 @@ public class StoryManager : MonoBehaviour
             case GameState.ThreeDPuzzleItemSecond:
                 if (item3DPuzzleHouse.IsComplete() && blockCollectItem1.IsComplete())
                 {
+                    UIItemManager.instance.CollectItem(blockCollectItem1);
                     blockManager.Activate();
                     CurrentState = GameState.ThreeDPuzzleSecond;
                 }
@@ -234,6 +235,7 @@ public class StoryManager : MonoBehaviour
             case GameState.NightStandItem:
                 if (nightStandItem.IsComplete() && blockCollectItem2.IsComplete())
                 {
+                    UIItemManager.instance.CollectItem(blockCollectItem2);
                     theatreArticleItem.SetInteractable(true);
                     CurrentState = GameState.TheatreArticleItem;
                 }

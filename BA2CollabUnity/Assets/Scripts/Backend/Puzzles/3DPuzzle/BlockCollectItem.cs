@@ -12,8 +12,8 @@ public class BlockCollectItem : InteractableItem
         base.Collect();
         Player.instance.missingBlocks--;
         UIManager.instance.dialogues.StartDialogue(BlockCollectMemory);
-        UIItemManager.instance.CollectItem(this);
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        UIItemManager.instance.CollectItem(this);
         SetIsComplete(true);
     }
 }
