@@ -18,7 +18,7 @@ public class StoryManager : MonoBehaviour
         Start,
         PuckNoteItem, PuckItem, FamilyPhotoItem, TwoDPuzzle,
         MovingBoxItemDropPuck, ThreeDPuzzleFirst, ThreeDPuzzleItemFirst, MovingBoxItemPickedUp, MovingBoxItemDropped,
-        DegreeItem, TextPuzzleFirst, MedallionItem, GiftCardItem, NightStandItem, ThreeDPuzzleSecond, ThreeDPuzzleItemSecond,
+        DegreeItem, TextPuzzleFirst, MedallionItem, GiftCardItem,BlockCollectItem1, NightStandItem, ThreeDPuzzleSecond, ThreeDPuzzleItemSecond,
         MoonShineLanternItem,
         TheatreArticleItem, TextPuzzleSecond, ThreeDPuzzleThird, ThreeDPuzzleItemThird,
         JewelryBoxItem, ThreeDPuzzleFourth, ThreeDPuzzleItemFourth,
@@ -122,29 +122,28 @@ public class StoryManager : MonoBehaviour
                 if (puckItem.IsComplete())
                 {
                     UIItemManager.instance.CollectItem(puckItem);
-                    NefariousParentAbuseActivation(familyPhotoFrameItem.gameObject);
-                    CurrentState = GameState.FamilyPhotoItem;
-                }
-                break;
-            case GameState.FamilyPhotoItem:
-                if (familyPhotoFrameItem.IsComplete())
-                {
-                    puzzle2DManager.Activate();
-                    CurrentState = GameState.TwoDPuzzle;
-                }
-                break;
-            case GameState.TwoDPuzzle:
-                if (puzzle2DManager.IsComplete())
-                {
-                    Destroy(familyPhotoFrameItem);
-                    movingBoxItem.SetInteractable(true);
+                    NefariousParentAbuseActivation(movingBoxItem.gameObject);
                     CurrentState = GameState.MovingBoxItemDropPuck;
                 }
                 break;
+            // case GameState.FamilyPhotoItem:
+            //     if (familyPhotoFrameItem.IsComplete())
+            //     {
+            //         puzzle2DManager.Activate();
+            //         CurrentState = GameState.TwoDPuzzle;
+            //     }
+            //     break;
+            // case GameState.TwoDPuzzle:
+            //     if (puzzle2DManager.IsComplete())
+            //     {
+            //         Destroy(familyPhotoFrameItem);
+            //         movingBoxItem.SetInteractable(true);
+            //         CurrentState = GameState.MovingBoxItemDropPuck;
+            //     }
+            //      break;
             case GameState.MovingBoxItemDropPuck:
                 if (movingBoxItem.boxState == MovingBoxState.PickingUpBox)
                 {
-                    UIItemManager.instance.UseItem(puckItem);
                     item3DPuzzleFam.SetInteractable(true);
                     CurrentState = GameState.ThreeDPuzzleItemFirst;
                 }
@@ -204,14 +203,19 @@ public class StoryManager : MonoBehaviour
                 if (giftCardItem.IsComplete())
                 {
                     blockCollectItem1.SetInteractable(true);
+                    CurrentState = GameState.BlockCollectItem1;
+                }
+                break;
+            case GameState.BlockCollectItem1:
+                if (blockCollectItem1.IsComplete())
+                {
                     NefariousParentAbuseActivation(item3DPuzzleHouse.gameObject);
                     CurrentState = GameState.ThreeDPuzzleItemSecond;
                 }
                 break;
             case GameState.ThreeDPuzzleItemSecond:
-                if (item3DPuzzleHouse.IsComplete() && blockCollectItem1.IsComplete())
+                if (item3DPuzzleHouse.IsComplete())
                 {
-                    UIItemManager.instance.CollectItem(blockCollectItem1);
                     blockManager.Activate();
                     CurrentState = GameState.ThreeDPuzzleSecond;
                 }
@@ -219,7 +223,7 @@ public class StoryManager : MonoBehaviour
             case GameState.ThreeDPuzzleSecond:
                 if (blockManager.IsComplete())
                 {
-                    UIItemManager.instance.UseItem(blockCollectItem1);
+                    
                     Destroy(item3DPuzzleHouse);
                     moonShineLanternItem.SetInteractable(true);
                     CurrentState = GameState.MoonShineLanternItem;
@@ -235,26 +239,26 @@ public class StoryManager : MonoBehaviour
             case GameState.NightStandItem:
                 if (nightStandItem.IsComplete() && blockCollectItem2.IsComplete())
                 {
-                    UIItemManager.instance.CollectItem(blockCollectItem2);
-                    theatreArticleItem.SetInteractable(true);
-                    CurrentState = GameState.TheatreArticleItem;
-                }
-                break;
-            case GameState.TheatreArticleItem:
-                if (theatreArticleItem.IsComplete())
-                {
-                    textBoxManager2.Activate();
-                    CurrentState = GameState.TextPuzzleSecond;
-                }
-                break;
-            case GameState.TextPuzzleSecond:
-                if (textBoxManager2.IsComplete())
-                {
-                    Destroy(textBoxManager2.gameObject);
+                    //theatreArticleItem.SetInteractable(true);
                     NefariousParentAbuseActivation(item3DPuzzleTheat.gameObject);
                     CurrentState = GameState.ThreeDPuzzleItemThird;
                 }
                 break;
+            // case GameState.TheatreArticleItem:
+            //     if (theatreArticleItem.IsComplete())
+            //     {
+            //         textBoxManager2.Activate();
+            //         CurrentState = GameState.TextPuzzleSecond;
+            //     }
+            //     break;
+            // case GameState.TextPuzzleSecond:
+            //     if (textBoxManager2.IsComplete())
+            //     {
+            //         Destroy(textBoxManager2.gameObject);
+            //         NefariousParentAbuseActivation(item3DPuzzleTheat.gameObject);
+            //         CurrentState = GameState.ThreeDPuzzleItemThird;
+            //     }
+            //     break;
             case GameState.ThreeDPuzzleItemThird:
                 if (item3DPuzzleTheat.IsComplete())
                 {
@@ -266,7 +270,6 @@ public class StoryManager : MonoBehaviour
             case GameState.ThreeDPuzzleThird:
                 if (blockManager.IsComplete())
                 {
-                    UIItemManager.instance.UseItem(blockCollectItem2);
                     Destroy(item3DPuzzleTheat);
                     NefariousParentAbuseActivation(jewelryBoxItem.gameObject);
                     CurrentState = GameState.JewelryBoxItem;
@@ -306,7 +309,6 @@ public class StoryManager : MonoBehaviour
                 if (wallPosterItem.IsComplete())
                 {
                     glassesItem.SetInteractable(true);
-                    UIItemManager.instance.UseItem(posterItem);
                     UIItemManager.instance.CollectItem(glassesItem);
                     CurrentState = GameState.GlassesItem;
                 }
@@ -321,7 +323,6 @@ public class StoryManager : MonoBehaviour
             case GameState.GlassesPuzzle:
                 if (glassesManager.IsComplete())
                 {
-                    UIItemManager.instance.UseItem(glassesItem);
                     NefariousParentAbuseActivation(lockBoxItem.gameObject);
                     CurrentState = GameState.LockBoxItem;
                 }
@@ -345,7 +346,6 @@ public class StoryManager : MonoBehaviour
             case GameState.ProjectorItem:
                 if (projectorItem.IsComplete())
                 {
-                    UIItemManager.instance.UseItem(projectorItem);//slide
                     NefariousParentAbuseActivation(shelvesManager.gameObject);
                     CurrentState = GameState.ShelvesPuzzle;
                 }
@@ -375,7 +375,6 @@ public class StoryManager : MonoBehaviour
             case GameState.ThreeDPuzzleFifth:
                 if (blockManager.IsComplete())
                 {
-                    UIItemManager.instance.UseItem(blockCollectItem3);
                     Destroy(item3DPuzzleNewFam);
                     plantManager.Activate();
                     CurrentState = GameState.FlowerPuzzle;

@@ -13,7 +13,7 @@ public class BlockManager : MonoBehaviour
     public BlockFace wincon;
     public bool isComplete;
 
-    public Quaternion targetRotation = Quaternion.Euler(270, 0, 0);
+    public Quaternion targetRotation = Quaternion.Euler(90, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
     private bool solved;
 
@@ -112,6 +112,7 @@ public class BlockManager : MonoBehaviour
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
             solved = true;
             isComplete = true;
+            AudioManager.instance.SetMemoryParameter("PuzzleSolvingState",1);
         }
     }
 

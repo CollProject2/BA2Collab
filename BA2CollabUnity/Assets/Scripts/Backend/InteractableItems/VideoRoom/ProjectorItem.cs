@@ -25,11 +25,11 @@ public class ProjectorItem : InteractableItem
             image.SetActive(false);
         }
 
-        if (picIndex <= 2)
+        if (picIndex <= 1)
         {
             imagesToShow[picIndex].SetActive(true);
         }
-        else if (picIndex == 3)
+        else if (picIndex == 2)
         {
             foreach (var image in imagesToShow)
             {

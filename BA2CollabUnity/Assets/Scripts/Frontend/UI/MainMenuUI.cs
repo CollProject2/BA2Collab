@@ -11,6 +11,7 @@ public class MainMenuUI : MonoBehaviour
 
     //Properties
     public bool isDisplayed { get; private set; }
+    public bool journalIsOpen;
 
     [Header("Objects")]
     public GameObject mainMenuPanel;
@@ -20,10 +21,14 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private GameObject curtainL;
     [SerializeField] private GameObject curtainR;
     [SerializeField] private GameObject mandala;
+    [SerializeField] private GameObject journalScreen;
+    [SerializeField] private GameObject pauseScreen;
 
     [Header("Positions")]
 
     [SerializeField] private Transform titleActivePos;
+    [SerializeField] private Transform pauseActivePos;
+    [SerializeField] private Transform pauseInitPos;
     [SerializeField] private Transform flowerActivePos;
     [SerializeField] private Transform TEMPUIAwayPos;
 
@@ -59,18 +64,18 @@ public class MainMenuUI : MonoBehaviour
     {
         // starts without input
         MainMenuSequence();
+        journalIsOpen = false;
     }
 
     private void Update()
     {
-        
+        TurnMandala();
+        OpenJournalScreen();
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             PauseMenuSequence();
         }
-
-        TurnMandala();
     }
 
     void TurnMandala()
@@ -87,17 +92,46 @@ public class MainMenuUI : MonoBehaviour
         MoveTitleAndFlowerDown();
     }
 
-    void PauseMenuSequence()
+    public void PauseMenuSequence()
     {
-        if (canPause == false) return;
-        canPause = false;
-        CameraManager.instance.look = false;
-        CameraManager.instance.CameraZoomOutSequence();
-        Player.instance.SetCanMove(false);
-        LightManager.instance.TurnOffPlayerLights();
-        LightManager.instance.TurnOnFrontStageLights();
-        MoveMenuButtonsIn();
-        CloseCurtains();
+        if (journalIsOpen) return;
+        if (canPause)
+        {
+            canPause = false;
+            Player.instance.SetCanMove(false);
+            LightManager.instance.TurnOffPlayerLights();
+            pauseScreen.transform.DOMove(pauseActivePos.position, 2).SetEase(buttonCurve);
+        }
+        else
+        {
+            canPause = true;
+            Player.instance.SetCanMove(false);
+            LightManager.instance.TurnOnPlayerLights();
+            pauseScreen.transform.DOMove(pauseInitPos.position, 2).SetEase(buttonCurve);
+        }
+        
+    }
+    public void OpenJournalScreen()
+    {
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            if (canPause && !journalIsOpen)
+            {
+                canPause = false;
+                journalIsOpen = true;
+                Player.instance.SetCanMove(false);
+                journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, 2);
+                LightManager.instance.TurnOffPlayerLights();
+            }
+            else if (!canPause && journalIsOpen)
+            {
+                canPause = true;
+                journalIsOpen = false;
+                Player.instance.SetCanMove(true);
+                journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, 2);
+                LightManager.instance.TurnOnPlayerLights();
+            }
+        }
     }
 
     public void FadeToTransparent(float duration)
@@ -105,6 +139,7 @@ public class MainMenuUI : MonoBehaviour
         // Tweens the alpha value to zero
         mainMenuPanel.GetComponent<Image>().DOColor(new Color(0, 0, 0, 0), duration);
     }
+
     public void FadeToBlack(float duration)
     {
         // Tweens the alpha value to 1

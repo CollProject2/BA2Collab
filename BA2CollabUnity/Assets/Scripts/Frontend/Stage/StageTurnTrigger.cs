@@ -65,6 +65,11 @@ public class StageTurnTrigger : MonoBehaviour
         Player.instance.transform.parent = null;
         Environment.instance.canTurnStage = true;
         UnloadRoom();
+        Invoke("ColliderDelay",0.1f);
+    }
+
+    void ColliderDelay()
+    {
         gameObject.GetComponent<Collider>().enabled = true;
     }
 
