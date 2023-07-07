@@ -37,7 +37,7 @@ public class ItemManager : MonoBehaviour
         {
             itemStatus[item.gameObject] = true;
         }
-        LogDictionaryValues();
+       // LogDictionaryValues();
     }
 
     public bool IsItemCollected(InteractableItem item)

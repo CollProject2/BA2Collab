@@ -306,6 +306,7 @@ public class StoryManager : MonoBehaviour
                 if (wallPosterItem.IsComplete())
                 {
                     glassesItem.SetInteractable(true);
+                    UIItemManager.instance.UseItem(posterItem);
                     UIItemManager.instance.CollectItem(glassesItem);
                     CurrentState = GameState.GlassesItem;
                 }
@@ -313,7 +314,6 @@ public class StoryManager : MonoBehaviour
             case GameState.GlassesItem:
                 if (glassesItem.IsComplete())
                 {
-                    UIItemManager.instance.UseItem(posterItem);
                     glassesManager.Activate();
                     CurrentState = GameState.GlassesPuzzle;
                 }
