@@ -286,7 +286,7 @@ public class Environment : MonoBehaviour
                 Player.instance.SetCanMove(false);
                 Player.instance.animator.SetBool("isMoving",false);
                 canTurnStage = false;
-                        
+                Player.instance.inGarden = false;        
                 Player.instance.TeleportPlayer(playerTeleportPosEntrance);
                 SetActiveConservatory(false);
                 SetActiveGarden(false);
