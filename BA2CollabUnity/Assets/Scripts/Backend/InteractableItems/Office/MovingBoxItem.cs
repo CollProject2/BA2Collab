@@ -30,24 +30,28 @@ public class MovingBoxItem : InteractableItem
 
     protected override void Interact()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+
+        if (Player.instance.CheckDistanceWithPlayer(gameObject.transform.position) < interactRange && !Player.instance.isSolving)
         {
-            switch (boxState)
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                case MovingBoxState.DroppingPuck:
-                    Collect();
-                    break;
-                case MovingBoxState.PickingUpBox:
-                    PickUpBox();
-                    break;
-                case MovingBoxState.DroppingBox:
-                    PutDownBox();
-                    break;
-                case MovingBoxState.End:
-                    UIManager.instance.dialogues.StartDialogue(endingMemory);
-                    break;
+                switch (boxState)
+                {
+                    case MovingBoxState.DroppingPuck:
+                        Collect();
+                        break;
+                    case MovingBoxState.PickingUpBox:
+                        PickUpBox();
+                        break;
+                    case MovingBoxState.DroppingBox:
+                        PutDownBox();
+                        break;
+                    case MovingBoxState.End:
+                        UIManager.instance.dialogues.StartDialogue(endingMemory);
+                        break;
+                }
+
             }
-            
         }
     }
 
@@ -64,28 +68,26 @@ public class MovingBoxItem : InteractableItem
 
     private void PickUpBox()
     {
-        UIManager.instance.dialogues.StartDialogue(PickUpBoxAndBearMemory);
-        transform.DOMove(Player.instance.playerCarrypos.position, 1).OnComplete(
+        Player.instance.SetCanMove(false);
+        transform.DOMove(Player.instance.playerCarrypos.position, 0.6f).OnComplete(
             () =>
             {
                 transform.parent = Player.instance.transform;
+                UIManager.instance.dialogues.StartDialogue(PickUpBoxAndBearMemory);
                 ChangeValues();
             });
-
     }
 
     public void PutDownBox()
     {
-        if (Player.instance.CheckDistanceWithPlayer(boxPos.position) < interactRange && !Player.instance.isSolving)
+        gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
         {
-            gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
-            {
-                UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
-                gameObject.transform.parent = boxPos;
-                ChangeValues();
-            });
-        }
-       
+            gameObject.transform.parent = boxPos;
+            UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
+            ChangeValues();
+        });
+
+
     }
 
     private void UpdateBoxState()
@@ -117,7 +119,7 @@ public class MovingBoxItem : InteractableItem
                 Player.instance.hasMovingBox = true;
                 interactParticle.SetActive(false);
                 LightManager.instance.OpenOfficeMovingBoxHighLight(false);
-                Player.instance.SetCanMove(false);
+                Player.instance.SetCanMove(true);
                 break;
             case MovingBoxState.DroppingBox:
                 Player.instance.hasMovingBox = false;

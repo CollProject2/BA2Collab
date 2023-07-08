@@ -3,7 +3,147 @@ guid: 674ad9f17cfc972478420e78e767f900
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_A
+    second: {fileID: 2100000, guid: 32fe852d8ee6af7448e4d64bd273a410, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_1.1
+    second: {fileID: 2100000, guid: fdd1ad481d1988e4b86829427287d08f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_1.2
+    second: {fileID: 2100000, guid: c91496266de030a4e8e71b7be4744425, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_1.3
+    second: {fileID: 2100000, guid: 30f047a4f8d30764a8adc963884d6547, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_2.1
+    second: {fileID: 2100000, guid: 8641be48af6e300449f9b9180908bc2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_2.2
+    second: {fileID: 2100000, guid: 240bc778431bcb343975c315c378c052, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_2.3
+    second: {fileID: 2100000, guid: 0b57335166772b246908d6ab26c3d05e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_3.1
+    second: {fileID: 2100000, guid: e988fc626bdbf63489e332effc7c01a2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_3.2
+    second: {fileID: 2100000, guid: 71d2be843549cdf40ab269e9d1cfaf9c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_Cube_3.3
+    second: {fileID: 2100000, guid: 5e5007c9ae03feb4b8578a6861377685, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_D
+    second: {fileID: 2100000, guid: 9402c9dd0fa68584b96922d3a7b7aa27, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_S
+    second: {fileID: 2100000, guid: 29b3659d989510441862327ca4548f54, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_W
+    second: {fileID: 2100000, guid: 644c554fbfa58f74883a9290ca631543, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_cube_box
+    second: {fileID: 2100000, guid: b068ab5a8ba3413498c428c305acb731, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_cube_box_2
+    second: {fileID: 2100000, guid: e8d5a10ffee5d8c4681bd4ab9d90f52d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_light_bulb_a.1
+    second: {fileID: 2100000, guid: 2030b04367037774893e82f179701e74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_light_bulb_a.2
+    second: {fileID: 2100000, guid: b4a3ab01633cbc34997b2afdd293148d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_light_bulb_a.3
+    second: {fileID: 2100000, guid: 51b86444f2cf82046a726342a1ee10dd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_light_bulb_b.1
+    second: {fileID: 2100000, guid: e51f6e91ea725d74a9675fe99af5026a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_light_bulb_b.2
+    second: {fileID: 2100000, guid: 94d4b79c947236b4485e09c53b5dfae2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_light_bulb_b.3
+    second: {fileID: 2100000, guid: 580c462e19f32a24299daabe3774aaa3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_metal_supports
+    second: {fileID: 2100000, guid: a3243743f5b71bf42893b678e22f4f65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_photo_1
+    second: {fileID: 2100000, guid: 3df542f5a05dee34baba5e2a213799c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_photo_2
+    second: {fileID: 2100000, guid: 6ab153292b638f347bcc3b6f193ad21d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_photo_3
+    second: {fileID: 2100000, guid: 16f1631135b1f6542a91e5ee5269e30e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_photo_4
+    second: {fileID: 2100000, guid: b6dea0fd617c9d14d9d5da3853446cf4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_photo_5
+    second: {fileID: 2100000, guid: ec4bc686353ae414f917a211ee96d01e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MAT_photo_6
+    second: {fileID: 2100000, guid: 981a19ec93af32942807221a88d9a7fc, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
