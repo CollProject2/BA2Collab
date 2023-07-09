@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CheckListManager : MonoBehaviour
 {
-    List<GameObject> checkList = new List<GameObject>();
+    public List<GameObject> checkList;
     public static CheckListManager instance;
     private int currentCheck;
     //putting puck in the box = start packing
