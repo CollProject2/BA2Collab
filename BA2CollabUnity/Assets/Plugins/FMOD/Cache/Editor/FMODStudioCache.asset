@@ -27,6 +27,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8043
+--- !u!114 &-9065151254359629388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_27_And I realised
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_27_And I realised
+  Guid:
+    Data1: -1270610411
+    Data2: 1201843434
+    Data3: -965316440
+    Data4: -1674295488
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7624
+--- !u!114 &-9043860351468941994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_72_oh nonsense
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_72_oh nonsense
+  Guid:
+    Data1: 787001576
+    Data2: 1269151409
+    Data3: 1177901723
+    Data4: 274073733
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5124
+--- !u!114 &-8882330133716176443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_55_this moment
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_55_this moment
+  Guid:
+    Data1: 1282264877
+    Data2: 1155942759
+    Data3: 682439055
+    Data4: -277039731
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
 --- !u!114 &-8798037297154557371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,6 +135,438 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6124
+--- !u!114 &-8752988777645207946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_73_maybe I made
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_73_maybe I made
+  Guid:
+    Data1: -1161654589
+    Data2: 1211221883
+    Data3: -2020299123
+    Data4: -121394458
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-8703915184784348204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_163_but the only
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_163_but the only
+  Guid:
+    Data1: 290737503
+    Data2: 1200538200
+    Data3: 711616175
+    Data4: 655629525
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6374
+--- !u!114 &-8625971838422296492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_67_she worked in
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_67_she worked in
+  Guid:
+    Data1: -1160046265
+    Data2: 1195290253
+    Data3: -2088171382
+    Data4: 2037383457
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5874
+--- !u!114 &-8333776632755834541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_21_bad smell
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_21_bad smell
+  Guid:
+    Data1: 137818909
+    Data2: 1111185672
+    Data3: 1100234392
+    Data4: -653518029
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6500
+--- !u!114 &-8147125543901813929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_133_I really do
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_133_I really do
+  Guid:
+    Data1: 1566518996
+    Data2: 1226220602
+    Data3: -1511157322
+    Data4: 1399693538
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-7661126286634717694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_120_well I also
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_120_well I also
+  Guid:
+    Data1: -1471476661
+    Data2: 1163609667
+    Data3: -2042404162
+    Data4: 1504221342
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-7508141962672129450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_159_Even when
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_159_Even when
+  Guid:
+    Data1: -1995479335
+    Data2: 1335359266
+    Data3: -1745036396
+    Data4: -460178888
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8500
+--- !u!114 &-7293113303193592351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_115_our shared
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_115_our shared
+  Guid:
+    Data1: -1400436227
+    Data2: 1195840865
+    Data3: 1272996754
+    Data4: 1662843918
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8791
+--- !u!114 &-7202619424454620073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_105_all of so
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_105_all of so
+  Guid:
+    Data1: 1040061955
+    Data2: 1196913980
+    Data3: -549731929
+    Data4: -1371549032
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10874
+--- !u!114 &-6565012073634464646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_43_One day my
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_43_One day my
+  Guid:
+    Data1: 1390948275
+    Data2: 1210120967
+    Data3: -1482488655
+    Data4: -285010659
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &-6526586030705875711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_87_I spent
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_87_I spent
+  Guid:
+    Data1: -1201311429
+    Data2: 1250682224
+    Data3: 1216320917
+    Data4: -406085952
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8374
+--- !u!114 &-6525739611315283815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_157_I was expect
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_157_I was expect
+  Guid:
+    Data1: 1495815172
+    Data2: 1141220195
+    Data3: -266691712
+    Data4: -1033319103
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11250
+--- !u!114 &-5841914947798599439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_102_we share
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_102_we share
+  Guid:
+    Data1: 445103931
+    Data2: 1337850258
+    Data3: 512652982
+    Data4: 1797147842
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2583
+--- !u!114 &-5654493801014196862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_28_Could only
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_28_Could only
+  Guid:
+    Data1: 882027584
+    Data2: 1180396414
+    Data3: -853291335
+    Data4: -47805381
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6374
+--- !u!114 &-5588590188237924675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_31_but as soon
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_31_but as soon
+  Guid:
+    Data1: 425993440
+    Data2: 1179145690
+    Data3: 1372560279
+    Data4: 451697258
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7277
+--- !u!114 &-5270118925693658312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_34_what have I
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_34_what have I
+  Guid:
+    Data1: 1808362666
+    Data2: 1239049124
+    Data3: 1602140326
+    Data4: 1747374537
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4124
 --- !u!114 &-5143897097376029460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,11 +582,281 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244709742519889
+  lastModified: 638244780332192507
   FileSizes:
   - Name: 
-    Value: 1928
+    Value: 6804
   Exists: 1
+--- !u!114 &-4802465694910622357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_145_juli is such
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_145_juli is such
+  Guid:
+    Data1: 1372962748
+    Data2: 1324389008
+    Data3: -914575691
+    Data4: 380339407
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8250
+--- !u!114 &-4722926774431136478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_118_of course I can
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_118_of course I can
+  Guid:
+    Data1: -210526554
+    Data2: 1208960033
+    Data3: -1306600528
+    Data4: 403980206
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-4662144710110501186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_114_having someone
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_114_having someone
+  Guid:
+    Data1: -77815134
+    Data2: 1281874992
+    Data3: 1331832471
+    Data4: -316321294
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4124
+--- !u!114 &-4537982302404103908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_62_flora she
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_62_flora she
+  Guid:
+    Data1: -658043045
+    Data2: 1341156236
+    Data3: 631320472
+    Data4: 634760634
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5687
+--- !u!114 &-4535870999275886087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_130_what I really
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_130_what I really
+  Guid:
+    Data1: 1342175441
+    Data2: 1166726219
+    Data3: 1974652298
+    Data4: 558268382
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5124
+--- !u!114 &-4505068524782730972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_38_you know that
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_38_you know that
+  Guid:
+    Data1: -2502716
+    Data2: 1289849170
+    Data3: -2026808148
+    Data4: -1419418514
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5374
+--- !u!114 &-4327374674622236895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_147_I am so imp
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_147_I am so imp
+  Guid:
+    Data1: -824817173
+    Data2: 1165699912
+    Data3: 1012400830
+    Data4: 1921790104
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7374
+--- !u!114 &-4305309423392178462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_40_father I co
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_40_father I co
+  Guid:
+    Data1: -44348075
+    Data2: 1079801532
+    Data3: 646929302
+    Data4: -390603336
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3624
+--- !u!114 &-4130465495896814945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_32_And He wanted
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_32_And He wanted
+  Guid:
+    Data1: -766639040
+    Data2: 1127543279
+    Data3: -85217356
+    Data4: -885977141
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4815
+--- !u!114 &-4057222893251288854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_70_understanding
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_70_understanding
+  Guid:
+    Data1: -1383101088
+    Data2: 1167574041
+    Data3: -1786509655
+    Data4: -624479491
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
 --- !u!114 &-4025464701835835941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -92,6 +875,33 @@ MonoBehaviour:
   lastModified: 638233453732488119
   FileSizes: []
   Exists: 1
+--- !u!114 &-3889038928137291054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_79_the first time
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_79_the first time
+  Guid:
+    Data1: 839939288
+    Data2: 1142075609
+    Data3: -1858809957
+    Data4: 2047769849
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7333
 --- !u!114 &-3808579388263205136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,6 +929,141 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6666
+--- !u!114 &-3706864088489046556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_20_you give me
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_20_you give me
+  Guid:
+    Data1: -1958231986
+    Data2: 1144379275
+    Data3: 920743575
+    Data4: -1565897162
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7674
+--- !u!114 &-3649440963212236110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_164_if you one
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_164_if you one
+  Guid:
+    Data1: 1041044867
+    Data2: 1076909029
+    Data3: 2055227302
+    Data4: -1334886287
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &-3620167061430389829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_98_this is the
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_98_this is the
+  Guid:
+    Data1: 1577567627
+    Data2: 1239125750
+    Data3: -1381974349
+    Data4: -1896287534
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7250
+--- !u!114 &-3454125842435624486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_126_I love you too
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_126_I love you too
+  Guid:
+    Data1: 862300531
+    Data2: 1331782640
+    Data3: 660932531
+    Data4: -826221123
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3407978047956105563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_29_this degree
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_29_this degree
+  Guid:
+    Data1: 1976597259
+    Data2: 1176358906
+    Data3: -311245922
+    Data4: 1431538056
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4736
 --- !u!114 &-3227535647774278028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,9 +1079,117 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244709742504861
+  lastModified: 638244780332181906
   FileSizes: []
   Exists: 1
+--- !u!114 &-2629963263853849237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_146_and I also
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_146_and I also
+  Guid:
+    Data1: 1034016125
+    Data2: 1244033661
+    Data3: -283837029
+    Data4: 1937424506
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3874
+--- !u!114 &-2386182350758279751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_89_I love them
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_89_I love them
+  Guid:
+    Data1: 1730587083
+    Data2: 1108715990
+    Data3: 1036321411
+    Data4: -239913947
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12250
+--- !u!114 &-2279843978701487119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_12_you always had
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_12_you always had
+  Guid:
+    Data1: -607947599
+    Data2: 1089374377
+    Data3: 1175691435
+    Data4: -1219545419
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5662
+--- !u!114 &-1956341828475231104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_112_1_aah
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_112_1_aah
+  Guid:
+    Data1: -1504801880
+    Data2: 1321306711
+    Data3: 1160455328
+    Data4: 72335596
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1698
 --- !u!114 &-1928912687670561651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,9 +1205,144 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638244709742800911
+  lastModified: 638244780351336946
   FileSizes: []
   Exists: 1
+--- !u!114 &-1787191558192566795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_11_this was our
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_11_this was our
+  Guid:
+    Data1: -1822264391
+    Data2: 1088275424
+    Data3: -2096207199
+    Data4: 1964606307
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6791
+--- !u!114 &-1324087132222087780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_110_we were
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_110_we were
+  Guid:
+    Data1: 1665608755
+    Data2: 1228770213
+    Data3: -1649216887
+    Data4: -1800135735
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5208
+--- !u!114 &-1317015046133217279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_69_my jaw
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_69_my jaw
+  Guid:
+    Data1: 1583042555
+    Data2: 1330081946
+    Data3: -1408601413
+    Data4: -443958288
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6500
+--- !u!114 &-1253350484586198554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_122_I am glad
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_122_I am glad
+  Guid:
+    Data1: 1686931697
+    Data2: 1276013508
+    Data3: 1501830021
+    Data4: -400995936
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &-1129782360877671590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_94_what if
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_94_what if
+  Guid:
+    Data1: -1960009331
+    Data2: 1227114968
+    Data3: -1855865978
+    Data4: 1044608456
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11098
 --- !u!114 &-1106247449454266767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -182,6 +1370,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6696
+--- !u!114 &-607786039480437197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_101_her father
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_101_her father
+  Guid:
+    Data1: -2105357555
+    Data2: 1129528622
+    Data3: 1278935171
+    Data4: 2025827123
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5750
 --- !u!114 &-512631901933300074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -209,6 +1424,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3666
+--- !u!114 &-462278070875918806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_26_Elisabeth
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_26_Elisabeth
+  Guid:
+    Data1: -293038625
+    Data2: 1076293769
+    Data3: 903317951
+    Data4: 1293834565
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6788
 --- !u!114 &-176893300715409063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -236,6 +1478,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 833
+--- !u!114 &-139588859341277101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_128_come on lizz
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_128_come on lizz
+  Guid:
+    Data1: -262704097
+    Data2: 1252064393
+    Data3: -1110351975
+    Data4: -1919126884
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4750
+--- !u!114 &-134104441889225938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_63_flora she
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_63_flora she
+  Guid:
+    Data1: 230275557
+    Data2: 1185062999
+    Data3: -1536827467
+    Data4: -1869440568
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5416
+--- !u!114 &-117177982514613834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_106_it feels so
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_106_it feels so
+  Guid:
+    Data1: -1114367237
+    Data2: 1080236503
+    Data3: -1244814674
+    Data4: 1129121592
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6556
 --- !u!114 &-35345361026848262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,13 +1617,551 @@ MonoBehaviour:
   - {fileID: 7982820880305604656}
   - {fileID: 6449706111051506106}
   - {fileID: -8798037297154557371}
+  - {fileID: -7202619424454620073}
+  - {fileID: -6525739611315283815}
+  - {fileID: 1093546405268323580}
+  - {fileID: 7012909631578063936}
+  - {fileID: -3407978047956105563}
+  - {fileID: 1688630771512956482}
+  - {fileID: -607786039480437197}
+  - {fileID: -9065151254359629388}
+  - {fileID: 3763144710398714732}
+  - {fileID: -8333776632755834541}
+  - {fileID: 9119841505307183165}
+  - {fileID: -139588859341277101}
+  - {fileID: 1193020027320805843}
+  - {fileID: 4427334327174509089}
+  - {fileID: 1074354019311922287}
+  - {fileID: 5874317153638892670}
+  - {fileID: -8882330133716176443}
+  - {fileID: 2975869699942699146}
+  - {fileID: -1324087132222087780}
+  - {fileID: 3262377391045946214}
+  - {fileID: -6526586030705875711}
+  - {fileID: -5841914947798599439}
+  - {fileID: 1802174471359818076}
+  - {fileID: -4130465495896814945}
+  - {fileID: -5654493801014196862}
+  - {fileID: 1441804238813570995}
+  - {fileID: 2689872697888828926}
+  - {fileID: -8625971838422296492}
+  - {fileID: -7661126286634717694}
+  - {fileID: -3706864088489046556}
+  - {fileID: 5634817286750923044}
+  - {fileID: 352944811409865558}
+  - {fileID: -4305309423392178462}
+  - {fileID: 440075893770966391}
+  - {fileID: 2227848810376953799}
+  - {fileID: 9211945946494036519}
+  - {fileID: -4537982302404103908}
+  - {fileID: 439692465466214962}
+  - {fileID: 8627797197073604926}
+  - {fileID: 6654281858885079290}
+  - {fileID: 3525206050766335850}
+  - {fileID: -8703915184784348204}
+  - {fileID: -4057222893251288854}
+  - {fileID: 2553325929510749157}
+  - {fileID: 5682024530047055056}
+  - {fileID: 8830891208167841383}
+  - {fileID: 1379690439940803805}
+  - {fileID: 1061935150305909668}
+  - {fileID: 7252579933632209610}
+  - {fileID: -3454125842435624486}
+  - {fileID: 5105728911477325532}
+  - {fileID: -2629963263853849237}
+  - {fileID: -3649440963212236110}
+  - {fileID: 74088915676784687}
+  - {fileID: 7922393673631503716}
+  - {fileID: 6198082788038736401}
+  - {fileID: -3620167061430389829}
+  - {fileID: -1129782360877671590}
+  - {fileID: 7004362407631000423}
+  - {fileID: 2985020638459090121}
+  - {fileID: 329244444840935888}
+  - {fileID: 220098823237181157}
+  - {fileID: 8249435327434624817}
+  - {fileID: -4662144710110501186}
+  - {fileID: 7017898089174746172}
+  - {fileID: 1205265672031134435}
+  - {fileID: 931348892189037103}
+  - {fileID: 3550862690401735358}
+  - {fileID: -4722926774431136478}
+  - {fileID: -1956341828475231104}
+  - {fileID: -5270118925693658312}
+  - {fileID: -2279843978701487119}
+  - {fileID: -6565012073634464646}
+  - {fileID: 2245744654848479878}
+  - {fileID: -1787191558192566795}
+  - {fileID: -4802465694910622357}
+  - {fileID: 5355757022857899809}
+  - {fileID: -8752988777645207946}
+  - {fileID: -4505068524782730972}
+  - {fileID: 7564268375122597821}
+  - {fileID: 5308274012378759670}
+  - {fileID: 3990489952714572963}
+  - {fileID: -2386182350758279751}
+  - {fileID: 7026978205165572757}
+  - {fileID: 754790717085821939}
+  - {fileID: -4535870999275886087}
+  - {fileID: 6452873392168675384}
+  - {fileID: -8147125543901813929}
+  - {fileID: 8241228445583430754}
+  - {fileID: -3889038928137291054}
+  - {fileID: -7508141962672129450}
+  - {fileID: 2174624015534938235}
+  - {fileID: 3641290243998870575}
+  - {fileID: -462278070875918806}
+  - {fileID: -5588590188237924675}
+  - {fileID: 3677624104385648704}
+  - {fileID: -134104441889225938}
+  - {fileID: -9043860351468941994}
+  - {fileID: -4327374674622236895}
+  - {fileID: 5552305061841449558}
+  - {fileID: -1253350484586198554}
+  - {fileID: 5584688543861712283}
+  - {fileID: 4757576971238292516}
+  - {fileID: -117177982514613834}
+  - {fileID: -1317015046133217279}
+  - {fileID: -7293113303193592351}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638244709742800911
+  cacheTime: 638244780351336946
   cacheVersion: 131603
+--- !u!114 &74088915676784687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_144_love for your family
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_144_love for your family
+  Guid:
+    Data1: 1364476804
+    Data2: 1104912308
+    Data3: 2056914816
+    Data4: 22218075
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &220098823237181157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_25_viggo was angry
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_25_viggo was angry
+  Guid:
+    Data1: 1551543962
+    Data2: 1200433606
+    Data3: 1808716215
+    Data4: -1816338359
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9116
+--- !u!114 &329244444840935888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_58_so I took a
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_58_so I took a
+  Guid:
+    Data1: 687257239
+    Data2: 1080371158
+    Data3: 198789048
+    Data4: -1549222623
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3750
+--- !u!114 &352944811409865558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_140_and she never
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_140_and she never
+  Guid:
+    Data1: -736399277
+    Data2: 1231577945
+    Data3: -367247727
+    Data4: -894578243
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5000
+--- !u!114 &439692465466214962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_92_an engagement ring
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_92_an engagement ring
+  Guid:
+    Data1: 1182447707
+    Data2: 1336102724
+    Data3: -1450224754
+    Data4: -18595153
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10750
+--- !u!114 &440075893770966391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_90_thats what
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_90_thats what
+  Guid:
+    Data1: 1366272085
+    Data2: 1312658192
+    Data3: -1316498302
+    Data4: 1997061601
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 11374
+--- !u!114 &754790717085821939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_138_I got all of them
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_138_I got all of them
+  Guid:
+    Data1: -363652400
+    Data2: 1251430498
+    Data3: 333200057
+    Data4: -1088476472
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4500
+--- !u!114 &931348892189037103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_86_there was some
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_86_there was some
+  Guid:
+    Data1: -208179803
+    Data2: 1285512195
+    Data3: -1083097439
+    Data4: -571359885
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6937
+--- !u!114 &1061935150305909668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_76_do you hide
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_76_do you hide
+  Guid:
+    Data1: -1010290839
+    Data2: 1093855058
+    Data3: -1601797198
+    Data4: 157912253
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4062
+--- !u!114 &1074354019311922287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_88_we talked about
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_88_we talked about
+  Guid:
+    Data1: -1149178583
+    Data2: 1204458460
+    Data3: -1574537599
+    Data4: 839383346
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &1093546405268323580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_124_lizz we have
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_124_lizz we have
+  Guid:
+    Data1: -1429310971
+    Data2: 1275613713
+    Data3: -1619722572
+    Data4: 1864110395
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12000
+--- !u!114 &1193020027320805843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_108_one of the
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_108_one of the
+  Guid:
+    Data1: -396575967
+    Data2: 1319326234
+    Data3: 897515961
+    Data4: -1150687113
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4837
+--- !u!114 &1205265672031134435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_100_and how men
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_100_and how men
+  Guid:
+    Data1: 983381157
+    Data2: 1145907863
+    Data3: -1967691859
+    Data4: 812113628
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2750
+--- !u!114 &1379690439940803805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_42_Everything to
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_42_Everything to
+  Guid:
+    Data1: 747713382
+    Data2: 1182568113
+    Data3: -67884413
+    Data4: -1051688952
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &1441804238813570995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_57_for mother
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_57_for mother
+  Guid:
+    Data1: -752418494
+    Data2: 1200583409
+    Data3: -734015603
+    Data4: -2030664821
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5437
+--- !u!114 &1688630771512956482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_112_and the smell
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_112_and the smell
+  Guid:
+    Data1: 755371020
+    Data2: 1238228712
+    Data3: -1557572446
+    Data4: 1977480077
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7833
 --- !u!114 &1784499567279226234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,6 +2190,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &1802174471359818076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_137_and that was
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_137_and that was
+  Guid:
+    Data1: -578171329
+    Data2: 1194092060
+    Data3: -1330359889
+    Data4: 1660950073
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2708
 --- !u!114 &2172646794227879946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,6 +2244,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4833
+--- !u!114 &2174624015534938235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_148_I feel so
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_148_I feel so
+  Guid:
+    Data1: 348937947
+    Data2: 1287186074
+    Data3: 555471801
+    Data4: -1394342646
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8124
+--- !u!114 &2227848810376953799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_56_this locket
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_56_this locket
+  Guid:
+    Data1: -1240650407
+    Data2: 1269407645
+    Data3: 706819456
+    Data4: -222347635
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2750
+--- !u!114 &2245744654848479878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_136_lizz wrote
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_136_lizz wrote
+  Guid:
+    Data1: 1890187959
+    Data2: 1307314146
+    Data3: 1011995284
+    Data4: -98113883
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7250
 --- !u!114 &2515421389587987932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,6 +2352,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2417
+--- !u!114 &2553325929510749157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_35_I loved life
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_35_I loved life
+  Guid:
+    Data1: -162942879
+    Data2: 1083083859
+    Data3: -898903162
+    Data4: 216340622
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4948
+--- !u!114 &2689872697888828926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_113_haha this
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_113_haha this
+  Guid:
+    Data1: -426281146
+    Data2: 1143684442
+    Data3: 425746054
+    Data4: 166415279
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6624
 --- !u!114 &2722496842294283583
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +2434,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 28545
+--- !u!114 &2975869699942699146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_160_In the end
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_160_In the end
+  Guid:
+    Data1: 1617907250
+    Data2: 1178769488
+    Data3: 1667090581
+    Data4: 1668602560
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &2985020638459090121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_39_how wonderful
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_39_how wonderful
+  Guid:
+    Data1: 1298066067
+    Data2: 1287548626
+    Data3: 1029427336
+    Data4: 314693971
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5374
 --- !u!114 &3229155113919149714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,6 +2515,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &3262377391045946214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_143_first you
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_143_first you
+  Guid:
+    Data1: 1202541622
+    Data2: 1261466632
+    Data3: -419661415
+    Data4: 448250328
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7333
 --- !u!114 &3397208660156601694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -466,6 +2570,168 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 265
+--- !u!114 &3525206050766335850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_81_without you
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_81_without you
+  Guid:
+    Data1: -1727054753
+    Data2: 1299355961
+    Data3: -962037884
+    Data4: -1768350777
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
+--- !u!114 &3550862690401735358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_95_thats why
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_95_thats why
+  Guid:
+    Data1: -1190356570
+    Data2: 1236358247
+    Data3: 1528883334
+    Data4: 29815029
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7062
+--- !u!114 &3641290243998870575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_109_I was so
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_109_I was so
+  Guid:
+    Data1: 294876893
+    Data2: 1309821379
+    Data3: -188532808
+    Data4: 433240164
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5750
+--- !u!114 &3677624104385648704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_33_I also
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_33_I also
+  Guid:
+    Data1: -1359508508
+    Data2: 1265819876
+    Data3: 385911435
+    Data4: 658580404
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &3763144710398714732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_139_It took
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_139_It took
+  Guid:
+    Data1: -1646457320
+    Data2: 1113162638
+    Data3: -438843770
+    Data4: -1545850383
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5666
+--- !u!114 &3990489952714572963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_44_her mask fell
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_44_her mask fell
+  Guid:
+    Data1: 2141399751
+    Data2: 1341065670
+    Data3: -115623283
+    Data4: -1627946964
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7708
 --- !u!114 &4333426495449838960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +2760,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4427334327174509089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_142_lizz el
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_142_lizz el
+  Guid:
+    Data1: 1311385383
+    Data2: 1078318592
+    Data3: 508670103
+    Data4: -1196431206
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8333
+--- !u!114 &4757576971238292516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_85_but somehow
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_85_but somehow
+  Guid:
+    Data1: 1778568951
+    Data2: 1201924776
+    Data3: 1333197212
+    Data4: 863929864
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &4975908088745058414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +2841,249 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1022
+--- !u!114 &5105728911477325532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_30_in public
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_30_in public
+  Guid:
+    Data1: 1062826869
+    Data2: 1152454502
+    Data3: 130042015
+    Data4: -487263448
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10145
+--- !u!114 &5308274012378759670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_22_I feel Horrible
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_22_I feel Horrible
+  Guid:
+    Data1: -1713013050
+    Data2: 1303328071
+    Data3: 1178913723
+    Data4: 1972972632
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4874
+--- !u!114 &5355757022857899809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_104_It ment so
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_104_It ment so
+  Guid:
+    Data1: -1527317824
+    Data2: 1232576489
+    Data3: -413679743
+    Data4: -73481153
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6231
+--- !u!114 &5552305061841449558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_80_from then on
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_80_from then on
+  Guid:
+    Data1: 1182692078
+    Data2: 1233747892
+    Data3: 834302623
+    Data4: -219565826
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6250
+--- !u!114 &5584688543861712283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_68_my savings
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_68_my savings
+  Guid:
+    Data1: -1642628107
+    Data2: 1164192545
+    Data3: 1385023638
+    Data4: 255580673
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6124
+--- !u!114 &5634817286750923044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_74_wasnt that
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_74_wasnt that
+  Guid:
+    Data1: 1032475984
+    Data2: 1221879949
+    Data3: -119871320
+    Data4: -786809935
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5937
+--- !u!114 &5682024530047055056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_78_aha
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_78_aha
+  Guid:
+    Data1: -606384541
+    Data2: 1152906313
+    Data3: 2075905923
+    Data4: -1011883830
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1208
+--- !u!114 &5874317153638892670
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_41_they had no
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_41_they had no
+  Guid:
+    Data1: -713743059
+    Data2: 1219188257
+    Data3: 551268265
+    Data4: 2047313122
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2374
+--- !u!114 &6198082788038736401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_158_I am infiniet
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_158_I am infiniet
+  Guid:
+    Data1: 122534795
+    Data2: 1192066853
+    Data3: -1416214356
+    Data4: -693106255
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9874
 --- !u!114 &6420497515404571880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +3135,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6708
+--- !u!114 &6452873392168675384
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_162_you know I had
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_162_you know I had
+  Guid:
+    Data1: 639463634
+    Data2: 1199919516
+    Data3: 1812089268
+    Data4: -815056563
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7250
 --- !u!114 &6635889139093115319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -619,6 +3209,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 806
   Exists: 1
+--- !u!114 &6654281858885079290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_84_we had so
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_84_we had so
+  Guid:
+    Data1: 710992476
+    Data2: 1079270151
+    Data3: 735059091
+    Data4: -1628130556
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5750
 --- !u!114 &6892326231132066782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +3283,168 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
+--- !u!114 &7004362407631000423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_132_you cant keep
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_132_you cant keep
+  Guid:
+    Data1: 866945169
+    Data2: 1218223106
+    Data3: -1658423168
+    Data4: 1466178732
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6250
+--- !u!114 &7012909631578063936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_64_who are
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_64_who are
+  Guid:
+    Data1: 251578376
+    Data2: 1315786164
+    Data3: -1970592867
+    Data4: -781497401
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5416
+--- !u!114 &7017898089174746172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_36_so I gave
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_36_so I gave
+  Guid:
+    Data1: -819877214
+    Data2: 1327850785
+    Data3: -1844724808
+    Data4: -648441236
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7416
+--- !u!114 &7026978205165572757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_134_I cant believe
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_134_I cant believe
+  Guid:
+    Data1: -1477367603
+    Data2: 1181890981
+    Data3: -1837364566
+    Data4: -2145944747
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5541
+--- !u!114 &7252579933632209610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_103_Carter on
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_103_Carter on
+  Guid:
+    Data1: -736033168
+    Data2: 1327288873
+    Data3: 1474356611
+    Data4: -385983902
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8833
+--- !u!114 &7564268375122597821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_111_I always
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_111_I always
+  Guid:
+    Data1: 1581391558
+    Data2: 1226026045
+    Data3: -258552699
+    Data4: 772054212
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &7769095055274465820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,6 +3472,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9250
+--- !u!114 &7922393673631503716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_66_Everything start
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_66_Everything start
+  Guid:
+    Data1: 1019099783
+    Data2: 1319171590
+    Data3: -183002972
+    Data4: 1819112173
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3124
 --- !u!114 &7982820880305604656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,6 +3526,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4687
+--- !u!114 &8241228445583430754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/VoiceLines/Helen/Helen_96_how did \u0131"
+  m_EditorClassIdentifier: 
+  Path: "event:/VoiceLines/Helen/Helen_96_how did \u0131"
+  Guid:
+    Data1: 705015255
+    Data2: 1289261597
+    Data3: 1197130168
+    Data4: 1864589
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3416
+--- !u!114 &8249435327434624817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_99_lissandra hated
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_99_lissandra hated
+  Guid:
+    Data1: 1443457949
+    Data2: 1077988065
+    Data3: 1891082379
+    Data4: -1869578111
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &8627797197073604926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_93_did lizz
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_93_did lizz
+  Guid:
+    Data1: -1753135780
+    Data2: 1262525101
+    Data3: -1562057059
+    Data4: 348621638
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
 --- !u!114 &8776475477020645263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -762,6 +3649,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &8830891208167841383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_156_but why arent
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_156_but why arent
+  Guid:
+    Data1: -1630255260
+    Data2: 1339789515
+    Data3: -1285875557
+    Data4: 836379110
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1624
 --- !u!114 &9044369158183322214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,3 +3703,57 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1666
+--- !u!114 &9119841505307183165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_83_oh this
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_83_oh this
+  Guid:
+    Data1: 1730171167
+    Data2: 1154230074
+    Data3: 1059976077
+    Data4: -955037848
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6562
+--- !u!114 &9211945946494036519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_116_these numbers
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_116_these numbers
+  Guid:
+    Data1: -329787814
+    Data2: 1316411279
+    Data3: 577194638
+    Data4: 55044419
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7124
