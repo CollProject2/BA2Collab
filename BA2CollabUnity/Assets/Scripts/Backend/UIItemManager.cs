@@ -23,6 +23,8 @@ public class UIItemManager : MonoBehaviour
 
     public void CollectItem(InteractableItem item)
     {
+        Debug.Log(item.name);
+        Debug.Log(itemManager);
         itemManager.CollectItem(item);
         UpdateItemImage();
     }

@@ -69,12 +69,6 @@ public class PuzzleBlock : MonoBehaviour
     {
         SetRandomRotation();
     }
-    private void FixedUpdate()
-    {
-        if (BlockManager.instance.isComplete || isRotating) return;
-        
-        SetCurrentConditions();
-    }
 
     //when the player interract with the collider of the block
     private void OnMouseDown()
@@ -91,12 +85,16 @@ public class PuzzleBlock : MonoBehaviour
                 BlockManager.instance.currentBlock.canMoveOut = true;
                 //move the block away
                 BlockManager.instance.currentBlock.transform.DOMove(BlockManager.instance.currentBlock.defaultBlockPos.position, 1);
+                //move the detector too so it can still detect
+                faceDetector.transform.DOMove(defaultFaceDetectorPos.position, 1);
             }
             //set the new block as the current block
             BlockManager.instance.SetCurrentBlock(this);
             //move the block towards player
             transform.DOMove(new Vector3(transform.position.x, transform.position.y, transform.position.z - 0.5f), 1);
             canMoveOut = false;
+            //move facedetector 
+            faceDetector.transform.DOMove(activeFaceDetectorPos.position, 1);
         }
 
     }
