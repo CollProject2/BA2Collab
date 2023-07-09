@@ -17,11 +17,14 @@ public class UIItemManager : MonoBehaviour
             Destroy(gameObject);
 
         itemManager = ItemManager.instance;
-        UpdateItemImage();
+        if (itemManager != null)
+            UpdateItemImage();
     }
 
     public void CollectItem(InteractableItem item)
     {
+        Debug.Log(item.name);
+        Debug.Log(itemManager);
         itemManager.CollectItem(item);
         UpdateItemImage();
     }
