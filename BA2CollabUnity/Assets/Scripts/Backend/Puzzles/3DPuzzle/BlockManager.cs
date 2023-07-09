@@ -1,5 +1,4 @@
 using DG.Tweening;
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,7 +15,6 @@ public class BlockManager : MonoBehaviour
 
     public Quaternion targetRotation = Quaternion.Euler(90, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
-    private bool solved;
 
     private Dictionary<int, int[]> blockDisplayMapping = new Dictionary<int, int[]>()
     {
@@ -36,7 +34,6 @@ public class BlockManager : MonoBehaviour
 
         puzzle = GetComponentInParent<Puzzle>();
         DisplayNextBlock();
-        solved = false;
     }
     public bool IsComplete()
     {
@@ -56,6 +53,8 @@ public class BlockManager : MonoBehaviour
     {
         if (!isInteractable) return;
         CheckInput();
+        if (!isComplete)
+            CallCheck();
     }
 
     private void CheckInput()
@@ -104,7 +103,7 @@ public class BlockManager : MonoBehaviour
     //check wincon and finish up the puzzle
     public void CallCheck()
     {
-        if (CheckWinCondition() && !solved)
+        if (CheckWinCondition())
         {
             //disable block interaction
             DeactivateBlocks();
@@ -112,9 +111,8 @@ public class BlockManager : MonoBehaviour
             Player.instance.RecallMemory(puzzle.associatedMemory);
             //move the last block in place
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
-            solved = true;
             isComplete = true;
-            AudioManager.instance.SetMemoryParameter("PuzzleSolvingState",1);
+            AudioManager.instance.SetMemoryParameter("PuzzleSolvingState", 1);
         }
     }
 
@@ -124,7 +122,7 @@ public class BlockManager : MonoBehaviour
         {
             if (block.isActiveAndEnabled)
             {
-                if ((block.CurrentFace != wincon || !block.rightRotation))
+                if (block.CurrentFace != wincon || !block.CheckRotation())
                     return false;
             }
         }
@@ -147,7 +145,7 @@ public class BlockManager : MonoBehaviour
             gridBlocks[index].RotateBlock(direction);
 
     }
-    
+
     internal void Activate()
     {
         isInteractable = true;

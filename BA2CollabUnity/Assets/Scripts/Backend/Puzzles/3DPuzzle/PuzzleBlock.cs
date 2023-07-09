@@ -45,7 +45,6 @@ public class PuzzleBlock : MonoBehaviour
     public GameObject faceDetector;
     public BlockFace CurrentFace;
 
-    public bool rightRotation;
     private bool isRotating;
     private bool canMoveOut;
     public bool interactable;
@@ -68,12 +67,6 @@ public class PuzzleBlock : MonoBehaviour
     private void Awake()
     {
         SetRandomRotation();
-    }
-    private void FixedUpdate()
-    {
-        if (BlockManager.instance.isComplete || isRotating) return;
-        
-        SetCurrentConditions();
     }
 
     //when the player interract with the collider of the block
@@ -112,7 +105,6 @@ public class PuzzleBlock : MonoBehaviour
         transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete( ()=>
         {
             isRotating = false;
-            SetCurrentConditions();
         });
     }
 
@@ -135,11 +127,5 @@ public class PuzzleBlock : MonoBehaviour
         float difference = Quaternion.Angle(transform.localRotation, BlockManager.instance.targetRotation);
         return Mathf.Abs(difference) < 0.3f;
     }
-    //check if the block has the right position/rotation
 
-    public void SetCurrentConditions()
-    {
-        if (CheckRotation()) rightRotation = true;
-        BlockManager.instance.CallCheck();
-    }
 }
