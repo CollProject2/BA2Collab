@@ -344,7 +344,6 @@ public class StoryManager : MonoBehaviour
             case GameState.LockPuzzle:
                 if (lockManager.IsComplete())
                 {
-                    Destroy(lockManager.gameObject);
                     projectorItem.SetInteractable(true);
                     UIItemManager.instance.CollectItem(projectorItem);//slide
                     CurrentState = GameState.ProjectorItem;

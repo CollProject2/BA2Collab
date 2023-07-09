@@ -21,14 +21,14 @@ public class CheckListManager : MonoBehaviour
         else
             Destroy(this);
 
-        currentCheck = 0;
+        currentCheck = -1;
     }
 
     private void Check()
     {
         for (int i = 0; i < checkList.Count; i++)
         {
-            if (i-1 <= currentCheck)
+            if (i <= currentCheck)
                 checkList[i].SetActive(true);
         }
     }

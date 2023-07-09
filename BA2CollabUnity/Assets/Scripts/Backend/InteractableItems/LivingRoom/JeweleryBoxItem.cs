@@ -34,7 +34,7 @@ public class JeweleryBoxItem : InteractableItem
         {
             jeweleryBoxPivot.transform.DOLocalRotate(new Vector3(0, 180, jeweleryBoxPivot.transform.rotation.z), jeweleryBoxOpenDur);
             JeweleryPuzzleObj.transform.DOMove(initPos.position, itemMovementDuration);
-            JeweleryPuzzleObj.transform.DOScale(new Vector3(1, 1, 1), jeweleryBoxOpenDur);
+            JeweleryPuzzleObj.transform.DOScale(new Vector3(0.4f, 0.4f, 0.4f), jeweleryBoxOpenDur);
             SetIsComplete(true);
         });
     }

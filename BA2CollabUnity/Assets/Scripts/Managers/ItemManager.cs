@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ItemManager : MonoBehaviour
 {
-    public static ItemManager instance;
+    public static ItemManager instance = null;
     public List<InteractableItem> items;
 
     public Dictionary<GameObject, bool> itemStatus = new();

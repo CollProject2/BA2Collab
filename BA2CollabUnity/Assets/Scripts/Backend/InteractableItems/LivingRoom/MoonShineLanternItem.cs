@@ -28,8 +28,7 @@ public class MoonShineLanternItem : InteractableItem
 
     public void MoveMoonshineLanternAway()
     {
-        
-        itemObject.transform.DOScale(new Vector3(1, 1, 1), itemMovementDuration);
+        itemObject.transform.DOScale(new Vector3(0.75f, 0.75f, 0.75f), itemMovementDuration);
         itemObject.transform.DOMove(initPos.position, itemMovementDuration).OnComplete(()=>
         {
             LightManager.instance.OpenLivingRoomEntranceDoorHighLight(true);
