@@ -19,6 +19,7 @@ public class Puzzle : MonoBehaviour
         puzzleObj = Instantiate(associatedPuzzle,puzzleSpawn.position,puzzleSpawn.rotation).gameObject;
         //tween it in the UI
         StoryManager.instance.blockManager = puzzleObj.GetComponentInChildren<BlockManager>();
+  
 
         if (!Player.instance.inGarden)
         {
@@ -32,8 +33,8 @@ public class Puzzle : MonoBehaviour
                 .DOMove(UIManager.instance.puzzleUI.gardenBlockPuzzleActivePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
                 .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve).OnComplete(()=> BlockManager.instance.ActivateBlocks());
         }
-        
-        
+
+
         //startPuzzle solving Music from AudioManager, get the event ref from FMODEvents
         AudioManager.instance.InitializeMemoryMusic(FMODEvents.instance.memoryMusic_1);
     }
