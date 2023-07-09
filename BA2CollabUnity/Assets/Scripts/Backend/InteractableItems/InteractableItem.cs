@@ -1,5 +1,3 @@
-using DG.Tweening;
-using UnityEditor.Rendering;
 using UnityEngine;
 
 public abstract class InteractableItem : MonoBehaviour
@@ -40,7 +38,7 @@ public abstract class InteractableItem : MonoBehaviour
     protected virtual void Update()
     {
         if (!isInteractable) return;
-            Interact();
+        Interact();
     }
 
     protected virtual void Interact()
@@ -60,11 +58,11 @@ public abstract class InteractableItem : MonoBehaviour
         interactParticle.SetActive(false);
         Player.instance.SetCanMove(false);
 
-        if(hasToMove)
+        if (hasToMove)
             InstantiateAndMove();
         isCollected = true;
     }
 
-    public virtual void InstantiateAndMove(){}
+    public virtual void InstantiateAndMove() { }
 
 }

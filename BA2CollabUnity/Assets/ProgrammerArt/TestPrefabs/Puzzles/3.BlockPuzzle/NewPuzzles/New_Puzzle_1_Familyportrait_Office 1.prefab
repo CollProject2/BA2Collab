@@ -159,7 +159,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1667175154709221993
 Transform:
   m_ObjectHideFlags: 0
@@ -209,7 +209,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 1
   defaultBlockPos: {fileID: 1955696516726317550}
@@ -844,7 +843,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 5
   defaultBlockPos: {fileID: 5973237868515858963}
@@ -1533,7 +1531,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 7
   defaultBlockPos: {fileID: 6379092641172632967}
@@ -1996,7 +1993,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 3
   defaultBlockPos: {fileID: 7951056207932637744}
@@ -3593,7 +3589,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 6
   defaultBlockPos: {fileID: 8484195521831435614}
@@ -8055,7 +8050,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 8
   defaultBlockPos: {fileID: 4936475429085322773}
@@ -10616,7 +10610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 4
   defaultBlockPos: {fileID: 4938959982526549442}
@@ -10682,7 +10675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7807392671435852346
 Transform:
   m_ObjectHideFlags: 0
@@ -10732,7 +10725,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faceDetector: {fileID: 6432159345091150833}
   CurrentFace: 0
-  rightRotation: 0
   interactable: 0
   index: 2
   defaultBlockPos: {fileID: 3526051715971859769}
@@ -11241,7 +11233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5a141f6a57261147884b25225119f60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentBlock: {fileID: 7065356271932820409}
+  currentBlock: {fileID: 8413444310099189775}
   gridBlocks:
   - {fileID: 4442386126797853242}
   - {fileID: 8449613540605609444}
@@ -12266,6 +12258,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Block  (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4403859162346079859, guid: f32e8316b01517d4ea1c1c05f5892d10,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7773750511230178069, guid: f32e8316b01517d4ea1c1c05f5892d10,
         type: 3}

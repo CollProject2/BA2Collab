@@ -68,6 +68,7 @@ public class MovingBoxItem : InteractableItem
 
     private void PickUpBox()
     {
+
         Player.instance.SetCanMove(false);
         transform.DOMove(Player.instance.playerCarrypos.position, 0.6f).OnComplete(
             () =>
@@ -80,13 +81,17 @@ public class MovingBoxItem : InteractableItem
 
     public void PutDownBox()
     {
-        gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
+        
+        if (Player.instance.CheckDistanceWithPlayer(boxPos.position) < interactRange && !Player.instance.isSolving)
         {
-            gameObject.transform.parent = boxPos;
-            UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
-            ChangeValues();
-        });
-
+            Player.instance.SetCanMove(false);
+            gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
+            {
+                gameObject.transform.parent = boxPos;
+                UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
+                ChangeValues();
+            });
+        }
 
     }
 
@@ -124,6 +129,7 @@ public class MovingBoxItem : InteractableItem
             case MovingBoxState.DroppingBox:
                 Player.instance.hasMovingBox = false;
                 interactParticle.SetActive(false);
+                Player.instance.SetCanMove(true);
                 break;
             case MovingBoxState.End:
                 interactParticle.SetActive(false);
