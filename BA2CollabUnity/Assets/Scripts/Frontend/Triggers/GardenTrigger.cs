@@ -12,5 +12,6 @@ public class GardenTrigger : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = false;
         Player.instance.inGarden = true;
         gardenCollider.SetActive(true);
+        CheckListManager.instance.AdvanceChecklist(); //visit the garden == after zoom in?
     }
 }

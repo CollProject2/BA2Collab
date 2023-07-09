@@ -147,6 +147,7 @@ public class StoryManager : MonoBehaviour
             case GameState.MovingBoxItemDropPuck:
                 if (movingBoxItem.boxState == MovingBoxState.PickingUpBox)
                 {
+                    CheckListManager.instance.AdvanceChecklist(); //putting puck in the box = start packing
                     item3DPuzzleFam.SetInteractable(true);
                     CurrentState = GameState.ThreeDPuzzleItemFirst;
                 }
@@ -176,6 +177,7 @@ public class StoryManager : MonoBehaviour
             case GameState.MovingBoxItemDropped:
                 if (movingBoxItem.boxState == MovingBoxState.BoxDropped)
                 {
+                    CheckListManager.instance.AdvanceChecklist(); //putting the box in the entrance = dropping moving box finished 
                     degreeItem.SetInteractable(true);
                     CurrentState = GameState.DegreeItem;
                 }
@@ -226,7 +228,7 @@ public class StoryManager : MonoBehaviour
             case GameState.ThreeDPuzzleSecond:
                 if (blockManager.IsComplete())
                 {
-                    
+                    CheckListManager.instance.AdvanceChecklist(); //bring cube to the livingroom = finishing first 3d puzzle in livingroom 
                     Destroy(item3DPuzzleHouse);
                     moonShineLanternItem.SetInteractable(true);
                     CurrentState = GameState.MoonShineLanternItem;
@@ -281,6 +283,7 @@ public class StoryManager : MonoBehaviour
             case GameState.JewelryBoxItem:
                 if (jewelryBoxItem.IsComplete())
                 {
+                    CheckListManager.instance.AdvanceChecklist(); //whos ring is it? = after ionteract with the ring
                     item3DPuzzleProtest.SetInteractable(true);
                     CurrentState = GameState.ThreeDPuzzleItemFourth;
                 }
@@ -311,6 +314,7 @@ public class StoryManager : MonoBehaviour
             case GameState.WallPosterItem:
                 if (wallPosterItem.IsComplete())
                 {
+                    CheckListManager.instance.AdvanceChecklist(); //posters belong in the basement == atfer posterwall 
                     glassesItem.SetInteractable(true);
                     UIItemManager.instance.CollectItem(glassesItem);
                     CurrentState = GameState.GlassesItem;
@@ -356,6 +360,7 @@ public class StoryManager : MonoBehaviour
             case GameState.ShelvesPuzzle:
                 if (shelvesManager.IsComplete())
                 {
+                    CheckListManager.instance.AdvanceChecklist(); //What are these letters for? == shelf puzzle done
                     Destroy(shelvesManager);
                     secrectDrawerItem.SetInteractable(true);
                     CurrentState = GameState.SecrectDrawerItem;
@@ -386,6 +391,7 @@ public class StoryManager : MonoBehaviour
             case GameState.FlowerPuzzle:
                 if (plantManager.IsComplete())
                 {
+                    CheckListManager.instance.AdvanceChecklist(); //after flowerpuzzle
                     Destroy(plantManager);
                     NefariousParentAbuseActivation(item3DPuzzleHos.gameObject);
                     CurrentState = GameState.ThreeDPuzzleItemSixth;
