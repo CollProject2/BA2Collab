@@ -18,13 +18,13 @@ public class PartialRoomLoader : MonoBehaviour
 
     public void PartialLoad()
     {
-        Debug.Log("partially load");
+        //Debug.Log("partially load");
         roomObjects.transform.DOMove(Vector3.zero, Environment.instance.turnDuration);
     }
 
     public void PartiallyUnload()
     {
-        Debug.Log("partially Unload");
+        //Debug.Log("partially Unload");
         roomObjects.transform.DOMove(new Vector3(roomObjects.transform.position.x, 10, roomObjects.transform.position.z), Environment.instance.turnDuration);
     }
     
