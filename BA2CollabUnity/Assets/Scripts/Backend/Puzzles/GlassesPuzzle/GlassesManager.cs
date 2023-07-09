@@ -29,13 +29,24 @@ public class GlassesManager : MonoBehaviour
     public bool isComplete;
     public bool isInteractable;
     public GameObject border;
+    public bool activated;
+
+    public GameObject particle;
+
+    public static GlassesManager instance;
 
 
     private void Awake()
     {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this);
+
         glassesState = GlassesState.off;
         left = false;
         canSwitch = false;
+        activated = false;
     }
 
     public void InitializeGlasses()
@@ -52,14 +63,16 @@ public class GlassesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInteractable)
+        if (isInteractable && activated)
         {
             if (Input.GetKeyDown(KeyCode.Q)) // take off glasses 
             {
                 glassesState = GlassesState.off;
                 Player.instance.hasGlasses = false;
+                activated = false;
                 isComplete = true;
                 glassesItem.ResetValues();
+                glassesItem.interactParticle = particle;
             }
             if (Input.GetKeyDown(KeyCode.E))
                 glassesState = GlassesState.threeD;

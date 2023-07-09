@@ -9,8 +9,10 @@ public class GlassesItem : InteractableItem
     protected override void Collect()
     {
         base.Collect();
+        GlassesManager.instance.activated = true;
         ActivateGlassesOnCamera();
         SetIsComplete(true);
+
     }
 
     public void ActivateGlassesOnCamera()

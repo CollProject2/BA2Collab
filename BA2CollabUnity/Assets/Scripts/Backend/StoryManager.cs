@@ -108,8 +108,11 @@ public class StoryManager : MonoBehaviour
         switch (CurrentState)
         {
             case GameState.Start:
-                puckNoteItem.SetInteractable(true);
-                CurrentState = GameState.PuckNoteItem;
+                if (Player.instance != null)
+                {
+                    puckNoteItem.SetInteractable(true);
+                    CurrentState = GameState.PuckNoteItem;
+                }
                 break;
             case GameState.PuckNoteItem:
                 if (puckNoteItem.IsComplete())
