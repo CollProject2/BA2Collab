@@ -12,6 +12,7 @@ public class BlockManager : MonoBehaviour
     public bool isInteractable;
     public BlockFace wincon;
     public bool isComplete;
+    public GameObject initDetector;
 
     public Quaternion targetRotation = Quaternion.Euler(90, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
@@ -55,8 +56,8 @@ public class BlockManager : MonoBehaviour
     {
         if (!isInteractable) return;
         CheckInput();
-
     }
+
     private void CheckInput()
     {
         //check if the player pressed the respective key
@@ -74,6 +75,7 @@ public class BlockManager : MonoBehaviour
     public void ActivateBlocks()
     {
         gridBlocks.ForEach(block => block.interactable = true);
+        Destroy(initDetector);
     }
 
     //make the blocks unclickable
