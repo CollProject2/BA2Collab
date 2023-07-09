@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8043
+--- !u!114 &-8798037297154557371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_7_have you
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_7_have you
+  Guid:
+    Data1: 1897150496
+    Data2: 1180646690
+    Data3: -1254327376
+    Data4: 1828019843
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6124
 --- !u!114 &-5143897097376029460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +69,10 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638241977824387869
+  lastModified: 638244709742519889
   FileSizes:
   - Name: 
-    Value: 1546
+    Value: 1928
   Exists: 1
 --- !u!114 &-4025464701835835941
 MonoBehaviour:
@@ -62,7 +89,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638241977824439141
+  lastModified: 638233453732488119
   FileSizes: []
   Exists: 1
 --- !u!114 &-3808579388263205136
@@ -107,7 +134,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638241977824377820
+  lastModified: 638244709742504861
   FileSizes: []
   Exists: 1
 --- !u!114 &-1928912687670561651
@@ -125,7 +152,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638241977824454012
+  lastModified: 638244709742800911
   FileSizes: []
   Exists: 1
 --- !u!114 &-1106247449454266767
@@ -260,12 +287,19 @@ MonoBehaviour:
   - {fileID: -3808579388263205136}
   - {fileID: 2172646794227879946}
   - {fileID: -512631901933300074}
+  - {fileID: 3229155113919149714}
+  - {fileID: 6635889139093115319}
+  - {fileID: 7769095055274465820}
+  - {fileID: 6974105278793026715}
+  - {fileID: 7982820880305604656}
+  - {fileID: 6449706111051506106}
+  - {fileID: -8798037297154557371}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638241977824454012
+  cacheTime: 638244709742800911
   cacheVersion: 131603
 --- !u!114 &1784499567279226234
 MonoBehaviour:
@@ -377,6 +411,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 28545
+--- !u!114 &3229155113919149714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_5_there is a button
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_5_there is a button
+  Guid:
+    Data1: -1051046773
+    Data2: 1160859670
+    Data3: 92757412
+    Data4: 1852454269
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &3397208660156601694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,8 +485,8 @@ MonoBehaviour:
     Data3: -459947078
     Data4: -1639359516
   Banks:
-  - {fileID: -3227535647774278028}
   - {fileID: -4025464701835835941}
+  - {fileID: -3227535647774278028}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -484,6 +545,60 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &6449706111051506106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_9_and the best
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_9_and the best
+  Guid:
+    Data1: 2108424617
+    Data2: 1238355626
+    Data3: 2000170125
+    Data4: 1575703491
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6708
+--- !u!114 &6635889139093115319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_4_A teddy
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_4_A teddy
+  Guid:
+    Data1: 1126565562
+    Data2: 1194860342
+    Data3: -1305677933
+    Data4: -1152251775
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6250
 --- !u!114 &6651897055698001300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,6 +639,87 @@ MonoBehaviour:
   - Name: Desktop
     Value: 884992
   Exists: 1
+--- !u!114 &6974105278793026715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_10_you should
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_10_you should
+  Guid:
+    Data1: -388486542
+    Data2: 1222048525
+    Data3: -1662418787
+    Data4: -782359027
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &7769095055274465820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_6_puck is that
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_6_puck is that
+  Guid:
+    Data1: 783241944
+    Data2: 1264069201
+    Data3: -1759419776
+    Data4: 1645869982
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9250
+--- !u!114 &7982820880305604656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_8_she asked
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_8_she asked
+  Guid:
+    Data1: 302200736
+    Data2: 1212906553
+    Data3: -1013661307
+    Data4: -505232233
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4687
 --- !u!114 &8776475477020645263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -539,7 +735,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/MemoryMusic.bank
   Name: MemoryMusic
   StudioPath: bank:/MemoryMusic
-  lastModified: 638241977824404039
+  lastModified: 638227824731328878
   FileSizes: []
   Exists: 1
 --- !u!114 &8828023277134063912
