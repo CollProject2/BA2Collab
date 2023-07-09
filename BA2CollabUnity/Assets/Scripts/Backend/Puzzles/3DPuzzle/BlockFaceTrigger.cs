@@ -3,7 +3,6 @@ using UnityEngine;
 public class BlockFaceTrigger : MonoBehaviour
 {
     private PuzzleBlock puzzleBlock;
-    private bool hasBeenTriggered = false;
     private const string DetectorTag = "BlockFaceDetector";
 
     private void Start()
@@ -13,16 +12,10 @@ public class BlockFaceTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(DetectorTag) && !hasBeenTriggered)
+       
+        if (other.CompareTag(DetectorTag) && puzzleBlock != null && (BlockManager.instance.currentBlock == puzzleBlock || !puzzleBlock.interactable))
         {
             puzzleBlock.SetState(name);
-            hasBeenTriggered = true;
-        }
-
-
-        if (other.CompareTag(DetectorTag))
-        {
-            hasBeenTriggered = false;
         }
     }
 
