@@ -9,7 +9,7 @@ public class MoveMoonshineItemAway : Command
     public override void OnEnter()
     {
         moonshineItem.MoveMoonshineLanternAway();
-        triggerZoneToEntrance.SetActive(true);
+        //triggerZoneToEntrance.SetActive(true);
         Continue();
     }
 }

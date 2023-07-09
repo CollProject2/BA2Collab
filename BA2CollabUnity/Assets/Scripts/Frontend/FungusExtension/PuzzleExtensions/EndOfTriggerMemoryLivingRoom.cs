@@ -9,7 +9,7 @@ public class EndOfTriggerMemoryLivingRoom : Command
 {
     public override void OnEnter()
     {
-        LightManager.instance.OpenEntranceBedRoomDoorHighLight(true);
+        //LightManager.instance.OpenEntranceBedRoomDoorHighLight(true);
         Continue();
     }
 }

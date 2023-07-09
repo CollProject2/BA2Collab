@@ -216,6 +216,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5874
+--- !u!114 &-8528922949703805753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_71_so you are
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_71_so you are
+  Guid:
+    Data1: 1992029407
+    Data2: 1203160798
+    Data3: -165005695
+    Data4: -796756136
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8073
+--- !u!114 &-8362466922320823523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_75_its in my
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_75_its in my
+  Guid:
+    Data1: 325266306
+    Data2: 1233280974
+    Data3: -1287398469
+    Data4: -1930319311
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1374
 --- !u!114 &-8333776632755834541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +378,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8500
+--- !u!114 &-7399080774646387582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_82_with these
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_82_with these
+  Guid:
+    Data1: -1726699202
+    Data2: 1163586063
+    Data3: 1828864907
+    Data4: 2076239073
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4791
 --- !u!114 &-7293113303193592351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +459,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10874
+--- !u!114 &-6664885070976904872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_91_flustered
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_91_flustered
+  Guid:
+    Data1: 810324707
+    Data2: 1251539893
+    Data3: 402052279
+    Data4: 1505904688
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5833
 --- !u!114 &-6565012073634464646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,6 +567,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11250
+--- !u!114 &-6143846409079520989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_69_just less
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_69_just less
+  Guid:
+    Data1: -2056080308
+    Data2: 1276249343
+    Data3: -1510106213
+    Data4: 1541943957
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8916
 --- !u!114 &-5841914947798599439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,10 +717,10 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638244780332192507
+  lastModified: 638245056056725580
   FileSizes:
   - Name: 
-    Value: 6804
+    Value: 7338
   Exists: 1
 --- !u!114 &-4802465694910622357
 MonoBehaviour:
@@ -1079,7 +1214,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638244780332181906
+  lastModified: 638245056056704225
   FileSizes: []
   Exists: 1
 --- !u!114 &-2629963263853849237
@@ -1136,6 +1271,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12250
+--- !u!114 &-2310059491070073761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_37_its a miracle
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_37_its a miracle
+  Guid:
+    Data1: -1532726509
+    Data2: 1221439718
+    Data3: 1004878488
+    Data4: 767578485
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5500
 --- !u!114 &-2279843978701487119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1205,7 +1367,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638244780351336946
+  lastModified: 638245107402102884
   FileSizes: []
   Exists: 1
 --- !u!114 &-1787191558192566795
@@ -1451,6 +1613,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6788
+--- !u!114 &-288448833206228636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_59_and so helen
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_59_and so helen
+  Guid:
+    Data1: -937481320
+    Data2: 1235322194
+    Data3: -704379252
+    Data4: 1997547314
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4624
 --- !u!114 &-176893300715409063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1723,12 +1912,23 @@ MonoBehaviour:
   - {fileID: -117177982514613834}
   - {fileID: -1317015046133217279}
   - {fileID: -7293113303193592351}
+  - {fileID: 3689355959462278125}
+  - {fileID: -2310059491070073761}
+  - {fileID: -7399080774646387582}
+  - {fileID: -6143846409079520989}
+  - {fileID: 7955581650486736965}
+  - {fileID: 5883327816506289798}
+  - {fileID: -8362466922320823523}
+  - {fileID: -288448833206228636}
+  - {fileID: 6988425959087942620}
+  - {fileID: -8528922949703805753}
+  - {fileID: -6664885070976904872}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638244780351336946
+  cacheTime: 638245107402102884
   cacheVersion: 131603
 --- !u!114 &74088915676784687
 MonoBehaviour:
@@ -2678,6 +2878,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
+--- !u!114 &3689355959462278125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_77_oh its for
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_77_oh its for
+  Guid:
+    Data1: 558010889
+    Data2: 1089105862
+    Data3: 1809106563
+    Data4: 623995960
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5458
 --- !u!114 &3763144710398714732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3057,6 +3284,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2374
+--- !u!114 &5883327816506289798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_53_I would
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_53_I would
+  Guid:
+    Data1: 1018221154
+    Data2: 1084386910
+    Data3: -1882042490
+    Data4: -847567712
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5374
 --- !u!114 &6198082788038736401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3283,6 +3537,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
+--- !u!114 &6988425959087942620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_54_and it was
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_54_and it was
+  Guid:
+    Data1: -1489460291
+    Data2: 1192417162
+    Data3: 1921841570
+    Data4: -1711536443
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4320
 --- !u!114 &7004362407631000423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3499,6 +3780,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3124
+--- !u!114 &7955581650486736965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_65_its from
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_65_its from
+  Guid:
+    Data1: 826670421
+    Data2: 1189755985
+    Data3: -1374665805
+    Data4: -1840751116
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5407
 --- !u!114 &7982820880305604656
 MonoBehaviour:
   m_ObjectHideFlags: 0

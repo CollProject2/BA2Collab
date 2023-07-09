@@ -13,8 +13,8 @@ public class EntranceTriggerLantern : MonoBehaviour
     private void ChangeValues()
     {
         gameObject.GetComponent<Collider>().enabled = false;
-        UIManager.instance.dialogues.StartDialogue(triggerMemory);
-        LightManager.instance.OpenLivingRoomEntranceDoorHighLight(false);
+        //UIManager.instance.dialogues.StartDialogue(triggerMemory);
+        //LightManager.instance.OpenLivingRoomEntranceDoorHighLight(false);
         Destroy(gameObject);
         //light to the door end of fungus
     }
