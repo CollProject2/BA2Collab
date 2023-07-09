@@ -9,7 +9,6 @@ public class GlassesItem : InteractableItem
     protected override void Collect()
     {
         base.Collect();
-        GlassesManager.instance.activated = true;
         ActivateGlassesOnCamera();
         SetIsComplete(true);
 
@@ -26,6 +25,7 @@ public class GlassesItem : InteractableItem
                 glassesModel.transform.DOLocalMove(new Vector3(0, -1, -1), 1);
                 glasses.gameObject.SetActive(true);
                 glasses.InitializeGlasses();
+                GlassesManager.instance.activated = true;
             });
         });
     }
