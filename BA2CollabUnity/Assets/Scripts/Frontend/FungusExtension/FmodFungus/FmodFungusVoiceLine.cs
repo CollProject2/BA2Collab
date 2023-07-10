@@ -7,8 +7,8 @@ using UnityEngine;
 using Fungus;
 using FMODUnity;
 using STOP_MODE = FMOD.Studio.STOP_MODE;
-[CommandInfo("Fmod","VoiceLine","unskipable voiceline")]
 
+[CommandInfo("Fmod", "VoiceLine", "unskipable voiceline")]
 public class FmodFungusVoiceLine : Command
 {
     private DialogInput dialogInput;
@@ -24,38 +24,45 @@ public class FmodFungusVoiceLine : Command
 
     public override void OnEnter()
     {
-        dialogInput.enabled = false;
-        voiceLineInstance = AudioManager.instance.CreateUnlistedInstance(voiceLine);
-        voiceLineInstance.start();
+        if (AudioManager.instance.CAN_PLAY_DIALOG)
+        {
+            dialogInput.enabled = false;
+            voiceLineInstance = AudioManager.instance.CreateUnlistedInstance(voiceLine);
+            voiceLineInstance.start();
+        }
+
         Continue();
     }
+
     // check is it playing 
-    bool IsPlaying(EventInstance instance) {
-        
-        PLAYBACK_STATE state;   
+    bool IsPlaying(EventInstance instance)
+    {
+        PLAYBACK_STATE state;
         instance.getPlaybackState(out state);
         return state != PLAYBACK_STATE.STOPPED;
     }
+
     private void Update()
     {
-        if(!voiceLineInstance.isValid()) return;
-        // check if the event exist, if not return. if 
-        if (RuntimeManager.StudioSystem.getEvent(AudioManager.instance.GetInstantiatedEventName(voiceLineInstance),
-                out eventDescription) == RESULT.ERR_EVENT_NOTFOUND)
+        if (AudioManager.instance.CAN_PLAY_DIALOG)
         {
-            return;
-        }
-        else
-        {
-            // if the event exists and it is not playing anymore, continue to the next command by allowing the click and remove event
-            if (!IsPlaying(voiceLineInstance))
+            if (!voiceLineInstance.isValid()) return;
+            // check if the event exist, if not return. if 
+            if (RuntimeManager.StudioSystem.getEvent(AudioManager.instance.GetInstantiatedEventName(voiceLineInstance),
+                    out eventDescription) == RESULT.ERR_EVENT_NOTFOUND)
             {
-                dialogInput.enabled = true;
-                voiceLineInstance.stop(STOP_MODE.IMMEDIATE);
-                voiceLineInstance.release();
+                return;
+            }
+            else
+            {
+                // if the event exists and it is not playing anymore, continue to the next command by allowing the click and remove event
+                if (!IsPlaying(voiceLineInstance))
+                {
+                    dialogInput.enabled = true;
+                    voiceLineInstance.stop(STOP_MODE.IMMEDIATE);
+                    voiceLineInstance.release();
+                }
             }
         }
     }
-
-    
 }

@@ -135,6 +135,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3500
+--- !u!114 &-8861488806297503839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_23_father only saw
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_23_father only saw
+  Guid:
+    Data1: 189236224
+    Data2: 1309674241
+    Data3: 1090411919
+    Data4: -1914210993
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4874
 --- !u!114 &-8798037297154557371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +350,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6500
+  Length: 1500
 --- !u!114 &-8147125543901813929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,6 +378,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &-7899926371301042049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_117_can you
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_117_can you
+  Guid:
+    Data1: -1279457955
+    Data2: 1278948559
+    Data3: 1155150511
+    Data4: -1422665428
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1874
 --- !u!114 &-7661126286634717694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,6 +432,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
+--- !u!114 &-7656450634004681537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_150_the first one
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_150_the first one
+  Guid:
+    Data1: -1233190696
+    Data2: 1198299216
+    Data3: -882421108
+    Data4: -1765798753
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
+--- !u!114 &-7581248530390377307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_151_as you see
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_151_as you see
+  Guid:
+    Data1: 677170514
+    Data2: 1144318969
+    Data3: 1386691495
+    Data4: -1837511377
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9229
 --- !u!114 &-7508141962672129450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,6 +594,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10874
+--- !u!114 &-7200969629317380237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_97_She Asked
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_97_She Asked
+  Guid:
+    Data1: -1955582684
+    Data2: 1084074267
+    Data3: -668376668
+    Data4: -304690156
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6291
+--- !u!114 &-7121260653601087262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_141_helen was
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_141_helen was
+  Guid:
+    Data1: -976791393
+    Data2: 1093477869
+    Data3: 1376639641
+    Data4: -1551644281
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3657
+--- !u!114 &-6984056565817154899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_123_its okay darling
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_123_its okay darling
+  Guid:
+    Data1: 1823488566
+    Data2: 1078899300
+    Data3: 1399092659
+    Data4: -365689368
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7176
 --- !u!114 &-6664885070976904872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +891,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6374
+--- !u!114 &-5636376096423817188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_154_I was never
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_154_I was never
+  Guid:
+    Data1: 761152785
+    Data2: 1182999049
+    Data3: 155618483
+    Data4: 1517146996
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
 --- !u!114 &-5588590188237924675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -771,11 +987,38 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638245955306192339
+  lastModified: 638246047801764572
   FileSizes:
   - Name: 
-    Value: 7536
+    Value: 9406
   Exists: 1
+--- !u!114 &-4865821039684836041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_17_Not only
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_17_Not only
+  Guid:
+    Data1: 1106371181
+    Data2: 1186368506
+    Data3: 1639029121
+    Data4: 1125258460
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6250
 --- !u!114 &-4802465694910622357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -938,6 +1181,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5374
+--- !u!114 &-4357307934610743052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_131_I am yo
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_131_I am yo
+  Guid:
+    Data1: -1728538452
+    Data2: 1086754358
+    Data3: 1028996755
+    Data4: 1654654021
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6041
 --- !u!114 &-4327374674622236895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1061,7 +1331,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638245955306249850
+  lastModified: 638245996379636456
   FileSizes: []
   Exists: 1
 --- !u!114 &-3889038928137291054
@@ -1091,6 +1361,87 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7333
+--- !u!114 &-3851797488133176908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_63_I love donuts
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_63_I love donuts
+  Guid:
+    Data1: 230275557
+    Data2: 1185062999
+    Data3: -1536827467
+    Data4: -1869440568
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5416
+--- !u!114 &-3815668858701862751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_51_you may not
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_51_you may not
+  Guid:
+    Data1: -1622573479
+    Data2: 1234220293
+    Data3: -1268845405
+    Data4: 1969155597
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9000
+--- !u!114 &-3814046353536131048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_107_in helen
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_107_in helen
+  Guid:
+    Data1: -1272649979
+    Data2: 1142598081
+    Data3: -1235288695
+    Data4: -1230613421
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &-3808579388263205136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1172,6 +1523,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &-3632905509391119523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_13_Helen I am
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_13_Helen I am
+  Guid:
+    Data1: 1774323122
+    Data2: 1149651344
+    Data3: 1968515214
+    Data4: -683344290
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8624
 --- !u!114 &-3620167061430389829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,9 +1646,36 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638245480944493200
+  lastModified: 638246047801715654
   FileSizes: []
   Exists: 1
+--- !u!114 &-3197625085947168861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_129_but dear
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_129_but dear
+  Guid:
+    Data1: -549270295
+    Data2: 1319175589
+    Data3: 920841401
+    Data4: 306579070
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6094
 --- !u!114 &-2629963263853849237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1421,9 +1826,36 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638245955307016019
+  lastModified: 638246098218349360
   FileSizes: []
   Exists: 1
+--- !u!114 &-1883262884531691224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_152_if you can
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_152_if you can
+  Guid:
+    Data1: -654936477
+    Data2: 1327166611
+    Data3: -578917482
+    Data4: 1581318305
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &-1787191558192566795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1532,6 +1964,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &-1149710743708338236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_153_see this
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_153_see this
+  Guid:
+    Data1: 189713268
+    Data2: 1098558751
+    Data3: 1661363135
+    Data4: 796928981
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5624
 --- !u!114 &-1129782360877671590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1586,6 +2045,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6696
+--- !u!114 &-699220420267261359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_19_now let go
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_19_now let go
+  Guid:
+    Data1: -2008471816
+    Data2: 1149476150
+    Data3: -1388375621
+    Data4: -192160198
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &-607786039480437197
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +2099,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5750
+--- !u!114 &-557916254874014330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_18_think about
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_18_think about
+  Guid:
+    Data1: -989864043
+    Data2: 1107182111
+    Data3: -549683283
+    Data4: 1977852099
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8500
 --- !u!114 &-512631901933300074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1748,7 +2261,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4750
---- !u!114 &-134104441889225938
+--- !u!114 &-137225120157711126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1758,14 +2271,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/VoiceLines/Helen/Helen_63_flora she
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_127_the time
   m_EditorClassIdentifier: 
-  Path: event:/VoiceLines/Helen/Helen_63_flora she
+  Path: event:/VoiceLines/Lissandra/Lissandra_127_the time
   Guid:
-    Data1: 230275557
-    Data2: 1185062999
-    Data3: -1536827467
-    Data4: -1869440568
+    Data1: 1622334509
+    Data2: 1218616862
+    Data3: -117860196
+    Data4: -1720320274
   Banks:
   - {fileID: -1928912687670561651}
   IsStream: 0
@@ -1774,7 +2287,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5416
+  Length: 4666
 --- !u!114 &-117177982514613834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,6 +2335,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 885504
   Exists: 1
+--- !u!114 &-5855014312474028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_15_no because
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_15_no because
+  Guid:
+    Data1: -1249368823
+    Data2: 1246367727
+    Data3: 639367584
+    Data4: 2133007764
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,7 +2496,6 @@ MonoBehaviour:
   - {fileID: -462278070875918806}
   - {fileID: -5588590188237924675}
   - {fileID: 3677624104385648704}
-  - {fileID: -134104441889225938}
   - {fileID: -9043860351468941994}
   - {fileID: -4327374674622236895}
   - {fileID: 5552305061841449558}
@@ -1981,12 +2520,51 @@ MonoBehaviour:
   - {fileID: -6248726511187888845}
   - {fileID: 5274633243360540265}
   - {fileID: -8875667572962359539}
+  - {fileID: 4555474125497520494}
+  - {fileID: -3814046353536131048}
+  - {fileID: -5636376096423817188}
+  - {fileID: -7200969629317380237}
+  - {fileID: -137225120157711126}
+  - {fileID: 2295644853073383660}
+  - {fileID: 7841475609031813542}
+  - {fileID: -6984056565817154899}
+  - {fileID: 6485696210954136412}
+  - {fileID: -7581248530390377307}
+  - {fileID: -3815668858701862751}
+  - {fileID: -7899926371301042049}
+  - {fileID: -1883262884531691224}
+  - {fileID: -1149710743708338236}
+  - {fileID: 5844372774348653848}
+  - {fileID: 8734582891595690015}
+  - {fileID: 2154292009317593032}
+  - {fileID: 8204608289256954650}
+  - {fileID: 4673186272134085856}
+  - {fileID: -7121260653601087262}
+  - {fileID: 9157422328461078271}
+  - {fileID: -4357307934610743052}
+  - {fileID: 7835743565990400100}
+  - {fileID: 1163503737692082424}
+  - {fileID: 5701445199039411273}
+  - {fileID: 841458731389893538}
+  - {fileID: -7656450634004681537}
+  - {fileID: -3197625085947168861}
+  - {fileID: 4318233184675596182}
+  - {fileID: -5855014312474028}
+  - {fileID: 5133802209018445954}
+  - {fileID: -4865821039684836041}
+  - {fileID: -557916254874014330}
+  - {fileID: -3632905509391119523}
+  - {fileID: -699220420267261359}
+  - {fileID: -8861488806297503839}
+  - {fileID: 7613718577336489998}
+  - {fileID: -3851797488133176908}
+  - {fileID: 8949652818168508392}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638245955307016019
+  cacheTime: 638246098218349360
   cacheVersion: 131603
 --- !u!114 &74088915676784687
 MonoBehaviour:
@@ -2177,6 +2755,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4500
+--- !u!114 &841458731389893538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_47_There was a man
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_47_There was a man
+  Guid:
+    Data1: -1756375612
+    Data2: 1079208982
+    Data3: 1305830070
+    Data4: -134830912
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
 --- !u!114 &931348892189037103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2285,6 +2890,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12000
+--- !u!114 &1163503737692082424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_135_there is no
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_135_there is no
+  Guid:
+    Data1: -894098754
+    Data2: 1263826040
+    Data3: -1508753759
+    Data4: 1959732840
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3449
 --- !u!114 &1193020027320805843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,6 +3107,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2708
+--- !u!114 &2154292009317593032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_155_you liked
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_155_you liked
+  Guid:
+    Data1: -21405044
+    Data2: 1204240033
+    Data3: -49387859
+    Data4: 124914215
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8250
 --- !u!114 &2172646794227879946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2583,6 +3242,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7250
+--- !u!114 &2295644853073383660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_50_But I know
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_50_But I know
+  Guid:
+    Data1: -895456207
+    Data2: 1105145655
+    Data3: -214767440
+    Data4: 1230562027
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6500
 --- !u!114 &2515421389587987932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3017,6 +3703,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7708
+--- !u!114 &4318233184675596182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_14_we cant afford
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_14_we cant afford
+  Guid:
+    Data1: 1368010501
+    Data2: 1120156374
+    Data3: 780630179
+    Data4: 674742032
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6750
 --- !u!114 &4333426495449838960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3036,8 +3749,8 @@ MonoBehaviour:
     Data3: -459947078
     Data4: -1639359516
   Banks:
-  - {fileID: -3227535647774278028}
   - {fileID: -4025464701835835941}
+  - {fileID: -3227535647774278028}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3072,6 +3785,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8333
+--- !u!114 &4555474125497520494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_49_On our last
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_49_On our last
+  Guid:
+    Data1: -59757823
+    Data2: 1210333129
+    Data3: -250055289
+    Data4: 629665979
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
+--- !u!114 &4673186272134085856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_48_he didnt fit
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_48_he didnt fit
+  Guid:
+    Data1: -840969320
+    Data2: 1323864212
+    Data3: -1047035495
+    Data4: 2041550697
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7500
 --- !u!114 &4757576971238292516
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3153,6 +3920,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10145
+--- !u!114 &5133802209018445954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Father/Father_16_do you have
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Father/Father_16_do you have
+  Guid:
+    Data1: 1239157080
+    Data2: 1175943674
+    Data3: 752797869
+    Data4: -736639375
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7312
 --- !u!114 &5274633243360540265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3206,7 +4000,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 4874
+  Length: 4687
 --- !u!114 &5355757022857899809
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3342,6 +4136,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1208
+--- !u!114 &5701445199039411273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_46_I understand
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_46_I understand
+  Guid:
+    Data1: -70799936
+    Data2: 1319824485
+    Data3: -1509676665
+    Data4: -414481487
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &5844372774348653848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_91_flustered
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_91_flustered
+  Guid:
+    Data1: -601065850
+    Data2: 1205572443
+    Data3: 40663439
+    Data4: 952820505
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6874
 --- !u!114 &5874317153638892670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3501,6 +4349,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7250
+--- !u!114 &6485696210954136412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_121_haha it was
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_121_haha it was
+  Guid:
+    Data1: -377752502
+    Data2: 1215918645
+    Data3: 561196985
+    Data4: 1321697077
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6674
 --- !u!114 &6635889139093115319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3702,7 +4577,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5416
+  Length: 5874
 --- !u!114 &7017898089174746172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3811,6 +4686,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
+--- !u!114 &7613718577336489998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Helen/Helen_21_1_I dont care
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Helen/Helen_21_1_I dont care
+  Guid:
+    Data1: -2025051196
+    Data2: 1303432223
+    Data3: 1716593834
+    Data4: -515391167
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4500
 --- !u!114 &7769095055274465820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3838,6 +4740,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 9250
+--- !u!114 &7835743565990400100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_52_at least
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_52_at least
+  Guid:
+    Data1: -1495974992
+    Data2: 1196523757
+    Data3: -1838042745
+    Data4: -849571166
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 7000
+--- !u!114 &7841475609031813542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_119_you only
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_119_you only
+  Guid:
+    Data1: -1610961099
+    Data2: 1321493718
+    Data3: 757416116
+    Data4: -1901314257
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &7922393673631503716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3919,6 +4875,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4687
+--- !u!114 &8204608289256954650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_149_but your
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_149_but your
+  Guid:
+    Data1: -489722228
+    Data2: 1277400426
+    Data3: 1902844334
+    Data4: -336726852
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6801
 --- !u!114 &8241228445583430754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4000,6 +4983,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &8734582891595690015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Mother/Mother_45_I never
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Mother/Mother_45_I never
+  Guid:
+    Data1: 798219146
+    Data2: 1138774318
+    Data3: 82736810
+    Data4: 981230217
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9500
 --- !u!114 &8776475477020645263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4015,7 +5025,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/MemoryMusic.bank
   Name: MemoryMusic
   StudioPath: bank:/MemoryMusic
-  lastModified: 638245955306224853
+  lastModified: 638245996379016284
   FileSizes: []
   Exists: 1
 --- !u!114 &8828023277134063912
@@ -4069,6 +5079,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1624
+--- !u!114 &8949652818168508392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/MaleNarrator/MaleNarrator_97_she asked
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/MaleNarrator/MaleNarrator_97_she asked
+  Guid:
+    Data1: 1668213345
+    Data2: 1148513980
+    Data3: -374820452
+    Data4: -136655880
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5877
 --- !u!114 &8969925950149708079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4150,6 +5187,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6562
+--- !u!114 &9157422328461078271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Lissandra/Lissandra_125_okay bring
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Lissandra/Lissandra_125_okay bring
+  Guid:
+    Data1: -1477234016
+    Data2: 1316199619
+    Data3: -1655688815
+    Data4: -1870830196
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4645
 --- !u!114 &9211945946494036519
 MonoBehaviour:
   m_ObjectHideFlags: 0
