@@ -17,8 +17,7 @@ public class MedallionItem : InteractableItem
     {
         base.Awake();
         hasToMove = true;
-        
-        isInteractable = true;
+      
     }
 
     public override void InstantiateAndMove()

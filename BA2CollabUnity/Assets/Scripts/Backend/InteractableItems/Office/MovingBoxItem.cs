@@ -88,6 +88,7 @@ public class MovingBoxItem : InteractableItem
             gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
             {
                 gameObject.transform.parent = boxPos;
+                gameObject.transform.DORotate(new Vector3(0, 90, 0), 0.1f);
                 UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
                 ChangeValues();
             });
