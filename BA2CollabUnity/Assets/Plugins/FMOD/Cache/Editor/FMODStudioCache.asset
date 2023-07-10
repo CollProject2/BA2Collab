@@ -108,6 +108,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5500
+--- !u!114 &-8875667572962359539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Juli/Juli_161_auntieHelen
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Juli/Juli_161_auntieHelen
+  Guid:
+    Data1: -2106302490
+    Data2: 1265125420
+    Data3: -1915249475
+    Data4: 240920780
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3500
 --- !u!114 &-8798037297154557371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +594,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 11250
+--- !u!114 &-6248726511187888845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Juli/Juli_3_luv u
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Juli/Juli_3_luv u
+  Guid:
+    Data1: 994487988
+    Data2: 1310030291
+    Data3: 1135073433
+    Data4: -423571130
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1770
 --- !u!114 &-6143846409079520989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,10 +771,10 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638245056056725580
+  lastModified: 638245480944508783
   FileSizes:
   - Name: 
-    Value: 7338
+    Value: 7536
   Exists: 1
 --- !u!114 &-4802465694910622357
 MonoBehaviour:
@@ -1214,7 +1268,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638245056056704225
+  lastModified: 638245480944493200
   FileSizes: []
   Exists: 1
 --- !u!114 &-2629963263853849237
@@ -1367,7 +1421,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638245107402102884
+  lastModified: 638245480965980400
   FileSizes: []
   Exists: 1
 --- !u!114 &-1787191558192566795
@@ -1923,12 +1977,16 @@ MonoBehaviour:
   - {fileID: 6988425959087942620}
   - {fileID: -8528922949703805753}
   - {fileID: -6664885070976904872}
+  - {fileID: 8969925950149708079}
+  - {fileID: -6248726511187888845}
+  - {fileID: 5274633243360540265}
+  - {fileID: -8875667572962359539}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638245107402102884
+  cacheTime: 638245480965980400
   cacheVersion: 131603
 --- !u!114 &74088915676784687
 MonoBehaviour:
@@ -2978,8 +3036,8 @@ MonoBehaviour:
     Data3: -459947078
     Data4: -1639359516
   Banks:
-  - {fileID: -3227535647774278028}
   - {fileID: -4025464701835835941}
+  - {fileID: -3227535647774278028}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3095,6 +3153,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10145
+--- !u!114 &5274633243360540265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Juli/Juli_2_ah oh
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Juli/Juli_2_ah oh
+  Guid:
+    Data1: 1229892035
+    Data2: 1122013022
+    Data3: -295929177
+    Data4: 879061038
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9624
 --- !u!114 &5308274012378759670
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3984,6 +4069,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1624
+--- !u!114 &8969925950149708079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/VoiceLines/Juli/Juli_1_goodmorning
+  m_EditorClassIdentifier: 
+  Path: event:/VoiceLines/Juli/Juli_1_goodmorning
+  Guid:
+    Data1: -566671336
+    Data2: 1164633408
+    Data3: 536749481
+    Data4: -433800473
+  Banks:
+  - {fileID: -1928912687670561651}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8282
 --- !u!114 &9044369158183322214
 MonoBehaviour:
   m_ObjectHideFlags: 0
