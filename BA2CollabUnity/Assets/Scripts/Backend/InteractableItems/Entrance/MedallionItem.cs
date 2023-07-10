@@ -17,6 +17,8 @@ public class MedallionItem : InteractableItem
     {
         base.Awake();
         hasToMove = true;
+        
+        isInteractable = true;
     }
 
     public override void InstantiateAndMove()
@@ -24,9 +26,9 @@ public class MedallionItem : InteractableItem
         medallionPuzzleObj.SetActive(true);
         medallionPuzzleObj.transform.DOMove(activePos.position, medallionMovementDuration);
         medallionPuzzleObj.transform.DOScale(new Vector3(8.7f, 8.7f, 8.7f), medallionOpenDuration);
-        medallionPuzzleObj.transform.DORotate(new Vector3(0, -90, 0), medallionMovementDuration).OnComplete(() =>
+        medallionPuzzleObj.transform.DORotate(new Vector3(0, 0, -90), medallionMovementDuration).OnComplete(() =>
         {
-            medallionPivot.transform.DORotate(new Vector3(0, -90, 96), medallionOpenDuration).OnComplete(() =>
+            medallionPivot.transform.DOLocalRotate(new Vector3(0, -200, 0), medallionOpenDuration).OnComplete(() =>
             {
                 letter.SetActive(true);
                 UIManager.instance.dialogues.StartDialogue(medallionMemory);
@@ -37,11 +39,11 @@ public class MedallionItem : InteractableItem
     public void MoveItemAway()
     {
         letter.SetActive(false);
-        medallionPivot.transform.DORotate(new Vector3(0, -90, 1), medallionOpenDuration).OnComplete(() =>
+        medallionPivot.transform.DOLocalRotate(new Vector3(0, -90, 0), medallionOpenDuration).OnComplete(() =>
         {
             medallionPuzzleObj.transform.DOMove(initPos.position, medallionMovementDuration);
-            medallionPuzzleObj.transform.DOScale(new Vector3(1, 1, 1), medallionOpenDuration);
-            medallionPuzzleObj.transform.DORotate(new Vector3(0, -60, -90), medallionMovementDuration);
+            medallionPuzzleObj.transform.DOScale(new Vector3(0.6f, 0.6f, 0.6f), medallionOpenDuration);
+            medallionPuzzleObj.transform.DORotate(new Vector3(90, 160, -315), medallionMovementDuration);
             SetIsComplete(true);
         });
     }
