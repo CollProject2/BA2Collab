@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using DG.Tweening;
-using static UnityEditor.Progress;
 
 public class Item3DPuzzle : InteractableItem
 {
