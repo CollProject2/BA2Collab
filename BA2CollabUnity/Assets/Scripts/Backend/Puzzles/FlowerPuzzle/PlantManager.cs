@@ -11,6 +11,8 @@ public class PlantManager : MonoBehaviour
     public static PlantManager instance = null;
     public Leaf currentLeaf;
     public bool isComplete;
+    public bool canTurn;
+    public float turnSpeed;
     
 
     private void Awake()
@@ -20,7 +22,15 @@ public class PlantManager : MonoBehaviour
         else
             Destroy(this);
         
-        isIntaractable = false;
+        isIntaractable = true;
+    }
+
+    private void Update()
+    {
+        if (canTurn)
+        {
+            transform.Rotate(new Vector3(0,1,0)* Time.deltaTime * turnSpeed);
+        }
     }
 
     public void CallCheck()

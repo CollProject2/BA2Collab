@@ -19,6 +19,8 @@ public class AudioManager : MonoBehaviour
 
     [Header("Parameters")] 
     public float textSoundAge = 0;
+
+    public bool CAN_PLAY_DIALOG;
     
     //Singleton
     public static AudioManager instance { get; private set; }
