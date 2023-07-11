@@ -68,6 +68,7 @@ public class MovingBoxItem : InteractableItem
     private void StartCutscene()
     {
         Player.instance.MoveCharacterAwayCutscene();
+        boxModel.SetActive(false);
         dialogueBox.SetActive(false);
         cutscene.SetActive(true);
     }
