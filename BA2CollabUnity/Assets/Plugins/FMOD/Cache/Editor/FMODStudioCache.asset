@@ -972,6 +972,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4124
+--- !u!114 &-5181740200571441480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SlideSkip
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SlideSkip
+  Guid:
+    Data1: 180011689
+    Data2: 1292537884
+    Data3: 451146920
+    Data4: 391722398
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 361
 --- !u!114 &-5143897097376029460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -987,10 +1014,10 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638246297424803929
+  lastModified: 638246997759949813
   FileSizes:
   - Name: 
-    Value: 9406
+    Value: 9618
   Exists: 1
 --- !u!114 &-4865821039684836041
 MonoBehaviour:
@@ -1331,7 +1358,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638241977824439141
+  lastModified: 638246997770377067
   FileSizes: []
   Exists: 1
 --- !u!114 &-3889038928137291054
@@ -1469,6 +1496,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6666
+--- !u!114 &-3800424514484355278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/BlockRotate
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/BlockRotate
+  Guid:
+    Data1: 1877919307
+    Data2: 1212348435
+    Data3: -1766021442
+    Data4: 1385366669
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 180
 --- !u!114 &-3706864088489046556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1646,7 +1700,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638241977824377820
+  lastModified: 638246997759924358
   FileSizes: []
   Exists: 1
 --- !u!114 &-3197625085947168861
@@ -1826,7 +1880,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638246297425272131
+  lastModified: 638246997774460236
   FileSizes: []
   Exists: 1
 --- !u!114 &-1883262884531691224
@@ -1883,6 +1937,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6791
+--- !u!114 &-1494741017234674317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Interact
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Interact
+  Guid:
+    Data1: 828207453
+    Data2: 1294281732
+    Data3: -1957411395
+    Data4: 383733582
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-1324087132222087780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2559,12 +2640,17 @@ MonoBehaviour:
   - {fileID: 7613718577336489998}
   - {fileID: -3851797488133176908}
   - {fileID: 8949652818168508392}
+  - {fileID: 8489624033700952669}
+  - {fileID: -3800424514484355278}
+  - {fileID: -1494741017234674317}
+  - {fileID: -5181740200571441480}
+  - {fileID: 8468392296645030382}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638246297425272131
+  cacheTime: 638246997774460236
   cacheVersion: 131603
 --- !u!114 &74088915676784687
 MonoBehaviour:
@@ -4956,6 +5042,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 7000
+--- !u!114 &8468392296645030382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Ambiance
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Ambiance
+  Guid:
+    Data1: 1974778291
+    Data2: 1272334466
+    Data3: -1748276820
+    Data4: -779370954
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 56000
+--- !u!114 &8489624033700952669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/RoomChange
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/RoomChange
+  Guid:
+    Data1: 165707586
+    Data2: 1196456353
+    Data3: -425184361
+    Data4: -718405590
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4333
 --- !u!114 &8627797197073604926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5025,7 +5165,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/MemoryMusic.bank
   Name: MemoryMusic
   StudioPath: bank:/MemoryMusic
-  lastModified: 638241977824404039
+  lastModified: 638245996379016284
   FileSizes: []
   Exists: 1
 --- !u!114 &8828023277134063912

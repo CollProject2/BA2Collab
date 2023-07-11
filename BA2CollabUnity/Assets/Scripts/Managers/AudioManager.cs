@@ -17,6 +17,8 @@ public class AudioManager : MonoBehaviour
     
     private EventInstance memoryEventInstance;
 
+    private EventInstance ambianceEvent;
+
     [Header("Parameters")] 
     public float textSoundAge = 0;
 
@@ -28,6 +30,7 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         textSoundAge = 0;
+        InitializeAmbiance(FMODEvents.instance.ambiance);
     }
 
     private void Awake()
@@ -51,6 +54,12 @@ public class AudioManager : MonoBehaviour
     {
         memoryEventInstance = CreateInstance(memoryEventReference);
         memoryEventInstance.start();
+    }
+    
+    public void InitializeAmbiance(EventReference memoryEventReference)
+    {
+        ambianceEvent = CreateInstance(memoryEventReference);
+        ambianceEvent.start();
     }
 
     public void SetMemoryParameter(string parameterName, float parameterValue)

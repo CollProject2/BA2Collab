@@ -17,6 +17,11 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference titleDown { get; private set; }
     [field: SerializeField] public EventReference titleUp { get; private set; }
     [field: SerializeField] public EventReference startButtonClick { get; private set; }
+    [field: SerializeField] public EventReference roomChange { get; private set; }
+    [field: SerializeField] public EventReference blockRotate { get; private set; }
+    [field: SerializeField] public EventReference interact { get; private set; }
+    [field: SerializeField] public EventReference ambiance { get; private set; }
+    [field: SerializeField] public EventReference slideSkip { get; private set; }
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

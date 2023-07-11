@@ -100,6 +100,8 @@ public class PuzzleBlock : MonoBehaviour
         if (isRotating) return;
         //we set rotating to true
         isRotating = true;
+        //play Rotating Sound
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.blockRotate,Vector3.zero);
         //rotate and will call the wincon check and turn rotating false after the rotation is complete
         transform.DORotate(rotationDirections[direction], 0.3f, RotateMode.WorldAxisAdd).OnComplete( ()=>
         {

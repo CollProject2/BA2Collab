@@ -44,6 +44,7 @@ public class StageTurnTrigger : MonoBehaviour
         PartiallyUnloadRoom();
         Player.instance.SetCanMove(false);
         Player.instance.transform.parent = Environment.instance.stageGround.transform;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.roomChange, new Vector3(0,0,0));
         Environment.instance.canTurnStage = false;
         Environment.instance.turningEnviroment.transform.DORotate(Environment.instance.turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, 180, 0), Environment.instance.turnDuration).SetEase(Environment.instance.turnEase).OnComplete(EndOfTurn);
     }
@@ -54,6 +55,7 @@ public class StageTurnTrigger : MonoBehaviour
         PartiallyUnloadRoom();
         Player.instance.SetCanMove(false);
         Player.instance.transform.parent = Environment.instance.stageGround.transform;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.roomChange, new Vector3(0,0,0));
         Environment.instance.canTurnStage = false;
         Environment.instance.turningEnviroment.transform.DORotate(Environment.instance.turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0), Environment.instance.turnDuration).SetEase(Environment.instance.turnEase).OnComplete(EndOfTurn);
     }

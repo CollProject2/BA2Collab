@@ -10,6 +10,7 @@ public class ChangePicturesProjector : Command
     public override void OnEnter()
     {
         projector.ShowPicture(picIndex);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.slideSkip,Vector3.zero);
         Continue();
     }
 }

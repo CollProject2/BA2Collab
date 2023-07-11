@@ -111,6 +111,7 @@ public class Environment : MonoBehaviour
         LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadBedRoomColor);
         Player.instance.transform.parent = turningEnviroment.transform;
         Player.instance.SetCharacterController(false);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.roomChange, new Vector3(0,0,0));
         turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0), 2).SetEase(turnEase).OnComplete(
             () =>
             {

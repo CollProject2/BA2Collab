@@ -49,7 +49,10 @@ public abstract class InteractableItem : MonoBehaviour
             if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
             {
                 if (Input.GetKeyDown(KeyCode.E))
+                {
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.interact,Vector3.zero);
                     Collect();
+                }
             }
         }
     }
