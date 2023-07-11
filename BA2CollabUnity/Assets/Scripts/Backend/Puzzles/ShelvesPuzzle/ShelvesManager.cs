@@ -7,6 +7,7 @@ public class ShelvesManager : InteractableItem
     public List<Letter> isRight = new();
     public static ShelvesManager instance = null;
     public Letter currentLetter;
+    public GameObject adButtons;
     
 
     protected override void Awake()
@@ -33,8 +34,12 @@ public class ShelvesManager : InteractableItem
     //set this as the current block
     public void SetCurrentLetter(Letter letter)
     {
-        if(currentLetter == null)
+        if (currentLetter == null)
+        {
             Player.instance.SetCanMove(false); 
+            adButtons.gameObject.SetActive(true);
+        }
+            
         //do ui stuff
         
         currentLetter = letter;
@@ -50,6 +55,7 @@ public class ShelvesManager : InteractableItem
             Player.instance.RecallMemory(associatedMemory);
             interactParticle.enabled = false;
             isComplete = true;
+            adButtons.gameObject.SetActive(false);
         }
 
     }
