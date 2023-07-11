@@ -37,6 +37,7 @@ public class PlantManager : MonoBehaviour
     {
         if (PlantIsClean() && isIntaractable)
         {
+            LightManager.instance.OpenDialogBoxLight(false);
             isIntaractable = false;
             UIManager.instance.dialogues.StartDialogue(associatedMemory);
             isComplete = true;
@@ -48,6 +49,7 @@ public class PlantManager : MonoBehaviour
         foreach (Leaf v in leafList)
             if (!v.removed) return false;
         return true;
+
     }
     public bool IsComplete()
     {

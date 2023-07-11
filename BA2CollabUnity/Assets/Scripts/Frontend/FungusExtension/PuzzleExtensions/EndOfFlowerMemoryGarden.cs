@@ -8,6 +8,7 @@ public class EndOfFlowerMemoryGarden : Command
     public override void OnEnter()
     {
         Environment.instance.TeleportToEntrance();
+        LightManager.instance.OpenDialogBoxLight(true);
         Continue();
     }
 }
