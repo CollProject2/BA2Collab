@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Highlighters;
 using UnityEngine;
 
 public class MovingBoxItem : InteractableItem
@@ -23,6 +24,7 @@ public class MovingBoxItem : InteractableItem
     public GameObject cutscene;
     public GameObject boxModel;
     public GameObject dialogueBox;
+    public Highlighter boxParticle;
 
     protected override void Awake()
     {
@@ -33,10 +35,14 @@ public class MovingBoxItem : InteractableItem
 
     protected override void Interact()
     {
-        interactParticle.enabled = true;
+        if (boxState == MovingBoxState.DroppingBox)
+
+            boxParticle.enabled = true;
+        else
+            interactParticle.enabled = true;
         if (Player.instance.CheckDistanceWithPlayer(gameObject.transform.position) < interactRange && !Player.instance.isSolving)
         {
-            
+
             if (Input.GetKeyDown(KeyCode.E))
             {
                 switch (boxState)
@@ -93,7 +99,7 @@ public class MovingBoxItem : InteractableItem
 
     public void PutDownBox()
     {
-        
+
         if (Player.instance.CheckDistanceWithPlayer(boxPos.position) < interactRange && !Player.instance.isSolving)
         {
             Player.instance.SetCanMove(false);
@@ -141,7 +147,7 @@ public class MovingBoxItem : InteractableItem
                 break;
             case MovingBoxState.DroppingBox:
                 Player.instance.hasMovingBox = false;
-                interactParticle.enabled = false;
+                boxParticle.enabled = false;
                 Player.instance.SetCanMove(true);
                 break;
             case MovingBoxState.End:
