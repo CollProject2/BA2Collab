@@ -25,11 +25,15 @@ public class YoursEverLetter_BlockCollect3_livingRoom : Command
 
     void OpenLetter()
     {
+        LightManager.instance.OpenMiddleLight(false);
+        LightManager.instance.OpenLetterLight(true);
         YoursEverLetter.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, 2);
     }
 
     void CloseLetter()
     {
+        LightManager.instance.OpenMiddleLight(true);
+        LightManager.instance.OpenLetterLight(false);
         YoursEverLetter.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, 2);
     }
 }

@@ -24,6 +24,8 @@ public class LockBoxItem : InteractableItem
     {
         base.Collect();
         lockPuzzleObj.SetActive(true);
+        LightManager.instance.OpenMiddleLight(false);
+        LightManager.instance.OpenLockPuzzleLight(true);
         lockPuzzleObj.transform.DOMove(puzzleIActivePos.position, lockBoxMoveDuration);
         SetIsComplete(true);
     }
@@ -36,6 +38,8 @@ public class LockBoxItem : InteractableItem
     public void OpenLockBox()
     {
         lockPuzzleObj.transform.DOMove(puzzleInitPos.position, lockBoxMoveDuration);
+        LightManager.instance.OpenMiddleLight(true);
+        LightManager.instance.OpenLockPuzzleLight(false);
         UIManager.instance.dialogues.StartDialogue(LockBoxMemory);
     }
 

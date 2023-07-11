@@ -100,6 +100,7 @@ public class MainMenuUI : MonoBehaviour
             canPause = false;
             Player.instance.SetCanMove(false);
             LightManager.instance.TurnOffPlayerLights();
+            LightManager.instance.OpenMiddleLight(false);
             pauseScreen.transform.DOMove(pauseActivePos.position, 2).SetEase(buttonCurve);
         }
         else
@@ -107,6 +108,7 @@ public class MainMenuUI : MonoBehaviour
             canPause = true;
             Player.instance.SetCanMove(false);
             LightManager.instance.TurnOnPlayerLights();
+            LightManager.instance.OpenMiddleLight(true);
             pauseScreen.transform.DOMove(pauseInitPos.position, 2).SetEase(buttonCurve);
         }
         
@@ -117,19 +119,25 @@ public class MainMenuUI : MonoBehaviour
         {
             if (canPause && !journalIsOpen)
             {
+                //OPen
                 canPause = false;
                 journalIsOpen = true;
                 Player.instance.SetCanMove(false);
                 journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, 2);
                 LightManager.instance.TurnOffPlayerLights();
+                LightManager.instance.OpenMiddleLight(false);
+                LightManager.instance.OpenJournalUILight(true);
             }
             else if (!canPause && journalIsOpen)
             {
+                //Close
                 canPause = true;
                 journalIsOpen = false;
                 Player.instance.SetCanMove(true);
                 journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, 2);
                 LightManager.instance.TurnOnPlayerLights();
+                LightManager.instance.OpenMiddleLight(true);
+                LightManager.instance.OpenJournalUILight(false);
             }
         }
     }
@@ -155,6 +163,7 @@ public class MainMenuUI : MonoBehaviour
 
     void MoveMenuButtonsIn()
     {
+        LightManager.instance.OpenButtonFollwerLight(true);
         startButton.transform.DOLocalRotate(new Vector3(0,0,-40), startButtonMoveDuration,RotateMode.LocalAxisAdd).SetEase(buttonCurve).OnComplete(() => canStart = true);
     }
 
@@ -185,6 +194,7 @@ public class MainMenuUI : MonoBehaviour
     //Buttons
     public void StartGameButton()
     {
+        LightManager.instance.OpenButtonFollwerLight(false);
         if (canStart == false) return; 
         mainMenuPanel.SetActive(false);
         mandala.GetComponent<SpriteRenderer>().DOColor(new Color(1, 1, 1, 0), 1);

@@ -62,7 +62,9 @@ public class Environment : MonoBehaviour
     public Transform playerTeleportPosLivingRoom;
     public Transform playerTeleportPosEntrance;
     public Transform playerTeleportPosBedroom;
-
+    [Header("EntranceExeptionObjects")] 
+    [SerializeField] private GameObject entranceNote;
+    [SerializeField] private GameObject entranceImage;
     public bool trashTheVideoRoom;
     
     public CurrentRoom currentRoom;
@@ -78,7 +80,8 @@ public class Environment : MonoBehaviour
             Destroy(this);
         }
 
-        //make lists new init here so they are empty on awake
+        entranceNote.SetActive(false);
+        entranceImage.SetActive(false);
     }
 
 
@@ -104,6 +107,8 @@ public class Environment : MonoBehaviour
     public void TurnEnvironmentAtStart()
     {
         partialLoader_BedRoom.PartialLoad();
+        LightManager.instance.ChangeColorBG(LightManager.instance.bedRoomColor);
+        LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadBedRoomColor);
         Player.instance.transform.parent = turningEnviroment.transform;
         Player.instance.SetCharacterController(false);
         turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0),2).SetEase(turnEase).OnComplete(
@@ -113,6 +118,9 @@ public class Environment : MonoBehaviour
                 Player.instance.SetCharacterController(true);
                 currentRoom = CurrentRoom.Bedroom;
                 LightManager.instance.TurnOnPlayerLights();
+                LightManager.instance.OpenOverHeadLights(true);
+                LightManager.instance.OpenMiddleLight(true);
+                LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadBedRoomColor);
                 DeactivateEntranceToBedRoomDoor();
                 SetActiveEntrance(false);
             });
@@ -153,6 +161,8 @@ public class Environment : MonoBehaviour
             bedroomDoor_ofc.SetActive(true);
             currentRoom = CurrentRoom.Bedroom;
             partialLoader_BedRoom.PartialLoad();
+            LightManager.instance.ChangeColorBG(LightManager.instance.bedRoomColor);
+            LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadBedRoomColor);
         }
         else
         {
@@ -169,6 +179,8 @@ public class Environment : MonoBehaviour
             officeDoor_bed.SetActive(true);
             currentRoom = CurrentRoom.Office;
             partialLoader_Office.PartialLoad();
+            LightManager.instance.ChangeColorBG(LightManager.instance.officeColor);
+            LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadOfficeColor);
         }
         else
         {
@@ -184,7 +196,12 @@ public class Environment : MonoBehaviour
             entranceDoor_liv.SetActive(true);
             entrenceDoor_bed.SetActive(true);
             currentRoom = CurrentRoom.Entrance;
-            LightManager.instance.ChangeColor(LightManager.instance.entranceRoomColor); // experimental
+            LightManager.instance.ChangeColorBG(LightManager.instance.entranceRoomColor); // experimental
+            LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadEntranceRoomColor);
+            LightManager.instance.OpenMiddleLight(true);
+            LightManager.instance.OpenEntranceDoorLights(true);
+            entranceNote.SetActive(true);
+            entranceImage.SetActive(true);
         }
         else
         {
@@ -200,7 +217,8 @@ public class Environment : MonoBehaviour
             livingDoor_ent.SetActive(true);
             livingDoor_scr.SetActive(true);
             currentRoom = CurrentRoom.LivingDiningRoom;
-            LightManager.instance.ChangeColor(LightManager.instance.livingRoomColor);
+            LightManager.instance.ChangeColorBG(LightManager.instance.livingRoomColor);
+            LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadLivingRoomColor);
             partialLoader_LivingRoom.PartialLoad();
         }
         else
@@ -218,6 +236,9 @@ public class Environment : MonoBehaviour
             screenDoor_liv.SetActive(true);
             screenDoor_vid.SetActive(true);
             currentRoom = CurrentRoom.ScreeningRoom;
+            LightManager.instance.ChangeColorBG(LightManager.instance.screeningRoomColor);
+            LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadScreeningRoomColor);
+            LightManager.instance.OpenMiddleLight(true);
         }
         else
         {
@@ -232,15 +253,19 @@ public class Environment : MonoBehaviour
             if (!trashTheVideoRoom)
             {
                 videoRoom.SetActive(true);
+                LightManager.instance.OpenMiddleLight(false);
                 currentRoom = CurrentRoom.VideoPrep;
             }
             else
             {
                 trashedVideoRoom.SetActive(true);
+                LightManager.instance.OpenMiddleLight(false);
                 currentRoom = CurrentRoom.TrashedVideoPrep;
             }
             
             videoDoor_scr.SetActive(true);
+            LightManager.instance.ChangeColorBG(LightManager.instance.VideoColor);
+            LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadVideoColor);
         }
         else
         {

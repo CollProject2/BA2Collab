@@ -74,6 +74,7 @@ public class MovingBoxItem : InteractableItem
             () =>
             {
                 transform.parent = Player.instance.transform;
+                gameObject.transform.DOLocalRotate(new Vector3(0, -90, 0), 0.2f);
                 UIManager.instance.dialogues.StartDialogue(PickUpBoxAndBearMemory);
                 ChangeValues();
             });
@@ -88,7 +89,6 @@ public class MovingBoxItem : InteractableItem
             gameObject.transform.DOMove(boxPos.position, 1).OnComplete(() =>
             {
                 gameObject.transform.parent = boxPos;
-                gameObject.transform.DORotate(new Vector3(0, 90, 0), 0.1f);
                 UIManager.instance.dialogues.StartDialogue(movingBoxDropMemory);
                 ChangeValues();
             });

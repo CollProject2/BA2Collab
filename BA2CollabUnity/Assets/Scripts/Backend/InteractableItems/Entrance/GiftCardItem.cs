@@ -24,6 +24,8 @@ public class GiftCardItem : InteractableItem
     public override void InstantiateAndMove()
     {
         giftCardUI.SetActive(true);
+        LightManager.instance.OpenMiddleLight(false);
+        LightManager.instance.OpenGiftCardLight(true);
         giftCardUI.transform.DOMove(activePos.position, noteMovementDuration).OnComplete(() =>
         {
             UIManager.instance.dialogues.StartDialogue(giftCardMemory);
@@ -37,6 +39,8 @@ public class GiftCardItem : InteractableItem
 
     public void MoveItemAway()
     {
+        LightManager.instance.OpenMiddleLight(true);
+        LightManager.instance.OpenGiftCardLight(false);
         giftCardUI.transform.DOMove(initPos.position, noteMovementDuration).OnComplete(() =>
         {
             giftCardUI.SetActive(false);

@@ -133,6 +133,7 @@ public class BlockManager : MonoBehaviour
     //move the puzzle away
     public void OnPuzzleFinishedMove()
     {
+        LightManager.instance.OpenMiddleLight(false);
         gameObject.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
             .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve)
             .OnComplete(() => Destroy(gameObject));

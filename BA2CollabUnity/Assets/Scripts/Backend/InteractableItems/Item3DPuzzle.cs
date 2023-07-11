@@ -17,6 +17,7 @@ public class Item3DPuzzle : InteractableItem
         //solves the puzzle associated with the item
         SolvePuzzle(associatedPuzzle); // player attempts to solve the puzzle associated with this item
         SetIsComplete(true);
+        LightManager.instance.OpenMiddleLight(false);
     }
 
     public void SolvePuzzle(Puzzle puzzle)

@@ -27,7 +27,7 @@ public class MedallionItem : InteractableItem
         medallionPuzzleObj.transform.DOScale(new Vector3(8.7f, 8.7f, 8.7f), medallionOpenDuration);
         medallionPuzzleObj.transform.DORotate(new Vector3(0, 0, -90), medallionMovementDuration).OnComplete(() =>
         {
-            medallionPivot.transform.DOLocalRotate(new Vector3(0, -200, 0), medallionOpenDuration).OnComplete(() =>
+            medallionPivot.transform.DOLocalRotate(new Vector3(0, -180, 0), medallionOpenDuration).OnComplete(() =>
             {
                 letter.SetActive(true);
                 UIManager.instance.dialogues.StartDialogue(medallionMemory);

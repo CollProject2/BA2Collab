@@ -79,7 +79,7 @@ public class CameraManager : MonoBehaviour
         look = true;
         UIManager.instance.MainMenuUI.canPause = true;
         Player.instance.SetCanMove(true);
-        LightManager.instance.TurnOffFrontStageLights();
+        LightManager.instance.OpenFrontStageLights(false);
         UIManager.instance.dialogues.dialogueBox.MoveToActivePos();
         Invoke("StartFirstDialogue", 1);
     }
