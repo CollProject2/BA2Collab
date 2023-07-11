@@ -130,20 +130,21 @@ public class MovingBoxItem : InteractableItem
             case MovingBoxState.DroppingPuck:
                 boxAnimator.SetTrigger("PutBearInBox");
                 Player.instance.hasBear = false;
+                interactParticle.enabled = false;
                 break;
             case MovingBoxState.PickingUpBox:
                 Player.instance.hasMovingBox = true;
-                interactParticle.SetActive(false);
+                interactParticle.enabled = false;
                 LightManager.instance.OpenOfficeMovingBoxHighLight(false);
                 Player.instance.SetCanMove(true);
                 break;
             case MovingBoxState.DroppingBox:
                 Player.instance.hasMovingBox = false;
-                interactParticle.SetActive(false);
+                interactParticle.enabled = false;
                 Player.instance.SetCanMove(true);
                 break;
             case MovingBoxState.End:
-                interactParticle.SetActive(false);
+                interactParticle.enabled = false;
                 break;
         }
         SetIsComplete(true);

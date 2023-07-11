@@ -7,8 +7,6 @@ public class ShelvesManager : InteractableItem
     public List<Letter> isRight = new();
     public static ShelvesManager instance = null;
     public Letter currentLetter;
-    public List<GameObject> particles;
-    private bool doOnce;
     
 
     protected override void Awake()
@@ -16,14 +14,13 @@ public class ShelvesManager : InteractableItem
         if (instance == null)
             instance = this;
         isInteractable = false;
-        doOnce = true;
     }
 
     protected override void Update()
     {
         if (Environment.instance.currentRoom == Environment.CurrentRoom.LivingDiningRoom && isInteractable)
         {
-            SetParticleSystem(true);
+            interactParticle.enabled = true;
             if (currentLetter != null)
                 CheckInput(); 
         }
@@ -48,21 +45,13 @@ public class ShelvesManager : InteractableItem
         if (ShelvesAreSolved())
         {
             isInteractable = false;
-            doOnce = true;
-            SetParticleSystem(isInteractable);
             Player.instance.SetCanMove(true);
             //recall memory
             Player.instance.RecallMemory(associatedMemory);
+            interactParticle.enabled = false;
             isComplete = true;
         }
 
-    }
-
-    public void SetParticleSystem(bool enabled)
-    {
-        if (doOnce)
-            foreach (var particle in particles) { particle.SetActive(enabled); } 
-        doOnce = false;
     }
 
     private void CheckInput()

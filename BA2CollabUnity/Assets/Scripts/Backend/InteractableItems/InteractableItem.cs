@@ -1,8 +1,9 @@
+using Highlighters;
 using UnityEngine;
 
 public abstract class InteractableItem : MonoBehaviour
 {
-    public GameObject interactParticle;
+    public Highlighter interactParticle;
     protected float interactRange;
     protected bool isInteractable;
     protected bool isComplete;
@@ -45,7 +46,7 @@ public abstract class InteractableItem : MonoBehaviour
     {
         if (!isCollected)
         {
-            interactParticle.SetActive(true);
+            interactParticle.enabled = true;
             if (Player.instance.CheckDistanceWithPlayer(transform.position) < interactRange && !Player.instance.isSolving)
             {
                 if (Input.GetKeyDown(KeyCode.E))
@@ -58,7 +59,7 @@ public abstract class InteractableItem : MonoBehaviour
     }
     protected virtual void Collect()
     {
-        interactParticle.SetActive(false);
+        interactParticle.enabled = false;
         Player.instance.SetCanMove(false);
 
         if (hasToMove)

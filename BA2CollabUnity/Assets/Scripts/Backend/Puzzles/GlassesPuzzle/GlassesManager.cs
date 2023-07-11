@@ -72,7 +72,6 @@ public class GlassesManager : MonoBehaviour
                 activated = false;
                 isComplete = true;
                 glassesItem.ResetValues();
-                glassesItem.interactParticle = particle;
             }
             if (Input.GetKeyDown(KeyCode.E))
                 glassesState = GlassesState.threeD;
