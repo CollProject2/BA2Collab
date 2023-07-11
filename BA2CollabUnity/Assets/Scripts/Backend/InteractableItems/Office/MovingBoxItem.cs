@@ -33,9 +33,10 @@ public class MovingBoxItem : InteractableItem
 
     protected override void Interact()
     {
-
+        interactParticle.enabled = true;
         if (Player.instance.CheckDistanceWithPlayer(gameObject.transform.position) < interactRange && !Player.instance.isSolving)
         {
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 switch (boxState)
