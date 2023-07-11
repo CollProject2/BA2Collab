@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6427929322077229640}
   - component: {fileID: 4137831457215383401}
   - component: {fileID: 4551315525623803610}
+  - component: {fileID: 3753852985897762650}
   m_Layer: 0
   m_Name: MDL_Box_Bottom_01.001
   m_TagString: Untagged
@@ -83,6 +84,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3753852985897762650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571326640895235487}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8109496382566870083, guid: 9145250bf20a53c48938393c40594eb9, type: 3}
 --- !u!1 &1402986818193364503
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +109,7 @@ GameObject:
   - component: {fileID: 6584695786974531460}
   - component: {fileID: 957408360024136069}
   - component: {fileID: 843558713140001350}
+  - component: {fileID: 2353965084114383205}
   m_Layer: 0
   m_Name: MDL_Box_Bottom_01
   m_TagString: Untagged
@@ -166,6 +182,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &2353965084114383205
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402986818193364503}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 957499148086803513, guid: 9145250bf20a53c48938393c40594eb9, type: 3}
 --- !u!1 &5041987521088877156
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +219,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5041987521088877156}
-  m_LocalRotation: {x: -0, y: -0.092815466, z: -0, w: 0.9956834}
+  m_LocalRotation: {x: 0, y: -0.09281381, z: 0, w: 0.9956835}
   m_LocalPosition: {x: 1, y: 0.84, z: 3.57}
   m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_ConstrainProportionsScale: 1
@@ -198,4 +228,4 @@ Transform:
   - {fileID: 6427929322077229640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 169.349, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -10.651, z: 0}

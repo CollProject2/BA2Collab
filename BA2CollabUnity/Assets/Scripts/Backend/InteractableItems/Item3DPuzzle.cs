@@ -27,7 +27,11 @@ public class Item3DPuzzle : InteractableItem
         if (!Player.instance.inGarden)
             puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.blockPuzzleInstantiatePos);
         else if (Player.instance.inGarden)
+        {
+            LightManager.instance.OpenDialogBoxLight(false);
             puzzle.StartPuzzle(puzzle, UIManager.instance.puzzleUI.gardenBlockPuzzleInstantiatePos);
+        }
+           
     }
 
 }

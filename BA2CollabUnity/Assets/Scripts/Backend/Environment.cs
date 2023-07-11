@@ -1,7 +1,6 @@
-using System.Collections;
 using DG.Tweening;
 using JetBrains.Annotations;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,7 +21,7 @@ public class Environment : MonoBehaviour
     //Singelton instance
     public static Environment instance = null;
 
-    
+
     //Properties
     [Header("Rooms")]
     [SerializeField] private GameObject bedroom;
@@ -35,12 +34,12 @@ public class Environment : MonoBehaviour
     [SerializeField] private GameObject garden;
     [SerializeField] private GameObject conservatory;
 
-    [Header("Partially Loaded Part")] 
+    [Header("Partially Loaded Part")]
     [CanBeNull] public PartialRoomLoader partialLoader_BedRoom;
     [CanBeNull] public PartialRoomLoader partialLoader_Office;
     [CanBeNull] public PartialRoomLoader partialLoader_LivingRoom;
-    
-    [Header("Doors")] 
+
+    [Header("Doors")]
     [SerializeField] private GameObject bedroomDoor_ent;
     [SerializeField] private GameObject bedroomDoor_ofc;
     [SerializeField] private GameObject officeDoor_bed;
@@ -62,11 +61,11 @@ public class Environment : MonoBehaviour
     public Transform playerTeleportPosLivingRoom;
     public Transform playerTeleportPosEntrance;
     public Transform playerTeleportPosBedroom;
-    [Header("EntranceExeptionObjects")] 
+    [Header("EntranceExeptionObjects")]
     [SerializeField] private GameObject entranceNote;
     [SerializeField] private GameObject entranceImage;
     public bool trashTheVideoRoom;
-    
+
     public CurrentRoom currentRoom;
     private void Awake()
     {
@@ -80,7 +79,8 @@ public class Environment : MonoBehaviour
             Destroy(this);
         }
 
-        entranceNote.SetActive(false);
+        if (entranceNote != null)
+            entranceNote.SetActive(false);
         entranceImage.SetActive(false);
     }
 
@@ -111,8 +111,8 @@ public class Environment : MonoBehaviour
         LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadBedRoomColor);
         Player.instance.transform.parent = turningEnviroment.transform;
         Player.instance.SetCharacterController(false);
-        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0),2).SetEase(turnEase).OnComplete(
-            ()=>
+        turningEnviroment.transform.DORotate(turningEnviroment.transform.rotation.eulerAngles + new Vector3(0, -180, 0), 2).SetEase(turnEase).OnComplete(
+            () =>
             {
                 Player.instance.transform.parent = null;
                 Player.instance.SetCharacterController(true);
@@ -126,7 +126,7 @@ public class Environment : MonoBehaviour
             });
     }
 
-    
+
     //Doors 
     // these doors have slightly different functionalities, Unloading them separetely
     public void DeactivateLivingToScrDoor()
@@ -200,7 +200,8 @@ public class Environment : MonoBehaviour
             LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadEntranceRoomColor);
             LightManager.instance.OpenMiddleLight(true);
             LightManager.instance.OpenEntranceDoorLights(true);
-            entranceNote.SetActive(true);
+            if (entranceNote != null)
+                entranceNote.SetActive(true);
             entranceImage.SetActive(true);
         }
         else
@@ -262,7 +263,7 @@ public class Environment : MonoBehaviour
                 LightManager.instance.OpenMiddleLight(false);
                 currentRoom = CurrentRoom.TrashedVideoPrep;
             }
-            
+
             videoDoor_scr.SetActive(true);
             LightManager.instance.ChangeColorBG(LightManager.instance.VideoColor);
             LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadVideoColor);
@@ -309,9 +310,9 @@ public class Environment : MonoBehaviour
             {
                 SetActiveEntrance(true);
                 Player.instance.SetCanMove(false);
-                Player.instance.animator.SetBool("isMoving",false);
+                Player.instance.animator.SetBool("isMoving", false);
                 canTurnStage = false;
-                Player.instance.inGarden = false;        
+                Player.instance.inGarden = false;
                 Player.instance.TeleportPlayer(playerTeleportPosEntrance);
                 SetActiveConservatory(false);
                 SetActiveGarden(false);
@@ -322,16 +323,16 @@ public class Environment : MonoBehaviour
 
             });
     }
-    
+
     IEnumerator DelayForEntranceTP(float duration)
     {
         yield return new WaitForSeconds(duration);
         Player.instance.SetCanMove(true);
         canTurnStage = true;
-        
+
 
     }
-    
+
 }
 
 

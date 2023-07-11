@@ -20,6 +20,9 @@ public class MovingBoxItem : InteractableItem
     public string movingBoxDropMemory;
     public string endingMemory;
     public Transform boxPos;
+    public GameObject cutscene;
+    public GameObject boxModel;
+    public GameObject dialogueBox;
 
     protected override void Awake()
     {
@@ -47,12 +50,19 @@ public class MovingBoxItem : InteractableItem
                         PutDownBox();
                         break;
                     case MovingBoxState.End:
-                        UIManager.instance.dialogues.StartDialogue(endingMemory);
+                        StartCutscene();
                         break;
                 }
 
             }
         }
+    }
+
+    private void StartCutscene()
+    {
+        Player.instance.MoveCharacterAwayCutscene();
+        dialogueBox.SetActive(false);
+        cutscene.SetActive(true);
     }
 
     protected override void Collect()

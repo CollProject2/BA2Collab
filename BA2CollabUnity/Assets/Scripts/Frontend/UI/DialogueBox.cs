@@ -22,9 +22,7 @@ public class DialogueBox : MonoBehaviour
     [Header("Scale")]
     [Header("Curves")]
     [SerializeField] private AnimationCurve dialogueBoxMoveCurve;
-    
-    
-    
+
 
     public bool dialogueIsPlaying;
     

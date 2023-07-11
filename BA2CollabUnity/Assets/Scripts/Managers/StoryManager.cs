@@ -408,15 +408,11 @@ public class StoryManager : MonoBehaviour
                 {
                     Destroy(item3DPuzzleHos);
                     movingBoxItem.SetInteractable(true);
+                    movingBoxItem.boxState = MovingBoxState.End;
                     CurrentState = GameState.MovingBoxItemEnd;
                 }
                 break;
-            case GameState.MovingBoxItemEnd:
-                if (movingBoxItem.boxState == MovingBoxState.End)
-                {
-                    //ending shit fr
-                }
-                break;
+
         }
     }
 

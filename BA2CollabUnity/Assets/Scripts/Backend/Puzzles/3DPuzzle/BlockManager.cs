@@ -113,6 +113,7 @@ public class BlockManager : MonoBehaviour
             currentBlock.transform.DOMove(currentBlock.defaultBlockPos.position, 1);
             isComplete = true;
             AudioManager.instance.SetMemoryParameter("PuzzleSolvingState", 1);
+
         }
     }
 
@@ -133,7 +134,8 @@ public class BlockManager : MonoBehaviour
     //move the puzzle away
     public void OnPuzzleFinishedMove()
     {
-        LightManager.instance.OpenMiddleLight(false);
+        LightManager.instance.OpenMiddleLight(true);
+        LightManager.instance.OpenDialogBoxLight(true);
         gameObject.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
             .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve)
             .OnComplete(() => Destroy(gameObject));

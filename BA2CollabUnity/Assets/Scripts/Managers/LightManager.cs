@@ -38,7 +38,8 @@ public class LightManager : MonoBehaviour
     [SerializeField] private GameObject stage1;
     [SerializeField] private GameObject stage2;
     [SerializeField] private GameObject buttonFollowerStart;
-    
+    [SerializeField] private GameObject dialogBoxLight;
+
     [Header("UI Lights")]
     [SerializeField] private GameObject JournalLight;
     [SerializeField] private GameObject letterLight;
@@ -201,6 +202,10 @@ public class LightManager : MonoBehaviour
     public void OpenButtonFollwerLight(bool state)
     {
         buttonFollowerStart.SetActive(state);
+    }
+    public void OpenDialogBoxLight(bool state)
+    {
+        dialogBoxLight.SetActive(state);
     }
     
     

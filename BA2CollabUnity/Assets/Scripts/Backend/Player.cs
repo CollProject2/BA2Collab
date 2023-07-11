@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     private CharacterController characterController;
     public Animator animator;
     public static Player instance = null;
+    public GameObject playerModel;
 
     private Vector3 direction;
     public Vector3 velocity;
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour
     public bool hasGlasses;
     public bool hasBear;
     public bool hasMovingBox;
+    public bool cutscene;
 
     public bool inGarden;
 
@@ -56,11 +58,12 @@ public class Player : MonoBehaviour
         //inventory = new List<Item>();
         missingBlocks = 3;
         inGarden = false;
+        cutscene = false;
     }
 
     private void Update()
     {
-        if (!canMove || !Environment.instance.canTurnStage)
+        if (!canMove || !Environment.instance.canTurnStage || cutscene)
             return;
 
         HandleMovement();
@@ -136,5 +139,13 @@ public class Player : MonoBehaviour
     public void SetCharacterController(bool state)
     {
         characterController.enabled = state;
+    }
+
+    public void MoveCharacterAwayCutscene()
+    {
+        cutscene = true;
+        transform.position = new Vector3(-1.89999998f, 1.42299998f, -2.20700002f);
+        playerModel.SetActive(false);
+        characterController.enabled = false;
     }
 }

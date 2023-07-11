@@ -22,7 +22,7 @@ public class PlantManager : MonoBehaviour
         else
             Destroy(this);
         
-        isIntaractable = true;
+        isIntaractable = false;
     }
 
     private void Update()
