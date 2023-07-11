@@ -194,8 +194,8 @@ public class MainMenuUI : MonoBehaviour
     //Buttons
     public void StartGameButton()
     {
+        if (canStart == false) return;
         LightManager.instance.OpenButtonFollwerLight(false);
-        if (canStart == false) return; 
         mainMenuPanel.SetActive(false);
         mandala.GetComponent<SpriteRenderer>().DOColor(new Color(1, 1, 1, 0), 1);
         CameraManager.instance.CameraZoomSequence();
@@ -204,6 +204,7 @@ public class MainMenuUI : MonoBehaviour
         MoveButtonsAndTitleAway(); // TEMPorary
         AudioManager.instance.PlayOneShot(FMODEvents.instance.startButtonClick,transform.position);
         isDisplayed = false;
+        canStart = false;
     }
     public void ExitGameButton()
     {
