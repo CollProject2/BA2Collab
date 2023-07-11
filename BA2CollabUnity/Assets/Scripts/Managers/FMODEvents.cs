@@ -22,6 +22,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference interact { get; private set; }
     [field: SerializeField] public EventReference ambiance { get; private set; }
     [field: SerializeField] public EventReference slideSkip { get; private set; }
+    [field: SerializeField] public EventReference yoursEverMusic { get; private set; }
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

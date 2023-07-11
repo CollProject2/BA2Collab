@@ -1014,10 +1014,10 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638247030914732939
+  lastModified: 638247205436676213
   FileSizes:
   - Name: 
-    Value: 9618
+    Value: 9656
   Exists: 1
 --- !u!114 &-4865821039684836041
 MonoBehaviour:
@@ -1358,7 +1358,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638247030914822520
+  lastModified: 638247205459409812
   FileSizes: []
   Exists: 1
 --- !u!114 &-3889038928137291054
@@ -1685,6 +1685,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4736
+--- !u!114 &-3297194570010659269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/EndMusic
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/EndMusic
+  Guid:
+    Data1: -90930842
+    Data2: 1128313332
+    Data3: 1804657026
+    Data4: 1395559549
+  Banks:
+  - {fileID: -4025464701835835941}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 137454
 --- !u!114 &-3227535647774278028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1700,7 +1727,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638241977824377820
+  lastModified: 638247205436646252
   FileSizes: []
   Exists: 1
 --- !u!114 &-3197625085947168861
@@ -1880,7 +1907,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/VoiceLines.bank
   Name: VoiceLines
   StudioPath: bank:/VoiceLines
-  lastModified: 638246297425272131
+  lastModified: 638246997774460236
   FileSizes: []
   Exists: 1
 --- !u!114 &-1883262884531691224
@@ -2645,12 +2672,13 @@ MonoBehaviour:
   - {fileID: -1494741017234674317}
   - {fileID: -5181740200571441480}
   - {fileID: 8468392296645030382}
+  - {fileID: -3297194570010659269}
   EditorParameters: []
   MasterBanks:
   - {fileID: -3227535647774278028}
   StringsBanks:
   - {fileID: -5143897097376029460}
-  cacheTime: 638247030914822520
+  cacheTime: 638247205459409812
   cacheVersion: 131603
 --- !u!114 &74088915676784687
 MonoBehaviour:
@@ -5165,7 +5193,7 @@ MonoBehaviour:
   Path: Assets/Audio/FmodBanks/Desktop/MemoryMusic.bank
   Name: MemoryMusic
   StudioPath: bank:/MemoryMusic
-  lastModified: 638241977824404039
+  lastModified: 638245996379016284
   FileSizes: []
   Exists: 1
 --- !u!114 &8828023277134063912
