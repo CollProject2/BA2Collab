@@ -57,7 +57,7 @@ public class MovingBoxItem : InteractableItem
                         PutDownBox();
                         break;
                     case MovingBoxState.End:
-                        StartCutscene();
+                        UIManager.instance.dialogues.StartDialogue(endingMemory);
                         break;
                 }
 
@@ -65,7 +65,7 @@ public class MovingBoxItem : InteractableItem
         }
     }
 
-    private void StartCutscene()
+    public void StartCutscene()
     {
         Player.instance.MoveCharacterAwayCutscene();
         boxModel.SetActive(false);
