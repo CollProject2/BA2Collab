@@ -124,10 +124,6 @@ public class Player : MonoBehaviour
         UIManager.instance.dialogues.StartDialogue(memory);
     }
 
-    public void BeginNewChapter()
-    {
-        currentStage++;
-    }
 
     public void TeleportPlayer(Transform tpPos)
     {

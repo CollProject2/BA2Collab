@@ -2071,8 +2071,6 @@ MonoBehaviour:
   interactable: 0
   index: 1
   defaultBlockPos: {fileID: 8871948893108598058}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &2725672904957535428
 GameObject:
   m_ObjectHideFlags: 0
@@ -2367,8 +2365,6 @@ MonoBehaviour:
   interactable: 0
   index: 7
   defaultBlockPos: {fileID: 244118313115837190}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &2957389814245994642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2849,8 +2845,6 @@ MonoBehaviour:
   interactable: 0
   index: 2
   defaultBlockPos: {fileID: 205563233609186047}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &3557333928802797266
 GameObject:
   m_ObjectHideFlags: 0
@@ -3329,8 +3323,6 @@ MonoBehaviour:
   interactable: 0
   index: 4
   defaultBlockPos: {fileID: 3663748335934313388}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &4126103550699408118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4776,8 +4768,6 @@ MonoBehaviour:
   interactable: 0
   index: 8
   defaultBlockPos: {fileID: 4780663229307748222}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &6124101939980189739
 GameObject:
   m_ObjectHideFlags: 0
@@ -5163,8 +5153,6 @@ MonoBehaviour:
   interactable: 0
   index: 6
   defaultBlockPos: {fileID: 975262421685146745}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &6552724757612483179
 GameObject:
   m_ObjectHideFlags: 0
@@ -6419,8 +6407,6 @@ MonoBehaviour:
   interactable: 0
   index: 3
   defaultBlockPos: {fileID: 1376490138031077090}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &8438169368357354940
 GameObject:
   m_ObjectHideFlags: 0
@@ -6624,7 +6610,7 @@ MonoBehaviour:
   - {fileID: 8014618528990271803}
   - {fileID: 6786510462836117741}
   - {fileID: 6107545262246006075}
-  isInteractable: 1
+  isInteractable: 0
   wincon: 1
   isComplete: 0
   initDetector: {fileID: 1337316685054952446}
@@ -6816,8 +6802,6 @@ MonoBehaviour:
   interactable: 0
   index: 5
   defaultBlockPos: {fileID: 19644776239791878}
-  defaultFaceDetectorPos: {fileID: 4677465290571702955}
-  activeFaceDetectorPos: {fileID: 562448338651653664}
 --- !u!1 &8873734109967447336
 GameObject:
   m_ObjectHideFlags: 0

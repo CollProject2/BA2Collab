@@ -211,8 +211,6 @@ MonoBehaviour:
   interactable: 0
   index: 2
   defaultBlockPos: {fileID: 3033367716752102430}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &194875300684251598
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,8 +742,6 @@ MonoBehaviour:
   interactable: 0
   index: 3
   defaultBlockPos: {fileID: 6572489701460133523}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &704253135451953586
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,8 +812,6 @@ MonoBehaviour:
   interactable: 0
   index: 0
   defaultBlockPos: {fileID: 7029943380186129300}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &726994352639305032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,8 +2453,6 @@ MonoBehaviour:
   interactable: 0
   index: 4
   defaultBlockPos: {fileID: 8454989568767442256}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &2807329056160918074
 GameObject:
   m_ObjectHideFlags: 0
@@ -3892,8 +3884,6 @@ MonoBehaviour:
   interactable: 0
   index: 6
   defaultBlockPos: {fileID: 3446779292960837196}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &5091521802804493371
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,8 +4717,6 @@ MonoBehaviour:
   interactable: 0
   index: 7
   defaultBlockPos: {fileID: 7592742732132813824}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &5905516003035135607
 GameObject:
   m_ObjectHideFlags: 0
@@ -4799,8 +4787,6 @@ MonoBehaviour:
   interactable: 0
   index: 5
   defaultBlockPos: {fileID: 1250005502955727015}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &6035192801827634449
 GameObject:
   m_ObjectHideFlags: 0
@@ -7311,7 +7297,7 @@ MonoBehaviour:
   - {fileID: 2825300883096656818}
   - {fileID: 1290442843930109476}
   - {fileID: 3986934401229474875}
-  isInteractable: 1
+  isInteractable: 0
   wincon: 3
   isComplete: 0
   initDetector: {fileID: 5641289625186884628}
@@ -7611,8 +7597,6 @@ MonoBehaviour:
   interactable: 0
   index: 1
   defaultBlockPos: {fileID: 565548012877905735}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}
 --- !u!1 &9081304374873591728
 GameObject:
   m_ObjectHideFlags: 0
@@ -7714,5 +7698,3 @@ MonoBehaviour:
   interactable: 0
   index: 8
   defaultBlockPos: {fileID: 7522854527079143893}
-  defaultFaceDetectorPos: {fileID: 8547674011576194991}
-  activeFaceDetectorPos: {fileID: 6672420401065978899}

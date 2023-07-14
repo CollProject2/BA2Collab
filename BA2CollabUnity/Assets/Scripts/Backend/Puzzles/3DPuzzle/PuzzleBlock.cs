@@ -25,8 +25,8 @@ public class PuzzleBlock : MonoBehaviour
 {
     private static Dictionary<RotationDirection, Vector3> rotationDirections = new()
     {
-        {RotationDirection.Up, new Vector3(-90, 0, 0)},
-        {RotationDirection.Down, new Vector3(90, 0, 0)},
+        {RotationDirection.Up, new Vector3(90, 0, 0)},
+        {RotationDirection.Down, new Vector3(-90, 0, 0)},
         {RotationDirection.Left, new Vector3(0, -90, 0)},
         {RotationDirection.Right, new Vector3(0, 90, 0)},
     };
@@ -51,8 +51,7 @@ public class PuzzleBlock : MonoBehaviour
     public int index;
 
     public Transform defaultBlockPos;
-    public Transform defaultFaceDetectorPos;
-    public Transform activeFaceDetectorPos;
+
 
 
     private void Start()

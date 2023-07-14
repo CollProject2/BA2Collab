@@ -82,6 +82,7 @@ public class Environment : MonoBehaviour
         if (entranceNote != null)
             entranceNote.SetActive(false);
         entranceImage.SetActive(false);
+        currentRoom = CurrentRoom.Entrance;
     }
 
 

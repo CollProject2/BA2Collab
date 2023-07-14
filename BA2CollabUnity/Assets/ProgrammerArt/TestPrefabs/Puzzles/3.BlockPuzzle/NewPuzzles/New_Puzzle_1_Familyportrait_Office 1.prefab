@@ -11360,7 +11360,7 @@ MonoBehaviour:
   - {fileID: 2124012771053205027}
   - {fileID: 5769275271472190487}
   - {fileID: 6275524433111586592}
-  isInteractable: 1
+  isInteractable: 0
   wincon: 4
   isComplete: 0
   initDetector: {fileID: 6201436879789217792}

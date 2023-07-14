@@ -1,5 +1,6 @@
 using JetBrains.Annotations;
 using UnityEngine;
+using static Environment;
 using static MovingBoxItem;
 
 public class StoryManager : MonoBehaviour
@@ -108,7 +109,7 @@ public class StoryManager : MonoBehaviour
         switch (CurrentState)
         {
             case GameState.Start:
-                if (Player.instance != null)
+                if (Player.instance != null && Environment.instance.currentRoom == CurrentRoom.Bedroom)
                 {
                     puckNoteItem.SetInteractable(true);
                     CurrentState = GameState.PuckNoteItem;

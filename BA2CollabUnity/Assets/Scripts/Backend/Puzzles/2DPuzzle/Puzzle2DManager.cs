@@ -40,6 +40,7 @@ public class Puzzle2DManager : MonoBehaviour
         if (PictureIsSolved())
         {
             //recall memory
+            
             Player.instance.RecallMemory(associatedMemory);
             DeactivatePuzzle();
             isInteractable = false;
