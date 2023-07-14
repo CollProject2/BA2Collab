@@ -16,7 +16,7 @@ public class LockBoxItem : InteractableItem
     [Header("Duration")]
     [SerializeField] private float lockBoxMoveDuration;
 
-    public GameObject Waldo;
+    public GameObject Waldo; //Hello Tom, u found him
     
 
 

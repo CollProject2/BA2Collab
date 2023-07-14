@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1920078508990904576}
   - component: {fileID: 1920078508990904577}
   - component: {fileID: 1920078508990904606}
+  - component: {fileID: 6055539374771125866}
   m_Layer: 0
   m_Name: Note
   m_TagString: Untagged
@@ -111,3 +112,80 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteId: 0
+--- !u!114 &6055539374771125866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920078508990904604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0970a923eff145744a66a980e20b235c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highlighterSettings:
+    depthMask: 2
+    infoRenderScale: 1
+    useOuterGlow: 1
+    useSingleOuterGlow: 1
+    outerGlowColorFront: {r: 1, g: 1, b: 1, a: 1}
+    outerGlowColorBack: {r: 0, g: 0, b: 0, a: 1}
+    outlineVisibleBeforeObject: 1
+    blurType: 0
+    blendType: 1
+    boxBlurSize: 0.04
+    blurIterations: 13.5
+    blurRenderScale: 1
+    blurIntensity: 1.99
+    blurIntensityMultiplier: 1
+    blurAdaptiveThickness: 0.225
+    cameraDistanceMultiplier: 2.75
+    useMeshOutline: 0
+    useSingleMeshOutline: 1
+    meshOutlineFront:
+      color: {r: 1, g: 1, b: 1, a: 1}
+    meshOutlineBack:
+      color: {r: 1, g: 1, b: 1, a: 1}
+    meshOutlineThickness: 0.1
+    meshOutlineAdaptiveThickness: 0
+    useInnerGlow: 0
+    useSingleInnerGlow: 1
+    innerGlowFront:
+      color: {r: 1, g: 0.69540036, b: 0, a: 1}
+      power: 6.38
+    innerGlowBack:
+      color: {r: 0, g: 1, b: 1, a: 1}
+      power: 4
+    useOverlay: 0
+    useSingleOverlay: 1
+    overlayFront:
+      color: {r: 1, g: 0.9721711, b: 0, a: 0.08627451}
+      useTexture: 0
+      texture: {fileID: 0}
+      background: 0
+      tilling: 60
+      rotation: 0
+    overlayBack:
+      color: {r: 0, g: 1, b: 1, a: 1}
+      useTexture: 0
+      texture: {fileID: 0}
+      background: 0
+      tilling: 60
+      rotation: 0
+    RenderingBoundsSizeIncrease: 0.2
+    RenderingBoundsDistanceFix: 0
+    RenderingBoundsMaxDistanceFix: 1
+    RenderingBoundsMinDistanceFix: 0
+  findRenderers: 0
+  renderers:
+  - renderer: {fileID: 0}
+    useCutout: 0
+    clippingThreshold: 0
+    clippingSource: 0
+    clipTexture: {fileID: 0}
+    submeshIndexes: 00000000
+    cullMode: 2
+  id: 1
+  showRenderBounds: 0
+  showScreenAdjustedRenderBounds: 0

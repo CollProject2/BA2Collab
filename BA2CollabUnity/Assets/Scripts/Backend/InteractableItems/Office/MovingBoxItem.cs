@@ -70,7 +70,10 @@ public class MovingBoxItem : InteractableItem
         Player.instance.MoveCharacterAwayCutscene();
         boxModel.SetActive(false);
         dialogueBox.SetActive(false);
+        interactParticle.enabled = false;
+        boxParticle.enabled = false;
         cutscene.SetActive(true);
+
     }
 
     protected override void Collect()
