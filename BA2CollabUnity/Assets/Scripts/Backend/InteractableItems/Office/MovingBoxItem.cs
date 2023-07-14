@@ -67,11 +67,13 @@ public class MovingBoxItem : InteractableItem
 
     public void StartCutscene()
     {
+        interactParticle.enabled = false;
+        boxParticle.enabled = false;
+        gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+        SetIsComplete(true);
         Player.instance.MoveCharacterAwayCutscene();
         boxModel.SetActive(false);
         dialogueBox.SetActive(false);
-        interactParticle.enabled = false;
-        boxParticle.enabled = false;
         cutscene.SetActive(true);
 
     }

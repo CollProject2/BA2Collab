@@ -27,7 +27,7 @@ public class StoryManager : MonoBehaviour
         GlassesItem, GlassesPuzzle,
         LockBoxItem, LockPuzzle,
         ProjectorItem, ShelvesPuzzle,
-        SecrectDrawerItem, ThreeDPuzzleFifth, ThreeDPuzzleItemFifth,
+        SecrectDrawerItem, ThreeDPuzzleFifth, ThreeDPuzzleItemFifth, FlowerItem,
         FlowerPuzzle, ThreeDPuzzleSixth, ThreeDPuzzleItemSixth,
         MovingBoxItemEnd
     }
@@ -52,6 +52,7 @@ public class StoryManager : MonoBehaviour
     public LockBoxItem lockBoxItem;
     public ProjectorItem projectorItem;
     public SecretDrawerItem secrectDrawerItem;
+    public PlantItemScript flowerItem;
 
     // To check the completion status of puzzles
     public Puzzle2DManager puzzle2DManager;
@@ -384,7 +385,14 @@ public class StoryManager : MonoBehaviour
                 if (blockManager.IsComplete())
                 {
                     Destroy(item3DPuzzleNewFam);
-                    plantManager.Activate();
+                    flowerItem.SetInteractable(true);
+                    CurrentState = GameState.FlowerItem;
+                }
+                break;
+            case GameState.FlowerItem:
+                if (flowerItem.IsComplete())
+                {
+                    plantManager.InitializePlantPuzzle();
                     CurrentState = GameState.FlowerPuzzle;
                 }
                 break;

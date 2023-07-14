@@ -30,8 +30,6 @@ public class Leaf : MonoBehaviour
         // Calculate the offset
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
 
-        PlantManager.instance.canTurn = true;
-        PlantManager.instance.transform.DOScale(new Vector3(0.15f, 0.15f, 0.15f), 2);
     }
 
     void OnMouseDrag()

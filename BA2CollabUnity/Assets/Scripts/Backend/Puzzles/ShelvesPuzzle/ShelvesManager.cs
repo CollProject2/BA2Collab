@@ -8,6 +8,7 @@ public class ShelvesManager : InteractableItem
     public static ShelvesManager instance = null;
     public Letter currentLetter;
     public GameObject adButtons;
+    public bool clicked;
     
 
     protected override void Awake()
@@ -15,6 +16,7 @@ public class ShelvesManager : InteractableItem
         if (instance == null)
             instance = this;
         isInteractable = false;
+        clicked = false;
     }
 
     protected override void Update()
@@ -22,7 +24,7 @@ public class ShelvesManager : InteractableItem
         if (Environment.instance.currentRoom == Environment.CurrentRoom.LivingDiningRoom && isInteractable)
         {
             interactParticle.enabled = true;
-            if (currentLetter != null)
+            if (currentLetter != null && clicked)
                 CheckInput(); 
         }
         else

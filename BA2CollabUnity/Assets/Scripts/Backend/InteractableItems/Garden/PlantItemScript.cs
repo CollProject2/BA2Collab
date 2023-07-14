@@ -1,18 +1,19 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlantItemScript : MonoBehaviour
+public class PlantItemScript : InteractableItem
 {
-    // Start is called before the first frame update
-    void Start()
+    public string plantMemory;
+    [Header("object")]
+    [SerializeField] private PlantManager plantPuzzleObj;
+
+    protected override void Collect()
     {
-        
+        base.Collect();
+        plantPuzzleObj.isIntaractable = true;
+        SetIsComplete(true);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

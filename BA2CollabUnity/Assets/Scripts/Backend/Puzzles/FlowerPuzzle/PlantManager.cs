@@ -1,5 +1,5 @@
-using System;
-using System.Collections;
+using DG.Tweening;
+using Highlighters;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,24 +13,32 @@ public class PlantManager : MonoBehaviour
     public bool isComplete;
     public bool canTurn;
     public float turnSpeed;
-    
+    public Highlighter highlighter;
+
 
     private void Awake()
     {
-        if (instance == null)       
-            instance = this;        
+        if (instance == null)
+            instance = this;
         else
             Destroy(this);
-        
+
         isIntaractable = false;
+    }
+
+    public void InitializePlantPuzzle()
+    {
+        isIntaractable = true;
+        highlighter.enabled = true;
+        canTurn = true;
+        transform.DOScale(new Vector3(0.15f, 0.15f, 0.15f), 2);
     }
 
     private void Update()
     {
         if (canTurn)
-        {
-            transform.Rotate(new Vector3(0,1,0)* Time.deltaTime * turnSpeed);
-        }
+            transform.Rotate(new Vector3(0, 1, 0) * Time.deltaTime * turnSpeed);
+
     }
 
     public void CallCheck()

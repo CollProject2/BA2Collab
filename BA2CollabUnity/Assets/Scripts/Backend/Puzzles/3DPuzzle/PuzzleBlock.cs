@@ -70,9 +70,10 @@ public class PuzzleBlock : MonoBehaviour
     //when the player interract with the collider of the block
     private void OnMouseDown()
     {
+
         //prevent clicking before the puzzle is loaded
         if (!interactable ) return;
-
+        BlockManager.instance.clicked = true;
         //prevent double clicking a block
         if (canMoveOut)
         {

@@ -12,6 +12,7 @@ public class BlockManager : MonoBehaviour
     public BlockFace wincon;
     public bool isComplete;
     public GameObject initDetector;
+    public bool clicked;
 
     public Quaternion targetRotation = Quaternion.Euler(90, 0, 0);
     public float delayAfterPuzzleEnd = 2.5f;
@@ -31,7 +32,7 @@ public class BlockManager : MonoBehaviour
             instance = this;
         else
             Destroy(this);
-
+        clicked = false;
         puzzle = GetComponentInParent<Puzzle>();
         DisplayNextBlock();
     }
@@ -51,7 +52,7 @@ public class BlockManager : MonoBehaviour
     }
     private void Update()
     {
-        if (!isInteractable) return;
+        if (!isInteractable || !clicked) return;
         CheckInput();
         if (!isComplete)
             CallCheck();

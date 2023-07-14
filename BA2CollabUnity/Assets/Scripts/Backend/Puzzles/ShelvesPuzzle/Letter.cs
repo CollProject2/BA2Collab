@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using Unity.VisualScripting.ReorderableList;
 using UnityEngine;
 
 public enum RotationLR
@@ -31,7 +32,7 @@ public class Letter : MonoBehaviour
     {
         //prevent clicking before the puzzle is loaded
         if (!isInteractable || ShelvesManager.instance.IsComplete()) return;
-
+        ShelvesManager.instance.clicked = true;
         //set the new Letter as the current letter
         ShelvesManager.instance.SetCurrentLetter(this);
     }

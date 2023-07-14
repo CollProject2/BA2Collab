@@ -14,6 +14,7 @@ public class ProjectorItem : InteractableItem
     {
         base.Collect();
         projectorLight.SetActive(true);
+        LightManager.instance.OpenMiddleLight(false);
         ShowPicture(0);
         Player.instance.isSolving = true;
         UIManager.instance.dialogues.StartDialogue(projectorSlideShowMemory);
@@ -37,6 +38,7 @@ public class ProjectorItem : InteractableItem
                 image.SetActive(false);
             }
             projectorLight.SetActive(false);
+            LightManager.instance.OpenMiddleLight(true);
             SetIsComplete(true);
         }
     }
