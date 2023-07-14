@@ -134,7 +134,15 @@ public class BlockManager : MonoBehaviour
     //move the puzzle away
     public void OnPuzzleFinishedMove()
     {
-        LightManager.instance.OpenMiddleLight(true);
+        if (Player.instance.inGarden)
+        {
+            LightManager.instance.OpenMiddleLight(false);
+        }
+        else
+        {
+            LightManager.instance.OpenMiddleLight(true);
+        }
+        
         LightManager.instance.OpenDialogBoxLight(true);
         gameObject.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, UIManager.instance.puzzleUI.blockPuzzleMoveDur)
             .SetEase(UIManager.instance.puzzleUI.blockPuzzleCurve)
