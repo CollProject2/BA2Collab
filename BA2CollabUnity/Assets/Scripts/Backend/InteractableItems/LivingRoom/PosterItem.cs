@@ -10,6 +10,7 @@ public class PosterItem : InteractableItem
         base.Collect();
         UIManager.instance.dialogues.StartDialogue(posterMemory);
         Player.instance.hasPoster = true;
+        Player.instance.isSolving = true;
 
 
         MeshRenderer[] renders; 

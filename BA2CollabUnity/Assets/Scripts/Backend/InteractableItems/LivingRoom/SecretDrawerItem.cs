@@ -16,6 +16,7 @@ public class SecretDrawerItem : InteractableItem
 
     public override void InstantiateAndMove()
     {
+        Player.instance.isSolving = true;
         secretCabinetDoor.transform.DOLocalRotate(new Vector3(-50, -121.215f, 0), 1).OnComplete(() =>
         {
             CubeObject.GetComponent<BlockCollectItem>().SetInteractable(true);

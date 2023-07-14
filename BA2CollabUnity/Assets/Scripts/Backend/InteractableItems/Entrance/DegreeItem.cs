@@ -20,6 +20,7 @@ public class DegreeItem : InteractableItem
     public override void InstantiateAndMove()
     {
         textPuzzle.SetActive(true);
+        Player.instance.isSolving = true;
         LightManager.instance.OpenMiddleLight(false);
         LightManager.instance.OpenTextPuzzleLight(true);
         textPuzzle.transform.DOMove(activePos.position, textPuzzleMovementDuration);

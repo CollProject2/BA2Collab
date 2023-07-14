@@ -17,6 +17,7 @@ public class FamilyPhotoFrameItem : InteractableItem
     public override void InstantiateAndMove()
     {
         framePuzzleObj.SetActive(true);
+        Player.instance.isSolving = true;
         framePuzzleObj.transform.DOMove(activePos.position, itemMovementDuration);
         SetIsComplete(true);
     }

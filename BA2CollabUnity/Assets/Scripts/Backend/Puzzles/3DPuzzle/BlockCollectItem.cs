@@ -10,6 +10,7 @@ public class BlockCollectItem : InteractableItem
     protected override void Collect()
     {
         base.Collect();
+        Player.instance.isSolving = true;
         Player.instance.missingBlocks--;
         UIManager.instance.dialogues.StartDialogue(BlockCollectMemory);
         gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;

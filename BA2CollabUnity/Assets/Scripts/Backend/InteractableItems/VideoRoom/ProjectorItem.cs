@@ -15,6 +15,7 @@ public class ProjectorItem : InteractableItem
         base.Collect();
         projectorLight.SetActive(true);
         ShowPicture(0);
+        Player.instance.isSolving = true;
         UIManager.instance.dialogues.StartDialogue(projectorSlideShowMemory);
     }
 

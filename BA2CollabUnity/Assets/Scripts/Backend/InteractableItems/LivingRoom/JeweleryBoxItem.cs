@@ -41,6 +41,7 @@ public class JeweleryBoxItem : InteractableItem
 
     public override void InstantiateAndMove()
     {
+        Player.instance.isSolving = true;
         JeweleryPuzzleObj.transform.DOMove(activePos.position, itemMovementDuration);
         JeweleryPuzzleObj.transform.DOScale(new Vector3(5f, 5f, 5f), jeweleryBoxOpenDur).OnComplete(() =>
         {

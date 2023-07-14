@@ -36,7 +36,8 @@ public class ShelvesManager : InteractableItem
     {
         if (currentLetter == null)
         {
-            Player.instance.SetCanMove(false); 
+            Player.instance.SetCanMove(false);
+            Player.instance.isSolving = true;
             adButtons.gameObject.SetActive(true);
         }
             

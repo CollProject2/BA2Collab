@@ -117,13 +117,23 @@ public class MainMenuUI : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.J))
         {
+            if (Player.instance.isSolving) return;
             if (canPause && !journalIsOpen)
             {
                 //OPen
                 canPause = false;
                 journalIsOpen = true;
                 Player.instance.SetCanMove(false);
-                journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, 2);
+                
+                if (Player.instance.inGarden)
+                {
+                    journalScreen.transform.DOMove(UIManager.instance.puzzleUI.gardenBlockPuzzleActivePos.position, 2);
+                }
+                else
+                {
+                    journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleActivePos.position, 2);
+                }
+                
                 LightManager.instance.TurnOffPlayerLights();
                 LightManager.instance.OpenMiddleLight(false);
                 LightManager.instance.OpenJournalUILight(true);
@@ -134,9 +144,16 @@ public class MainMenuUI : MonoBehaviour
                 canPause = true;
                 journalIsOpen = false;
                 Player.instance.SetCanMove(true);
-                journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, 2);
+                if (Player.instance.inGarden)
+                {
+                    journalScreen.transform.DOMove(UIManager.instance.puzzleUI.gardenBlockPuzzleInstantiatePos.position, 2);
+                }
+                else
+                {
+                    LightManager.instance.OpenMiddleLight(true);
+                    journalScreen.transform.DOMove(UIManager.instance.puzzleUI.blockPuzzleInstantiatePos.position, 2);
+                }
                 LightManager.instance.TurnOnPlayerLights();
-                LightManager.instance.OpenMiddleLight(true);
                 LightManager.instance.OpenJournalUILight(false);
             }
         }

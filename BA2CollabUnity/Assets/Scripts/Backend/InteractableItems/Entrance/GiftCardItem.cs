@@ -24,6 +24,7 @@ public class GiftCardItem : InteractableItem
     public override void InstantiateAndMove()
     {
         giftCardUI.SetActive(true);
+        Player.instance.isSolving = true;
         LightManager.instance.OpenMiddleLight(false);
         LightManager.instance.OpenGiftCardLight(true);
         giftCardUI.transform.DOMove(activePos.position, noteMovementDuration).OnComplete(() =>

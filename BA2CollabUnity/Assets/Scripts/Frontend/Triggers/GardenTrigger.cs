@@ -11,6 +11,7 @@ public class GardenTrigger : MonoBehaviour
         CameraManager.instance.CameraZoomInGarden();
         LightManager.instance.ChangeColorBG(LightManager.instance.GardenColor);
         LightManager.instance.ChangeColorOverHead(LightManager.instance.overHeadGardenColor);
+        LightManager.instance.OpenMiddleLight(false);
         gameObject.GetComponent<Collider>().enabled = false;
         Player.instance.inGarden = true;
         gardenCollider.SetActive(true);

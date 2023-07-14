@@ -23,6 +23,7 @@ public class MedallionItem : InteractableItem
     public override void InstantiateAndMove()
     {
         medallionPuzzleObj.SetActive(true);
+        Player.instance.isSolving = true;
         medallionPuzzleObj.transform.DOMove(activePos.position, medallionMovementDuration);
         medallionPuzzleObj.transform.DOScale(new Vector3(8.7f, 8.7f, 8.7f), medallionOpenDuration);
         medallionPuzzleObj.transform.DORotate(new Vector3(0, 0, -90), medallionMovementDuration).OnComplete(() =>

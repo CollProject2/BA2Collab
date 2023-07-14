@@ -24,6 +24,7 @@ public class LockBoxItem : InteractableItem
     {
         base.Collect();
         lockPuzzleObj.SetActive(true);
+        Player.instance.isSolving = true;
         LightManager.instance.OpenMiddleLight(false);
         LightManager.instance.OpenLockPuzzleLight(true);
         lockPuzzleObj.transform.DOMove(puzzleIActivePos.position, lockBoxMoveDuration);

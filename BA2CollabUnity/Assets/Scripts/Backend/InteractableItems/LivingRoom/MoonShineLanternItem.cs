@@ -19,6 +19,7 @@ public class MoonShineLanternItem : InteractableItem
     public override void InstantiateAndMove()
     {
         itemObject.SetActive(true);
+        Player.instance.isSolving = true;
         itemObject.transform.DOScale(new Vector3(3.5f, 3.5f, 3.5f), itemMovementDuration);
         itemObject.transform.DOMove(activePos.position, itemMovementDuration).OnComplete(() =>
         {

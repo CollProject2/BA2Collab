@@ -11,6 +11,7 @@ public class WallPosterItem : InteractableItem
         base.Collect();
         GetComponent<MeshRenderer>().enabled = true;
         Player.instance.SetCanMove(false);
+        Player.instance.isSolving = true;
         UIManager.instance.dialogues.StartDialogue(posterGapMemory);
         SetIsComplete(true);
     }

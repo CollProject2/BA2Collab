@@ -57,6 +57,7 @@ public class GlassesManager : MonoBehaviour
         border.SetActive(true);
         adButtons.SetActive(true);
         Player.instance.canMove = false;
+        Player.instance.isSolving = true;
         canSwitch = true;
         glassesState = GlassesState.threeD;
         ActivateGlasses();
@@ -71,6 +72,7 @@ public class GlassesManager : MonoBehaviour
             {
                 glassesState = GlassesState.off;
                 Player.instance.hasGlasses = false;
+                Player.instance.isSolving = false;
                 activated = false;
                 isComplete = true;
                 glassesItem.ResetValues();
