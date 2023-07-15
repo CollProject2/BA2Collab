@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 {
     // This class is a Singleton and a Test Class 
     // https://www.youtube.com/watch?v=rcBHIOjZDpk
+    // this was the tutorail that I used to start working with FMOD and then I modified it
     // SoundSource Script is also test and created to work with this script
 
     private List<EventInstance> eventInstances;
@@ -44,24 +45,27 @@ public class AudioManager : MonoBehaviour
         eventInstances = new List<EventInstance>();
         eventEmitters = new List<StudioEventEmitter>();
     }
-
+    
+    //plays a one shot sfx
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     {
         RuntimeManager.PlayOneShot(sound,worldPos);
     }
-
+    
+    //creates and starts a memory music that loops
     public void InitializeMemoryMusic(EventReference memoryEventReference)
     {
         memoryEventInstance = CreateInstance(memoryEventReference);
         memoryEventInstance.start();
     }
-    
+    //creates and starts a ambiance that loops
     public void InitializeAmbiance(EventReference memoryEventReference)
     {
         ambianceEvent = CreateInstance(memoryEventReference);
         ambianceEvent.start();
     }
-
+    
+    // changes the parameter in FMOD by name to a value, used for memory music transition
     public void SetMemoryParameter(string parameterName, float parameterValue)
     {
         memoryEventInstance.setParameterByName(parameterName, parameterValue);
@@ -71,7 +75,7 @@ public class AudioManager : MonoBehaviour
     {
         textSoundAge = age;
     }
-    
+    // Creates and Event Instance and adds it to the list of events
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);

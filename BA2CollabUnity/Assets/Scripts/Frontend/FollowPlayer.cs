@@ -7,7 +7,7 @@ public class FollowPlayer : MonoBehaviour
     public float yOffset = 0.5f;
 
     
-    
+    // for the lights that follow the player
     void Update()
     {
         if (LightManager.instance.canLookatPlayer)

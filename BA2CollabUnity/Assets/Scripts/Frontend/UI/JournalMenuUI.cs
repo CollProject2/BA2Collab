@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JournalMenuUI : MonoBehaviour
 {
+    // works as a journal manager, keeps track of notes in the game and opens them as they are collected.
     public static JournalMenuUI instance { get; private set; }
 
     [Header("positions")]

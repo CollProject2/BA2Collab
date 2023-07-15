@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class DialogueBox : MonoBehaviour
 {
+    // the class that holds the fucntions for Dialog box animations usually called from Fungus Command classed
     [Header("Objects")] 
     [SerializeField] private GameObject dialogueBoxParent;
     [SerializeField] private GameObject dialogueBoxTurningPart;
@@ -26,7 +27,7 @@ public class DialogueBox : MonoBehaviour
 
     public bool dialogueIsPlaying;
     
-
+    // Animations for Dialog box
     public void MoveToActivePos()
     {
         dialogueBoxParent.transform.DOMove(dialogueBoxActivePos.position, dialogueBoxMoveDur)

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GardenTrigger : MonoBehaviour
 {
+    // trigger on the garden to make the player lock inside the garden and Camera zoom 
+    
     public GameObject gardenCollider;
     private void OnTriggerEnter(Collider other)
     {

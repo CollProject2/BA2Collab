@@ -6,8 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
-    // the UI panel appears instantly now, in the future we will have a sequence
-    // zoom in, open curtains, open related buttons....
+    // the main Menu class, holds most of the Animated UI elements, holds the functions to animate them.
 
     //Properties
     public bool isDisplayed { get; private set; }
@@ -80,6 +79,7 @@ public class MainMenuUI : MonoBehaviour
 
     void TurnMandala()
     {
+        // just turns the mandala sprite 
         mandala.transform.Rotate(Vector3.forward, mandalaTurnSpeed * Time.deltaTime);
     }
 
@@ -111,20 +111,21 @@ public class MainMenuUI : MonoBehaviour
             LightManager.instance.OpenMiddleLight(true);
             pauseScreen.transform.DOMove(pauseInitPos.position, 2).SetEase(buttonCurve);
         }
-        
     }
     public void OpenJournalScreen()
     {
+        // open close journal
         if (Input.GetKeyDown(KeyCode.J))
         {
+            // only when player is not solving 
             if (Player.instance.isSolving) return;
             if (canPause && !journalIsOpen)
             {
-                //OPen
+                //Open
                 canPause = false;
                 journalIsOpen = true;
                 Player.instance.SetCanMove(false);
-                
+                // if player is in garden the journal has a different position
                 if (Player.instance.inGarden)
                 {
                     journalScreen.transform.DOMove(UIManager.instance.puzzleUI.gardenBlockPuzzleActivePos.position, 2);
@@ -144,6 +145,7 @@ public class MainMenuUI : MonoBehaviour
                 canPause = true;
                 journalIsOpen = false;
                 Player.instance.SetCanMove(true);
+                // if player is in garden the journal has a different position
                 if (Player.instance.inGarden)
                 {
                     journalScreen.transform.DOMove(UIManager.instance.puzzleUI.gardenBlockPuzzleInstantiatePos.position, 2);

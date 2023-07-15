@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    // Camera movement control animations
     public static CameraManager instance;
     
     [Header("Positions")]
